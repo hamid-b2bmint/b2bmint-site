@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B2BMint — The SaaS Agency That Makes AI Recommend You and Google Rank You</title>
+<meta name="description" content="B2BMint builds the semantic authority system that makes your SaaS the cited answer in AI search and the ranked result in Google. Pipeline, not traffic.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+--mint:#40B58A;--mint-deep:#2D8B68;--mint-light:#C8F0DA;--mint-bg:rgba(200,240,218,.12);
+--salmon:#E7A890;--salmon-light:#F5D5C8;--salmon-bg:rgba(231,168,144,.08);
+--gold:#EDD677;--gold-deep:#C4A83A;--gold-bg:rgba(237,214,119,.1);
+--red:#FA4028;--red-bg:rgba(250,64,40,.06);
+--cream:#F2EAD8;--cream-light:#FAF6EE;--cream-dark:#E8DCCA;
+--ink:#1A1612;--text:#3D3428;--text-mid:#6B5D4A;--text-light:#9B8E7D;
+}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+@keyframes dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.rv{opacity:0;transform:translateY(32px);transition:opacity .65s ease,transform .65s ease}
+.rv.vis{opacity:1;transform:translateY(0)}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}.rv-d4{transition-delay:.4s}
+
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;background:var(--cream-light);border-bottom:1px solid rgba(0,0,0,.06);transition:all .3s}
+.nav.scrolled{background:rgba(250,246,238,.95);backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.nav-logo{font-family:'Archivo',sans-serif;font-size:1.4rem;font-weight:900;color:var(--ink);letter-spacing:-.03em;text-decoration:none}
+.nav-logo span{color:var(--mint)}
+.nav-r{display:flex;align-items:center;gap:24px}
+.nav-r a{font-size:.8rem;font-weight:600;color:var(--text-mid);text-decoration:none;transition:color .2s}
+.nav-r a:hover{color:var(--ink)}
+.nav-cta{font-family:'Archivo',sans-serif;background:var(--mint)!important;color:#fff!important;padding:8px 22px;border-radius:100px;font-weight:700!important;font-size:.78rem!important;border:none;cursor:pointer;transition:all .2s!important}
+.nav-cta:hover{background:var(--mint-deep)!important;box-shadow:0 4px 16px rgba(64,181,138,.25)!important}
+
+/* ===== HERO ===== */
+.hero{padding:100px 48px 80px;background:var(--cream-light)}
+.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:'Archivo',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mint-deep);margin-bottom:24px;background:var(--mint-bg);border:1px solid rgba(64,181,138,.15);padding:6px 16px;border-radius:100px}
+.hero-tag::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--mint);animation:dot 2.5s infinite}
+.hero h1{font-family:'Archivo',sans-serif;font-size:3.4rem;font-weight:900;line-height:1;letter-spacing:-.04em;margin-bottom:20px;animation:fadeUp .7s ease both}
+.hero h1 .hl{color:var(--mint)}
+.hero h1 .ul{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:6px;text-decoration-thickness:4px}
+.hero-sub{font-size:1.05rem;color:var(--text);line-height:1.7;margin-bottom:16px;max-width:500px;animation:fadeUp .7s ease both .1s}
+.hero-body{font-size:.9rem;color:var(--text-mid);line-height:1.65;margin-bottom:28px;max-width:460px;animation:fadeUp .7s ease both .2s}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .7s ease both .3s}
+.btn-m{font-family:'Archivo',sans-serif;background:var(--mint);color:#fff;padding:14px 28px;border-radius:100px;font-size:.85rem;font-weight:700;border:none;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn-m:hover{background:var(--mint-deep);transform:translateY(-2px);box-shadow:0 6px 24px rgba(64,181,138,.3)}
+.btn-o{font-family:'Archivo',sans-serif;background:transparent;color:var(--ink);padding:12px 24px;border-radius:100px;font-size:.85rem;font-weight:700;border:2px solid var(--ink);cursor:pointer;transition:all .25s;text-decoration:none}
+.btn-o:hover{background:var(--ink);color:var(--cream)}
+.hero-note{font-size:.76rem;color:var(--text-light);margin-top:20px;animation:fadeUp .7s ease both .4s}
+
+/* Metric cards */
+.mc-stack{max-width:400px;margin-left:auto}
+.mc{border-radius:20px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.06);position:relative}
+.mc-1{background:var(--mint);color:#fff;z-index:3;transform:rotate(-2deg)}
+.mc-2{background:var(--salmon);color:var(--ink);margin-top:-20px;margin-left:36px;z-index:2;transform:rotate(1.5deg)}
+.mc-3{background:var(--gold);color:var(--ink);margin-top:-18px;margin-right:16px;z-index:1;transform:rotate(-1deg)}
+.mc-4{background:var(--ink);color:var(--cream);margin-top:-14px;margin-left:52px;z-index:0;transform:rotate(2deg);padding:18px 24px}
+.mc-num{font-family:'Archivo',sans-serif;font-weight:900;line-height:1;letter-spacing:-.03em}
+.mc-1 .mc-num{font-size:2.8rem}.mc-2 .mc-num{font-size:2rem}.mc-3 .mc-num{font-size:1.7rem}.mc-4 .mc-num{font-size:1.4rem}
+.mc-label{font-size:.72rem;font-weight:600;opacity:.75;margin-top:4px}
+
+/* ===== TRUST ===== */
+.trust{padding:18px 48px;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;background:var(--ink);color:var(--cream)}
+.trust span{font-size:.76rem;color:rgba(242,234,216,.45)}.trust strong{color:var(--mint-light);font-weight:700;font-size:.82rem}
+.trust-d{width:4px;height:4px;border-radius:50%;background:var(--mint);opacity:.35}
+
+/* ===== SECTIONS BASE ===== */
+.sec{padding:96px 48px}
+.sec-inner{max-width:1280px;margin:0 auto}
+.sec-cream{background:var(--cream)}.sec-light{background:var(--cream-light)}.sec-dark{background:var(--ink);color:var(--cream)}
+.stag{font-family:'Archivo',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;margin-bottom:20px}
+.stag::before{content:'';width:7px;height:7px;border-radius:50%}
+.stag-mint{color:var(--mint-deep)}.stag-mint::before{background:var(--mint)}
+.stag-salmon{color:var(--salmon)}.stag-salmon::before{background:var(--salmon)}
+.stag-gold{color:var(--gold-deep)}.stag-gold::before{background:var(--gold)}
+.sh2{font-family:'Archivo',sans-serif;font-weight:900;letter-spacing:-.04em;line-height:1.04;margin-bottom:24px}
+.sh2 .hl{color:var(--mint)}.sh2 .hl-r{color:var(--red)}
+.sp{font-size:1rem;color:var(--text);line-height:1.75;margin-bottom:16px;max-width:660px}
+.sp strong{color:var(--ink);font-weight:700}
+.sec-dark .sp{color:rgba(242,234,216,.55)}.sec-dark .sp strong{color:var(--cream)}
+
+/* ===== PROBLEM ===== */
+.prob-break{font-family:'Archivo',sans-serif;font-size:1.4rem;font-weight:800;color:var(--ink);margin:40px 0 20px;padding-left:20px;border-left:4px solid var(--red)}
+.pain{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.pc{border-radius:16px;padding:28px;transition:all .35s;border:2px solid rgba(0,0,0,.04);background:var(--cream-light)}
+.pc:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.07)}
+.pc:nth-child(1):hover{border-color:var(--salmon);background:var(--salmon-bg)}
+.pc:nth-child(2):hover{border-color:var(--red);background:var(--red-bg)}
+.pc:nth-child(3):hover{border-color:var(--gold-deep);background:var(--gold-bg)}
+.pc:nth-child(4):hover{border-color:var(--mint);background:var(--mint-bg)}
+.pc-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.4rem}
+.pc:nth-child(1) .pc-icon{background:var(--salmon-light)}
+.pc:nth-child(2) .pc-icon{background:rgba(250,64,40,.08)}
+.pc:nth-child(3) .pc-icon{background:rgba(237,214,119,.2)}
+.pc:nth-child(4) .pc-icon{background:var(--mint-light)}
+.pc h3{font-family:'Archivo',sans-serif;font-size:.92rem;font-weight:800;margin-bottom:8px}
+.pc p{font-size:.82rem;color:var(--text-mid);line-height:1.6}
+.urgency{margin-top:40px;padding:20px 24px;border-radius:12px;background:linear-gradient(135deg,var(--red-bg),rgba(250,64,40,.1));border:1px solid rgba(250,64,40,.1);max-width:700px;display:flex;gap:12px;align-items:flex-start}
+.urgency p{font-size:.88rem;color:var(--text);line-height:1.7}
+
+/* ===== FROM SEARCH TO ANSWERS ===== */
+.sa-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:40px 0}
+.sa-panel{border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.06);background:#fff}
+.sa-hdr{padding:10px 20px;font-family:'Archivo',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.sa-old .sa-hdr{background:rgba(0,0,0,.03);color:var(--text-light)}
+.sa-new .sa-hdr{background:var(--mint-bg);color:var(--mint-deep)}
+.sa-body{padding:20px;min-height:200px}
+.serp{padding:10px 0;border-bottom:1px solid rgba(0,0,0,.04)}
+.serp:last-child{border:none}
+.serp-ad{font-size:.52rem;background:#F1C232;color:#333;padding:1px 5px;border-radius:2px;font-weight:800;margin-right:4px}
+.serp-title{font-size:.82rem;color:#1a0dab;font-weight:500}
+.serp-desc{font-size:.7rem;color:var(--text-light);line-height:1.4;margin-top:2px}
+.serp-you{background:rgba(250,64,40,.04);border-radius:6px;padding:10px;border-left:3px solid var(--red);opacity:.5}
+.ai-msg{font-size:.82rem;color:var(--text-mid);line-height:1.6;margin-bottom:12px}
+.ai-q{background:rgba(0,0,0,.03);border-radius:8px;padding:10px 14px;margin-bottom:12px}
+.ai-rec{background:var(--mint-bg);border-radius:8px;padding:12px 16px;border-left:3px solid var(--mint)}
+.ai-rec-brand{font-family:'Archivo',sans-serif;font-weight:800;color:var(--mint-deep);font-size:.85rem}
+.ai-rec-desc{font-size:.72rem;color:var(--text-mid);margin-top:2px}
+
+/* ===== STATS ===== */
+.stats{display:flex;gap:14px;margin:0 48px}
+.stat{flex:1;border-radius:16px;padding:28px 16px;text-align:center;transition:all .3s}
+.stat:nth-child(1){background:var(--mint);color:#fff}
+.stat:nth-child(2){background:var(--salmon);color:var(--ink)}
+.stat:nth-child(3){background:var(--gold);color:var(--ink)}
+.stat:nth-child(4){background:var(--ink);color:var(--cream)}
+.stat:nth-child(5){background:var(--mint-light);color:var(--mint-deep)}
+.stat:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.stat-num{font-family:'Archivo',sans-serif;font-size:1.8rem;font-weight:900;line-height:1;letter-spacing:-.02em}
+.stat-label{font-size:.65rem;font-weight:600;margin-top:8px;opacity:.7;line-height:1.3}
+.stats-note{text-align:center;padding:20px 48px;font-size:.82rem;color:var(--text-mid)}
+
+/* ===== 80% OVERLAP ===== */
+.overlap{margin:40px 0;background:var(--cream-light);border-radius:16px;padding:40px;border:1px solid rgba(0,0,0,.04)}
+.overlap-center{background:#fff;border-radius:12px;padding:28px;border:2px solid var(--mint-light);text-align:center;margin-bottom:20px}
+.overlap-center h4{font-family:'Archivo',sans-serif;font-size:1rem;font-weight:800;color:var(--mint-deep);margin-bottom:12px}
+.overlap-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.ot{font-family:'Archivo',sans-serif;font-size:.68rem;font-weight:700;padding:5px 14px;border-radius:100px;background:var(--mint-bg);color:var(--mint-deep)}
+.overlap-out{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.oo{background:#fff;border-radius:10px;padding:18px;text-align:center;border:1px solid rgba(0,0,0,.04)}
+.oo h5{font-family:'Archivo',sans-serif;font-size:.88rem;font-weight:800}
+.oo p{font-size:.72rem;color:var(--text-light)}
+.overlap-note{font-size:.78rem;color:var(--text-mid);font-style:italic;text-align:center;margin-top:20px}
+
+/* ===== ASTPE PHASES ===== */
+.phases{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.phase{background:var(--cream-light);border-radius:14px;padding:28px;border:2px solid rgba(0,0,0,.04);transition:all .3s;position:relative;overflow:hidden}
+.phase:hover{border-color:var(--mint-light);transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.06)}
+.phase::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--mint);opacity:.2;transition:opacity .3s}
+.phase:hover::before{opacity:1}
+.phase-num{font-family:'Archivo',sans-serif;font-size:.65rem;font-weight:800;color:var(--mint);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.phase h3{font-family:'Archivo',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:10px}
+.phase p{font-size:.85rem;color:var(--text-mid);line-height:1.65}
+.phase-result{margin-top:12px;font-family:'Archivo',sans-serif;font-size:.72rem;font-weight:700;color:var(--mint);padding:6px 12px;background:var(--mint-bg);border-radius:6px;display:inline-block}
+
+/* ===== SERVICES ===== */
+.svc-t1{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+.svc1{background:var(--cream-light);border-radius:14px;padding:28px;border:2px solid rgba(0,0,0,.04);transition:all .3s}
+.svc1:hover{border-color:var(--mint-light);box-shadow:0 8px 24px rgba(0,0,0,.05)}
+.svc1-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:1.2rem;background:var(--mint-bg)}
+.svc1 h3{font-family:'Archivo',sans-serif;font-size:1rem;font-weight:800;margin-bottom:8px}
+.svc1 p{font-size:.82rem;color:var(--text-mid);line-height:1.6}
+.svc-t2{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.svc2{background:var(--cream-light);border-radius:12px;padding:22px;border:1px solid rgba(0,0,0,.04);transition:all .3s}
+.svc2:hover{border-color:rgba(0,0,0,.08)}
+.svc2 h4{font-family:'Archivo',sans-serif;font-size:.85rem;font-weight:800;margin-bottom:6px}
+.svc2 p{font-size:.75rem;color:var(--text-mid);line-height:1.5}
+
+/* ===== CASE STUDIES ===== */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.case{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;transition:all .3s}
+.case:hover{border-color:rgba(200,240,218,.15);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.25)}
+.case-top{padding:24px 24px 16px}
+.case-logo{font-family:'Archivo',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px}
+.case-top h3{font-family:'Archivo',sans-serif;font-size:1.1rem;font-weight:900;color:#fff;line-height:1.2}
+.case-before{padding:0 24px 16px;font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6}
+.case-before strong{color:rgba(255,255,255,.65)}
+.case-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.05)}
+.cs{padding:14px;text-align:center;border-right:1px solid rgba(255,255,255,.05)}
+.cs:last-child{border-right:none}
+.cs-num{font-family:'Archivo',sans-serif;font-size:1rem;font-weight:900;color:var(--mint-light)}
+.cs-label{font-size:.55rem;color:rgba(255,255,255,.3);margin-top:2px}
+.case-link{display:block;padding:12px 24px;font-family:'Archivo',sans-serif;font-size:.75rem;font-weight:700;color:var(--mint-light);text-decoration:none;border-top:1px solid rgba(255,255,255,.05);transition:background .2s}
+.case-link:hover{background:rgba(255,255,255,.03)}
+.testimonial{margin-top:48px;text-align:center;max-width:680px;margin-left:auto;margin-right:auto}
+.testimonial blockquote{font-size:1.05rem;font-style:italic;color:rgba(242,234,216,.6);line-height:1.65;margin-bottom:16px}
+.testimonial cite{font-family:'Archivo',sans-serif;font-size:.78rem;color:var(--mint-light);font-style:normal;font-weight:700}
+
+/* ===== TIMELINE ===== */
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.tl-card{background:var(--cream-light);border-radius:14px;padding:28px;border:1px solid rgba(0,0,0,.04)}
+.tl-num{font-family:'Archivo',sans-serif;font-size:1.8rem;font-weight:900;color:var(--mint-light);margin-bottom:8px}
+.tl-card h3{font-family:'Archivo',sans-serif;font-size:1rem;font-weight:800;margin-bottom:10px}
+.tl-card p{font-size:.85rem;color:var(--text-mid);line-height:1.65}
+.tl-after{margin-top:32px;padding:24px 28px;background:var(--mint-bg);border-radius:12px;border:1px solid rgba(64,181,138,.1)}
+.tl-after p{font-size:.92rem;color:var(--text);line-height:1.7}
+.tl-after strong{color:var(--mint-deep);font-weight:700}
+
+/* ===== COMPARISON ===== */
+.cmp-hdrs{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px}
+.cmp-h{padding:14px 24px;font-family:'Archivo',sans-serif;font-size:.82rem;font-weight:800;text-align:center}
+.cmp-without{background:rgba(250,64,40,.08);color:var(--red);border-radius:8px 0 0 0}
+.cmp-with{background:var(--mint-bg);color:var(--mint-deep);border-radius:0 8px 0 0}
+.cmp-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px}
+.cmp-cell{padding:18px 24px;font-size:.85rem;line-height:1.6}
+.cmp-cell.wo{background:rgba(255,255,255,.03);color:rgba(242,234,216,.4);border-left:3px solid rgba(250,64,40,.2)}
+.cmp-cell.wi{background:rgba(64,181,138,.04);color:rgba(242,234,216,.7);border-left:3px solid var(--mint)}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:720px;margin:40px auto 0}
+.faq-item{border-bottom:1px solid rgba(0,0,0,.06)}
+.faq-q{padding:18px 0;font-family:'Archivo',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
+.faq-q:hover{color:var(--mint)}
+.faq-q::after{content:'+';font-size:1.3rem;color:var(--mint);font-weight:400;transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{font-size:.88rem;color:var(--text-mid);line-height:1.7;padding-bottom:18px;max-width:620px}
+.faq-a strong{color:var(--ink);font-weight:700}
+
+/* ===== FINAL CTA ===== */
+.final-cta{background:var(--mint);text-align:center;padding:96px 48px;position:relative;overflow:hidden}
+.final-cta h2{font-family:'Archivo',sans-serif;font-size:2.4rem;font-weight:900;letter-spacing:-.03em;color:#fff;margin-bottom:16px}
+.final-cta .sub{font-size:1rem;color:rgba(255,255,255,.7);max-width:520px;margin:0 auto 32px;line-height:1.7}
+.final-cta .btn-w{font-family:'Archivo',sans-serif;background:#fff;color:var(--mint-deep);padding:16px 36px;border-radius:100px;font-size:.92rem;font-weight:700;border:none;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.final-cta .btn-w:hover{box-shadow:0 8px 32px rgba(0,0,0,.15);transform:translateY(-2px)}
+.final-cta-note{font-size:.82rem;color:rgba(255,255,255,.5);margin-top:20px;font-style:italic}
+.final-trust{display:flex;justify-content:center;gap:28px;margin-top:24px;flex-wrap:wrap}
+.final-trust span{font-size:.76rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:6px}
+.final-trust span::before{content:'✓';font-weight:700;color:#fff}
+.founder-bar{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:36px}
+.founder-bar img{width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,.3);object-fit:cover}
+.founder-name{font-family:'Archivo',sans-serif;font-size:.82rem;font-weight:700;color:#fff}
+.founder-role{font-size:.7rem;color:rgba(255,255,255,.5)}
+
+/* Footer */
+.footer{background:var(--ink);padding:28px 48px;text-align:center;font-size:.7rem;color:rgba(242,234,216,.25)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+.hero-inner{grid-template-columns:1fr}.mc-stack{display:none}
+.hero,.sec{padding:64px 24px}.nav{padding:0 20px}.trust{padding:14px 20px;gap:20px}
+.hero h1{font-size:2.4rem}.sh2{font-size:2rem!important}
+.pain,.phases,.svc-t1,.cases,.timeline,.cmp-row,.cmp-hdrs{grid-template-columns:1fr 1fr}
+.stats{margin:0 24px;flex-wrap:wrap}.stat{min-width:calc(33% - 10px)}
+.svc-t2{grid-template-columns:1fr 1fr}.sa-grid{grid-template-columns:1fr}
+.nav-r a:not(.nav-cta){display:none}
+}
+@media(max-width:600px){
+.hero h1{font-size:2rem}.sh2{font-size:1.7rem!important}
+.pain,.phases,.svc-t1,.svc-t2,.cases,.timeline{grid-template-columns:1fr}
+.cmp-row,.cmp-hdrs{grid-template-columns:1fr}
+.cmp-h:first-child{border-radius:8px 8px 0 0}.cmp-h:last-child{border-radius:0}
+.stats{flex-direction:column}.stat{min-width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+<a href="#" class="nav-logo">B2B<span>Mint</span></a>
+<div class="nav-r"><a href="#system">How It Works</a><a href="#proof">Results</a><a href="#faq">FAQ</a><a href="#cta" class="nav-cta">Book Free Audit</a></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-inner">
+<div>
+<div class="hero-tag">AI Search Visibility for B2B SaaS</div>
+<h1>The SaaS Agency That Makes <span class="hl ul">AI Recommend You</span> and Google Rank You</h1>
+<p class="hero-sub">Your buyers ask ChatGPT, Perplexity, and Google for software recommendations. The brands that show up win the deal. The brands that don't never know they lost it.</p>
+<p class="hero-body">B2BMint builds the semantic authority system that makes your SaaS the cited answer in AI search and the ranked result in Google. Same foundation. Two outputs. Pipeline, not traffic.</p>
+<div class="hero-ctas"><a href="#cta" class="btn-m">Book Your Free AI Visibility Audit →</a><a href="#system" class="btn-o">See How It Works</a></div>
+<p class="hero-note">For B2B SaaS companies. Pre-seed to $40M+ revenue.</p>
+</div>
+<div class="mc-stack">
+<div class="mc mc-1"><div class="mc-num">4,244</div><div class="mc-label">AI citations across 5 platforms</div></div>
+<div class="mc mc-2"><div class="mc-num">$1.2M</div><div class="mc-label">Pipeline in months 4-6</div></div>
+<div class="mc mc-3"><div class="mc-num">3,300%</div><div class="mc-label">Traffic growth</div></div>
+<div class="mc mc-4"><div class="mc-num">$1M → $5M+</div><div class="mc-label">BookYourData revenue</div></div>
+</div>
+</div>
+</section>
+
+<!-- TRUST -->
+<div class="trust"><span><strong>4,244</strong> AI citations across 5 platforms</span><span class="trust-d"></span><span><strong>$5M+</strong> revenue from organic</span><span class="trust-d"></span><span><strong>$1.2M</strong> pipeline from one client</span></div>
+
+<!-- PROBLEM -->
+<section class="sec sec-cream">
+<div class="sec-inner">
+<div class="stag stag-salmon rv">This Is Probably Your Situation Right Now</div>
+<h2 class="sh2 rv" style="font-size:2.6rem;max-width:760px">342 blog posts. 589 visitors. A competitor founded 4 years later <span class="hl-r">does 124K.</span></h2>
+<p class="sp rv">You've spent the money. Published the content. Sat through the monthly reports with green arrows. And your CFO still can't connect any of it to pipeline.</p>
+<p class="sp rv"><strong>Traffic went up. Pipeline didn't.</strong> The effort was there. The methodology wasn't.</p>
+<div class="prob-break rv">And while you were trying to fix Google, something bigger happened.</div>
+<p class="sp rv">Your buyers stopped searching the way they used to. They started asking ChatGPT for software recommendations. They started asking Perplexity to compare tools. They read AI Overviews instead of clicking links.</p>
+<p class="sp rv" style="font-weight:700;color:var(--ink)">You're not in the conversation. You don't even know the conversation is happening.</p>
+<div class="pain">
+<div class="pc rv"><div class="pc-icon">📊</div><h3>You rank. You don't convert.</h3><p>Traffic goes up. Pipeline stays flat. Your SEO agency celebrates metrics your CFO can't spend.</p></div>
+<div class="pc rv rv-d1"><div class="pc-icon">👻</div><h3>AI is eating your clicks.</h3><p>ChatGPT, Perplexity, Gemini answer buyer questions without sending anyone to your site.</p></div>
+<div class="pc rv rv-d2"><div class="pc-icon">🪦</div><h3>You built content. Not authority.</h3><p>100 blog posts. None connect. Google sees fragments. LLMs see noise.</p></div>
+<div class="pc rv rv-d3"><div class="pc-icon">📟</div><h3>Your last agency sold you 2019 SEO.</h3><p>Backlinks and "domain authority." Not how LLMs decide who to trust.</p></div>
+</div>
+<div class="urgency rv"><span style="font-size:1.2rem;flex-shrink:0">⚠️</span><p>Every month you wait, the gap widens. LLMs are trained on content from 6-18 months ago. The authority your competitors build today becomes their AI visibility for years.</p></div>
+</div>
+</section>
+
+<!-- FROM SEARCH TO ANSWERS -->
+<section class="sec sec-light">
+<div class="sec-inner">
+<div class="stag stag-mint rv">From Search to Answers</div>
+<h2 class="sh2 rv" style="font-size:2.2rem">Search used to mean ten blue links. Now it means <span class="hl">one recommended answer.</span></h2>
+<div class="sa-grid">
+<div class="sa-panel sa-old rv"><div class="sa-hdr">Days of old</div><div class="sa-body">
+<div class="serp"><span class="serp-ad">Ad</span><span class="serp-title">Competitor A — Best Email Tool</span><div class="serp-desc">Try the #1 rated email platform.</div></div>
+<div class="serp"><span class="serp-ad">Ad</span><span class="serp-title">Competitor B — Marketing Made Easy</span><div class="serp-desc">Trusted by 10K+ companies.</div></div>
+<div class="serp"><span class="serp-title" style="color:var(--text)">10 Best Email Marketing Tools (2026)</span><div class="serp-desc">We reviewed the top email platforms...</div></div>
+<div class="serp serp-you"><span class="serp-title" style="color:var(--text-light)">Your Brand — Email Marketing</span><div class="serp-desc">Position 8. Below the fold. Nobody scrolls this far.</div></div>
+</div></div>
+<div class="sa-panel sa-new rv rv-d2"><div class="sa-hdr">Current results</div><div class="sa-body">
+<div class="ai-q">What's the best email marketing software for a B2B SaaS with 50K contacts?</div>
+<div class="ai-msg">Based on my analysis, here are the top recommendations:</div>
+<div class="ai-rec"><div class="ai-rec-brand">1. Your Brand ★</div><div class="ai-rec-desc">Best for B2B SaaS with advanced segmentation and pipeline attribution. Strong deliverability. $299/mo.</div></div>
+<div class="ai-msg" style="font-size:.72rem;color:var(--text-light);margin-top:12px">Cited because of <strong style="color:var(--text)">semantic authority</strong> — entity recognition, structured content, and topical depth.</div>
+</div></div>
+</div>
+<p class="sp rv">B2BMint makes your brand the answer across AI search and Google. Not just indexed. Cited. Not just ranked. Recommended.</p>
+</div>
+</section>
+
+<!-- STATS -->
+<div class="stats rv">
+<div class="stat"><div class="stat-num">4,244</div><div class="stat-label">AI citations across 5 platforms</div></div>
+<div class="stat"><div class="stat-num">$1.2M</div><div class="stat-label">Pipeline in months 4-6</div></div>
+<div class="stat"><div class="stat-num">$1M→$5M+</div><div class="stat-label">BookYourData revenue</div></div>
+<div class="stat"><div class="stat-num">3,300%</div><div class="stat-label">Traffic growth</div></div>
+<div class="stat"><div class="stat-num">67%</div><div class="stat-label">Lower CAC vs paid</div></div>
+</div>
+<p class="stats-note rv">Three SaaS companies. One system. AI citation metrics no other agency can show because no other agency tracks them.</p>
+
+<!-- MECHANISM (80% OVERLAP) -->
+<section class="sec sec-cream" id="system">
+<div class="sec-inner">
+<div class="stag stag-mint rv">The System</div>
+<h2 class="sh2 rv" style="font-size:2.2rem;max-width:760px">Why the Same System That Ranks You in Google <span class="hl">Gets You Cited by AI</span></h2>
+<p class="sp rv" style="font-weight:700;color:var(--ink);font-size:1.05rem">80% of the work that makes Google rank you is the same work that makes ChatGPT, Perplexity, and Gemini cite you.</p>
+<div class="overlap rv">
+<div class="overlap-center"><h4>Shared Foundation — 80% of All Deliverables</h4>
+<div class="overlap-tags"><span class="ot">Semantic architecture</span><span class="ot">Entity engineering</span><span class="ot">BOFU content</span><span class="ot">Schema markup</span><span class="ot">Topical authority</span><span class="ot">Internal linking</span><span class="ot">Comparison pages</span><span class="ot">Pillar-cluster design</span><span class="ot">71-rule framework</span></div></div>
+<div class="overlap-out"><div class="oo"><h5>→ Google Rankings</h5><p>Position 47 to 3 in 8 days</p></div><div class="oo"><h5>→ AI Citations</h5><p>4,244 across 5 platforms</p></div></div>
+<p class="overlap-note">Competitors treat these as separate services. B2BMint builds one foundation that serves both.</p>
+</div>
+<p class="sp rv">It's called ASTPE (Authority Search-to-Pipeline Engine). It gets installed into your website and compounds over time. Not a retainer. Not a service menu. A system.</p>
+<p class="sp rv" style="font-size:.88rem;color:var(--text-light);font-style:italic">We analyzed 23 SaaS agency homepages. Zero explain their methodology publicly. Zero report AI citations by platform.</p>
+<a href="#cta" class="btn-m rv" style="margin-top:8px">Book Your Free AI Visibility Audit →</a>
+</div>
+</section>
+
+<!-- ASTPE PHASES -->
+<section class="sec sec-light">
+<div class="sec-inner">
+<div class="stag stag-mint rv">Inside the ASTPE System</div>
+<h2 class="sh2 rv" style="font-size:2.2rem">4 Phases. One Compounding System.</h2>
+<div class="phases">
+<div class="phase rv"><div class="phase-num">Phase 1</div><h3>Semantic Architecture</h3><p>Rebuild how Google and AI models understand your entire product category. Map every sub-query, restructure as one interconnected authority system.</p><div class="phase-result">One client's crawl frequency increased 340%</div></div>
+<div class="phase rv rv-d1"><div class="phase-num">Phase 2</div><h3>Pipeline-First Content</h3><p>BOFU content that captures buyers 7 days before purchase. Comparison pages, alternative pages. 5-10x conversion vs blog posts.</p><div class="phase-result">Comparison pages indexed within 72 hours. Demos up 34% by Month 3.</div></div>
+<div class="phase rv rv-d2"><div class="phase-num">Phase 3</div><h3>AI Search Positioning</h3><p>Engineer your brand to be cited in ChatGPT, Perplexity, Gemini, and AI Overviews. Prompt research alongside keyword research.</p><div class="phase-result">Zero AI presence to 4,244 citations across 5 platforms.</div></div>
+<div class="phase rv rv-d3"><div class="phase-num">Phase 4</div><h3>The Compound Effect</h3><p>Once semantic coverage crosses ~60% of a topic cluster, everything accelerates. New content indexes in hours. Old pages climb untouched.</p><div class="phase-result">Position 47 to 3 in 8 days. Zero link building.</div></div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec sec-cream">
+<div class="sec-inner">
+<div class="stag stag-gold rv">What B2BMint Builds for Your SaaS</div>
+<h2 class="sh2 rv" style="font-size:2.2rem">Search, visibility, and everything that connects them to <span class="hl">pipeline.</span></h2>
+<div class="svc-t1" style="margin-top:40px">
+<div class="svc1 rv"><div class="svc1-icon">◎</div><h3>AI Search Visibility (GEO)</h3><p>Get cited across ChatGPT, Perplexity, Gemini, AI Overviews, Claude, and Copilot. Entity recognition, LLM-structured content, prompt research, platform-by-platform monitoring.</p></div>
+<div class="svc1 rv rv-d1"><div class="svc1-icon">◈</div><h3>Semantic SEO Strategy</h3><p>Full semantic topical mapping. Entity-attribute prioritization. Pillar-cluster architecture that Google reads as category authority.</p></div>
+<div class="svc1 rv rv-d2"><div class="svc1-icon">▸</div><h3>Pipeline Content Production</h3><p>Comparison pages, alternative pages, problem-solution pages. Every page through a 71-rule framework. 5-10x conversion vs blog posts.</p></div>
+</div>
+<div class="svc-t2">
+<div class="svc2 rv"><h4>Technical SEO & AI Readiness</h4><p>Crawlability, schema, Core Web Vitals. AI crawlability for GPTBot, ClaudeBot, PerplexityBot.</p></div>
+<div class="svc2 rv rv-d1"><h4>AI Visibility Monitoring</h4><p>Citation tracking across ChatGPT, Perplexity, Gemini, AI Overviews. Platform-by-platform reports.</p></div>
+<div class="svc2 rv rv-d2"><h4>Web Design & Development</h4><p>SaaS websites, landing pages, conversion-focused builds on WordPress and Webflow.</p></div>
+<div class="svc2 rv"><h4>Paid Search & Social</h4><p>Google Ads and LinkedIn campaigns. Paid amplifies what organic builds.</p></div>
+<div class="svc2 rv rv-d1"><h4>Creative & Brand Design</h4><p>Graphics, social assets, pitch decks, brand identity across every touchpoint.</p></div>
+<div class="svc2 rv rv-d2"><h4>Social Media & Community</h4><p>LinkedIn content strategy, founder-led social presence. Strategic, not vanity.</p></div>
+</div>
+<div style="text-align:center;margin-top:40px"><a href="#cta" class="btn-m rv">Book Your Free AI Visibility Audit →</a></div>
+</div>
+</section>
+
+<!-- PROOF -->
+<section class="sec sec-dark" id="proof">
+<div class="sec-inner">
+<div class="stag stag-mint rv">The Proof</div>
+<h2 class="sh2 rv" style="font-size:2.4rem;color:#fff">Real numbers. Named clients. <span class="hl">Verifiable results.</span></h2>
+<div class="cases">
+<div class="case rv"><div class="case-top"><div class="case-logo">Email Marketing SaaS</div><h3>4,244 AI citations. $1.2M pipeline.</h3></div><div class="case-before"><strong>Before:</strong> $3M ARR. $50K spent. 68 blog posts. 73 clicks/day. Zero AI presence.</div><div class="case-stats"><div class="cs"><div class="cs-num">4,244</div><div class="cs-label">AI citations</div></div><div class="cs"><div class="cs-num">$1.2M</div><div class="cs-label">Pipeline</div></div><div class="cs"><div class="cs-num">3,300%</div><div class="cs-label">Growth</div></div></div><a href="#" class="case-link">View Case Study →</a></div>
+<div class="case rv rv-d1"><div class="case-top"><div class="case-logo">BookYourData</div><h3>$1M to $5M+. 511 AI Overview citations.</h3></div><div class="case-before"><strong>Bootstrapped.</strong> Started ~$1M. Now $5M+. 3+ year engagement.</div><div class="case-stats"><div class="cs"><div class="cs-num">511</div><div class="cs-label">AI Overviews</div></div><div class="cs"><div class="cs-num">891</div><div class="cs-label">Top-3 keywords</div></div><div class="cs"><div class="cs-num">#1</div><div class="cs-label">"buy email list"</div></div></div><a href="#" class="case-link">View Case Study →</a></div>
+<div class="case rv rv-d2"><div class="case-top"><div class="case-logo">Socially Powerful</div><h3>1,500 to 26K+ traffic. Page 1 for brutal keyword.</h3></div><div class="case-before"><strong>$40M+ revenue</strong> influencer agency. Page 1 for "influencer marketing agency" UK.</div><div class="case-stats"><div class="cs"><div class="cs-num">26K+</div><div class="cs-label">Monthly traffic</div></div><div class="cs"><div class="cs-num">17x</div><div class="cs-label">Multiplier</div></div><div class="cs"><div class="cs-num">P1</div><div class="cs-label">Brutal keyword</div></div></div><a href="#" class="case-link">View Case Study →</a></div>
+</div>
+<div class="testimonial rv"><blockquote>"The $5M in revenue we've generated from search isn't just a number. It's validation that authority-driven SEO actually works. Our CAC dropped 39% while lead quality went through the roof."</blockquote><cite>Baris Zeren, CEO & Founder, BookYourData</cite></div>
+<div style="text-align:center;margin-top:40px"><a href="#cta" class="btn-m rv">Book Your Free AI Visibility Audit →</a></div>
+</div>
+</section>
+
+<!-- 90-DAY TIMELINE -->
+<section class="sec sec-light">
+<div class="sec-inner">
+<div class="stag stag-mint rv">Your First 90 Days</div>
+<h2 class="sh2 rv" style="font-size:2.2rem">The same timeline the clients above went through.</h2>
+<p class="sp rv" style="font-style:italic">Every engagement is scoped to your stage, goals, and situation. The milestones show the structure. The depth scales to fit.</p>
+<div class="timeline">
+<div class="tl-card rv"><div class="tl-num">01</div><h3>Days 1-30. Foundation</h3><p>Semantic architecture audit and rebuild. Competitor gap analysis across Google and AI. First BOFU pages live. AI visibility baseline established.</p></div>
+<div class="tl-card rv rv-d1"><div class="tl-num">02</div><h3>Days 31-60. Traction</h3><p>Pipeline-first content production. Comparison pages, alternative pages. Low-competition BOFU queries start ranking. AI positioning begins.</p></div>
+<div class="tl-card rv rv-d2"><div class="tl-num">03</div><h3>Days 61-90. Acceleration</h3><p>Content velocity increases. First pipeline indicators. AI citation monitoring active. Demo requests tracking back to specific pages.</p></div>
+</div>
+<div class="tl-after rv"><p><strong>After 90 days, the system compounds.</strong> One client hit $1.2M in pipeline between months 4 and 6. CAC from organic came in 67% lower than paid. The gap between you and competitors widens in your favor.</p></div>
+</div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="sec sec-dark">
+<div class="sec-inner">
+<div class="stag stag-mint rv">Why Choose B2BMint</div>
+<h2 class="sh2 rv" style="font-size:2.2rem;color:#fff">We don't optimize for rankings. We engineer systems that turn search into <span class="hl">revenue.</span></h2>
+<div style="margin-top:40px" class="rv">
+<div class="cmp-hdrs"><div class="cmp-h cmp-without">Without B2BMint</div><div class="cmp-h cmp-with">With B2BMint</div></div>
+<div class="cmp-row"><div class="cmp-cell wo">Your SEO agency sends traffic reports. Your CFO asks "how many deals from organic?" Silence.</div><div class="cmp-cell wi">Every dollar of pipeline is attributed. You walk into board meetings with organic revenue numbers.</div></div>
+<div class="cmp-row"><div class="cmp-cell wo">100 blog posts. None rank. None connect. Google sees noise.</div><div class="cmp-cell wi">Content works as a system. Every page reinforces authority. Google and AI see a category leader.</div></div>
+<div class="cmp-row"><div class="cmp-cell wo">Buyers ask ChatGPT for recommendations. Your competitor gets cited. You don't exist.</div><div class="cmp-cell wi">Your brand is the answer in AI search. ChatGPT, Perplexity, Gemini. Cited, not ignored.</div></div>
+<div class="cmp-row"><div class="cmp-cell wo">Keywords nobody buying your product searches. Top-funnel fluff. Zero pipeline.</div><div class="cmp-cell wi">You own "[category] software," "[competitor] alternatives." Buyers find you 7 days before purchase.</div></div>
+<div class="cmp-row"><div class="cmp-cell wo">Backlinks and "domain authority." Not how modern search works.</div><div class="cmp-cell wi">Semantic architecture, entity recognition, built for how Google and LLMs rank in 2026.</div></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-cream" id="faq">
+<div class="sec-inner">
+<div class="stag stag-salmon rv">Questions You Probably Have</div>
+<h2 class="sh2 rv" style="font-size:2rem">Straight answers.</h2>
+<div class="faq-list">
+<div class="faq-item rv"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long until we see results?</div><div class="faq-a"><p><strong>Most clients see ranking movement within 30-60 days and pipeline impact within 90 days.</strong> BOFU content goes live in Week 4. Low-competition rankings by Week 6-8. One client hit $1.2M in pipeline between months 4 and 6.</p></div></div>
+<div class="faq-item rv"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I get my SaaS recommended by ChatGPT?</div><div class="faq-a"><p><strong>By building semantic authority, entity recognition, and information uniqueness.</strong> AI models evaluate four things: entity recognition, content structure, original research, and topical authority. ASTPE Phase 3 engineers all four.</p></div></div>
+<div class="faq-item rv"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if it doesn't work?</div><div class="faq-a"><p><strong>Every engagement starts as a 90-day trial. All assets stay with you regardless.</strong> Content, semantic maps, technical work, architecture. If it doesn't move the needle, you keep everything and we part as friends.</p></div></div>
+<div class="faq-item rv"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How much should we budget?</div><div class="faq-a"><p><strong>Engagements are 90-day trials scaled to your stage and goals.</strong> Early-stage starts focused on highest-impact BOFU content. Larger companies invest in full semantic coverage. Measured against pipeline, not traffic.</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="cta">
+<h2 class="rv">See Your AI Visibility Gaps Before You Spend a Dollar</h2>
+<p class="sub rv">On the first call, we don't pitch. We show you exactly where your competitors are being cited by AI and where you're invisible.</p>
+<a href="https://calendly.com/hamid-b2bmint/30min" class="btn-w rv">Book Your Free AI Visibility Audit →</a>
+<p class="final-cta-note rv">No annual contract. No content held hostage. Everything we build belongs to you.</p>
+<div class="final-trust rv"><span>No annual contract</span><span>All assets stay with you</span><span>90-day trial, no lock-in</span></div>
+<div class="founder-bar rv">
+<img src="assets/images/hamid-khan.png" alt="Hamid Khan">
+<div><div class="founder-name">Hamid Khan leads every engagement personally.</div><div class="founder-role">That's why B2BMint takes on limited clients.</div></div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer"><p>© 2026 B2BMint. Build Goat LLC (Delaware).</p></footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>50));
+const obs=new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('vis')}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
