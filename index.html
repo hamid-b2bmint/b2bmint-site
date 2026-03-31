@@ -40,6 +40,20 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 }
 
 
+/* Crisp screen — clip-path zooms from tiny laptop screen to full viewport.
+   CSS clip-path is GPU-accelerated so it never blurs, regardless of scale. */
+.crisp-screen{
+  position:absolute;inset:0;z-index:3;
+  pointer-events:none;
+  /* Start fully clipped (hidden), JS drives clip-path expansion */
+  clip-path:inset(56% 48% 42% 49% round 3px);
+  will-change:clip-path,opacity;
+  opacity:0;
+}
+.crisp-screen img{
+  width:100%;height:100%;object-fit:cover;object-position:center center;
+}
+
 /* Overlay — light gradient for text readability */
 .hero-overlay{position:absolute;inset:0;z-index:2;pointer-events:none;
   background:linear-gradient(180deg,rgba(5,10,8,.6) 0%,rgba(5,10,8,.15) 35%,rgba(5,10,8,.0) 55%,rgba(5,10,8,.1) 75%,rgba(5,10,8,.5) 100%)}
@@ -411,7 +425,10 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
     <!-- SCROLL-SCRUBBED CANVAS (frame sequence from video) -->
     <div class="hero-video" id="heroVideo">
       <canvas id="heroCanvas"></canvas>
-
+      <!-- Crisp mockup — clip-path tracks laptop screen throughout zoom -->
+      <div class="crisp-screen" id="crispScreen">
+        <img src="final-mockup.png" alt="">
+      </div>
       <div class="hero-overlay" id="overlay"></div>
       <div class="hero-vignette"></div>
     </div>
@@ -847,6 +864,7 @@ drawFrame(0);
 
 const heroVideo=document.getElementById('heroVideo');
 const laptopAnno=document.getElementById('laptopAnno');
+const crispScreen=document.getElementById('crispScreen');
 const ov=document.getElementById('overlay');
 const htxt=document.getElementById('htxt');
 const navbar=document.getElementById('navbar');
@@ -882,25 +900,38 @@ function tick(){
   if(p===lp)return;lp=p;
 
   // ═══ MERCURY TECHNIQUE: Draw frame by scroll position ═══
-  // Cap at frame 20 — frames 21-28 are blurry from CapCut digital zoom
-  const videoProgress = r(p, 0, 0.22);
-  const frameIdx = Math.min(20, Math.floor(videoProgress * (frameImages.length - 1)));
+  const videoProgress = r(p, 0, 0.25);
+  const frameIdx = Math.floor(videoProgress * (frameImages.length - 1));
   lastDrawnFrame = frameIdx;
   drawFrame(frameIdx);
 
+  // Crisp screen: clip-path tracks the laptop screen from tiny → full viewport.
+  // Starts as a tiny rect at the laptop screen position (frame 0),
+  // expands to match the full screen area as the video zooms in.
+  // GPU clip-path = never blurry at any scale.
+  {
+    const t = videoProgress;
+    const ct = 56*(1-t);           // top:    56% → 0%
+    const cr = 48 - 31*t;          // right:  48% → 17%
+    const cb = 42 - 25*t;          // bottom: 42% → 17%
+    const cl = 49 - 32*t;          // left:   49% → 17%
+    crispScreen.style.clipPath = `inset(${ct}% ${cr}% ${cb}% ${cl}% round 3px)`;
+    crispScreen.style.opacity = Math.min(1, videoProgress * 8); // fast fade-in
+  }
+
   // Fade text + navbar (0→8%)
   const textFade=1-r(p,0,0.08);
-  s(htxt,{opacity:textFade,transform:`translateY(${-r(p,0,0.22)*60}px)`});
+  s(htxt,{opacity:textFade,transform:`translateY(${-r(p,0,0.25)*60}px)`});
   navbar.style.opacity=textFade;
   laptopAnno.style.opacity=1-r(p,0,0.06);
   shint.style.opacity=1-r(p,0,0.02);
 
   // Fade overlay during zoom
-  ov.style.opacity=1-r(p,0.12,0.22);
+  ov.style.opacity=1-r(p,0.15,0.25);
 
-  // Crossfade to mockup layer right as zoom ends (scroll 22-26%)
-  heroVideo.style.opacity=1-r(p,0.22,0.26);
-  const mockIn=r(p,0.22,0.26);
+  // Crossfade to mockup layer at end of zoom (scroll 24-28%)
+  heroVideo.style.opacity=1-r(p,0.24,0.28);
+  const mockIn=r(p,0.24,0.28);
   mock.style.opacity=mockIn;
   mock.classList.toggle('visible',mockIn>0.1);
 
