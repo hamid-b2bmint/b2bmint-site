@@ -349,17 +349,29 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-evo-new-bar span{font-size:13px;font-weight:600;color:rgba(255,255,255,.85)}
 .hp-evo-new-body{padding:24px;position:relative;z-index:1}
 .evo-ai-intro{font-size:14px;color:rgba(255,255,255,.65);margin-bottom:16px;line-height:1.6}
-.evo-ai-pick{background:rgba(16,163,127,.08);border:1px solid rgba(16,163,127,.15);border-radius:12px;padding:16px;margin-bottom:16px}
-.evo-ai-pick-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.evo-ai-pick-num{width:26px;height:26px;border-radius:8px;background:#10A37F;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
-.evo-ai-pick-name{font-size:15px;font-weight:700;color:#fff}
-.evo-ai-pick-name em{font-style:normal;font-weight:400;color:rgba(255,255,255,.5);font-size:13px;margin-left:6px}
-.evo-ai-pick-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;padding-left:36px}
+.evo-ai-pick{background:linear-gradient(135deg,rgba(16,163,127,.12),rgba(16,163,127,.04));border:1px solid rgba(16,163,127,.2);border-radius:12px;padding:18px;margin-bottom:16px;position:relative;overflow:hidden}
+.evo-ai-pick::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:radial-gradient(circle,rgba(16,163,127,.15),transparent 70%);pointer-events:none}
+.evo-ai-pick-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.evo-ai-pick-num{width:28px;height:28px;border-radius:8px;background:#10A37F;color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(16,163,127,.3)}
+.evo-ai-pick-name{font-size:16px;font-weight:700;color:#fff}
+.evo-ai-pick-name em{font-style:normal;font-weight:500;color:#10A37F;font-size:12px;margin-left:8px;background:rgba(16,163,127,.12);padding:2px 8px;border-radius:4px}
+.evo-ai-pick-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;padding-left:38px}
+.evo-ai-check{display:flex;gap:16px;padding:10px 0 4px 38px;flex-wrap:wrap}
+.evo-ai-check span{font-size:11px;color:rgba(16,163,127,.8);display:flex;align-items:center;gap:4px}
+.evo-ai-check svg{width:14px;height:14px}
 .evo-ai-others{padding:0 4px}
 .evo-ai-others div{padding:8px 0;font-size:13px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:10px}
 .evo-ai-others .evo-num{background:rgba(255,255,255,.06);color:rgba(255,255,255,.3)}
 .hp-evo-new-tag{margin:12px 24px 20px;display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;background:rgba(16,163,127,.15);color:#10A37F;padding:5px 14px;border-radius:40px}
-.hp-evo-bottom{margin-top:56px;font-size:17px;line-height:1.7;color:rgba(0,0,0,.5);max-width:700px;text-align:center;margin-left:auto;margin-right:auto}
+/* Platform strip below the panels */
+.hp-evo-platforms{margin-top:48px;text-align:center}
+.hp-evo-plat-title{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:rgba(0,0,0,.35);margin-bottom:20px}
+.hp-evo-plat-row{display:flex;justify-content:center;align-items:center;gap:32px;flex-wrap:wrap}
+.hp-evo-plat{display:flex;align-items:center;gap:8px;padding:10px 20px;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.03);opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease}
+.hp-evo-plat.show{opacity:1;transform:translateY(0)}
+.hp-evo-plat img{width:20px;height:20px;object-fit:contain}
+.hp-evo-plat span{font-size:13px;font-weight:600;color:rgba(0,0,0,.7)}
+.hp-evo-bottom{margin-top:40px;font-size:17px;line-height:1.7;color:rgba(0,0,0,.5);max-width:700px;text-align:center;margin-left:auto;margin-right:auto}
 .hp-evo-bottom strong{color:var(--forest-deep);font-weight:700}
 
 /* ── S6: The System ── */
@@ -688,6 +700,11 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
               <div class="evo-ai-pick-name">Your Brand <em>#1 Recommended</em></div>
             </div>
             <div class="evo-ai-pick-desc">Known for 97%+ accuracy guarantee. Strong G2 ratings (4.9/5, 395+ reviews). Verified real-time data with API access.</div>
+            <div class="evo-ai-check">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Verified</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Top rated</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Cited #1</span>
+            </div>
           </div>
           <div class="evo-ai-others">
             <div><span class="evo-num">2</span>CompetitorA</div>
@@ -697,7 +714,19 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
         <span class="hp-evo-new-tag">You&rsquo;re the #1 answer</span>
       </div>
     </div>
-    <div class="hp-evo-bottom rv" style="transition-delay:.4s">Your buyers aren&rsquo;t scrolling through 10 links anymore. <strong>If AI isn&rsquo;t recommending you, you&rsquo;re not in the conversation.</strong></div>
+    <!-- Multi-platform strip -->
+    <div class="hp-evo-platforms rv" style="transition-delay:.45s">
+      <div class="hp-evo-plat-title">We get you cited across every AI platform</div>
+      <div class="hp-evo-plat-row" id="evoPlatRow">
+        <div class="hp-evo-plat" data-delay="0"><img src="logos/chatgpt-logo.avif" alt="ChatGPT"><span>ChatGPT</span></div>
+        <div class="hp-evo-plat" data-delay="100"><img src="logos/claude-logo.png" alt="Claude"><span>Claude</span></div>
+        <div class="hp-evo-plat" data-delay="200"><img src="logos/perplexity-logo.png" alt="Perplexity"><span>Perplexity</span></div>
+        <div class="hp-evo-plat" data-delay="300"><svg width="20" height="20" viewBox="0 0 24 24"><defs><linearGradient id="gm1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="50%" stop-color="#9B72CB"/><stop offset="100%" stop-color="#D96570"/></linearGradient></defs><path fill="url(#gm1)" d="M12 2C12 7.52 7.52 12 2 12c5.52 0 10 4.48 10 10 0-5.52 4.48-10 10-10-5.52 0-10-4.48-10-10z"/></svg><span>Gemini</span></div>
+        <div class="hp-evo-plat" data-delay="400"><svg width="20" height="20" viewBox="0 0 24 24"><defs><linearGradient id="aio1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="100%" stop-color="#34A853"/></linearGradient></defs><path fill="url(#aio1)" d="M12 2L8.5 8.5 2 12l6.5 3.5L12 22l3.5-6.5L22 12l-6.5-3.5z"/></svg><span>AI Overviews</span></div>
+        <div class="hp-evo-plat" data-delay="500"><img src="logos/google.png" alt="Google" style="width:20px;height:20px"><span>Google</span></div>
+      </div>
+    </div>
+    <div class="hp-evo-bottom rv" style="transition-delay:.5s">Your buyers aren&rsquo;t scrolling through 10 links anymore. <strong>If AI isn&rsquo;t recommending you, you&rsquo;re not in the conversation.</strong></div>
   </div>
 </section>
 
@@ -1079,6 +1108,20 @@ const cbObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.cb-fill').forEach(el => cbObs.observe(el));
+
+// ── Evo platform chips stagger ──
+const epObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.hp-evo-plat').forEach(p => {
+        setTimeout(() => p.classList.add('show'), parseInt(p.dataset.delay || '0'));
+      });
+      epObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+const epRow = document.getElementById('evoPlatRow');
+if (epRow) epObs.observe(epRow);
 
 // ── Search Evolution panel animations ──
 const evoObs = new IntersectionObserver((entries) => {
