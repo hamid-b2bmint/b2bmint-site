@@ -375,94 +375,73 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-evo-bottom strong{color:var(--forest-deep);font-weight:700}
 
 /* ── S6: The System (SAGE) ── */
-.s-sys{background:#fff;overflow:hidden}
+.s-sys{background:#f9fafb;overflow:hidden}
 .s-sys .s-inner{position:relative;z-index:1}
 .s-sys .s-p{max-width:640px}
 /* SAGE hero badge */
 .hp-sys-badge-wrap{text-align:center;margin:40px 0 24px}
-.hp-sys-badge-main{display:inline-flex;align-items:center;gap:5px;background:var(--forest-deep);padding:18px 40px;border-radius:16px;box-shadow:0 4px 24px rgba(10,61,32,.25),0 0 0 1px rgba(125,255,179,.1);position:relative;overflow:hidden}
-.hp-sys-badge-main::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(125,255,179,.08),transparent 60%);pointer-events:none}
+.hp-sys-badge-main{display:inline-flex;align-items:center;gap:5px;background:var(--forest-deep);padding:18px 40px;border-radius:16px;box-shadow:0 4px 24px rgba(10,61,32,.2);position:relative;overflow:hidden}
+.hp-sys-badge-main::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(125,255,179,.06),transparent 60%);pointer-events:none}
 .hp-sys-badge-main .bl{font-family:var(--display);font-size:38px;font-weight:700;color:var(--lime);line-height:1;position:relative;z-index:1}
-.hp-sys-badge-main .bw{font-size:14px;font-weight:500;color:rgba(255,255,255,.6);align-self:flex-end;padding-bottom:5px;margin-right:8px;position:relative;z-index:1}
+.hp-sys-badge-main .bw{font-size:14px;font-weight:500;color:rgba(255,255,255,.55);align-self:flex-end;padding-bottom:5px;margin-right:8px;position:relative;z-index:1}
 .hp-sys-badge-main .bw:last-child{margin-right:0}
-.hp-sys-badge-sub{margin-top:12px;font-size:14px;color:rgba(0,0,0,.45);letter-spacing:.01em}
-/* Full-width 3-stage flow */
+.hp-sys-badge-sub{margin-top:12px;font-size:14px;color:rgba(0,0,0,.4);letter-spacing:.01em}
+/* 3-stage pipeline */
 .hp-sys-pipeline{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:44px}
-/* Stage card base */
-.hp-sys-stage{border-radius:20px;padding:32px 28px;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;position:relative;overflow:hidden}
+/* All stage cards — unified white base */
+.hp-sys-stage{border-radius:20px;padding:32px 28px;background:#fff;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 3px rgba(0,0,0,.03),0 8px 32px rgba(0,0,0,.04);opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;position:relative;overflow:hidden}
 .hp-sys-stage.show{opacity:1;transform:translateY(0)}
-/* Stage number pill */
+/* Colored top accent bar */
+.hp-sys-stage::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.hp-sys-stage.s1::before{background:linear-gradient(90deg,var(--forest),#22A858)}
+.hp-sys-stage.s2::before{background:linear-gradient(90deg,#4285F4,#7C3AED,#10A37F)}
+.hp-sys-stage.s3::before{background:linear-gradient(90deg,var(--lime),#22A858)}
+/* Stage number */
 .hp-sys-snum{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px}
-.hp-sys-snum span:first-child{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
-.hp-sys-snum span:last-child{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}
-/* Stage 1 */
-.hp-sys-stage.s1{background:linear-gradient(135deg,#f0faf4,#e8f5ee);border:1px solid rgba(14,84,44,.08)}
-.s1 .hp-sys-snum span:first-child{background:var(--forest);color:var(--lime)}
-.s1 .hp-sys-snum span:last-child{color:var(--forest)}
-.hp-sys-stage h3{font-family:var(--display);font-size:24px;font-weight:700;margin-bottom:10px;line-height:1.2}
-.s1 h3{color:var(--forest-deep)}
-.hp-sys-stage>p{font-size:14px;line-height:1.6;margin-bottom:20px}
-.s1>p{color:rgba(0,0,0,.5)}
+.hp-sys-snum span:first-child{width:28px;height:28px;border-radius:50%;background:var(--forest-deep);color:var(--lime);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.hp-sys-snum span:last-child{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(0,0,0,.35)}
+.hp-sys-stage h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:10px;line-height:1.2;color:var(--forest-deep)}
+.hp-sys-stage>p{font-size:14px;line-height:1.6;margin-bottom:20px;color:rgba(0,0,0,.5)}
+/* Stage 1: authority items */
 .hp-sys-items{display:flex;flex-direction:column;gap:8px}
-.hp-sys-item{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:rgba(255,255,255,.8);border-radius:10px;border:1px solid rgba(14,84,44,.05);opacity:0;transform:translateX(-10px);transition:opacity .3s ease,transform .3s ease}
+.hp-sys-item{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#f8faf9;border-radius:10px;border:1px solid rgba(14,84,44,.05);opacity:0;transform:translateX(-10px);transition:opacity .3s ease,transform .3s ease}
 .hp-sys-item.show{opacity:1;transform:translateX(0)}
-.hp-sys-item-icon{width:28px;height:28px;border-radius:8px;background:rgba(14,84,44,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.hp-sys-item-icon{width:28px;height:28px;border-radius:8px;background:rgba(14,84,44,.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 .hp-sys-item-icon svg{width:14px;height:14px}
 .hp-sys-item-text{flex:1}
 .hp-sys-item-text strong{display:block;font-size:13px;font-weight:700;color:var(--forest-deep)}
 .hp-sys-item-text span{font-size:11px;color:rgba(0,0,0,.4);line-height:1.4}
-/* Stage 2 */
-.hp-sys-stage.s2{background:#f8f9fa;border:1px solid rgba(0,0,0,.06)}
-.s2 .hp-sys-snum span:first-child{background:#333;color:#fff}
-.s2 .hp-sys-snum span:last-child{color:rgba(0,0,0,.4)}
-.s2 h3{color:var(--forest-deep)}
-.s2>p{color:rgba(0,0,0,.5)}
-/* Hub diagram */
-.hp-sys-hub{position:relative;height:200px;margin:8px 0}
-.hp-sys-hub-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--forest-deep);display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 4px 16px rgba(10,61,32,.25)}
-.hp-sys-hub-center span{font-size:9px;font-weight:800;color:var(--lime);text-transform:uppercase;letter-spacing:.1em}
-.hp-sys-hub-node{position:absolute;display:flex;align-items:center;gap:6px;padding:6px 12px;background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 8px rgba(0,0,0,.04);font-size:11px;font-weight:600;color:rgba(0,0,0,.65);z-index:2;opacity:0;transform:scale(.8);transition:opacity .3s ease,transform .3s ease}
-.hp-sys-hub-node.show{opacity:1;transform:scale(1)}
-.hp-sys-hub-node img,.hp-sys-hub-node svg{width:16px;height:16px;object-fit:contain;flex-shrink:0}
-/* Node positions around the hub */
-.hp-sys-hub-node:nth-child(2){top:4%;left:50%;transform:translateX(-50%) scale(.8)}.hp-sys-hub-node:nth-child(2).show{transform:translateX(-50%) scale(1)}
-.hp-sys-hub-node:nth-child(3){top:22%;right:2%}
-.hp-sys-hub-node:nth-child(4){top:62%;right:2%}
-.hp-sys-hub-node:nth-child(5){bottom:4%;left:50%;transform:translateX(-50%) scale(.8)}.hp-sys-hub-node:nth-child(5).show{transform:translateX(-50%) scale(1)}
-.hp-sys-hub-node:nth-child(6){top:62%;left:2%}
-.hp-sys-hub-node:nth-child(7){top:22%;left:2%}
-/* Hub lines (SVG) */
-.hp-sys-hub-lines{position:absolute;inset:0;z-index:1}
-.hp-sys-hub-lines line{stroke:rgba(14,84,44,.1);stroke-width:1.5;stroke-dasharray:4 4}
-.hp-sys-hub-query{margin-top:8px;padding:8px 14px;background:#fff;border:1px dashed rgba(14,84,44,.15);border-radius:8px;font-size:11px;color:rgba(0,0,0,.45);text-align:center;font-style:italic}
-.hp-sys-hub-query strong{color:var(--forest);font-style:normal}
-/* Stage 3 */
-.hp-sys-stage.s3{background:var(--forest-deep);border:1px solid rgba(125,255,179,.08)}
-.s3::after{content:'';position:absolute;top:-30%;right:-20%;width:200px;height:200px;background:radial-gradient(circle,rgba(125,255,179,.06),transparent 70%);pointer-events:none}
-.s3 .hp-sys-snum span:first-child{background:var(--lime);color:var(--forest-deep)}
-.s3 .hp-sys-snum span:last-child{color:var(--lime)}
-.s3 h3{color:#fff}
-.s3>p{color:rgba(255,255,255,.5)}
+/* Stage 2: clean platform grid */
+.hp-sys-plat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.hp-sys-pg{display:flex;align-items:center;gap:8px;padding:12px 14px;background:#f8f9fa;border-radius:10px;border:1px solid rgba(0,0,0,.04);opacity:0;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease}
+.hp-sys-pg.show{opacity:1;transform:translateY(0)}
+.hp-sys-pg img,.hp-sys-pg svg{width:20px;height:20px;flex-shrink:0;object-fit:contain}
+.hp-sys-pg-text{flex:1}
+.hp-sys-pg-text strong{display:block;font-size:12px;font-weight:700;color:rgba(0,0,0,.7)}
+.hp-sys-pg-text span{font-size:10px;color:rgba(0,0,0,.35)}
+.hp-sys-query{margin-top:14px;padding:10px 16px;background:#f8f9fa;border-radius:10px;border:1px solid rgba(0,0,0,.04);font-size:12px;color:rgba(0,0,0,.45);display:flex;align-items:center;gap:8px}
+.hp-sys-query svg{width:14px;height:14px;flex-shrink:0;color:rgba(0,0,0,.25)}
+.hp-sys-query strong{color:var(--forest-deep);font-weight:600}
+/* Stage 3: pipeline metrics */
 .hp-sys-metrics{display:flex;flex-direction:column;gap:10px}
-.hp-sys-metric{display:flex;align-items:center;gap:14px;padding:14px 16px;background:rgba(255,255,255,.04);border-radius:12px;border:1px solid rgba(255,255,255,.06);opacity:0;transform:translateX(10px);transition:opacity .3s ease,transform .3s ease}
+.hp-sys-metric{display:flex;align-items:center;gap:14px;padding:14px 16px;background:#f0faf4;border-radius:12px;border:1px solid rgba(14,84,44,.06);opacity:0;transform:translateX(10px);transition:opacity .3s ease,transform .3s ease}
 .hp-sys-metric.show{opacity:1;transform:translateX(0)}
-.hp-sys-metric-val{font-family:var(--display);font-size:24px;font-weight:700;color:var(--lime);line-height:1;min-width:60px}
+.hp-sys-metric-val{font-family:var(--display);font-size:24px;font-weight:700;color:var(--forest-deep);line-height:1;min-width:60px}
 .hp-sys-metric-text{flex:1}
-.hp-sys-metric-text strong{display:block;font-size:13px;font-weight:700;color:#fff}
-.hp-sys-metric-text span{font-size:11px;color:rgba(255,255,255,.4)}
-/* Bottom connector arrows */
-.hp-sys-flow-arrows{display:flex;justify-content:center;align-items:center;gap:0;margin:32px 0 0;position:relative}
+.hp-sys-metric-text strong{display:block;font-size:13px;font-weight:700;color:var(--forest-deep)}
+.hp-sys-metric-text span{font-size:11px;color:rgba(0,0,0,.4)}
+/* Flow summary */
+.hp-sys-flow-arrows{display:flex;justify-content:center;align-items:center;gap:0;margin:36px 0 0}
 .hp-sys-flow-step{display:flex;align-items:center;gap:0}
-.hp-sys-flow-pill{padding:8px 20px;border-radius:40px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:0;transform:scale(.9);transition:opacity .4s ease,transform .4s ease}
+.hp-sys-flow-pill{padding:10px 22px;border-radius:40px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;opacity:0;transform:scale(.9);transition:opacity .4s ease,transform .4s ease;background:#fff;color:var(--forest-deep);border:1px solid rgba(0,0,0,.08);box-shadow:0 1px 3px rgba(0,0,0,.04)}
 .hp-sys-flow-pill.show{opacity:1;transform:scale(1)}
-.hp-sys-flow-pill.fp1{background:#e8f5ee;color:var(--forest)}
-.hp-sys-flow-pill.fp2{background:#f1f3f4;color:rgba(0,0,0,.5)}
-.hp-sys-flow-pill.fp3{background:var(--forest-deep);color:var(--lime)}
-.hp-sys-flow-arrow{width:40px;height:2px;background:linear-gradient(90deg,rgba(0,0,0,.08),rgba(0,0,0,.15));position:relative;opacity:0;transform:scaleX(0);transition:opacity .4s ease,transform .4s ease;transform-origin:left}
+.hp-sys-flow-pill.fp3{background:var(--forest-deep);color:var(--lime);border-color:var(--forest-deep)}
+.hp-sys-flow-arrow{width:32px;height:2px;background:rgba(0,0,0,.1);position:relative;opacity:0;transform:scaleX(0);transition:opacity .4s ease,transform .4s ease;transform-origin:left}
 .hp-sys-flow-arrow.show{opacity:1;transform:scaleX(1)}
-.hp-sys-flow-arrow::after{content:'';position:absolute;right:-3px;top:-3px;border:4px solid transparent;border-left:5px solid rgba(0,0,0,.15)}
+.hp-sys-flow-arrow::after{content:'';position:absolute;right:-3px;top:-3px;border:4px solid transparent;border-left:5px solid rgba(0,0,0,.1)}
 /* Tagline */
-.hp-sys-tagline{margin-top:44px;text-align:center;font-size:16px;font-weight:600;color:var(--forest);background:var(--mint-bg);border-radius:14px;padding:18px 28px;border:1px solid rgba(14,84,44,.08);max-width:640px;margin-left:auto;margin-right:auto}
+.hp-sys-tagline{margin-top:44px;text-align:center;font-size:16px;font-weight:600;color:var(--forest-deep);max-width:640px;margin-left:auto;margin-right:auto;line-height:1.6}
+.hp-sys-tagline em{font-style:normal;color:var(--forest);background:rgba(14,84,44,.06);padding:2px 8px;border-radius:4px}
 
 /* ── S7: Timeline ── */
 .s-tl{background:#FFFDD9}
@@ -852,18 +831,15 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
         <div class="hp-sys-snum"><span>2</span><span>Search Visibility</span></div>
         <h3>Dominate every platform your buyers use</h3>
         <p>Your ICP doesn't just Google anymore. They ask ChatGPT, Perplexity, Claude, Gemini. SAGE makes you the #1 recommended answer on all of them. Simultaneously.</p>
-        <!-- Hub diagram -->
-        <div class="hp-sys-hub" id="sysHub">
-          <div class="hp-sys-hub-center"><span>Your<br>Brand</span></div>
-          <svg class="hp-sys-hub-lines" viewBox="0 0 300 200"><line x1="150" y1="100" x2="150" y2="20"/><line x1="150" y1="100" x2="270" y2="50"/><line x1="150" y1="100" x2="270" y2="150"/><line x1="150" y1="100" x2="150" y2="180"/><line x1="150" y1="100" x2="30" y2="150"/><line x1="150" y1="100" x2="30" y2="50"/></svg>
-          <div class="hp-sys-hub-node" data-delay="0"><img src="logos/chatgpt-logo.avif" alt="">ChatGPT</div>
-          <div class="hp-sys-hub-node" data-delay="80"><img src="logos/perplexity-logo.png" alt="">Perplexity</div>
-          <div class="hp-sys-hub-node" data-delay="160"><svg width="16" height="16" viewBox="0 0 24 24"><defs><linearGradient id="gh1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="50%" stop-color="#9B72CB"/><stop offset="100%" stop-color="#D96570"/></linearGradient></defs><path fill="url(#gh1)" d="M12 2C12 7.52 7.52 12 2 12c5.52 0 10 4.48 10 10 0-5.52 4.48-10 10-10-5.52 0-10-4.48-10-10z"/></svg>Gemini</div>
-          <div class="hp-sys-hub-node" data-delay="240"><img src="logos/google.png" alt="" style="width:16px;height:16px">Google</div>
-          <div class="hp-sys-hub-node" data-delay="320"><svg width="16" height="16" viewBox="0 0 24 24"><defs><linearGradient id="gh2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="100%" stop-color="#34A853"/></linearGradient></defs><path fill="url(#gh2)" d="M12 2L8.5 8.5 2 12l6.5 3.5L12 22l3.5-6.5L22 12l-6.5-3.5z"/></svg>AI Overviews</div>
-          <div class="hp-sys-hub-node" data-delay="400"><img src="logos/claude-logo.png" alt="">Claude</div>
+        <div class="hp-sys-plat-grid" id="sysPlats">
+          <div class="hp-sys-pg" data-delay="0"><img src="logos/chatgpt-logo.avif" alt=""><div class="hp-sys-pg-text"><strong>ChatGPT</strong><span>AI answers</span></div></div>
+          <div class="hp-sys-pg" data-delay="80"><img src="logos/claude-logo.png" alt=""><div class="hp-sys-pg-text"><strong>Claude</strong><span>AI answers</span></div></div>
+          <div class="hp-sys-pg" data-delay="160"><img src="logos/perplexity-logo.png" alt=""><div class="hp-sys-pg-text"><strong>Perplexity</strong><span>AI search</span></div></div>
+          <div class="hp-sys-pg" data-delay="240"><svg width="20" height="20" viewBox="0 0 24 24"><defs><linearGradient id="gp1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="50%" stop-color="#9B72CB"/><stop offset="100%" stop-color="#D96570"/></linearGradient></defs><path fill="url(#gp1)" d="M12 2C12 7.52 7.52 12 2 12c5.52 0 10 4.48 10 10 0-5.52 4.48-10 10-10-5.52 0-10-4.48-10-10z"/></svg><div class="hp-sys-pg-text"><strong>Gemini</strong><span>AI answers</span></div></div>
+          <div class="hp-sys-pg" data-delay="320"><svg width="20" height="20" viewBox="0 0 24 24"><defs><linearGradient id="gp2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="100%" stop-color="#34A853"/></linearGradient></defs><path fill="url(#gp2)" d="M12 2L8.5 8.5 2 12l6.5 3.5L12 22l3.5-6.5L22 12l-6.5-3.5z"/></svg><div class="hp-sys-pg-text"><strong>AI Overviews</strong><span>Google AI</span></div></div>
+          <div class="hp-sys-pg" data-delay="400"><img src="logos/google.png" alt="" style="width:20px;height:20px"><div class="hp-sys-pg-text"><strong>Google</strong><span>Organic search</span></div></div>
         </div>
-        <div class="hp-sys-hub-query"><strong>Query:</strong> &ldquo;best platform to buy verified B2B email lists&rdquo;</div>
+        <div class="hp-sys-query"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><strong>Example:</strong> &ldquo;best B2B email list platform&rdquo;</div>
       </div>
 
       <!-- STAGE 3 -->
@@ -894,7 +870,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       </div>
     </div>
 
-    <div class="hp-sys-tagline rv" style="transition-delay:.5s">80% of SEO and GEO work overlaps. SAGE is the only engine that runs both from a single system.</div>
+    <div class="hp-sys-tagline rv" style="transition-delay:.5s">80% of SEO and GEO work overlaps. <em>SAGE</em> runs one engine that handles both simultaneously.</div>
   </div>
 </section>
 
@@ -1257,8 +1233,8 @@ const sysObs = new IntersectionObserver((entries) => {
       document.querySelectorAll('#sysItems1 .hp-sys-item').forEach(i => {
         setTimeout(() => i.classList.add('show'), 300 + parseInt(i.dataset.delay || '0'));
       });
-      // Stage 2 hub nodes
-      document.querySelectorAll('#sysHub .hp-sys-hub-node').forEach(n => {
+      // Stage 2 platform grid
+      document.querySelectorAll('#sysPlats .hp-sys-pg').forEach(n => {
         setTimeout(() => n.classList.add('show'), 700 + parseInt(n.dataset.delay || '0'));
       });
       // Stage 3 metrics
