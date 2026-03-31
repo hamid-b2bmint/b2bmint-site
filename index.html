@@ -271,10 +271,13 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-rc-val{font-size:14px;font-weight:700;color:#c00}
 .hp-rc-val.ok{color:var(--forest)}
 .hp-rc-val.amber{color:#B8860B}
-.s-pain-stat{display:flex;gap:16px;margin-top:28px;flex-wrap:wrap}
-.s-pain-num{text-align:center;padding:18px 24px;background:#fff;border-radius:14px;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 3px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.03)}
-.s-pain-num strong{display:block;font-family:var(--display);font-size:28px;font-weight:700;color:#c00;line-height:1}
-.s-pain-num span{display:block;font-size:11px;color:rgba(0,0,0,.45);margin-top:6px;letter-spacing:.02em}
+.s-pain-signs{margin-top:28px}
+.s-pain-signs-title{font-size:13px;font-weight:700;color:var(--forest-deep);margin-bottom:14px;text-transform:uppercase;letter-spacing:.08em}
+.s-pain-sign{display:flex;align-items:flex-start;gap:12px;padding:10px 0;opacity:0;transform:translateX(-12px);transition:opacity .4s ease,transform .4s ease}
+.s-pain-sign.show{opacity:1;transform:translateX(0)}
+.s-pain-sign-icon{width:22px;height:22px;border-radius:50%;background:rgba(204,0,0,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.s-pain-sign-icon svg{width:12px;height:12px}
+.s-pain-sign span{font-size:14px;color:rgba(0,0,0,.7);line-height:1.5}
 
 /* ── S3: Invisible Loss ── */
 .s-loss{background:#fff}
@@ -535,10 +538,12 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
         <div class="s-eye rv">The Problem</div>
         <h2 class="s-h rv" style="transition-delay:.1s">Your agency gave you traffic reports. Your CFO asked about pipeline.</h2>
         <p class="s-p rv" style="transition-delay:.2s">$50K+ spent. 68 blog posts. 12 months of &ldquo;it takes time.&rdquo; Zero demos from search. Your agency optimized for keywords. Your buyers moved to AI.</p>
-        <div class="s-pain-stat rv" style="transition-delay:.25s">
-          <div class="s-pain-num"><strong>$0</strong><span>Pipeline from SEO</span></div>
-          <div class="s-pain-num"><strong>0</strong><span>AI citations</span></div>
-          <div class="s-pain-num"><strong>73</strong><span>Clicks/day (flat)</span></div>
+        <div class="s-pain-signs rv" style="transition-delay:.25s">
+          <div class="s-pain-signs-title">Sound familiar?</div>
+          <div class="s-pain-sign" data-delay="0"><div class="s-pain-sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c00" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><span>Blog posts ranking on page 4 that nobody reads</span></div>
+          <div class="s-pain-sign" data-delay="150"><div class="s-pain-sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c00" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><span>Monthly reports showing &ldquo;impressions up&rdquo; but zero demos</span></div>
+          <div class="s-pain-sign" data-delay="300"><div class="s-pain-sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c00" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><span>Competitors showing up in AI answers while you&rsquo;re invisible</span></div>
+          <div class="s-pain-sign" data-delay="450"><div class="s-pain-sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c00" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><span>Your agency can&rsquo;t explain how SEO connects to pipeline</span></div>
         </div>
       </div>
       <div class="rv" style="transition-delay:.3s">
@@ -1025,6 +1030,21 @@ const cbObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.cb-fill').forEach(el => cbObs.observe(el));
+
+// ── Pain signs staggered reveal ──
+const signObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const signs = e.target.querySelectorAll('.s-pain-sign');
+      signs.forEach(sign => {
+        const delay = parseInt(sign.dataset.delay || '0');
+        setTimeout(() => sign.classList.add('show'), delay);
+      });
+      signObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.s-pain-signs').forEach(el => signObs.observe(el));
 
 // ── Proof strip: staggered reveal + count-up animation ──
 const stripObs = new IntersectionObserver((entries) => {
