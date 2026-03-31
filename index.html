@@ -905,18 +905,16 @@ function tick(){
   lastDrawnFrame = frameIdx;
   drawFrame(frameIdx);
 
-  // Crisp screen: clip-path tracks the laptop screen from tiny → full viewport.
-  // Starts as a tiny rect at the laptop screen position (frame 0),
-  // expands to match the full screen area as the video zooms in.
-  // GPU clip-path = never blurry at any scale.
+  // Crisp screen: per-frame clip-path measured by OpenCV from actual frames.
+  // Each value is the exact green screen region in that frame — pixel perfect.
   {
-    const t = videoProgress;
-    const ct = 56*(1-t);           // top:    56% → 0%
-    const cr = 48 - 31*t;          // right:  48% → 17%
-    const cb = 42 - 25*t;          // bottom: 42% → 17%
-    const cl = 49 - 32*t;          // left:   49% → 17%
-    crispScreen.style.clipPath = `inset(${ct}% ${cr}% ${cb}% ${cl}% round 3px)`;
-    crispScreen.style.opacity = Math.min(1, videoProgress * 8); // fast fade-in
+    const CT=[58.5,58.5,57.2,56.2,55.1,54.2,53.2,52.1,51.0,49.9,48.8,47.6,46.8,45.7,43.9,40.1,36.9,33.5,29.9,25.8,21.8,16.9,12.5,7.9,3.1,0,0,0,0];
+    const CR=[48.3,48.3,47.9,47.4,46.9,46.4,45.9,45.4,44.9,44.4,43.9,43.3,42.8,42.3,41.5,39.8,38.3,36.7,35.1,33.3,31.5,29.6,27.7,25.7,23.6,21.4,19.2,17.6,15.9];
+    const CB=[37.1,37.1,36.7,36.1,35.7,35.3,34.7,34.3,33.9,33.5,32.9,32.5,32.1,31.7,31.0,29.0,27.2,25.3,23.3,21.4,19.4,17.6,15.6,13.8,11.8,9.7,7.8,5.8,4.0];
+    const CL=[48.9,48.9,48.4,48.1,47.8,47.4,47.0,46.7,46.3,45.9,45.5,45.2,44.8,44.4,43.5,41.9,40.4,38.6,37.1,35.4,33.6,31.9,29.8,28.0,26.2,24.2,22.5,20.9,19.3];
+    const fi = Math.min(frameIdx, CT.length-1);
+    crispScreen.style.clipPath = `inset(${CT[fi]}% ${CR[fi]}% ${CB[fi]}% ${CL[fi]}% round 2px)`;
+    crispScreen.style.opacity = '1';
   }
 
   // Fade text + navbar (0→8%)
