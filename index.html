@@ -399,59 +399,65 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-sys-snum{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px}
 .hp-sys-snum span:first-child{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
 .hp-sys-snum span:last-child{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}
-.hp-sys-stage h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:10px;line-height:1.2}
-.hp-sys-stage>p{font-size:14px;line-height:1.6;margin-bottom:20px}
+.hp-sys-stage{transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.hp-sys-stage:hover{box-shadow:0 8px 40px rgba(0,0,0,.08)}
+.hp-sys-stage h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:12px;line-height:1.2}
+.hp-sys-stage>p{font-size:14px;line-height:1.7;margin-bottom:20px}
 /* Stage 1 — Yellow */
 .hp-sys-stage.s1{background:#FFFDD9;border:none}
 .s1 .hp-sys-snum span:first-child{background:#8A7200;color:#FFFDD9}
 .s1 .hp-sys-snum span:last-child{color:#8A7200}
-.s1 h3{color:#5C4D00}
-.s1>p{color:rgba(92,77,0,.55)}
+.s1 h3{color:#3D3400}
+.s1>p{color:rgba(61,52,0,.65)}
 .hp-sys-items{display:flex;flex-direction:column;gap:8px}
-.hp-sys-item{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:rgba(255,255,255,.55);border-radius:12px;opacity:0;transform:translateX(-10px);transition:opacity .3s ease,transform .3s ease}
+.hp-sys-item{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:rgba(255,255,255,.6);border-radius:12px;opacity:0;transform:translateX(-10px);transition:all .3s ease;cursor:default}
 .hp-sys-item.show{opacity:1;transform:translateX(0)}
-.hp-sys-item-icon{width:28px;height:28px;border-radius:8px;background:rgba(138,114,0,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.hp-sys-item:hover{background:rgba(255,255,255,.9);transform:translateX(4px)}
+.hp-sys-item-icon{width:30px;height:30px;border-radius:8px;background:rgba(138,114,0,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:background .3s}
+.hp-sys-item:hover .hp-sys-item-icon{background:rgba(138,114,0,.18)}
 .hp-sys-item-icon svg{width:14px;height:14px}
 .hp-sys-item-text{flex:1}
-.hp-sys-item-text strong{display:block;font-size:13px;font-weight:700;color:#5C4D00}
-.hp-sys-item-text span{font-size:11px;color:rgba(92,77,0,.5);line-height:1.4}
+.hp-sys-item-text strong{display:block;font-size:13px;font-weight:700;color:#3D3400}
+.hp-sys-item-text span{font-size:11px;color:rgba(61,52,0,.55);line-height:1.4}
 /* Stage 2 — Blue */
 .hp-sys-stage.s2{background:#CEEBFF;border:none}
 .s2 .hp-sys-snum span:first-child{background:#0043D2;color:#fff}
 .s2 .hp-sys-snum span:last-child{color:#0043D2}
-.s2 h3{color:#002E8A}
-.s2>p{color:rgba(0,46,138,.55)}
-/* Platform grid — each platform gets its own color */
+.s2 h3{color:#001D66}
+.s2>p{color:rgba(0,29,102,.6)}
+/* Platform grid */
 .hp-sys-plat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.hp-sys-pg{display:flex;align-items:center;gap:8px;padding:12px 14px;border-radius:12px;opacity:0;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease}
+.hp-sys-pg{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;opacity:0;transform:translateY(8px);transition:all .3s ease;cursor:default}
 .hp-sys-pg.show{opacity:1;transform:translateY(0)}
-.hp-sys-pg img,.hp-sys-pg svg{width:20px;height:20px;flex-shrink:0;object-fit:contain}
+.hp-sys-pg:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.hp-sys-pg img,.hp-sys-pg svg{width:22px;height:22px;flex-shrink:0;object-fit:contain}
 .hp-sys-pg-text{flex:1}
 .hp-sys-pg-text strong{display:block;font-size:12px;font-weight:700}
-.hp-sys-pg-text span{font-size:10px;opacity:.6}
-/* Individual platform colors */
-.hp-sys-pg.pg-gpt{background:#D2FFC1}.hp-sys-pg.pg-gpt .hp-sys-pg-text strong{color:#0E542C}.hp-sys-pg.pg-gpt .hp-sys-pg-text span{color:#0E542C}
-.hp-sys-pg.pg-claude{background:#FFE8E2}.hp-sys-pg.pg-claude .hp-sys-pg-text strong{color:#7B5BC5}.hp-sys-pg.pg-claude .hp-sys-pg-text span{color:#7B5BC5}
-.hp-sys-pg.pg-pplx{background:#FFFDD9}.hp-sys-pg.pg-pplx .hp-sys-pg-text strong{color:#8A7200}.hp-sys-pg.pg-pplx .hp-sys-pg-text span{color:#8A7200}
-.hp-sys-pg.pg-gemini{background:#FFE6F4}.hp-sys-pg.pg-gemini .hp-sys-pg-text strong{color:#C0006B}.hp-sys-pg.pg-gemini .hp-sys-pg-text span{color:#C0006B}
-.hp-sys-pg.pg-aio{background:rgba(255,255,255,.5)}.hp-sys-pg.pg-aio .hp-sys-pg-text strong{color:#0043D2}.hp-sys-pg.pg-aio .hp-sys-pg-text span{color:#0043D2}
-.hp-sys-pg.pg-google{background:rgba(255,255,255,.5)}.hp-sys-pg.pg-google .hp-sys-pg-text strong{color:#1A73E8}.hp-sys-pg.pg-google .hp-sys-pg-text span{color:#1A73E8}
-.hp-sys-query{margin-top:14px;padding:10px 16px;background:rgba(255,255,255,.5);border-radius:10px;font-size:12px;color:rgba(0,46,138,.5);display:flex;align-items:center;gap:8px}
-.hp-sys-query svg{width:14px;height:14px;flex-shrink:0;color:rgba(0,46,138,.35)}
+.hp-sys-pg-text span{font-size:10px;opacity:.55}
+/* Individual platform colors — all unique */
+.hp-sys-pg.pg-gpt{background:#D2FFC1}.hp-sys-pg.pg-gpt:hover{background:#C0F5A8}.hp-sys-pg.pg-gpt .hp-sys-pg-text strong{color:#0E542C}.hp-sys-pg.pg-gpt .hp-sys-pg-text span{color:#0E542C}
+.hp-sys-pg.pg-claude{background:#FFE8E2}.hp-sys-pg.pg-claude:hover{background:#FFD8CE}.hp-sys-pg.pg-claude .hp-sys-pg-text strong{color:#7B5BC5}.hp-sys-pg.pg-claude .hp-sys-pg-text span{color:#7B5BC5}
+.hp-sys-pg.pg-pplx{background:#FFFDD9}.hp-sys-pg.pg-pplx:hover{background:#FFF9B8}.hp-sys-pg.pg-pplx .hp-sys-pg-text strong{color:#8A7200}.hp-sys-pg.pg-pplx .hp-sys-pg-text span{color:#8A7200}
+.hp-sys-pg.pg-gemini{background:#FFE6F4}.hp-sys-pg.pg-gemini:hover{background:#FFD4EC}.hp-sys-pg.pg-gemini .hp-sys-pg-text strong{color:#C0006B}.hp-sys-pg.pg-gemini .hp-sys-pg-text span{color:#C0006B}
+.hp-sys-pg.pg-aio{background:#FFE8E2}.hp-sys-pg.pg-aio:hover{background:#FFD8CE}.hp-sys-pg.pg-aio .hp-sys-pg-text strong{color:#FA4028}.hp-sys-pg.pg-aio .hp-sys-pg-text span{color:#FA4028}
+.hp-sys-pg.pg-google{background:#FFE6F4}.hp-sys-pg.pg-google:hover{background:#FFD4EC}.hp-sys-pg.pg-google .hp-sys-pg-text strong{color:#1A73E8}.hp-sys-pg.pg-google .hp-sys-pg-text span{color:#1A73E8}
+.hp-sys-query{margin-top:14px;padding:10px 16px;background:rgba(255,255,255,.45);border-radius:10px;font-size:12px;color:rgba(0,29,102,.55);display:flex;align-items:center;gap:8px}
+.hp-sys-query svg{width:14px;height:14px;flex-shrink:0;color:rgba(0,29,102,.3)}
 .hp-sys-query strong{color:#0043D2;font-weight:600}
 /* Stage 3 — Green (revenue/growth) */
 .hp-sys-stage.s3{background:#D2FFC1;border:none}
 .s3 .hp-sys-snum span:first-child{background:#0E542C;color:#D2FFC1}
 .s3 .hp-sys-snum span:last-child{color:#0E542C}
-.s3 h3{color:#0A3D20}
-.s3>p{color:rgba(10,61,32,.55)}
+.s3 h3{color:#063D1A}
+.s3>p{color:rgba(6,61,26,.6)}
 .hp-sys-metrics{display:flex;flex-direction:column;gap:10px}
-.hp-sys-metric{display:flex;align-items:center;gap:14px;padding:14px 16px;background:rgba(255,255,255,.5);border-radius:12px;opacity:0;transform:translateX(10px);transition:opacity .3s ease,transform .3s ease}
+.hp-sys-metric{display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(14,84,44,.08);border:1.5px solid rgba(14,84,44,.1);border-radius:14px;opacity:0;transform:translateX(10px);transition:all .3s ease;cursor:default}
 .hp-sys-metric.show{opacity:1;transform:translateX(0)}
-.hp-sys-metric-val{font-family:var(--display);font-size:24px;font-weight:700;color:#0E542C;line-height:1;min-width:60px}
+.hp-sys-metric:hover{background:rgba(14,84,44,.14);border-color:rgba(14,84,44,.2);transform:translateX(4px)}
+.hp-sys-metric-val{font-family:var(--display);font-size:28px;font-weight:700;color:#0E542C;line-height:1;min-width:64px}
 .hp-sys-metric-text{flex:1}
-.hp-sys-metric-text strong{display:block;font-size:13px;font-weight:700;color:#0A3D20}
-.hp-sys-metric-text span{font-size:11px;color:rgba(10,61,32,.45)}
+.hp-sys-metric-text strong{display:block;font-size:14px;font-weight:700;color:#063D1A}
+.hp-sys-metric-text span{font-size:11px;color:rgba(6,61,26,.5)}
 /* Flow summary */
 .hp-sys-flow-arrows{display:flex;justify-content:center;align-items:center;gap:0;margin:36px 0 0}
 .hp-sys-flow-step{display:flex;align-items:center;gap:0}
