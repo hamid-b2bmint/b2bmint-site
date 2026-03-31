@@ -41,12 +41,12 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
 /* Sharp mockup image — fades in over blurry zoom */
 .sharp-mockup{
-  position:absolute;inset:0;z-index:2;
+  position:absolute;inset:0;z-index:4;
   opacity:0;will-change:opacity;
   pointer-events:none;
 }
 .sharp-mockup img{
-  width:100%;height:100%;object-fit:cover;
+  width:100%;height:100%;object-fit:cover;object-position:center center;
 }
 
 /* Overlay — light gradient for text readability */
@@ -420,6 +420,10 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
     <!-- SCROLL-SCRUBBED CANVAS (frame sequence from video) -->
     <div class="hero-video" id="heroVideo">
       <canvas id="heroCanvas"></canvas>
+      <!-- Sharp mockup fades in as video gets blurry at end of zoom -->
+      <div class="sharp-mockup" id="sharpMockup">
+        <img src="final-mockup.png" alt="">
+      </div>
       <div class="hero-overlay" id="overlay"></div>
       <div class="hero-vignette"></div>
     </div>
@@ -895,6 +899,9 @@ function tick(){
   const frameIdx = Math.floor(videoProgress * (frameImages.length - 1));
   lastDrawnFrame = frameIdx;
   drawFrame(frameIdx);
+
+  // Sharp mockup fades in over the blurry last ~40% of the zoom
+  sharpMockup.style.opacity = eo(r(videoProgress, 0.55, 0.95));
 
   // Fade text + navbar (0→8%)
   const textFade=1-r(p,0,0.08);
