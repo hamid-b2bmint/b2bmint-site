@@ -374,14 +374,44 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-evo-bottom{margin-top:40px;font-size:17px;line-height:1.7;color:rgba(0,0,0,.5);max-width:700px;text-align:center;margin-left:auto;margin-right:auto}
 .hp-evo-bottom strong{color:var(--forest-deep);font-weight:700}
 
-/* ── S6: The System ── */
-.s-sys{background:var(--mint-bg)}
-.hp-sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
-.hp-sys-card{background:#fff;border-radius:20px;padding:32px;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.04),0 12px 48px rgba(0,0,0,.06)}
-.hp-sys-num{width:36px;height:36px;border-radius:50%;background:var(--forest);color:var(--lime);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;margin-bottom:16px}
-.hp-sys-card h3{font-family:var(--display);font-size:20px;font-weight:700;margin-bottom:8px}
-.hp-sys-card p{font-size:15px;line-height:1.6;color:rgba(0,0,0,.55)}
-.hp-sys-badge{margin-top:40px;text-align:center;font-size:15px;font-weight:600;color:var(--forest);background:rgba(255,255,255,.7);border-radius:12px;padding:16px 24px;border:1px solid rgba(14,84,44,.1)}
+/* ── S6: The System (ASTPE) ── */
+.s-sys{background:var(--forest-deep);color:#fff;position:relative;overflow:hidden}
+.s-sys::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(125,255,179,.05) 0%,transparent 60%)}
+.s-sys .s-eye{color:var(--lime)}
+.s-sys .s-h{color:#fff;max-width:700px}
+.s-sys .s-p{color:rgba(255,255,255,.55);max-width:620px}
+.s-sys .s-inner{position:relative;z-index:1}
+.hp-sys-label{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;background:rgba(125,255,179,.1);color:var(--lime);padding:5px 14px;border-radius:40px;margin-bottom:24px}
+/* Horizontal connected steps */
+.hp-sys-flow{display:flex;align-items:flex-start;gap:0;margin-top:56px;position:relative}
+.hp-sys-step{flex:1;text-align:center;position:relative;padding:0 12px;opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+.hp-sys-step.show{opacity:1;transform:translateY(0)}
+/* Connector line between steps */
+.hp-sys-step:not(:last-child)::after{content:'';position:absolute;top:28px;left:calc(50% + 32px);width:calc(100% - 64px);height:2px;background:linear-gradient(90deg,rgba(125,255,179,.4),rgba(125,255,179,.15))}
+/* Step icon circle */
+.hp-sys-icon{width:56px;height:56px;border-radius:16px;background:rgba(125,255,179,.1);border:1px solid rgba(125,255,255,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;position:relative;z-index:1}
+.hp-sys-icon svg{width:24px;height:24px}
+.hp-sys-icon .sys-num{position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:var(--lime);color:var(--forest-deep);font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.hp-sys-step h3{font-family:var(--display);font-size:18px;font-weight:700;margin-bottom:8px;color:#fff;letter-spacing:-.01em}
+.hp-sys-step p{font-size:13px;line-height:1.55;color:rgba(255,255,255,.5);max-width:200px;margin:0 auto}
+/* Letter breakdown */
+.hp-sys-letters{display:flex;justify-content:center;gap:4px;margin-top:56px}
+.hp-sys-letter{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:22px;font-weight:700;opacity:0;transform:scale(.8);transition:opacity .4s ease,transform .4s ease,background .3s,color .3s;cursor:default;background:rgba(125,255,179,.08);color:rgba(125,255,179,.4);border:1px solid rgba(125,255,179,.08)}
+.hp-sys-letter.show{opacity:1;transform:scale(1)}
+.hp-sys-letter.active{background:var(--lime);color:var(--forest-deep);border-color:var(--lime);box-shadow:0 0 20px rgba(125,255,179,.25)}
+.hp-sys-letter-label{text-align:center;margin-top:8px;font-size:12px;color:rgba(255,255,255,.3);height:18px;transition:color .3s}
+.hp-sys-letter-label.active{color:var(--lime)}
+/* Output badges */
+.hp-sys-outputs{display:flex;justify-content:center;gap:16px;margin-top:48px;flex-wrap:wrap}
+.hp-sys-out{display:flex;align-items:center;gap:10px;padding:14px 24px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.hp-sys-out.show{opacity:1;transform:translateY(0)}
+.hp-sys-out-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hp-sys-out-icon.ai{background:rgba(125,255,179,.12)}
+.hp-sys-out-icon.seo{background:rgba(66,133,244,.12)}
+.hp-sys-out-icon svg{width:18px;height:18px}
+.hp-sys-out-text{text-align:left}
+.hp-sys-out-text strong{display:block;font-size:14px;font-weight:700;color:#fff}
+.hp-sys-out-text span{font-size:12px;color:rgba(255,255,255,.4)}
 
 /* ── S7: Timeline ── */
 .s-tl{background:#FFFDD9}
@@ -469,7 +499,9 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
 /* ── Responsive ── */
 @media(max-width:768px){
-  .s-grid2,.hp-evo-panels,.hp-sys-grid,.hp-ba,.hp-cases,.hp-fit-grid,.hp-svc-primary,.hp-svc-secondary{grid-template-columns:1fr}
+  .s-grid2,.hp-evo-panels,.hp-ba,.hp-cases,.hp-fit-grid,.hp-svc-primary,.hp-svc-secondary{grid-template-columns:1fr}
+  .hp-sys-flow{flex-direction:column;gap:32px}
+  .hp-sys-step:not(:last-child)::after{display:none}
   .s-strip .s-inner{flex-direction:column;text-align:center}
   .hp-ba{grid-template-columns:1fr}
   .hp-ba-vs{margin:0 auto}
@@ -735,30 +767,73 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   <div class="s-inner">
     <div class="s-eye rv">The System</div>
     <h2 class="s-h rv" style="transition-delay:.1s">Most agencies optimize pages. We engineer authority.</h2>
-    <p class="s-p rv" style="transition-delay:.2s">ASTPE is a semantic authority system. One system. Two outputs: AI citations and Google rankings.</p>
-    <div class="hp-sys-grid">
-      <div class="hp-sys-card rv" style="transition-delay:.25s">
-        <div class="hp-sys-num">1</div>
-        <h3>Semantic Architecture</h3>
-        <p>Map your full category. Fill every semantic gap.</p>
+    <p class="s-p rv" style="transition-delay:.2s">ASTPE is our semantic authority system. One unified framework. Two outputs: AI citations and Google rankings.</p>
+
+    <!-- ASTPE letter breakdown -->
+    <div class="hp-sys-letters" id="sysLetters">
+      <div class="hp-sys-letter" data-delay="0" data-step="0">A</div>
+      <div class="hp-sys-letter" data-delay="100" data-step="1">S</div>
+      <div class="hp-sys-letter" data-delay="200" data-step="2">T</div>
+      <div class="hp-sys-letter" data-delay="300" data-step="3">P</div>
+      <div class="hp-sys-letter" data-delay="400" data-step="4">E</div>
+    </div>
+    <div class="hp-sys-letter-label" id="sysLetterLabel">&nbsp;</div>
+
+    <!-- 5 connected steps -->
+    <div class="hp-sys-flow" id="sysFlow">
+      <div class="hp-sys-step" data-delay="0" data-step="0">
+        <div class="hp-sys-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+          <span class="sys-num">1</span>
+        </div>
+        <h3>Architecture</h3>
+        <p>Map your full category. Build the semantic structure that makes AI understand your authority.</p>
       </div>
-      <div class="hp-sys-card rv" style="transition-delay:.35s">
-        <div class="hp-sys-num">2</div>
-        <h3>Pipeline-First Content</h3>
-        <p>BOFU pages that convert 5-10x vs blogs.</p>
+      <div class="hp-sys-step" data-delay="150" data-step="1">
+        <div class="hp-sys-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          <span class="sys-num">2</span>
+        </div>
+        <h3>Semantic Depth</h3>
+        <p>Fill every semantic gap. Cover the entities and relationships that Google and AI need to trust you.</p>
       </div>
-      <div class="hp-sys-card rv" style="transition-delay:.45s">
-        <div class="hp-sys-num">3</div>
-        <h3>AI Search Positioning</h3>
-        <p>Cited in ChatGPT, Perplexity, Gemini, Claude.</p>
+      <div class="hp-sys-step" data-delay="300" data-step="2">
+        <div class="hp-sys-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="1.5" stroke-linecap="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+          <span class="sys-num">3</span>
+        </div>
+        <h3>Technical Foundation</h3>
+        <p>Schema markup, internal linking, crawl optimization. The infrastructure AI uses to index and cite you.</p>
       </div>
-      <div class="hp-sys-card rv" style="transition-delay:.55s">
-        <div class="hp-sys-num">4</div>
-        <h3>Compound Effect</h3>
-        <p>Every page strengthens every other page.</p>
+      <div class="hp-sys-step" data-delay="450" data-step="3">
+        <div class="hp-sys-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="1.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span class="sys-num">4</span>
+        </div>
+        <h3>Pipeline Content</h3>
+        <p>BOFU pages that convert 5-10x vs blog posts. Every page drives demos, not just traffic.</p>
+      </div>
+      <div class="hp-sys-step" data-delay="600" data-step="4">
+        <div class="hp-sys-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="1.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span class="sys-num">5</span>
+        </div>
+        <h3>Entity Authority</h3>
+        <p>Every page strengthens every other page. Compound authority that makes AI recommend you first.</p>
       </div>
     </div>
-    <div class="hp-sys-badge rv" style="transition-delay:.6s">80% of SEO and GEO work overlaps. We unify it.</div>
+
+    <!-- Two outputs -->
+    <div class="hp-sys-outputs" id="sysOutputs">
+      <div class="hp-sys-out" data-delay="0">
+        <div class="hp-sys-out-icon ai"><svg viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="hp-sys-out-text"><strong>AI Citations</strong><span>Cited across ChatGPT, Claude, Perplexity, Gemini</span></div>
+      </div>
+      <div class="hp-sys-out" data-delay="200">
+        <div class="hp-sys-out-icon seo"><svg viewBox="0 0 24 24" fill="none" stroke="#4285F4" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="hp-sys-out-text"><strong>Google Rankings</strong><span>Page 1 positions for high-intent queries</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1108,6 +1183,46 @@ const cbObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.cb-fill').forEach(el => cbObs.observe(el));
+
+// ── ASTPE system animations ──
+const sysObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      // Letters pop in
+      document.querySelectorAll('#sysLetters .hp-sys-letter').forEach(l => {
+        setTimeout(() => l.classList.add('show'), parseInt(l.dataset.delay || '0'));
+      });
+      // Steps slide up
+      document.querySelectorAll('#sysFlow .hp-sys-step').forEach(s => {
+        setTimeout(() => s.classList.add('show'), 300 + parseInt(s.dataset.delay || '0'));
+      });
+      // Outputs slide up
+      document.querySelectorAll('#sysOutputs .hp-sys-out').forEach(o => {
+        setTimeout(() => o.classList.add('show'), 1200 + parseInt(o.dataset.delay || '0'));
+      });
+      // Auto-cycle letter highlights
+      const letters = document.querySelectorAll('#sysLetters .hp-sys-letter');
+      const steps = document.querySelectorAll('#sysFlow .hp-sys-step');
+      const label = document.getElementById('sysLetterLabel');
+      const names = ['Architecture','Semantic Depth','Technical Foundation','Pipeline Content','Entity Authority'];
+      let cur = -1;
+      function cycleStep() {
+        letters.forEach(l => l.classList.remove('active'));
+        steps.forEach(s => s.querySelector('.hp-sys-icon').style.background = '');
+        label.classList.remove('active');
+        cur = (cur + 1) % 5;
+        letters[cur].classList.add('active');
+        steps[cur].querySelector('.hp-sys-icon').style.background = 'rgba(125,255,179,.2)';
+        label.textContent = names[cur];
+        label.classList.add('active');
+      }
+      setTimeout(() => { cycleStep(); setInterval(cycleStep, 2500); }, 1000);
+      sysObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+const sysSection = document.getElementById('hp-sys');
+if (sysSection) sysObs.observe(sysSection);
 
 // ── Evo platform chips stagger ──
 const epObs = new IntersectionObserver((entries) => {
