@@ -259,11 +259,14 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
 /* ── S2: The Pain ── */
 .s-pain{background:var(--mint-bg)}
-.s-pain .s-quote{margin-top:48px;font-size:16px;font-style:italic;color:rgba(0,0,0,.55);border-left:3px solid var(--forest);padding-left:20px;max-width:700px;line-height:1.6}
+.s-pain .s-quote{margin-top:48px;font-size:16px;font-style:italic;color:rgba(0,0,0,.55);border-left:3px solid var(--forest);padding-left:20px;max-width:700px;line-height:1.6;opacity:0;transform:translateY(16px);transition:opacity .6s ease .2s,transform .6s ease .2s}
+.s-pain .s-quote.show{opacity:1;transform:translateY(0)}
 .s-pain .s-quote span{font-weight:600;color:var(--forest-deep);font-style:normal}
 .hp-rc-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--forest);margin-bottom:8px}
-.hp-rc-grade{font-size:11px;color:#c00;font-weight:700;background:rgba(204,0,0,.08);padding:3px 10px;border-radius:20px;margin-bottom:20px;display:inline-block}
-.hp-rc-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.hp-rc-grade{font-size:11px;color:#c00;font-weight:700;background:rgba(204,0,0,.08);padding:4px 12px;border-radius:20px;margin-bottom:20px;display:inline-block;animation:gradePulse 2.5s ease-in-out infinite}
+@keyframes gradePulse{0%,100%{box-shadow:0 0 0 0 rgba(204,0,0,0)}50%{box-shadow:0 0 0 6px rgba(204,0,0,.08)}}
+.hp-rc-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.06);opacity:0;transform:translateX(16px);transition:opacity .4s ease,transform .4s ease}
+.hp-rc-row.show{opacity:1;transform:translateX(0)}
 .hp-rc-row:last-child{border-bottom:none}
 .hp-rc-label{font-size:14px;color:rgba(0,0,0,.65);display:flex;align-items:center;gap:8px}
 .hp-rc-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
@@ -1030,6 +1033,28 @@ const cbObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.cb-fill').forEach(el => cbObs.observe(el));
+
+// ── Report card rows staggered reveal ──
+const rcObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const rows = e.target.querySelectorAll('.hp-rc-row');
+      rows.forEach((row, i) => {
+        setTimeout(() => row.classList.add('show'), i * 150);
+      });
+      rcObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.s-pain .s-card').forEach(el => rcObs.observe(el));
+
+// ── Quote reveal ──
+const quoteObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('show'); quoteObs.unobserve(e.target); }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.s-pain .s-quote').forEach(el => quoteObs.observe(el));
 
 // ── Pain signs staggered reveal ──
 const signObs = new IntersectionObserver((entries) => {
