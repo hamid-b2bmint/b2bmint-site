@@ -374,16 +374,18 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-evo-bottom{margin-top:40px;font-size:17px;line-height:1.7;color:rgba(0,0,0,.5);max-width:700px;text-align:center;margin-left:auto;margin-right:auto}
 .hp-evo-bottom strong{color:var(--forest-deep);font-weight:700}
 
-/* ── S6: The System (ASTPE) ── */
+/* ── S6: The System (SAGE) ── */
 .s-sys{background:#fff;overflow:hidden}
 .s-sys .s-inner{position:relative;z-index:1}
 .s-sys .s-p{max-width:640px}
-/* ASTPE hero badge */
-.hp-sys-badge-wrap{text-align:center;margin:36px 0 20px}
-.hp-sys-badge-main{display:inline-flex;align-items:center;gap:4px;background:var(--forest-deep);padding:14px 32px;border-radius:14px;box-shadow:0 4px 20px rgba(10,61,32,.2)}
-.hp-sys-badge-main .bl{font-family:var(--display);font-size:32px;font-weight:700;color:var(--lime);line-height:1}
-.hp-sys-badge-main .bw{font-size:13px;font-weight:500;color:rgba(255,255,255,.6);align-self:flex-end;padding-bottom:4px}
-.hp-sys-badge-sub{margin-top:10px;font-size:13px;color:rgba(0,0,0,.4);letter-spacing:.02em}
+/* SAGE hero badge */
+.hp-sys-badge-wrap{text-align:center;margin:40px 0 24px}
+.hp-sys-badge-main{display:inline-flex;align-items:center;gap:5px;background:var(--forest-deep);padding:18px 40px;border-radius:16px;box-shadow:0 4px 24px rgba(10,61,32,.25),0 0 0 1px rgba(125,255,179,.1);position:relative;overflow:hidden}
+.hp-sys-badge-main::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(125,255,179,.08),transparent 60%);pointer-events:none}
+.hp-sys-badge-main .bl{font-family:var(--display);font-size:38px;font-weight:700;color:var(--lime);line-height:1;position:relative;z-index:1}
+.hp-sys-badge-main .bw{font-size:14px;font-weight:500;color:rgba(255,255,255,.6);align-self:flex-end;padding-bottom:5px;margin-right:8px;position:relative;z-index:1}
+.hp-sys-badge-main .bw:last-child{margin-right:0}
+.hp-sys-badge-sub{margin-top:12px;font-size:14px;color:rgba(0,0,0,.45);letter-spacing:.01em}
 /* Full-width 3-stage flow */
 .hp-sys-pipeline{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:44px}
 /* Stage card base */
@@ -815,19 +817,19 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <!-- S6: THE SYSTEM -->
 <section class="s-sec s-sys" id="hp-sys">
   <div class="s-inner">
-    <div class="s-eye rv">Our Proprietary Framework</div>
-    <h2 class="s-h rv" style="transition-delay:.1s">Most agencies optimize pages. We engineer authority into pipeline.</h2>
-    <p class="s-p rv" style="transition-delay:.2s">One unified system that builds your authority, makes you the recommended answer on every search platform, and converts that visibility into qualified pipeline.</p>
+    <div class="s-eye rv">The SAGE Engine</div>
+    <h2 class="s-h rv" style="transition-delay:.1s">One engine. Every search platform. Predictable pipeline.</h2>
+    <p class="s-p rv" style="transition-delay:.2s">Most agencies optimize for Google and ignore AI. We built SAGE to dominate both simultaneously. One system that builds authority, captures every buyer search, and converts it into revenue.</p>
 
-    <!-- ASTPE badge -->
+    <!-- SAGE badge -->
     <div class="hp-sys-badge-wrap rv" style="transition-delay:.25s">
       <div class="hp-sys-badge-main">
-        <span class="bl">A</span><span class="bw">uthority</span>
-        <span class="bl">S</span><span class="bw">earch-to-</span>
-        <span class="bl">P</span><span class="bw">ipeline</span>
+        <span class="bl">S</span><span class="bw">earch &</span>
+        <span class="bl">A</span><span class="bw">I</span>
+        <span class="bl">G</span><span class="bw">rowth</span>
         <span class="bl">E</span><span class="bw">ngine</span>
       </div>
-      <div class="hp-sys-badge-sub">The framework behind every result we deliver</div>
+      <div class="hp-sys-badge-sub">Our proprietary framework for SEO + AI domination</div>
     </div>
 
     <!-- 3-stage pipeline -->
@@ -835,8 +837,8 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       <!-- STAGE 1 -->
       <div class="hp-sys-stage s1" data-delay="0">
         <div class="hp-sys-snum"><span>1</span><span>Build Authority</span></div>
-        <h3>Engineer the foundation AI trusts</h3>
-        <p>We build the semantic architecture that makes Google and AI understand your brand as the definitive expert in your category.</p>
+        <h3>Engineer the foundation that Google and AI both trust</h3>
+        <p>We don't write blog posts. We build the semantic infrastructure that makes AI models cite you and Google rank you. The same architecture powers both.</p>
         <div class="hp-sys-items" id="sysItems1">
           <div class="hp-sys-item" data-delay="0"><div class="hp-sys-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div><div class="hp-sys-item-text"><strong>Semantic Architecture</strong><span>Map your full category topology</span></div></div>
           <div class="hp-sys-item" data-delay="100"><div class="hp-sys-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="hp-sys-item-text"><strong>Entity Optimization</strong><span>Build the knowledge graph AI reads</span></div></div>
@@ -848,8 +850,8 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       <!-- STAGE 2 -->
       <div class="hp-sys-stage s2" data-delay="400">
         <div class="hp-sys-snum"><span>2</span><span>Search Visibility</span></div>
-        <h3>Show up everywhere buyers search</h3>
-        <p>Your buyers don't just use Google anymore. We make you the recommended answer across every platform that influences B2B buying decisions.</p>
+        <h3>Dominate every platform your buyers use</h3>
+        <p>Your ICP doesn't just Google anymore. They ask ChatGPT, Perplexity, Claude, Gemini. SAGE makes you the #1 recommended answer on all of them. Simultaneously.</p>
         <!-- Hub diagram -->
         <div class="hp-sys-hub" id="sysHub">
           <div class="hp-sys-hub-center"><span>Your<br>Brand</span></div>
@@ -867,8 +869,8 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       <!-- STAGE 3 -->
       <div class="hp-sys-stage s3" data-delay="800">
         <div class="hp-sys-snum"><span>3</span><span>Pipeline</span></div>
-        <h3>Convert visibility into revenue</h3>
-        <p>Visibility without pipeline is vanity. We track every citation, every click, every demo back to the content that drove it.</p>
+        <h3>Turn every citation into revenue</h3>
+        <p>We don't report on traffic. We report on pipeline. Every AI citation, every Google ranking, tracked to demos booked and revenue generated.</p>
         <div class="hp-sys-metrics" id="sysMetrics">
           <div class="hp-sys-metric" data-delay="0"><div class="hp-sys-metric-val">47</div><div class="hp-sys-metric-text"><strong>Demos/Month</strong><span>Inbound from search + AI citations</span></div></div>
           <div class="hp-sys-metric" data-delay="150"><div class="hp-sys-metric-val">$1.2M</div><div class="hp-sys-metric-text"><strong>Pipeline Generated</strong><span>Attributed to organic + AI in 6 months</span></div></div>
@@ -892,7 +894,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       </div>
     </div>
 
-    <div class="hp-sys-tagline rv" style="transition-delay:.5s">80% of SEO and GEO work overlaps. ASTPE runs one engine that handles both.</div>
+    <div class="hp-sys-tagline rv" style="transition-delay:.5s">80% of SEO and GEO work overlaps. SAGE is the only engine that runs both from a single system.</div>
   </div>
 </section>
 
@@ -921,7 +923,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
     <h2 class="s-h rv" style="transition-delay:.1s">Real numbers from real clients.</h2>
     <div class="hp-ba">
       <div class="hp-ba-card before rv" style="transition-delay:.2s">
-        <div class="hp-ba-label">Before ASTPE</div>
+        <div class="hp-ba-label">Before SAGE</div>
         <div class="hp-ba-stat"><span>Daily clicks</span><span>73</span></div>
         <div class="hp-ba-stat"><span>AI citations</span><span>0</span></div>
         <div class="hp-ba-stat"><span>Demos from organic</span><span>0</span></div>
@@ -929,7 +931,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       </div>
       <div class="hp-ba-vs rv" style="transition-delay:.3s">vs</div>
       <div class="hp-ba-card after rv" style="transition-delay:.4s">
-        <div class="hp-ba-label">After ASTPE &mdash; 4 Months</div>
+        <div class="hp-ba-label">After SAGE &mdash; 4 Months</div>
         <div class="hp-ba-stat"><span>Daily clicks</span><span>2,500+</span></div>
         <div class="hp-ba-stat"><span>AI citations</span><span>4,244</span></div>
         <div class="hp-ba-stat"><span>Demo increase</span><span>+89%</span></div>
@@ -1041,7 +1043,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       </div>
       <div class="hp-faq-item rv" style="transition-delay:.2s">
         <div class="faq-q"><span>How do I get recommended by ChatGPT?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Three things: semantic authority across your full category, entity recognition by AI models, and information uniqueness that gives AI a reason to cite you over competitors. Our ASTPE system builds all three.</p></div>
+        <div class="faq-a"><p>Three things: semantic authority across your full category, entity recognition by AI models, and information uniqueness that gives AI a reason to cite you over competitors. Our SAGE engine builds all three.</p></div>
       </div>
       <div class="hp-faq-item rv" style="transition-delay:.25s">
         <div class="faq-q"><span>What if it doesn&rsquo;t work?</span><span class="faq-icon">+</span></div>
@@ -1243,7 +1245,7 @@ const cbObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.cb-fill').forEach(el => cbObs.observe(el));
 
-// ── ASTPE pipeline animations ──
+// ── SAGE pipeline animations ──
 const sysObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
