@@ -39,21 +39,6 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   width:100%;height:100%;object-fit:cover;
 }
 
-/* Sharp mockup image — sits precisely on laptop screen in last frame */
-.sharp-mockup{
-  position:absolute;
-  left:17%;right:17%;
-  top:0;height:83%;
-  z-index:4;
-  opacity:0;will-change:opacity;
-  pointer-events:none;
-  overflow:hidden;
-  border-radius:0 0 5px 5px;
-}
-.sharp-mockup img{
-  width:100%;height:100%;
-  object-fit:cover;object-position:center top;
-}
 
 /* Overlay — light gradient for text readability */
 .hero-overlay{position:absolute;inset:0;z-index:2;pointer-events:none;
@@ -426,10 +411,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
     <!-- SCROLL-SCRUBBED CANVAS (frame sequence from video) -->
     <div class="hero-video" id="heroVideo">
       <canvas id="heroCanvas"></canvas>
-      <!-- Sharp mockup fades in as video gets blurry at end of zoom -->
-      <div class="sharp-mockup" id="sharpMockup">
-        <img src="final-mockup.png" alt="">
-      </div>
+
       <div class="hero-overlay" id="overlay"></div>
       <div class="hero-vignette"></div>
     </div>
@@ -865,7 +847,6 @@ drawFrame(0);
 
 const heroVideo=document.getElementById('heroVideo');
 const laptopAnno=document.getElementById('laptopAnno');
-const sharpMockup=document.getElementById('sharpMockup');
 const ov=document.getElementById('overlay');
 const htxt=document.getElementById('htxt');
 const navbar=document.getElementById('navbar');
@@ -901,27 +882,25 @@ function tick(){
   if(p===lp)return;lp=p;
 
   // ═══ MERCURY TECHNIQUE: Draw frame by scroll position ═══
-  const videoProgress = r(p, 0, 0.25);
-  const frameIdx = Math.floor(videoProgress * (frameImages.length - 1));
+  // Cap at frame 20 — frames 21-28 are blurry from CapCut digital zoom
+  const videoProgress = r(p, 0, 0.22);
+  const frameIdx = Math.min(20, Math.floor(videoProgress * (frameImages.length - 1)));
   lastDrawnFrame = frameIdx;
   drawFrame(frameIdx);
 
-  // Sharp mockup fades in over the blurry last ~30% of the zoom
-  sharpMockup.style.opacity = eo(r(videoProgress, 0.70, 0.98));
-
   // Fade text + navbar (0→8%)
   const textFade=1-r(p,0,0.08);
-  s(htxt,{opacity:textFade,transform:`translateY(${-r(p,0,0.25)*60}px)`});
+  s(htxt,{opacity:textFade,transform:`translateY(${-r(p,0,0.22)*60}px)`});
   navbar.style.opacity=textFade;
   laptopAnno.style.opacity=1-r(p,0,0.06);
   shint.style.opacity=1-r(p,0,0.02);
 
   // Fade overlay during zoom
-  ov.style.opacity=1-r(p,0.15,0.25);
+  ov.style.opacity=1-r(p,0.12,0.22);
 
-  // At end of video (25%), crossfade to mockup layer
-  heroVideo.style.opacity=1-r(p,0.24,0.28);
-  const mockIn=r(p,0.24,0.28);
+  // Crossfade to mockup layer right as zoom ends (scroll 22-26%)
+  heroVideo.style.opacity=1-r(p,0.22,0.26);
+  const mockIn=r(p,0.22,0.26);
   mock.style.opacity=mockIn;
   mock.classList.toggle('visible',mockIn>0.1);
 
