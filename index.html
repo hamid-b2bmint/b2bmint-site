@@ -762,47 +762,50 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 /* ── Footer ── */
 .cta-bottom{background:var(--forest-deep);position:relative;z-index:1;overflow:hidden}
 
-/* decorative SVG ornaments — left & right */
-.ft-ornament{position:absolute;pointer-events:none;opacity:.06}
-.ft-ornament svg{width:100%;height:100%}
-.ft-ornament-l{left:-20px;bottom:60px;width:200px;height:200px;animation:ftOrnFloat 8s ease-in-out infinite}
-.ft-ornament-r{right:-10px;top:40px;width:160px;height:160px;animation:ftOrnFloat 10s ease-in-out infinite;animation-delay:-3s}
-@keyframes ftOrnFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(3deg)}}
-
-/* animated outlined brand text */
-.ft-brand-art{max-width:1100px;margin:0 auto;padding:56px 40px 0;position:relative;overflow:hidden}
-.ft-outline{font-family:Recoleta,serif;font-size:clamp(56px,9vw,120px);font-weight:700;line-height:.88;letter-spacing:-.03em;-webkit-text-stroke:1.5px rgba(125,255,179,.1);-webkit-text-fill-color:transparent;user-select:none;background:linear-gradient(90deg,rgba(125,255,179,.03),rgba(125,255,179,.08),rgba(125,255,179,.03));background-size:200% 100%;-webkit-background-clip:text;animation:ftTextShimmer 6s ease-in-out infinite}
-.ft-outline span{-webkit-text-stroke-color:rgba(125,255,179,.22)}
-@keyframes ftTextShimmer{0%,100%{background-position:200% 0}50%{background-position:-200% 0}}
-/* footer nav row */
-.ft-row{max-width:1100px;margin:0 auto;padding:40px 40px 0;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
-/* brand col */
-.ft-logo{display:flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:14px}
-.ft-logo-icon{width:28px;height:28px;border-radius:8px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--forest-deep);box-shadow:0 0 16px rgba(125,255,179,.15);animation:ftLogoGlow 4s ease-in-out infinite}
-@keyframes ftLogoGlow{0%,100%{box-shadow:0 0 16px rgba(125,255,179,.1)}50%{box-shadow:0 0 28px rgba(125,255,179,.25)}}
-.ft-logo-text{font-family:Recoleta,serif;font-size:17px;font-weight:700;color:#fff}
+/* ── top row: logo + social ── */
+.ft-topbar{max-width:1100px;margin:0 auto;padding:56px 40px 0;display:flex;justify-content:space-between;align-items:center}
+.ft-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.ft-logo-icon{width:32px;height:32px;border-radius:10px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--forest-deep)}
+.ft-logo-text{font-family:Recoleta,serif;font-size:20px;font-weight:700;color:#fff}
 .ft-logo-text span{color:var(--lime)}
-.ft-brand-desc{font-size:13px;line-height:1.6;color:rgba(255,255,255,.2);margin-bottom:20px;max-width:240px}
-.ft-socials{display:flex;gap:8px}
-.ft-socials a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;transition:all .3s;text-decoration:none}
-.ft-socials a:hover{border-color:var(--lime);background:rgba(125,255,179,.06);transform:translateY(-2px)}
-.ft-socials a svg{width:14px;height:14px;fill:rgba(255,255,255,.25);transition:fill .3s}
+.ft-socials{display:flex;gap:10px}
+.ft-socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:all .3s;text-decoration:none}
+.ft-socials a:hover{border-color:var(--lime);background:rgba(125,255,179,.08);transform:translateY(-2px)}
+.ft-socials a svg{width:16px;height:16px;fill:rgba(255,255,255,.4);transition:fill .3s}
 .ft-socials a:hover svg{fill:var(--lime)}
-/* link cols */
-.ft-col-title{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.12);margin-bottom:18px}
-.ft-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
-.ft-links a{color:rgba(255,255,255,.3);text-decoration:none;font-size:14px;font-weight:500;transition:all .3s;display:inline-block}
-.ft-links a:hover{color:var(--lime);transform:translateX(4px)}
-.ft-links a::before{content:'';display:inline-block;width:0;height:1px;background:var(--lime);vertical-align:middle;margin-right:0;transition:all .3s}
-.ft-links a:hover::before{width:12px;margin-right:8px}
-/* animated top border */
-.ft-glow-line{height:1px;background:linear-gradient(90deg,transparent,rgba(125,255,179,.15),rgba(125,255,179,.3),rgba(125,255,179,.15),transparent);background-size:200% 100%;animation:ftGlowSlide 4s linear infinite;margin-bottom:0}
-@keyframes ftGlowSlide{0%{background-position:200% 0}100%{background-position:-200% 0}}
-/* bottom bar */
-.ft-bottom{max-width:1100px;margin:0 auto;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.04);margin-top:40px;flex-wrap:wrap;gap:12px}
-.ft-copy{font-size:12px;color:rgba(255,255,255,.12)}
-.ft-legal{display:flex;gap:20px}
-.ft-legal a{font-size:12px;color:rgba(255,255,255,.12);text-decoration:none;transition:color .3s}
+
+/* ── centered nav ── */
+.ft-nav-center{text-align:center;padding:48px 40px;max-width:700px;margin:0 auto}
+.ft-nav{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;align-items:center}
+.ft-nav a{color:rgba(255,255,255,.5);text-decoration:none;font-size:17px;font-weight:600;transition:all .3s;display:inline-block;letter-spacing:.3px}
+.ft-nav a:hover{color:var(--lime);letter-spacing:1.5px}
+
+/* ── decorative badge strip ── */
+.ft-badge-strip{position:relative;padding:32px 40px;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:0}
+/* left badge */
+.ft-badge{flex-shrink:0;opacity:.35;animation:ftBadgeFloat 7s ease-in-out infinite}
+.ft-badge:last-child{animation-delay:-3.5s}
+@keyframes ftBadgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.ft-badge svg{display:block}
+/* center line + statement */
+.ft-statement{flex:1;display:flex;align-items:center;gap:0;padding:0 16px}
+.ft-statement-line{flex:1;height:1px;background:rgba(255,255,255,.12);position:relative}
+.ft-statement-line::before{content:'';position:absolute;width:6px;height:6px;border-radius:50%;background:rgba(125,255,179,.3);top:-2.5px}
+.ft-statement-line:first-child::before{right:0}
+.ft-statement-line:last-child::before{left:0}
+.ft-statement-text{padding:0 20px;white-space:nowrap;font-family:Recoleta,serif;font-size:clamp(14px,2vw,18px);color:rgba(255,255,255,.5);font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.ft-statement-text strong{color:var(--lime);font-size:1.3em}
+
+/* ── bottom bar ── */
+.ft-bottom{max-width:1100px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.05);margin-top:20px;flex-wrap:wrap;gap:12px}
+.ft-bottom-logo{font-family:Recoleta,serif;font-size:15px;font-weight:700;color:rgba(255,255,255,.15)}
+.ft-bottom-logo span{color:rgba(125,255,179,.2)}
+.ft-bottom-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:1px solid rgba(255,255,255,.12);border-radius:60px;color:rgba(255,255,255,.5);font-size:13px;font-weight:700;text-decoration:none;transition:all .3s}
+.ft-bottom-cta:hover{border-color:var(--lime);color:var(--lime);transform:translateY(-2px)}
+.ft-bottom-cta svg{width:14px;height:14px}
+.ft-copy{font-size:11px;color:rgba(255,255,255,.1)}
+.ft-legal{display:flex;gap:16px}
+.ft-legal a{font-size:11px;color:rgba(255,255,255,.1);text-decoration:none;transition:color .3s}
 .ft-legal a:hover{color:rgba(255,255,255,.4)}
 
 /* ── Responsive ── */
@@ -833,12 +836,13 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   .hp-cta-eyebrow{text-align:center}
   .hp-cta-btn{align-self:center}
   .hp-cta-stats{justify-content:center}
-  .ft-brand-art{padding:40px 20px 0}
-  .ft-row{grid-template-columns:1fr 1fr;gap:28px;padding:32px 20px 0}
-  .ft-bottom{padding:20px;margin-top:28px}
-  .ft-bottom{flex-direction:column;text-align:center}
+  .ft-topbar{padding:40px 20px 0}
+  .ft-nav-center{padding:32px 20px}
+  .ft-nav a{font-size:15px}
+  .ft-badge-strip{padding:24px 20px;flex-wrap:wrap;gap:20px}
+  .ft-badge svg{width:100px;height:100px}
+  .ft-bottom{padding:20px;margin-top:16px;flex-direction:column;text-align:center;gap:16px}
   .ft-legal{justify-content:center}
-  .s-footer .s-inner{padding:0 20px}
 }
 
 </style>
@@ -1472,80 +1476,73 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
   <!-- Footer -->
   <footer class="cta-bottom">
-    <!-- Animated glow line at top -->
-    <div class="ft-glow-line"></div>
 
-    <!-- Left ornament — mint leaf/growth badge -->
-    <div class="ft-ornament ft-ornament-l">
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="90" stroke="#7DFFB3" stroke-width="1"/>
-        <circle cx="100" cy="100" r="70" stroke="#7DFFB3" stroke-width=".5"/>
-        <path d="M100 30 C100 30 130 70 130 100 C130 130 100 170 100 170 C100 170 70 130 70 100 C70 70 100 30 100 30Z" stroke="#7DFFB3" stroke-width="1" fill="rgba(125,255,179,.05)"/>
-        <line x1="100" y1="30" x2="100" y2="170" stroke="#7DFFB3" stroke-width=".5"/>
-        <line x1="55" y1="65" x2="145" y2="135" stroke="#7DFFB3" stroke-width=".3"/>
-        <line x1="55" y1="135" x2="145" y2="65" stroke="#7DFFB3" stroke-width=".3"/>
-        <text x="100" y="105" text-anchor="middle" fill="#7DFFB3" font-size="14" font-weight="700" font-family="Recoleta,serif">MINT</text>
-      </svg>
+    <!-- Top: Logo + Socials -->
+    <div class="ft-topbar">
+      <a href="#" class="ft-logo">
+        <div class="ft-logo-icon">B</div>
+        <div class="ft-logo-text">B2B<span>Mint</span></div>
+      </a>
+      <div class="ft-socials">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      </div>
     </div>
 
-    <!-- Right ornament — growth/upward badge -->
-    <div class="ft-ornament ft-ornament-r">
-      <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="10" y="10" width="140" height="140" rx="70" stroke="#7DFFB3" stroke-width="1"/>
-        <path d="M80 120 L80 50 M60 70 L80 50 L100 70" stroke="#7DFFB3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="80" cy="42" r="4" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width=".5"/>
-        <text x="80" y="140" text-anchor="middle" fill="#7DFFB3" font-size="8" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif">GROWTH</text>
-      </svg>
+    <!-- Center: Vertical nav -->
+    <div class="ft-nav-center">
+      <ul class="ft-nav">
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Results</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
     </div>
 
-    <!-- Large outlined brand text -->
-    <div class="ft-brand-art">
-      <div class="ft-outline">Discover. Rank.<br>Get <span>Chosen.</span></div>
-    </div>
-    <!-- Nav row -->
-    <div class="ft-row">
-      <div>
-        <a href="#" class="ft-logo">
-          <div class="ft-logo-icon">B</div>
-          <div class="ft-logo-text">B2B<span>Mint</span></div>
-        </a>
-        <p class="ft-brand-desc">Search &amp; AI visibility engine for B2B SaaS companies.</p>
-        <div class="ft-socials">
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
-          <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-        </div>
+    <!-- Decorative badge strip: [SAGE badge] ——— WE BUILD 100% VISIBILITY ——— [MINT badge] -->
+    <div class="ft-badge-strip">
+      <!-- Left badge — SAGE emblem -->
+      <div class="ft-badge">
+        <svg width="140" height="140" viewBox="0 0 140 140" fill="none">
+          <circle cx="70" cy="70" r="64" stroke="rgba(125,255,179,.4)" stroke-width="1"/>
+          <circle cx="70" cy="70" r="52" stroke="rgba(125,255,179,.2)" stroke-width=".5"/>
+          <path d="M70 20 C85 45 95 55 95 70 C95 85 85 100 70 120 C55 100 45 85 45 70 C45 55 55 45 70 20Z" stroke="rgba(125,255,179,.35)" stroke-width="1" fill="rgba(125,255,179,.04)"/>
+          <path d="M50 40 C55 55 55 85 50 100" stroke="rgba(125,255,179,.15)" stroke-width=".5" fill="none"/>
+          <path d="M90 40 C85 55 85 85 90 100" stroke="rgba(125,255,179,.15)" stroke-width=".5" fill="none"/>
+          <text x="70" y="67" text-anchor="middle" fill="rgba(125,255,179,.5)" font-size="16" font-weight="700" font-family="Recoleta,serif">SAGE</text>
+          <text x="70" y="80" text-anchor="middle" fill="rgba(125,255,179,.25)" font-size="6" font-weight="600" letter-spacing="2.5" font-family="Inter,sans-serif">ENGINE</text>
+        </svg>
       </div>
-      <div>
-        <div class="ft-col-title">Navigate</div>
-        <ul class="ft-links">
-          <li><a href="#">How It Works</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Results</a></li>
-          <li><a href="#">FAQ</a></li>
-        </ul>
+
+      <!-- Center statement -->
+      <div class="ft-statement">
+        <div class="ft-statement-line"></div>
+        <div class="ft-statement-text">We build <strong>100%</strong> visibility</div>
+        <div class="ft-statement-line"></div>
       </div>
-      <div>
-        <div class="ft-col-title">Services</div>
-        <ul class="ft-links">
-          <li><a href="#">B2B SEO</a></li>
-          <li><a href="#">AI Visibility</a></li>
-          <li><a href="#">Content Strategy</a></li>
-          <li><a href="#">Technical SEO</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="ft-col-title">Connect</div>
-        <ul class="ft-links">
-          <li><a href="https://calendly.com/hamid-b2bmint/30min">Book a Call</a></li>
-          <li><a href="mailto:hamid@b2bmint.com">hamid@b2bmint.com</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
+
+      <!-- Right badge — MINT emblem -->
+      <div class="ft-badge">
+        <svg width="140" height="140" viewBox="0 0 140 140" fill="none">
+          <circle cx="70" cy="70" r="64" stroke="rgba(125,255,179,.4)" stroke-width="1"/>
+          <circle cx="70" cy="70" r="52" stroke="rgba(125,255,179,.2)" stroke-width=".5"/>
+          <path d="M70 30 L70 110 M50 50 L70 30 L90 50" stroke="rgba(125,255,179,.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="70" cy="25" r="5" stroke="rgba(125,255,179,.3)" stroke-width="1" fill="rgba(125,255,179,.06)"/>
+          <path d="M55 70 L45 85 M85 70 L95 85" stroke="rgba(125,255,179,.15)" stroke-width=".5"/>
+          <text x="70" y="105" text-anchor="middle" fill="rgba(125,255,179,.5)" font-size="12" font-weight="700" font-family="Recoleta,serif">MINT</text>
+          <text x="70" y="116" text-anchor="middle" fill="rgba(125,255,179,.25)" font-size="6" font-weight="600" letter-spacing="2.5" font-family="Inter,sans-serif">GROWTH</text>
+        </svg>
       </div>
     </div>
+
+    <!-- Bottom bar -->
     <div class="ft-bottom">
-      <div class="ft-copy">&copy; 2025 B2BMint. All rights reserved.</div>
+      <div class="ft-bottom-logo">B2B<span>Mint</span></div>
+      <a href="https://calendly.com/hamid-b2bmint/30min" class="ft-bottom-cta">Book a Strategy Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <div class="ft-legal">
+        <div class="ft-copy">&copy; 2025 B2BMint</div>
         <a href="#">Privacy</a>
         <a href="#">Terms</a>
       </div>
