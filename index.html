@@ -760,16 +760,26 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-cta-stat .lbl{font-size:11px;color:rgba(9,56,41,.3);margin-top:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
 
 /* ── Footer ── */
-.cta-bottom{background:var(--forest-deep);position:relative;z-index:1}
-/* large outlined brand text */
+.cta-bottom{background:var(--forest-deep);position:relative;z-index:1;overflow:hidden}
+
+/* decorative SVG ornaments — left & right */
+.ft-ornament{position:absolute;pointer-events:none;opacity:.06}
+.ft-ornament svg{width:100%;height:100%}
+.ft-ornament-l{left:-20px;bottom:60px;width:200px;height:200px;animation:ftOrnFloat 8s ease-in-out infinite}
+.ft-ornament-r{right:-10px;top:40px;width:160px;height:160px;animation:ftOrnFloat 10s ease-in-out infinite;animation-delay:-3s}
+@keyframes ftOrnFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(3deg)}}
+
+/* animated outlined brand text */
 .ft-brand-art{max-width:1100px;margin:0 auto;padding:56px 40px 0;position:relative;overflow:hidden}
-.ft-outline{font-family:Recoleta,serif;font-size:clamp(56px,9vw,120px);font-weight:700;line-height:.88;letter-spacing:-.03em;-webkit-text-stroke:1px rgba(125,255,179,.08);-webkit-text-fill-color:transparent;user-select:none}
-.ft-outline span{-webkit-text-stroke-color:rgba(125,255,179,.18);-webkit-text-fill-color:rgba(125,255,179,.03)}
+.ft-outline{font-family:Recoleta,serif;font-size:clamp(56px,9vw,120px);font-weight:700;line-height:.88;letter-spacing:-.03em;-webkit-text-stroke:1.5px rgba(125,255,179,.1);-webkit-text-fill-color:transparent;user-select:none;background:linear-gradient(90deg,rgba(125,255,179,.03),rgba(125,255,179,.08),rgba(125,255,179,.03));background-size:200% 100%;-webkit-background-clip:text;animation:ftTextShimmer 6s ease-in-out infinite}
+.ft-outline span{-webkit-text-stroke-color:rgba(125,255,179,.22)}
+@keyframes ftTextShimmer{0%,100%{background-position:200% 0}50%{background-position:-200% 0}}
 /* footer nav row */
 .ft-row{max-width:1100px;margin:0 auto;padding:40px 40px 0;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
 /* brand col */
 .ft-logo{display:flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:14px}
-.ft-logo-icon{width:28px;height:28px;border-radius:8px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--forest-deep)}
+.ft-logo-icon{width:28px;height:28px;border-radius:8px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--forest-deep);box-shadow:0 0 16px rgba(125,255,179,.15);animation:ftLogoGlow 4s ease-in-out infinite}
+@keyframes ftLogoGlow{0%,100%{box-shadow:0 0 16px rgba(125,255,179,.1)}50%{box-shadow:0 0 28px rgba(125,255,179,.25)}}
 .ft-logo-text{font-family:Recoleta,serif;font-size:17px;font-weight:700;color:#fff}
 .ft-logo-text span{color:var(--lime)}
 .ft-brand-desc{font-size:13px;line-height:1.6;color:rgba(255,255,255,.2);margin-bottom:20px;max-width:240px}
@@ -781,8 +791,13 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 /* link cols */
 .ft-col-title{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.12);margin-bottom:18px}
 .ft-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
-.ft-links a{color:rgba(255,255,255,.3);text-decoration:none;font-size:14px;font-weight:500;transition:color .3s}
-.ft-links a:hover{color:var(--lime)}
+.ft-links a{color:rgba(255,255,255,.3);text-decoration:none;font-size:14px;font-weight:500;transition:all .3s;display:inline-block}
+.ft-links a:hover{color:var(--lime);transform:translateX(4px)}
+.ft-links a::before{content:'';display:inline-block;width:0;height:1px;background:var(--lime);vertical-align:middle;margin-right:0;transition:all .3s}
+.ft-links a:hover::before{width:12px;margin-right:8px}
+/* animated top border */
+.ft-glow-line{height:1px;background:linear-gradient(90deg,transparent,rgba(125,255,179,.15),rgba(125,255,179,.3),rgba(125,255,179,.15),transparent);background-size:200% 100%;animation:ftGlowSlide 4s linear infinite;margin-bottom:0}
+@keyframes ftGlowSlide{0%{background-position:200% 0}100%{background-position:-200% 0}}
 /* bottom bar */
 .ft-bottom{max-width:1100px;margin:0 auto;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.04);margin-top:40px;flex-wrap:wrap;gap:12px}
 .ft-copy{font-size:12px;color:rgba(255,255,255,.12)}
@@ -1457,6 +1472,32 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
   <!-- Footer -->
   <footer class="cta-bottom">
+    <!-- Animated glow line at top -->
+    <div class="ft-glow-line"></div>
+
+    <!-- Left ornament — mint leaf/growth badge -->
+    <div class="ft-ornament ft-ornament-l">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="90" stroke="#7DFFB3" stroke-width="1"/>
+        <circle cx="100" cy="100" r="70" stroke="#7DFFB3" stroke-width=".5"/>
+        <path d="M100 30 C100 30 130 70 130 100 C130 130 100 170 100 170 C100 170 70 130 70 100 C70 70 100 30 100 30Z" stroke="#7DFFB3" stroke-width="1" fill="rgba(125,255,179,.05)"/>
+        <line x1="100" y1="30" x2="100" y2="170" stroke="#7DFFB3" stroke-width=".5"/>
+        <line x1="55" y1="65" x2="145" y2="135" stroke="#7DFFB3" stroke-width=".3"/>
+        <line x1="55" y1="135" x2="145" y2="65" stroke="#7DFFB3" stroke-width=".3"/>
+        <text x="100" y="105" text-anchor="middle" fill="#7DFFB3" font-size="14" font-weight="700" font-family="Recoleta,serif">MINT</text>
+      </svg>
+    </div>
+
+    <!-- Right ornament — growth/upward badge -->
+    <div class="ft-ornament ft-ornament-r">
+      <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="10" width="140" height="140" rx="70" stroke="#7DFFB3" stroke-width="1"/>
+        <path d="M80 120 L80 50 M60 70 L80 50 L100 70" stroke="#7DFFB3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="80" cy="42" r="4" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width=".5"/>
+        <text x="80" y="140" text-anchor="middle" fill="#7DFFB3" font-size="8" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif">GROWTH</text>
+      </svg>
+    </div>
+
     <!-- Large outlined brand text -->
     <div class="ft-brand-art">
       <div class="ft-outline">Discover. Rank.<br>Get <span>Chosen.</span></div>
