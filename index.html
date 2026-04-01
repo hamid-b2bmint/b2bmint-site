@@ -551,20 +551,34 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-ba-vs-circle{width:52px;height:52px;border-radius:50%;background:var(--forest-deep);color:var(--lime);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;box-shadow:0 4px 16px rgba(10,61,32,.2)}
 /* Case study cards */
 .hp-cases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
-.hp-case{border-radius:20px;padding:0;overflow:hidden;background:#fff;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 3px rgba(0,0,0,.03),0 8px 28px rgba(0,0,0,.05);opacity:0;transform:translateY(16px);transition:all .5s ease;cursor:default}
+.hp-case{border-radius:20px;padding:0;overflow:hidden;opacity:0;transform:translateY(16px);transition:all .5s ease;cursor:default;position:relative}
 .hp-case.show{opacity:1;transform:translateY(0)}
-.hp-case:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
-.hp-case-head{padding:24px 24px 16px;position:relative}
-.hp-case-head::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
-.hp-case:nth-child(1) .hp-case-head::before{background:linear-gradient(90deg,#C6F5E2,#D2FFC1)}
-.hp-case:nth-child(2) .hp-case-head::before{background:linear-gradient(90deg,#CEEBFF,#E8D8FF)}
-.hp-case:nth-child(3) .hp-case-head::before{background:linear-gradient(90deg,#FFD6E8,#FFE0C8)}
-.hp-case h3{font-family:var(--display);font-size:20px;font-weight:700;margin-bottom:4px;color:var(--forest-deep)}
-.hp-case .hp-case-sub{font-size:13px;color:rgba(0,0,0,.45)}
-.hp-case-stats{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0 24px 24px}
-.hp-case-stat{padding:14px 0;border-bottom:1px solid rgba(0,0,0,.04)}
-.hp-case-stat:nth-last-child(-n+2){border-bottom:none}
-.hp-case-stat strong{display:block;font-family:var(--display);font-size:22px;font-weight:700;color:var(--forest-deep);line-height:1;margin-bottom:2px}
+.hp-case:hover{transform:translateY(-4px)}
+.hp-case:nth-child(1){background:#C6F5E2}
+.hp-case:nth-child(2){background:#CEEBFF}
+.hp-case:nth-child(3){background:#FFD6E8}
+.hp-case:nth-child(1):hover{background:#B5EDCF}
+.hp-case:nth-child(2):hover{background:#BBE0FF}
+.hp-case:nth-child(3):hover{background:#FFC4DC}
+.hp-case-head{padding:28px 28px 16px;position:relative}
+.hp-case-badge{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:4px 10px;border-radius:20px;margin-bottom:12px}
+.hp-case:nth-child(1) .hp-case-badge{background:rgba(14,84,44,.1);color:#0E542C}
+.hp-case:nth-child(2) .hp-case-badge{background:rgba(0,67,210,.08);color:#0043D2}
+.hp-case:nth-child(3) .hp-case-badge{background:rgba(192,0,107,.08);color:#C0006B}
+.hp-case h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:6px}
+.hp-case:nth-child(1) h3{color:#063D1A}
+.hp-case:nth-child(2) h3{color:#001D66}
+.hp-case:nth-child(3) h3{color:#8A004E}
+.hp-case .hp-case-sub{font-size:13px;line-height:1.5}
+.hp-case:nth-child(1) .hp-case-sub{color:rgba(6,61,26,.5)}
+.hp-case:nth-child(2) .hp-case-sub{color:rgba(0,29,102,.45)}
+.hp-case:nth-child(3) .hp-case-sub{color:rgba(138,0,78,.4)}
+.hp-case-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:4px 28px 28px}
+.hp-case-stat{padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.5)}
+.hp-case-stat strong{display:block;font-family:var(--display);font-size:24px;font-weight:700;line-height:1;margin-bottom:3px}
+.hp-case:nth-child(1) .hp-case-stat strong{color:#0E542C}
+.hp-case:nth-child(2) .hp-case-stat strong{color:#0043D2}
+.hp-case:nth-child(3) .hp-case-stat strong{color:#8A004E}
 .hp-case-stat span{font-size:11px;color:rgba(0,0,0,.4)}
 /* Testimonial */
 .hp-testimonial{margin-top:56px;max-width:740px;margin-left:auto;margin-right:auto;padding:40px 48px;background:#fff;border-radius:20px;border:1px solid rgba(0,0,0,.06);position:relative;display:flex;gap:28px;align-items:flex-start}
@@ -1041,6 +1055,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
     <div class="hp-cases" id="proofCases">
       <div class="hp-case" data-delay="0">
         <div class="hp-case-head">
+          <div class="hp-case-badge">B2B SaaS</div>
           <h3>Email SaaS</h3>
           <div class="hp-case-sub">4,244 AI citations. $1.2M pipeline in 6 months.</div>
         </div>
@@ -1053,6 +1068,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       </div>
       <div class="hp-case" data-delay="150">
         <div class="hp-case-head">
+          <div class="hp-case-badge">Data Platform</div>
           <h3>BookYourData</h3>
           <div class="hp-case-sub">$1M to $5M+ revenue. 511 AI Overview citations.</div>
         </div>
@@ -1065,6 +1081,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       </div>
       <div class="hp-case" data-delay="300">
         <div class="hp-case-head">
+          <div class="hp-case-badge">Agency</div>
           <h3>Socially Powerful</h3>
           <div class="hp-case-sub">1,500 to 26K+ monthly traffic. Page 1 UK rankings.</div>
         </div>
