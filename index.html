@@ -739,11 +739,16 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 /* CTA card — white card on dark bg */
 .hp-cta-card{background:#fff;border-radius:24px;display:grid;grid-template-columns:1fr 1.1fr;overflow:hidden;position:relative;min-height:460px;box-shadow:0 30px 80px rgba(0,0,0,.3)}
 
-/* photo side — mint bg */
+/* photo side — mint bg + geometric shapes */
 .hp-cta-photo{position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:var(--mint-bg)}
-.hp-cta-photo img{position:relative;z-index:2;width:340px;max-width:100%;display:block;object-fit:contain;filter:drop-shadow(0 8px 30px rgba(9,56,41,.12))}
+.hp-cta-photo img{position:relative;z-index:3;width:340px;max-width:100%;display:block;object-fit:contain;filter:grayscale(100%) contrast(1.05) drop-shadow(0 8px 30px rgba(9,56,41,.15))}
+/* geometric shapes behind photo */
+.hp-cta-geo{position:absolute;z-index:1;border-radius:50%;pointer-events:none}
+.hp-cta-geo-1{width:220px;height:220px;background:var(--forest-deep);top:-20px;left:-30px;border-radius:0 0 100% 0}
+.hp-cta-geo-2{width:180px;height:180px;border:2px solid rgba(125,255,179,.3);top:80px;left:20px}
+.hp-cta-geo-3{width:120px;height:120px;background:rgba(125,255,179,.15);bottom:120px;left:0;border-radius:0 50% 50% 0}
 /* glow behind photo */
-.hp-cta-glow{position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(125,255,179,.25),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);z-index:0}
+.hp-cta-glow{position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(125,255,179,.2),transparent 70%);top:45%;left:50%;transform:translate(-50%,-50%);z-index:2}
 
 /* content side */
 .hp-cta-content{padding:56px 48px 56px 40px;display:flex;flex-direction:column;justify-content:center}
@@ -1452,6 +1457,9 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       <div class="hp-cta-card rv">
         <!-- Photo side -->
         <div class="hp-cta-photo">
+          <div class="hp-cta-geo hp-cta-geo-1"></div>
+          <div class="hp-cta-geo hp-cta-geo-2"></div>
+          <div class="hp-cta-geo hp-cta-geo-3"></div>
           <div class="hp-cta-glow"></div>
           <img src="hamid-khan.png" alt="Hamid Khan, Founder of B2BMint" loading="lazy">
         </div>
