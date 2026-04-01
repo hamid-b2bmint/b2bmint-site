@@ -694,17 +694,10 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-svc-more-card{display:flex;align-items:flex-start;gap:14px;padding:22px 24px;border-radius:16px;opacity:0;transform:translateY(12px);transition:all .4s ease;cursor:default}
 .hp-svc-more-card.show{opacity:1;transform:translateY(0)}
 .hp-svc-more-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
-/* All cards same neutral — clean, not competing with core cards */
-.hp-svc-more-card{background:#f4f5f7}
-.hp-svc-more-card:hover{background:#ecedf0}
-.hp-svc-more-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.hp-svc-more-icon svg{width:20px;height:20px}
-.hp-svc-more-card:nth-child(1) .hp-svc-more-icon{background:#E8F0FE}.hp-svc-more-card:nth-child(1) .hp-svc-more-icon svg{color:#1A73E8}
-.hp-svc-more-card:nth-child(2) .hp-svc-more-icon{background:#F3E8FF}.hp-svc-more-card:nth-child(2) .hp-svc-more-icon svg{color:#7B3DC5}
-.hp-svc-more-card:nth-child(3) .hp-svc-more-icon{background:#FFF3E0}.hp-svc-more-card:nth-child(3) .hp-svc-more-icon svg{color:#E67E00}
-.hp-svc-more-card:nth-child(4) .hp-svc-more-icon{background:#E8F0FE}.hp-svc-more-card:nth-child(4) .hp-svc-more-icon svg{color:#1A73E8}
-.hp-svc-more-card:nth-child(5) .hp-svc-more-icon{background:#F3E8FF}.hp-svc-more-card:nth-child(5) .hp-svc-more-icon svg{color:#7B3DC5}
-.hp-svc-more-card:nth-child(6) .hp-svc-more-icon{background:#FFF3E0}.hp-svc-more-card:nth-child(6) .hp-svc-more-icon svg{color:#E67E00}
+.hp-svc-more-card{background:var(--mint-bg)}
+.hp-svc-more-card:hover{background:#C8F0C0}
+.hp-svc-more-icon{width:44px;height:44px;border-radius:12px;background:var(--forest-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hp-svc-more-icon svg{width:20px;height:20px;color:var(--lime)}
 .hp-svc-more-text h4{font-size:14px;font-weight:700;color:var(--forest-deep);margin-bottom:4px}
 .hp-svc-more-text p{font-size:12px;color:rgba(0,0,0,.45);line-height:1.5}
 
@@ -1294,12 +1287,12 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
     <!-- Supporting Services -->
     <div class="hp-svc-more-label rv">Also included</div>
     <div class="hp-svc-more" id="svcMore">
-      <div class="hp-svc-more-card" data-delay="0"><div class="hp-svc-more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><div class="hp-svc-more-text"><h4>Technical SEO &amp; AI Readiness</h4><p>Schema, crawl optimization, and site architecture built for both Google and AI models.</p></div></div>
-      <div class="hp-svc-more-card" data-delay="80"><div class="hp-svc-more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><div class="hp-svc-more-text"><h4>AI Visibility Monitoring</h4><p>Track your brand presence across ChatGPT, Perplexity, Gemini, and Claude in real time.</p></div></div>
-      <div class="hp-svc-more-card" data-delay="160"><div class="hp-svc-more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="hp-svc-more-text"><h4>Web Design &amp; Development</h4><p>Conversion-optimized pages built to capture the traffic and citations we drive.</p></div></div>
-      <div class="hp-svc-more-card" data-delay="240"><div class="hp-svc-more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="hp-svc-more-text"><h4>Paid Search &amp; Social</h4><p>Amplify organic wins with targeted paid campaigns that compound results.</p></div></div>
-      <div class="hp-svc-more-card" data-delay="320"><div class="hp-svc-more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div><div class="hp-svc-more-text"><h4>Creative &amp; Brand Design</h4><p>Visual identity and assets that reinforce authority and trust across channels.</p></div></div>
-      <div class="hp-svc-more-card" data-delay="400"><div class="hp-svc-more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="hp-svc-more-text"><h4>Social Media &amp; Community</h4><p>Build presence where your buyers already spend their time and make decisions.</p></div></div>
+      <div class="hp-svc-more-card" data-delay="0"><div class="hp-svc-more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div><div class="hp-svc-more-text"><h4>Technical SEO &amp; AI Readiness</h4><p>Schema, crawl optimization, and site architecture built for both Google and AI models.</p></div></div>
+      <div class="hp-svc-more-card" data-delay="80"><div class="hp-svc-more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="hp-svc-more-text"><h4>AI Visibility Monitoring</h4><p>Track your brand presence across ChatGPT, Perplexity, Gemini, and Claude in real time.</p></div></div>
+      <div class="hp-svc-more-card" data-delay="160"><div class="hp-svc-more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div><div class="hp-svc-more-text"><h4>Web Design &amp; Development</h4><p>Conversion-optimized pages built to capture the traffic and citations we drive.</p></div></div>
+      <div class="hp-svc-more-card" data-delay="240"><div class="hp-svc-more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="hp-svc-more-text"><h4>Paid Search &amp; Social</h4><p>Amplify organic wins with targeted paid campaigns that compound results.</p></div></div>
+      <div class="hp-svc-more-card" data-delay="320"><div class="hp-svc-more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div class="hp-svc-more-text"><h4>Creative &amp; Brand Design</h4><p>Visual identity and assets that reinforce authority and trust across channels.</p></div></div>
+      <div class="hp-svc-more-card" data-delay="400"><div class="hp-svc-more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="hp-svc-more-text"><h4>Social Media &amp; Community</h4><p>Build presence where your buyers already spend their time and make decisions.</p></div></div>
     </div>
   </div>
 </section>
