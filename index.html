@@ -730,14 +730,23 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-faq-cta:hover svg{transform:translateX(3px)}
 
 /* ── S12: Final CTA ── */
-.s-cta{background:var(--forest-deep);padding:80px 0;text-align:center}
-.s-cta .s-inner{max-width:600px}
-.s-cta .s-h{color:#fff;font-size:clamp(28px,3.5vw,40px);margin:0 auto 20px;line-height:1.2}
-.s-cta .s-sub{color:rgba(255,255,255,.4);font-size:16px;line-height:1.6;margin:0 auto 36px}
-.hp-cta-btn{display:inline-flex;align-items:center;gap:10px;padding:18px 44px;background:var(--lime);color:var(--forest-deep);font-weight:800;font-size:16px;border-radius:12px;border:none;cursor:pointer;text-decoration:none;transition:all .3s}
-.hp-cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(125,255,179,.25)}
+.s-cta{background:#E8F5C4;padding:0;position:relative;overflow:hidden;min-height:480px;display:flex;align-items:stretch}
+.s-cta .s-inner{max-width:1200px;display:grid;grid-template-columns:1fr 1fr;align-items:center;width:100%;gap:0}
+
+/* left — large svg arrow */
+.hp-cta-visual{position:relative;display:flex;align-items:center;justify-content:center;padding:60px 0 60px 40px}
+.hp-cta-visual svg{width:280px;height:auto;color:var(--forest);opacity:.9}
+.hp-cta-visual::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:320px;height:320px;border-radius:50%;background:rgba(14,84,44,.04);pointer-events:none}
+
+/* right — content */
+.hp-cta-content{padding:80px 40px 80px 20px}
+.hp-cta-eyebrow{font-size:13px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--forest);margin-bottom:20px;opacity:.6}
+.s-cta .s-h{color:var(--forest-deep);font-size:clamp(36px,4.5vw,56px);margin:0 0 20px;line-height:1.08;text-align:left}
+.s-cta .s-sub{color:rgba(10,61,32,.45);font-size:16px;line-height:1.7;margin:0 0 36px;text-align:left;max-width:420px}
+.hp-cta-btn{display:inline-flex;align-items:center;gap:10px;padding:18px 40px;background:var(--forest);color:#fff;font-weight:700;font-size:16px;border-radius:60px;border:none;cursor:pointer;text-decoration:none;transition:all .3s}
+.hp-cta-btn:hover{background:var(--forest-deep);transform:translateY(-2px);box-shadow:0 8px 28px rgba(14,84,44,.2)}
 .hp-cta-btn svg{width:18px;height:18px}
-.hp-cta-note{margin-top:16px;font-size:13px;color:rgba(255,255,255,.25)}
+.hp-cta-note{margin-top:16px;font-size:13px;color:rgba(10,61,32,.3);font-weight:500}
 
 /* ── Responsive ── */
 @media(max-width:768px){
@@ -751,8 +760,14 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   .hp-tl-grid{grid-template-columns:1fr 1fr;gap:16px}
   .s-inner{padding:0 20px}
   .hp-faq-list{margin:0 -4px}
-  .s-cta .s-h{font-size:26px}
-  .hp-cta-btn{padding:16px 36px;font-size:15px}
+  .s-cta .s-inner{grid-template-columns:1fr}
+  .hp-cta-visual{padding:40px 20px 0;justify-content:center}
+  .hp-cta-visual svg{width:180px}
+  .hp-cta-content{padding:40px 20px 60px;text-align:center}
+  .s-cta .s-h{text-align:center;font-size:32px}
+  .s-cta .s-sub{text-align:center;margin-left:auto;margin-right:auto}
+  .hp-cta-eyebrow{text-align:center}
+  .hp-cta-note{text-align:center}
 }
 
 </style>
@@ -1356,13 +1371,51 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <!-- S12: FINAL CTA -->
 <section class="s-cta" id="hp-final">
   <div class="s-inner">
-    <h2 class="s-h rv">Ask ChatGPT who does what you do.<br>If it&rsquo;s not you &mdash; we should talk.</h2>
-    <p class="s-sub rv" style="transition-delay:.1s">Free 30-minute audit. We&rsquo;ll show you exactly where you&rsquo;re invisible &mdash; and how to fix it.</p>
-    <a href="https://calendly.com/hamid-b2bmint/30min" class="hp-cta-btn rv" style="transition-delay:.2s">
-      Book a call
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-    </a>
-    <div class="hp-cta-note rv" style="transition-delay:.25s">No contracts. You own everything. Founder-led.</div>
+
+    <!-- Left: Large illustration -->
+    <div class="hp-cta-visual rv">
+      <svg viewBox="0 0 200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Rocket / upward momentum illustration -->
+        <g stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <!-- main rocket body -->
+          <path d="M100 40 C100 40 60 120 60 220 C60 280 75 320 100 360 C125 320 140 280 140 220 C140 120 100 40 100 40Z" fill="rgba(14,84,44,.06)" stroke-width="2.5"/>
+          <!-- window -->
+          <circle cx="100" cy="180" r="22" fill="rgba(14,84,44,.04)" stroke-width="2"/>
+          <circle cx="100" cy="180" r="12" fill="rgba(14,84,44,.06)"/>
+          <!-- fins -->
+          <path d="M60 260 C60 260 30 290 25 330 L60 300Z" fill="rgba(14,84,44,.04)"/>
+          <path d="M140 260 C140 260 170 290 175 330 L140 300Z" fill="rgba(14,84,44,.04)"/>
+          <!-- flame -->
+          <path d="M85 355 C85 355 92 390 100 395 C108 390 115 355 115 355" stroke-width="2" opacity=".5"/>
+          <path d="M90 355 C90 355 95 375 100 380 C105 375 110 355 110 355" stroke-width="1.5" opacity=".3"/>
+          <!-- speed lines -->
+          <line x1="45" y1="140" x2="20" y2="160" opacity=".2" stroke-width="1.5"/>
+          <line x1="40" y1="180" x2="10" y2="195" opacity=".15" stroke-width="1.5"/>
+          <line x1="42" y1="220" x2="15" y2="230" opacity=".1" stroke-width="1.5"/>
+          <line x1="155" y1="140" x2="180" y2="160" opacity=".2" stroke-width="1.5"/>
+          <line x1="160" y1="180" x2="190" y2="195" opacity=".15" stroke-width="1.5"/>
+          <line x1="158" y1="220" x2="185" y2="230" opacity=".1" stroke-width="1.5"/>
+          <!-- stars -->
+          <circle cx="30" cy="80" r="2" fill="currentColor" opacity=".15"/>
+          <circle cx="170" cy="100" r="2.5" fill="currentColor" opacity=".12"/>
+          <circle cx="25" cy="260" r="1.5" fill="currentColor" opacity=".1"/>
+          <circle cx="175" cy="60" r="1.5" fill="currentColor" opacity=".1"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Right: Content -->
+    <div class="hp-cta-content">
+      <div class="hp-cta-eyebrow rv">Talk to a strategist</div>
+      <h2 class="s-h rv" style="transition-delay:.1s">Ready to get<br>discovered<br>by AI?</h2>
+      <p class="s-sub rv" style="transition-delay:.15s">Join <strong style="color:var(--forest-deep)">47 B2B SaaS companies</strong> already building pipeline from search and AI visibility.</p>
+      <a href="https://calendly.com/hamid-b2bmint/30min" class="hp-cta-btn rv" style="transition-delay:.25s">
+        Book a Strategy Call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="hp-cta-note rv" style="transition-delay:.3s">Free &bull; 30 min &bull; Founder-led</div>
+    </div>
+
   </div>
 </section>
 
