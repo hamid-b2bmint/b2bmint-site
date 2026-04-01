@@ -1219,7 +1219,7 @@ function tick(){
   if(ma>=0.5&&!metW.dataset.done){metW.dataset.done='1';mets.forEach((c,i)=>setTimeout(()=>c.classList.add('v'),i*120));}
   if(ma<0.3){delete metW.dataset.done;mets.forEach(c=>c.classList.remove('v'));}
   const cta=eo(r(p,0.87,0.92));s(ctaW,{opacity:cta,transform:`translateY(${20-cta*20}px)`});
-  if(cta>=1&&!tt){tt=true;ticks.forEach((t,i)=>setTimeout(()=>t.classList.add('pop'),300+i*200));setTimeout(()=>sm.classList.add('v'),300+ticks.length*200+400);}
+  if(cta>=1&&!tt){tt=true;ticks.forEach((t,i)=>setTimeout(()=>t.classList.add('pop'),i*100));setTimeout(()=>sm.classList.add('v'),ticks.length*100+200);}
   if(cta<0.5){tt=false;ticks.forEach(t=>t.classList.remove('pop'));sm.classList.remove('v');}
 }
 
