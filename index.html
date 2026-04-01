@@ -251,7 +251,10 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 /* Shared section */
 .s-sec{padding:100px 0}
 .s-inner{max-width:1100px;margin:0 auto;padding:0 40px}
-.s-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--forest);margin-bottom:14px}
+/* gradient text utility */
+.g-text{background:linear-gradient(135deg,var(--forest-deep),#1a6b42,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.g-text-light{background:linear-gradient(135deg,var(--lime),#a8ffd4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.s-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:14px;background:linear-gradient(135deg,var(--forest-deep),#1a6b42,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .s-h{font-family:var(--display);font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:18px;color:var(--forest-deep)}
 .s-p{font-size:17px;line-height:1.7;color:rgba(0,0,0,.6);max-width:600px}
 .s-card{border-radius:20px;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.04),0 12px 48px rgba(0,0,0,.06);padding:36px;background:#fff}
@@ -308,7 +311,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .s-strip .s-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;position:relative;z-index:1}
 .hp-stat{text-align:center;flex:1;min-width:180px;opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .hp-stat.show{opacity:1;transform:translateY(0)}
-.hp-stat-n{font-family:var(--display);font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--lime);line-height:1;letter-spacing:-.02em}
+.hp-stat-n{font-family:var(--display);font-size:clamp(28px,3.5vw,42px);font-weight:700;line-height:1;letter-spacing:-.02em;background:linear-gradient(135deg,var(--lime),#a8ffd4,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hp-stat-l{font-size:14px;color:rgba(255,255,255,.55);margin-top:8px;letter-spacing:.01em}
 .hp-stat+.hp-stat{border-left:1px solid rgba(255,255,255,.08)}
 
@@ -758,7 +761,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 /* proof stats row */
 .hp-cta-stats{display:flex;gap:28px;margin-top:28px;padding-top:22px;border-top:1px solid rgba(9,56,41,.06)}
 .hp-cta-stat{text-align:left}
-.hp-cta-stat .num{font-family:Recoleta,serif;font-size:22px;font-weight:700;color:var(--forest-deep);line-height:1}
+.hp-cta-stat .num{font-family:Recoleta,serif;font-size:22px;font-weight:700;line-height:1;background:linear-gradient(135deg,var(--forest-deep),#1a6b42,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hp-cta-stat .lbl{font-size:11px;color:rgba(9,56,41,.3);margin-top:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
 
 /* ── Footer ── */
@@ -971,7 +974,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
     <div class="s-grid2">
       <div>
         <div class="s-eye rv">The Problem</div>
-        <h2 class="s-h rv" style="transition-delay:.1s">Your agency gave you traffic reports. Your CFO asked about pipeline.</h2>
+        <h2 class="s-h rv" style="transition-delay:.1s">Your agency gave you traffic reports. Your CFO asked about <span class="g-text">pipeline.</span></h2>
         <p class="s-p rv" style="transition-delay:.2s">$50K+ spent. 68 blog posts. 12 months of &ldquo;it takes time.&rdquo; Zero demos from search. Your agency optimized for keywords. Your buyers moved to AI.</p>
         <div class="s-pain-signs rv" style="transition-delay:.25s">
           <div class="s-pain-signs-title">Sound familiar?</div>
@@ -1003,7 +1006,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
     <div class="s-grid2">
       <div>
         <div class="s-eye rv">The Invisible Loss</div>
-        <h2 class="s-h rv" style="transition-delay:.1s">A competitor with a weaker product is winning your buyers.</h2>
+        <h2 class="s-h rv" style="transition-delay:.1s">A competitor with a weaker product is <span class="g-text">winning your buyers.</span></h2>
         <p class="s-p rv" style="transition-delay:.2s">They don&rsquo;t have a better product. They have better content architecture. They show up when AI answers. You don&rsquo;t.</p>
         <div class="s-loss-quote rv" style="transition-delay:.3s">&ldquo;We kept losing deals to a startup half our size. Turns out, ChatGPT was recommending them for every query in our category.&rdquo;</div>
       </div>
@@ -1055,7 +1058,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <section class="s-sec s-evo" id="hp-evo">
   <div class="s-inner">
     <div class="s-eye rv">From Search to Answers</div>
-    <h2 class="s-h rv" style="transition-delay:.1s">Search used to mean ten blue links. Now it means one recommended answer.</h2>
+    <h2 class="s-h rv" style="transition-delay:.1s">Search used to mean ten blue links. Now it means <span class="g-text">one recommended answer.</span></h2>
     <div class="hp-evo-sub rv" style="transition-delay:.15s">The entire buying journey shifted. Your buyers ask AI for recommendations before they ever open Google.</div>
     <div class="hp-evo-wrap">
       <!-- OLD: Google SERP -->
@@ -1127,7 +1130,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <section class="s-sec s-sys" id="hp-sys">
   <div class="s-inner">
     <div class="s-eye rv">The SAGE Engine</div>
-    <h2 class="s-h rv" style="transition-delay:.1s">One engine. Every search platform. Predictable pipeline.</h2>
+    <h2 class="s-h rv" style="transition-delay:.1s">One engine. Every search platform. <span class="g-text">Predictable pipeline.</span></h2>
     <p class="s-p rv" style="transition-delay:.2s">Most agencies optimize for Google and ignore AI. We built SAGE to dominate both simultaneously. One system that builds authority, captures every buyer search, and converts it into revenue.</p>
 
     <!-- SAGE badge -->
@@ -1207,7 +1210,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <section class="s-sec s-tl" id="hp-tl">
   <div class="s-inner">
     <div class="s-eye rv">The Timeline</div>
-    <h2 class="s-h rv" style="transition-delay:.1s">Results in weeks, not months.</h2>
+    <h2 class="s-h rv" style="transition-delay:.1s">Results in <span class="g-text">weeks, not months.</span></h2>
     <p class="s-p rv" style="transition-delay:.2s">No 12-month &ldquo;trust the process&rdquo; pitch. Here&rsquo;s exactly what happens and when, backed by real client data.</p>
 
     <div class="hp-tl-grid" id="tlGrid">
@@ -1251,7 +1254,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <section class="s-sec s-proof" id="hp-proof">
   <div class="s-inner">
     <div class="s-eye rv">The Proof</div>
-    <h2 class="s-h rv" style="transition-delay:.1s">Real numbers from real clients.</h2>
+    <h2 class="s-h rv" style="transition-delay:.1s"><span class="g-text">Real numbers</span> from real clients.</h2>
     <p class="s-p rv" style="transition-delay:.15s">Not projections. Not &ldquo;potential.&rdquo; These are verified results from SaaS companies running the SAGE engine.</p>
 
     <!-- Before/After -->
@@ -1331,7 +1334,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <section class="s-sec s-fit" id="hp-fit">
   <div class="s-inner">
     <div class="s-eye rv" style="text-align:center">Who This Is For</div>
-    <h2 class="s-h rv" style="text-align:center;transition-delay:.1s">Is this for you?</h2>
+    <h2 class="s-h rv" style="text-align:center;transition-delay:.1s">Is this <span class="g-text">for you?</span></h2>
     <p class="s-p rv" style="transition-delay:.15s">We work with a specific type of company. Here&rsquo;s how to know if SAGE is the right fit.</p>
     <div class="hp-fit-grid" id="fitGrid">
       <div class="hp-fit-col yes-col" data-delay="0">
@@ -1356,7 +1359,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <section class="s-sec s-svc" id="hp-svc">
   <div class="s-inner">
     <div class="s-eye rv">What We Build</div>
-    <h2 class="s-h rv" style="transition-delay:.1s">Search, visibility, and everything that connects them to pipeline.</h2>
+    <h2 class="s-h rv" style="transition-delay:.1s">Search, visibility, and everything that connects them to <span class="g-text">pipeline.</span></h2>
     <p class="s-p rv" style="transition-delay:.15s">Three core engines. Six supporting systems. All working together inside SAGE.</p>
 
     <!-- Core Services -->
@@ -1434,7 +1437,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <section class="s-sec s-faq" id="hp-faq">
   <div class="s-inner">
     <div class="s-eye rv" style="text-align:center">Questions</div>
-    <h2 class="s-h rv" style="transition-delay:.1s">Straight answers.</h2>
+    <h2 class="s-h rv" style="transition-delay:.1s"><span class="g-text">Straight</span> answers.</h2>
     <p class="s-p rv" style="transition-delay:.15s">No fluff. Here&rsquo;s what SaaS founders actually ask before signing.</p>
     <div class="hp-faq-list">
       <div class="hp-faq-item rv" style="transition-delay:.15s">
@@ -1483,7 +1486,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
         <!-- Content side -->
         <div class="hp-cta-content">
           <div class="hp-cta-eyebrow">Talk to the founder</div>
-          <h2 class="s-h">Ready to get<br>discovered by AI?</h2>
+          <h2 class="s-h">Ready to get<br>discovered by <span class="g-text">AI?</span></h2>
           <p class="s-sub">I&rsquo;ll personally review your search presence, AI citations, and pipeline &mdash; then map out your next move.</p>
           <a href="https://calendly.com/hamid-b2bmint/30min" class="hp-cta-btn">
             Book a Strategy Call
