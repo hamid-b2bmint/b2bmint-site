@@ -469,15 +469,26 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
 /* ── S7: Timeline ── */
 .s-tl{background:#FFFDD9}
+.s-tl .s-p{max-width:560px}
 .hp-tl-track{position:relative;margin-top:60px;padding:0 0 20px}
-.hp-tl-line{position:relative;height:4px;background:rgba(14,84,44,.12);border-radius:4px;margin:0 40px}
+.hp-tl-line{position:relative;height:4px;background:rgba(14,84,44,.1);border-radius:4px;margin:0 60px}
 .hp-tl-fill{position:absolute;left:0;top:0;height:100%;width:0;background:var(--forest);border-radius:4px;transition:width 1.6s cubic-bezier(.16,1,.3,1)}
-.hp-tl-nodes{display:flex;justify-content:space-between;margin:0 20px;position:relative;top:-14px}
-.hp-tl-node{text-align:center;flex:1}
-.hp-tl-dot{width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid rgba(14,84,44,.15);margin:0 auto 12px;transition:all .6s ease;position:relative;z-index:2}
-.hp-tl-dot.lit{border-color:var(--forest);background:var(--lime)}
-.hp-tl-when{font-size:12px;font-weight:700;color:var(--forest);margin-bottom:4px}
-.hp-tl-what{font-size:13px;color:rgba(0,0,0,.5);max-width:140px;margin:0 auto}
+.hp-tl-nodes{display:grid;grid-template-columns:repeat(4,1fr);margin:0;position:relative;top:-16px}
+.hp-tl-node{text-align:center;padding:0 10px}
+.hp-tl-dot{width:32px;height:32px;border-radius:50%;background:#fff;border:3px solid rgba(14,84,44,.12);margin:0 auto 14px;transition:all .6s ease;position:relative;z-index:2;display:flex;align-items:center;justify-content:center}
+.hp-tl-dot svg{width:14px;height:14px;opacity:0;transition:opacity .4s}
+.hp-tl-dot.lit{border-color:var(--forest);background:var(--lime);box-shadow:0 0 0 6px rgba(125,255,179,.2)}
+.hp-tl-dot.lit svg{opacity:1}
+.hp-tl-when{font-size:13px;font-weight:800;color:var(--forest);margin-bottom:4px;letter-spacing:-.01em}
+.hp-tl-what{font-size:13px;font-weight:600;color:rgba(0,0,0,.6);margin-bottom:6px;max-width:160px;margin-left:auto;margin-right:auto}
+.hp-tl-detail{font-size:11px;color:rgba(0,0,0,.35);max-width:150px;margin:0 auto;line-height:1.4}
+/* Timeline cards below */
+.hp-tl-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.hp-tl-card{background:rgba(255,255,255,.55);border-radius:16px;padding:24px 20px;text-align:center;opacity:0;transform:translateY(16px);transition:all .4s ease;cursor:default}
+.hp-tl-card.show{opacity:1;transform:translateY(0)}
+.hp-tl-card:hover{background:rgba(255,255,255,.85);transform:translateY(-2px)}
+.hp-tl-card-num{font-family:var(--display);font-size:32px;font-weight:700;color:var(--forest-deep);line-height:1;margin-bottom:6px}
+.hp-tl-card-label{font-size:11px;font-weight:600;color:rgba(0,0,0,.4);text-transform:uppercase;letter-spacing:.08em}
 
 /* ── S8: The Proof ── */
 .s-proof{background:#fff}
@@ -560,7 +571,8 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   .s-strip .s-inner{flex-direction:column;text-align:center}
   .hp-ba{grid-template-columns:1fr}
   .hp-ba-vs{margin:0 auto}
-  .hp-tl-nodes{flex-direction:column;gap:24px;top:0;margin:24px 0 0}
+  .hp-tl-nodes{grid-template-columns:1fr 1fr;gap:24px;top:0;margin:24px 0 0}
+  .hp-tl-cards{grid-template-columns:1fr 1fr}
   .hp-tl-line{display:none}
   .s-inner{padding:0 20px}
 }
@@ -902,15 +914,22 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   <div class="s-inner">
     <div class="s-eye rv">The Timeline</div>
     <h2 class="s-h rv" style="transition-delay:.1s">Results in weeks, not months.</h2>
-    <p class="s-p rv" style="transition-delay:.2s">Here&rsquo;s the honest answer, backed by real client data.</p>
+    <p class="s-p rv" style="transition-delay:.2s">No 12-month &ldquo;trust the process&rdquo; pitch. Here&rsquo;s exactly what happens and when, backed by real client data.</p>
     <div class="hp-tl-track rv" style="transition-delay:.3s">
       <div class="hp-tl-line"><div class="hp-tl-fill" id="hp-tl-fill"></div></div>
       <div class="hp-tl-nodes">
-        <div class="hp-tl-node"><div class="hp-tl-dot" id="hp-tl-d1"></div><div class="hp-tl-when">Week 4</div><div class="hp-tl-what">First BOFU pages live</div></div>
-        <div class="hp-tl-node"><div class="hp-tl-dot" id="hp-tl-d2"></div><div class="hp-tl-when">Week 8</div><div class="hp-tl-what">Rankings start moving</div></div>
-        <div class="hp-tl-node"><div class="hp-tl-dot" id="hp-tl-d3"></div><div class="hp-tl-when">Month 3</div><div class="hp-tl-what">Demos from organic</div></div>
-        <div class="hp-tl-node"><div class="hp-tl-dot" id="hp-tl-d4"></div><div class="hp-tl-when">Month 4-6</div><div class="hp-tl-what">Compounding kicks in</div></div>
+        <div class="hp-tl-node"><div class="hp-tl-dot" id="hp-tl-d1"><svg viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="hp-tl-when">Week 4</div><div class="hp-tl-what">First BOFU pages live</div><div class="hp-tl-detail">Semantic architecture mapped, pipeline-first content published</div></div>
+        <div class="hp-tl-node"><div class="hp-tl-dot" id="hp-tl-d2"><svg viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="hp-tl-when">Week 8</div><div class="hp-tl-what">Rankings start moving</div><div class="hp-tl-detail">Google indexing, AI models begin citing your content</div></div>
+        <div class="hp-tl-node"><div class="hp-tl-dot" id="hp-tl-d3"><svg viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="hp-tl-when">Month 3</div><div class="hp-tl-what">Demos from organic</div><div class="hp-tl-detail">Inbound demos tracked back to SAGE-built content</div></div>
+        <div class="hp-tl-node"><div class="hp-tl-dot" id="hp-tl-d4"><svg viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="hp-tl-when">Month 4-6</div><div class="hp-tl-what">Compounding kicks in</div><div class="hp-tl-detail">Every new page strengthens the entire system</div></div>
       </div>
+    </div>
+    <!-- Metric cards -->
+    <div class="hp-tl-cards" id="tlCards">
+      <div class="hp-tl-card" data-delay="0"><div class="hp-tl-card-num">4 wks</div><div class="hp-tl-card-label">To first content live</div></div>
+      <div class="hp-tl-card" data-delay="120"><div class="hp-tl-card-num">8 wks</div><div class="hp-tl-card-label">To first rankings</div></div>
+      <div class="hp-tl-card" data-delay="240"><div class="hp-tl-card-num">3 mo</div><div class="hp-tl-card-label">To first inbound demo</div></div>
+      <div class="hp-tl-card" data-delay="360"><div class="hp-tl-card-num">67%</div><div class="hp-tl-card-label">Lower CAC by month 6</div></div>
     </div>
   </div>
 </section>
@@ -1408,10 +1427,13 @@ if (tlFill) {
   const tlObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        tlFill.style.width = '75%';
-        const pcts = [10, 33, 55, 75];
+        tlFill.style.width = '100%';
         tlDots.forEach((d, i) => {
-          if (d) setTimeout(() => d.classList.add('lit'), 400 + i * 350);
+          if (d) setTimeout(() => d.classList.add('lit'), 300 + i * 300);
+        });
+        // Timeline metric cards
+        document.querySelectorAll('#tlCards .hp-tl-card').forEach(c => {
+          setTimeout(() => c.classList.add('show'), 600 + parseInt(c.dataset.delay || '0'));
         });
         tlObs.unobserve(e.target);
       }
