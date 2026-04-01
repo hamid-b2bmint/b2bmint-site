@@ -730,25 +730,42 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-faq-cta:hover svg{transform:translateX(3px)}
 
 /* ── S12: Final CTA ── */
-.s-cta{background:linear-gradient(160deg,#0A3D20 0%,#0E542C 40%,#0A3D20 100%);padding:120px 0;text-align:center;position:relative;overflow:hidden}
-.s-cta::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(125,255,179,.08) 0%,transparent 70%);pointer-events:none}
-.s-cta::after{content:'';position:absolute;bottom:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(125,255,179,.05) 0%,transparent 60%);pointer-events:none}
-.s-cta .s-inner{position:relative;z-index:1}
-.s-cta .s-eye{color:var(--lime);border-color:rgba(125,255,179,.2);background:rgba(125,255,179,.08)}
-.s-cta .s-h{color:#fff;font-size:clamp(32px,4.5vw,52px);max-width:700px;margin:0 auto 16px}
-.s-cta .s-p{color:rgba(255,255,255,.55);margin:0 auto 44px;text-align:center;max-width:480px;font-size:17px;line-height:1.6}
-.hp-cta-btn{display:inline-flex;align-items:center;gap:14px;padding:24px 56px;background:var(--lime);color:var(--forest-deep);font-weight:800;font-size:18px;border-radius:16px;border:none;cursor:pointer;text-decoration:none;box-shadow:0 6px 30px rgba(125,255,179,.25),0 0 80px rgba(125,255,179,.1);transition:all .4s cubic-bezier(.16,1,.3,1);position:relative}
-.hp-cta-btn::before{content:'';position:absolute;inset:-3px;border-radius:19px;background:linear-gradient(135deg,rgba(125,255,179,.4),transparent,rgba(125,255,179,.2));z-index:-1;opacity:0;transition:opacity .4s}
-.hp-cta-btn:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 14px 50px rgba(125,255,179,.35),0 0 100px rgba(125,255,179,.15)}
-.hp-cta-btn:hover::before{opacity:1}
-.hp-cta-btn svg{width:20px;height:20px}
-.hp-trust{display:flex;justify-content:center;gap:28px;margin-top:28px;flex-wrap:wrap}
-.hp-trust span{font-size:14px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:8px;font-weight:500}
-.hp-trust .chk{color:var(--lime);font-weight:800;font-size:13px}
-.hp-cta-divider{width:60px;height:1px;background:rgba(125,255,179,.15);margin:44px auto}
-.hp-promise{background:rgba(255,255,255,.04);border-radius:16px;padding:24px 36px;display:inline-block;font-size:15px;color:rgba(255,255,255,.5);border:1px solid rgba(125,255,179,.08);line-height:1.6;max-width:500px;backdrop-filter:blur(8px)}
-.hp-promise strong{color:rgba(255,255,255,.8);font-weight:700}
-.hp-founder{margin-top:24px;font-size:14px;color:rgba(255,255,255,.35);font-weight:500;letter-spacing:.3px}
+.s-cta{background:var(--forest-deep);padding:0;position:relative;overflow:hidden}
+.s-cta .s-inner{max-width:1100px}
+
+/* top proof bar */
+.hp-cta-proof{display:flex;justify-content:center;gap:48px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.hp-cta-proof-item{text-align:center}
+.hp-cta-proof-item .num{font-family:Recoleta,serif;font-size:28px;font-weight:700;color:var(--lime);line-height:1}
+.hp-cta-proof-item .lbl{font-size:12px;color:rgba(255,255,255,.35);margin-top:4px;letter-spacing:.5px;text-transform:uppercase;font-weight:600}
+
+/* main cta area */
+.hp-cta-main{padding:80px 0 60px;text-align:center;position:relative}
+.hp-cta-main::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(125,255,179,.06) 0%,transparent 65%);pointer-events:none}
+.hp-cta-main .s-inner{position:relative;z-index:1}
+.s-cta .s-h{color:#fff;font-size:clamp(32px,4.5vw,48px);max-width:650px;margin:0 auto 16px;line-height:1.15}
+.s-cta .s-sub{color:rgba(255,255,255,.45);font-size:17px;line-height:1.6;max-width:460px;margin:0 auto 40px;text-align:center}
+.hp-cta-btn{display:inline-flex;align-items:center;gap:12px;padding:20px 48px;background:var(--lime);color:var(--forest-deep);font-weight:800;font-size:17px;border-radius:14px;border:none;cursor:pointer;text-decoration:none;transition:all .35s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 24px rgba(125,255,179,.2)}
+.hp-cta-btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(125,255,179,.3)}
+.hp-cta-btn svg{width:18px;height:18px}
+.hp-cta-micro{display:flex;justify-content:center;gap:24px;margin-top:16px;flex-wrap:wrap}
+.hp-cta-micro span{font-size:13px;color:rgba(255,255,255,.3);font-weight:500}
+
+/* 3 trust cards */
+.hp-cta-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.06)}
+.hp-cta-card{padding:40px 32px;text-align:center;background:var(--forest-deep);transition:background .3s}
+.hp-cta-card:hover{background:rgba(255,255,255,.03)}
+.hp-cta-card-icon{width:44px;height:44px;border-radius:12px;background:rgba(125,255,179,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.hp-cta-card-icon svg{width:22px;height:22px;stroke:var(--lime);stroke-width:1.8;fill:none}
+.hp-cta-card h4{font-family:Recoleta,serif;font-size:18px;color:#fff;font-weight:700;margin-bottom:8px}
+.hp-cta-card p{font-size:13.5px;color:rgba(255,255,255,.4);line-height:1.6;max-width:260px;margin:0 auto}
+
+/* founder strip */
+.hp-cta-founder{display:flex;align-items:center;justify-content:center;gap:14px;padding:24px 0;border-top:1px solid rgba(255,255,255,.06)}
+.hp-cta-founder img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(125,255,179,.2)}
+.hp-cta-founder-info{text-align:left}
+.hp-cta-founder-info strong{font-size:14px;color:rgba(255,255,255,.7);display:block;line-height:1.2}
+.hp-cta-founder-info span{font-size:12px;color:rgba(255,255,255,.3)}
 
 /* ── Responsive ── */
 @media(max-width:768px){
@@ -763,8 +780,11 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   .s-inner{padding:0 20px}
   .hp-faq-list{margin:0 -4px}
   .s-cta .s-h{font-size:28px}
-  .hp-cta-btn{padding:20px 40px;font-size:16px}
-  .hp-trust{gap:16px}
+  .hp-cta-btn{padding:18px 36px;font-size:16px}
+  .hp-cta-proof{gap:24px}
+  .hp-cta-proof-item .num{font-size:22px}
+  .hp-cta-cards{grid-template-columns:1fr}
+  .hp-cta-card{padding:28px 24px}
 }
 
 </style>
@@ -1367,23 +1387,68 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
 <!-- S12: FINAL CTA -->
 <section class="s-cta" id="hp-final">
+
+  <!-- Social proof stats bar -->
   <div class="s-inner">
-    <div class="s-eye rv" style="text-align:center">Let&rsquo;s Talk</div>
-    <h2 class="s-h rv" style="transition-delay:.1s">Stop losing deals<br>you never knew about.</h2>
-    <p class="s-p rv" style="transition-delay:.15s">Every day invisible to AI is a day competitors take your buyers. One call changes that.</p>
-    <a href="https://calendly.com/hamid-b2bmint/30min" class="hp-cta-btn rv" style="transition-delay:.25s">
-      Book Your Free AI Visibility Audit
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:20px;height:20px"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-    </a>
-    <div class="hp-trust rv" style="transition-delay:.35s">
-      <span><span class="chk">&#10003;</span> Free live audit</span>
-      <span><span class="chk">&#10003;</span> Founder-led, not outsourced</span>
-      <span><span class="chk">&#10003;</span> 30 min, zero obligation</span>
+    <div class="hp-cta-proof rv">
+      <div class="hp-cta-proof-item"><div class="num">4,244</div><div class="lbl">AI Citations Built</div></div>
+      <div class="hp-cta-proof-item"><div class="num">891</div><div class="lbl">Page-1 Rankings</div></div>
+      <div class="hp-cta-proof-item"><div class="num">$1.2M+</div><div class="lbl">Pipeline Generated</div></div>
+      <div class="hp-cta-proof-item"><div class="num">47</div><div class="lbl">SaaS Companies</div></div>
     </div>
-    <div class="hp-cta-divider rv" style="transition-delay:.4s"></div>
-    <div class="hp-promise rv" style="transition-delay:.45s"><strong>90-day trial.</strong> All assets stay with you. You own everything from day one &mdash; nothing locked behind our tools.</div>
-    <div class="hp-founder rv" style="transition-delay:.5s">Hamid Khan leads every engagement personally.</div>
   </div>
+
+  <!-- Main CTA -->
+  <div class="hp-cta-main">
+    <div class="s-inner">
+      <h2 class="s-h rv">Your competitors are already<br>being recommended by AI.</h2>
+      <p class="s-sub rv" style="transition-delay:.1s">Every week you wait, AI models learn to recommend someone else. One 30-minute call shows you exactly where you stand.</p>
+      <a href="https://calendly.com/hamid-b2bmint/30min" class="hp-cta-btn rv" style="transition-delay:.2s">
+        Book Your Free AI Visibility Audit
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="hp-cta-micro rv" style="transition-delay:.25s">
+        <span>Free &bull; 30 min &bull; Zero obligation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 Trust Cards -->
+  <div class="hp-cta-cards">
+    <div class="hp-cta-card rv" style="transition-delay:.2s">
+      <div class="hp-cta-card-icon">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h4>90-Day Trial</h4>
+      <p>Not a lock-in. See real pipeline results before you fully commit. Walk away anytime in the first 90 days.</p>
+    </div>
+    <div class="hp-cta-card rv" style="transition-delay:.3s">
+      <div class="hp-cta-card-icon">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h4>You Own Everything</h4>
+      <p>Every page, every asset, every piece of content. Nothing locked behind our platform. Your IP stays yours.</p>
+    </div>
+    <div class="hp-cta-card rv" style="transition-delay:.4s">
+      <div class="hp-cta-card-icon">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h4>Founder-Led</h4>
+      <p>No junior account managers. Hamid Khan personally leads strategy and execution for every client.</p>
+    </div>
+  </div>
+
+  <!-- Founder strip -->
+  <div class="s-inner">
+    <div class="hp-cta-founder rv" style="transition-delay:.45s">
+      <img src="baris-zeren.jpeg" alt="Hamid Khan" loading="lazy">
+      <div class="hp-cta-founder-info">
+        <strong>Hamid Khan</strong>
+        <span>Founder, B2BMint &bull; Replies within 4 hours</span>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 </main>
