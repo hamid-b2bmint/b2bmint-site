@@ -625,76 +625,58 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 /* ── S10: Services ── */
 .s-svc{background:#f9fafb}
 .s-svc .s-p{max-width:600px;margin-bottom:48px}
-/* Core services — light interactive cards */
+/* Core services — x.ai style with hover-animated illustrations */
 .hp-svc-core{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:0}
-.hp-svc-card{border-radius:24px;padding:0;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:all .5s ease;cursor:default;display:flex;flex-direction:column}
+.hp-svc-card{border-radius:24px;padding:32px 28px;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:all .5s ease;cursor:default;display:flex;flex-direction:column;gap:24px;min-height:480px}
 .hp-svc-card.show{opacity:1;transform:translateY(0)}
-.hp-svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
 .hp-svc-card:nth-child(1){background:#C6F5E2}
 .hp-svc-card:nth-child(2){background:#CEEBFF}
 .hp-svc-card:nth-child(3){background:#FFD6E8}
+/* Hover: subtle gradient wash from top */
+.hp-svc-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .2s ease;pointer-events:none;z-index:0}
+.hp-svc-card:nth-child(1)::before{background:linear-gradient(180deg,rgba(14,84,44,.06),transparent 40%)}
+.hp-svc-card:nth-child(2)::before{background:linear-gradient(180deg,rgba(0,67,210,.06),transparent 40%)}
+.hp-svc-card:nth-child(3)::before{background:linear-gradient(180deg,rgba(192,0,107,.06),transparent 40%)}
+.hp-svc-card:hover::before{opacity:1}
 /* Card text */
-.hp-svc-card-text{padding:32px 28px 16px;position:relative;z-index:2}
-.hp-svc-card h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:10px;line-height:1.2}
+.hp-svc-card-text{position:relative;z-index:2}
+.hp-svc-card h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:10px;line-height:1.2;transition:color .2s}
 .hp-svc-card:nth-child(1) h3{color:#063D1A}
 .hp-svc-card:nth-child(2) h3{color:#001D66}
 .hp-svc-card:nth-child(3) h3{color:#8A004E}
-.hp-svc-card-text>p{font-size:14px;line-height:1.65}
-.hp-svc-card:nth-child(1) .hp-svc-card-text>p{color:rgba(6,61,26,.55)}
-.hp-svc-card:nth-child(2) .hp-svc-card-text>p{color:rgba(0,29,102,.5)}
-.hp-svc-card:nth-child(3) .hp-svc-card-text>p{color:rgba(138,0,78,.45)}
+.hp-svc-card-text>p{font-size:14px;line-height:1.65;transition:color .2s}
+.hp-svc-card:nth-child(1) .hp-svc-card-text>p{color:rgba(6,61,26,.5)}
+.hp-svc-card:nth-child(2) .hp-svc-card-text>p{color:rgba(0,29,102,.45)}
+.hp-svc-card:nth-child(3) .hp-svc-card-text>p{color:rgba(138,0,78,.4)}
+.hp-svc-card:nth-child(1):hover .hp-svc-card-text>p{color:rgba(6,61,26,.7)}
+.hp-svc-card:nth-child(2):hover .hp-svc-card-text>p{color:rgba(0,29,102,.65)}
+.hp-svc-card:nth-child(3):hover .hp-svc-card-text>p{color:rgba(138,0,78,.6)}
 /* Tags */
-.hp-svc-tags{display:flex;flex-wrap:wrap;gap:6px;padding:0 28px 16px;position:relative;z-index:2}
-.hp-svc-tag{font-size:10px;font-weight:600;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.5)}
+.hp-svc-tags{display:flex;flex-wrap:wrap;gap:6px;position:relative;z-index:2}
+.hp-svc-tag{font-size:10px;font-weight:600;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.45);transition:background .2s}
+.hp-svc-card:hover .hp-svc-tag{background:rgba(255,255,255,.7)}
 .hp-svc-card:nth-child(1) .hp-svc-tag{color:#0E542C}
 .hp-svc-card:nth-child(2) .hp-svc-tag{color:#0043D2}
 .hp-svc-card:nth-child(3) .hp-svc-tag{color:#C0006B}
-/* Infographic mockup area */
-.hp-svc-mock{margin:0 16px 16px;border-radius:14px;overflow:hidden;position:relative;min-height:240px;padding:24px}
-/* Card 1: Platform coverage diagram */
-.hp-svc-card:nth-child(1) .hp-svc-mock{background:rgba(14,84,44,.04)}
-.svc-plat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-.svc-plat-chip{display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(255,255,255,.6);border-radius:10px;transition:all .3s ease}
-.svc-plat-chip:hover{background:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.svc-plat-chip img,.svc-plat-chip svg{width:18px;height:18px;object-fit:contain;flex-shrink:0}
-.svc-plat-chip span{font-size:11px;font-weight:600;color:#063D1A}
-.svc-plat-result{margin-top:14px;padding:12px 16px;background:rgba(255,255,255,.5);border-radius:10px;display:flex;align-items:center;gap:10px;border-left:3px solid #0E542C}
-.svc-plat-result-badge{width:24px;height:24px;border-radius:6px;background:#0E542C;color:#7DFFB3;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0}
-.svc-plat-result span{font-size:12px;color:#063D1A;font-weight:600}
-.svc-plat-result strong{color:#0E542C}
-/* Card 2: Semantic layers diagram */
-.hp-svc-card:nth-child(2) .hp-svc-mock{background:rgba(0,67,210,.03)}
-.svc-sem-layer{padding:10px 16px;border-radius:10px;margin-bottom:8px;display:flex;align-items:center;gap:10px;transition:all .3s ease}
-.svc-sem-layer:hover{transform:translateX(4px)}
-.svc-sem-layer.l1{background:rgba(0,67,210,.1)}
-.svc-sem-layer.l2{background:rgba(0,67,210,.07);margin-left:16px}
-.svc-sem-layer.l3{background:rgba(0,67,210,.04);margin-left:32px}
-.svc-sem-icon{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.svc-sem-layer.l1 .svc-sem-icon{background:#0043D2}
-.svc-sem-layer.l2 .svc-sem-icon{background:rgba(0,67,210,.2)}
-.svc-sem-layer.l3 .svc-sem-icon{background:rgba(0,67,210,.1)}
-.svc-sem-icon svg{width:12px;height:12px}
-.svc-sem-text{flex:1}
-.svc-sem-text strong{display:block;font-size:11px;font-weight:700;color:#001D66}
-.svc-sem-text span{font-size:10px;color:rgba(0,29,102,.45)}
-.svc-sem-count{font-family:var(--display);font-size:16px;font-weight:700;color:#0043D2;flex-shrink:0}
-.svc-sem-connector{width:2px;height:8px;background:rgba(0,67,210,.1);margin-left:28px}
-/* Card 3: Pipeline flow diagram */
-.hp-svc-card:nth-child(3) .hp-svc-mock{background:rgba(192,0,107,.03)}
-.svc-flow{display:flex;flex-direction:column;gap:0}
-.svc-flow-step{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;transition:all .3s ease}
-.svc-flow-step:hover{background:rgba(255,255,255,.4);transform:translateX(4px)}
-.svc-flow-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0}
-.svc-flow-step:nth-child(1) .svc-flow-num{background:rgba(192,0,107,.06);color:rgba(138,0,78,.4)}
-.svc-flow-step:nth-child(2) .svc-flow-num{background:rgba(192,0,107,.1);color:rgba(138,0,78,.5)}
-.svc-flow-step:nth-child(3) .svc-flow-num{background:rgba(192,0,107,.15);color:rgba(138,0,78,.6)}
-.svc-flow-step:nth-child(4) .svc-flow-num{background:#C0006B;color:#fff}
-.svc-flow-text{flex:1}
-.svc-flow-text strong{display:block;font-size:12px;font-weight:700;color:#8A004E}
-.svc-flow-text span{font-size:10px;color:rgba(138,0,78,.4)}
-.svc-flow-val{font-family:var(--display);font-size:16px;font-weight:700;color:#C0006B;flex-shrink:0}
-.svc-flow-arrow{display:flex;justify-content:center;padding:2px 0}
-.svc-flow-arrow svg{width:16px;height:16px;color:rgba(192,0,107,.15)}
+/* Illustration area — fills remaining space */
+.hp-svc-illust{flex:1;display:flex;align-items:flex-end;justify-content:center;position:relative;z-index:1;min-height:180px}
+.hp-svc-illust svg{width:100%;height:auto;transition:all .3s cubic-bezier(.16,1,.3,1)}
+/* Card 1: Chat bubble constellation — scales up on hover */
+.hp-svc-card:nth-child(1) .hp-svc-illust svg{opacity:.35;transform-origin:center bottom;transform:scale(.95)}
+.hp-svc-card:nth-child(1):hover .hp-svc-illust svg{opacity:.6;transform:scale(1.05)}
+/* Card 2: Architecture grid — tilts in perspective on hover */
+.hp-svc-card:nth-child(2) .hp-svc-illust svg{opacity:.35;transform:perspective(600px) rotateX(0deg)}
+.hp-svc-card:nth-child(2):hover .hp-svc-illust svg{opacity:.6;transform:perspective(600px) rotateX(12deg) scale(.95)}
+/* Card 3: Stacked pages — fan out on hover */
+.hp-svc-card:nth-child(3) .hp-svc-illust{position:relative}
+.hp-svc-card:nth-child(3) .hp-svc-illust svg{position:absolute;bottom:0;opacity:.3;transition:all .3s cubic-bezier(.16,1,.3,1)}
+.hp-svc-card:nth-child(3) .hp-svc-illust svg.pg-back{left:50%;transform:translateX(-50%)}
+.hp-svc-card:nth-child(3) .hp-svc-illust svg.pg-mid{left:50%;transform:translateX(-50%)}
+.hp-svc-card:nth-child(3) .hp-svc-illust svg.pg-front{left:50%;transform:translateX(-50%)}
+.hp-svc-card:nth-child(3):hover .hp-svc-illust svg{opacity:.55}
+.hp-svc-card:nth-child(3):hover .hp-svc-illust svg.pg-back{transform:translateX(-65%) rotate(-6deg)}
+.hp-svc-card:nth-child(3):hover .hp-svc-illust svg.pg-mid{transform:translateX(-50%)}
+.hp-svc-card:nth-child(3):hover .hp-svc-illust svg.pg-front{transform:translateX(-35%) rotate(6deg)}
 /* Supporting services */
 .hp-svc-more-label{margin-top:48px;margin-bottom:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(0,0,0,.3);text-align:center}
 .hp-svc-more{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -1239,78 +1221,138 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
     <!-- Core Services -->
     <div class="hp-svc-core" id="svcCore">
-      <!-- Card 1: AI Visibility — platform coverage infographic -->
+      <!-- Card 1: AI Visibility — chat bubble constellation, scales up on hover -->
       <div class="hp-svc-card" data-delay="0">
         <div class="hp-svc-card-text">
           <h3>AI Search Visibility</h3>
           <p>Get cited by ChatGPT, Perplexity, Gemini, and Claude as the #1 recommended solution in your category.</p>
         </div>
         <div class="hp-svc-tags"><span class="hp-svc-tag">GEO Strategy</span><span class="hp-svc-tag">Entity Building</span><span class="hp-svc-tag">Citation Tracking</span></div>
-        <div class="hp-svc-mock">
-          <div class="svc-plat-grid">
-            <div class="svc-plat-chip"><img src="logos/chatgpt-logo.avif" alt=""><span>ChatGPT</span></div>
-            <div class="svc-plat-chip"><img src="logos/claude-logo.png" alt=""><span>Claude</span></div>
-            <div class="svc-plat-chip"><img src="logos/perplexity-logo.png" alt=""><span>Perplexity</span></div>
-            <div class="svc-plat-chip"><svg width="18" height="18" viewBox="0 0 24 24"><defs><linearGradient id="sv1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="50%" stop-color="#9B72CB"/><stop offset="100%" stop-color="#D96570"/></linearGradient></defs><path fill="url(#sv1)" d="M12 2C12 7.52 7.52 12 2 12c5.52 0 10 4.48 10 10 0-5.52 4.48-10 10-10-5.52 0-10-4.48-10-10z"/></svg><span>Gemini</span></div>
-            <div class="svc-plat-chip"><svg width="18" height="18" viewBox="0 0 24 24"><defs><linearGradient id="sv2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="100%" stop-color="#34A853"/></linearGradient></defs><path fill="url(#sv2)" d="M12 2L8.5 8.5 2 12l6.5 3.5L12 22l3.5-6.5L22 12l-6.5-3.5z"/></svg><span>AI Overviews</span></div>
-            <div class="svc-plat-chip"><img src="logos/google.png" alt="" style="width:18px;height:18px"><span>Google</span></div>
-          </div>
-          <div class="svc-plat-result">
-            <div class="svc-plat-result-badge">#1</div>
-            <span><strong>Your Brand</strong> cited as the top answer on 6/6 platforms</span>
-          </div>
+        <div class="hp-svc-illust">
+          <svg viewBox="0 0 320 220" fill="none">
+            <!-- Multiple AI chat bubbles radiating from center -->
+            <!-- Center: your brand recommendation -->
+            <rect x="80" y="70" width="160" height="80" rx="12" stroke="#0E542C" stroke-width="1.2" fill="none"/>
+            <rect x="95" y="82" width="60" height="5" rx="2" fill="rgba(14,84,44,.15)"/>
+            <rect x="95" y="93" width="130" height="4" rx="2" fill="rgba(14,84,44,.08)"/>
+            <rect x="95" y="102" width="110" height="4" rx="2" fill="rgba(14,84,44,.08)"/>
+            <rect x="95" y="115" width="70" height="18" rx="9" fill="rgba(14,84,44,.1)"/>
+            <text x="130" y="127" text-anchor="middle" fill="#0E542C" font-size="7" font-weight="700">#1 Cited</text>
+            <!-- Surrounding smaller chat bubbles -->
+            <rect x="10" y="20" width="90" height="40" rx="10" stroke="#0E542C" stroke-width=".8" fill="none" opacity=".4"/>
+            <rect x="22" y="30" width="40" height="4" rx="2" fill="rgba(14,84,44,.08)"/>
+            <rect x="22" y="38" width="60" height="3" rx="1.5" fill="rgba(14,84,44,.05)"/>
+            <rect x="220" y="15" width="85" height="40" rx="10" stroke="#0E542C" stroke-width=".8" fill="none" opacity=".4"/>
+            <rect x="232" y="25" width="35" height="4" rx="2" fill="rgba(14,84,44,.08)"/>
+            <rect x="232" y="33" width="55" height="3" rx="1.5" fill="rgba(14,84,44,.05)"/>
+            <rect x="5" y="130" width="70" height="35" rx="8" stroke="#0E542C" stroke-width=".8" fill="none" opacity=".3"/>
+            <rect x="15" y="139" width="30" height="3" rx="1.5" fill="rgba(14,84,44,.06)"/>
+            <rect x="15" y="146" width="45" height="3" rx="1.5" fill="rgba(14,84,44,.04)"/>
+            <rect x="245" y="130" width="70" height="35" rx="8" stroke="#0E542C" stroke-width=".8" fill="none" opacity=".3"/>
+            <rect x="255" y="139" width="30" height="3" rx="1.5" fill="rgba(14,84,44,.06)"/>
+            <rect x="255" y="146" width="45" height="3" rx="1.5" fill="rgba(14,84,44,.04)"/>
+            <!-- Connection dots -->
+            <circle cx="100" cy="60" r="2" fill="rgba(14,84,44,.15)"/>
+            <circle cx="220" cy="55" r="2" fill="rgba(14,84,44,.15)"/>
+            <circle cx="75" cy="130" r="2" fill="rgba(14,84,44,.1)"/>
+            <circle cx="245" cy="130" r="2" fill="rgba(14,84,44,.1)"/>
+            <!-- Dashed connection lines -->
+            <line x1="100" y1="60" x2="120" y2="70" stroke="rgba(14,84,44,.08)" stroke-width=".8" stroke-dasharray="3 3"/>
+            <line x1="220" y1="55" x2="200" y2="70" stroke="rgba(14,84,44,.08)" stroke-width=".8" stroke-dasharray="3 3"/>
+            <line x1="75" y1="130" x2="100" y2="150" stroke="rgba(14,84,44,.06)" stroke-width=".8" stroke-dasharray="3 3"/>
+            <line x1="245" y1="130" x2="220" y2="150" stroke="rgba(14,84,44,.06)" stroke-width=".8" stroke-dasharray="3 3"/>
+          </svg>
         </div>
       </div>
-      <!-- Card 2: Semantic SEO — layered architecture -->
+      <!-- Card 2: Semantic SEO — isometric grid structure, tilts on hover -->
       <div class="hp-svc-card" data-delay="150">
         <div class="hp-svc-card-text">
           <h3>Semantic SEO Strategy</h3>
           <p>Full-category semantic architecture that builds topical authority across Google and AI simultaneously.</p>
         </div>
         <div class="hp-svc-tags"><span class="hp-svc-tag">Topical Maps</span><span class="hp-svc-tag">Semantic Clusters</span><span class="hp-svc-tag">Authority Building</span></div>
-        <div class="hp-svc-mock">
-          <div class="svc-sem-layer l1">
-            <div class="svc-sem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/></svg></div>
-            <div class="svc-sem-text"><strong>Category Authority</strong><span>Full topical coverage of your market</span></div>
-            <div class="svc-sem-count">1</div>
-          </div>
-          <div class="svc-sem-connector"></div>
-          <div class="svc-sem-layer l2">
-            <div class="svc-sem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0043D2" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m-10-10h4m12 0h4"/></svg></div>
-            <div class="svc-sem-text"><strong>Pillar Topics</strong><span>Core pages that anchor your authority</span></div>
-            <div class="svc-sem-count">8</div>
-          </div>
-          <div class="svc-sem-connector"></div>
-          <div class="svc-sem-layer l3">
-            <div class="svc-sem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0043D2" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-            <div class="svc-sem-text"><strong>Semantic Clusters</strong><span>Supporting pages that fill every gap</span></div>
-            <div class="svc-sem-count">42</div>
-          </div>
-          <div class="svc-sem-connector"></div>
-          <div class="svc-sem-layer l3">
-            <div class="svc-sem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0043D2" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
-            <div class="svc-sem-text"><strong>Entity Relationships</strong><span>Internal linking architecture</span></div>
-            <div class="svc-sem-count">180+</div>
-          </div>
+        <div class="hp-svc-illust">
+          <svg viewBox="0 0 320 220" fill="none">
+            <!-- Layered grid structure representing semantic architecture -->
+            <!-- Layer 1: Base grid -->
+            <rect x="40" y="120" width="240" height="60" rx="8" stroke="#0043D2" stroke-width=".8" fill="none" opacity=".3"/>
+            <line x1="120" y1="120" x2="120" y2="180" stroke="rgba(0,67,210,.1)" stroke-width=".5"/>
+            <line x1="200" y1="120" x2="200" y2="180" stroke="rgba(0,67,210,.1)" stroke-width=".5"/>
+            <rect x="52" y="130" width="56" height="6" rx="2" fill="rgba(0,67,210,.06)"/>
+            <rect x="52" y="140" width="40" height="4" rx="2" fill="rgba(0,67,210,.04)"/>
+            <rect x="132" y="130" width="56" height="6" rx="2" fill="rgba(0,67,210,.06)"/>
+            <rect x="132" y="140" width="44" height="4" rx="2" fill="rgba(0,67,210,.04)"/>
+            <rect x="212" y="130" width="56" height="6" rx="2" fill="rgba(0,67,210,.06)"/>
+            <rect x="212" y="140" width="48" height="4" rx="2" fill="rgba(0,67,210,.04)"/>
+            <!-- Layer 2: Middle pillars -->
+            <rect x="60" y="60" width="200" height="48" rx="8" stroke="#0043D2" stroke-width="1" fill="none" opacity=".5"/>
+            <line x1="160" y1="60" x2="160" y2="108" stroke="rgba(0,67,210,.12)" stroke-width=".5"/>
+            <rect x="74" y="70" width="70" height="7" rx="2" fill="rgba(0,67,210,.1)"/>
+            <rect x="74" y="82" width="50" height="4" rx="2" fill="rgba(0,67,210,.06)"/>
+            <rect x="174" y="70" width="70" height="7" rx="2" fill="rgba(0,67,210,.1)"/>
+            <rect x="174" y="82" width="55" height="4" rx="2" fill="rgba(0,67,210,.06)"/>
+            <!-- Layer 3: Top authority -->
+            <rect x="90" y="12" width="140" height="36" rx="8" stroke="#0043D2" stroke-width="1.2" fill="none" opacity=".7"/>
+            <rect x="106" y="22" width="88" height="7" rx="2" fill="rgba(0,67,210,.12)"/>
+            <rect x="106" y="33" width="60" height="4" rx="2" fill="rgba(0,67,210,.07)"/>
+            <!-- Vertical connectors -->
+            <line x1="130" y1="48" x2="130" y2="60" stroke="rgba(0,67,210,.1)" stroke-width=".8" stroke-dasharray="2 2"/>
+            <line x1="190" y1="48" x2="190" y2="60" stroke="rgba(0,67,210,.1)" stroke-width=".8" stroke-dasharray="2 2"/>
+            <line x1="100" y1="108" x2="80" y2="120" stroke="rgba(0,67,210,.08)" stroke-width=".8" stroke-dasharray="2 2"/>
+            <line x1="160" y1="108" x2="160" y2="120" stroke="rgba(0,67,210,.08)" stroke-width=".8" stroke-dasharray="2 2"/>
+            <line x1="220" y1="108" x2="240" y2="120" stroke="rgba(0,67,210,.08)" stroke-width=".8" stroke-dasharray="2 2"/>
+            <!-- Node dots at junctions -->
+            <circle cx="130" cy="48" r="3" fill="rgba(0,67,210,.15)"/>
+            <circle cx="190" cy="48" r="3" fill="rgba(0,67,210,.15)"/>
+            <circle cx="100" cy="108" r="2.5" fill="rgba(0,67,210,.1)"/>
+            <circle cx="160" cy="108" r="2.5" fill="rgba(0,67,210,.1)"/>
+            <circle cx="220" cy="108" r="2.5" fill="rgba(0,67,210,.1)"/>
+          </svg>
         </div>
       </div>
-      <!-- Card 3: Pipeline — step flow diagram -->
+      <!-- Card 3: Pipeline — stacked content pages that fan out on hover -->
       <div class="hp-svc-card" data-delay="300">
         <div class="hp-svc-card-text">
           <h3>Pipeline Content Production</h3>
           <p>BOFU content that converts visitors to demos. Every page drives pipeline, not vanity traffic.</p>
         </div>
         <div class="hp-svc-tags"><span class="hp-svc-tag">BOFU Pages</span><span class="hp-svc-tag">Comparison Content</span><span class="hp-svc-tag">Conversion Copy</span></div>
-        <div class="hp-svc-mock">
-          <div class="svc-flow">
-            <div class="svc-flow-step"><div class="svc-flow-num">1</div><div class="svc-flow-text"><strong>Search Impressions</strong><span>High-intent queries in your category</span></div><div class="svc-flow-val">124K</div></div>
-            <div class="svc-flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
-            <div class="svc-flow-step"><div class="svc-flow-num">2</div><div class="svc-flow-text"><strong>Qualified Clicks</strong><span>Visitors with buying intent</span></div><div class="svc-flow-val">8.2K</div></div>
-            <div class="svc-flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
-            <div class="svc-flow-step"><div class="svc-flow-num">3</div><div class="svc-flow-text"><strong>Demos Booked</strong><span>From organic + AI citations</span></div><div class="svc-flow-val">47/mo</div></div>
-            <div class="svc-flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
-            <div class="svc-flow-step"><div class="svc-flow-num">4</div><div class="svc-flow-text"><strong>Pipeline Revenue</strong><span>Attributed to SAGE content</span></div><div class="svc-flow-val">$1.2M</div></div>
-          </div>
+        <div class="hp-svc-illust">
+          <!-- Back page -->
+          <svg class="pg-back" viewBox="0 0 220 280" width="200">
+            <rect x="10" y="10" width="200" height="260" rx="12" stroke="#C0006B" stroke-width=".8" fill="none" opacity=".5"/>
+            <rect x="28" y="30" width="80" height="8" rx="3" fill="rgba(192,0,107,.06)"/>
+            <rect x="28" y="46" width="164" height="5" rx="2" fill="rgba(192,0,107,.04)"/>
+            <rect x="28" y="56" width="140" height="5" rx="2" fill="rgba(192,0,107,.04)"/>
+            <rect x="28" y="66" width="150" height="5" rx="2" fill="rgba(192,0,107,.04)"/>
+          </svg>
+          <!-- Middle page -->
+          <svg class="pg-mid" viewBox="0 0 220 280" width="200">
+            <rect x="10" y="10" width="200" height="260" rx="12" stroke="#C0006B" stroke-width="1" fill="none" opacity=".6"/>
+            <rect x="28" y="30" width="90" height="8" rx="3" fill="rgba(192,0,107,.08)"/>
+            <rect x="28" y="46" width="164" height="5" rx="2" fill="rgba(192,0,107,.05)"/>
+            <rect x="28" y="56" width="130" height="5" rx="2" fill="rgba(192,0,107,.05)"/>
+            <rect x="28" y="66" width="150" height="5" rx="2" fill="rgba(192,0,107,.05)"/>
+            <line x1="28" y1="85" x2="192" y2="85" stroke="rgba(192,0,107,.06)" stroke-width=".5"/>
+            <rect x="28" y="95" width="76" height="50" rx="6" stroke="rgba(192,0,107,.08)" stroke-width=".8" fill="none"/>
+            <rect x="114" y="95" width="78" height="50" rx="6" stroke="rgba(192,0,107,.06)" stroke-width=".8" fill="none"/>
+          </svg>
+          <!-- Front page -->
+          <svg class="pg-front" viewBox="0 0 220 280" width="200">
+            <rect x="10" y="10" width="200" height="260" rx="12" stroke="#C0006B" stroke-width="1.2" fill="none" opacity=".7"/>
+            <rect x="28" y="30" width="100" height="9" rx="3" fill="rgba(192,0,107,.1)"/>
+            <rect x="28" y="48" width="164" height="5" rx="2" fill="rgba(192,0,107,.06)"/>
+            <rect x="28" y="58" width="140" height="5" rx="2" fill="rgba(192,0,107,.06)"/>
+            <rect x="28" y="68" width="155" height="5" rx="2" fill="rgba(192,0,107,.06)"/>
+            <rect x="28" y="78" width="120" height="5" rx="2" fill="rgba(192,0,107,.06)"/>
+            <line x1="28" y1="95" x2="192" y2="95" stroke="rgba(192,0,107,.08)" stroke-width=".5"/>
+            <rect x="28" y="108" width="76" height="55" rx="6" stroke="rgba(192,0,107,.1)" stroke-width=".8" fill="none"/>
+            <rect x="114" y="108" width="78" height="55" rx="6" stroke="rgba(192,0,107,.08)" stroke-width=".8" fill="none"/>
+            <rect x="28" y="175" width="164" height="5" rx="2" fill="rgba(192,0,107,.05)"/>
+            <rect x="28" y="185" width="140" height="5" rx="2" fill="rgba(192,0,107,.05)"/>
+            <rect x="28" y="200" width="120" height="28" rx="8" fill="rgba(192,0,107,.08)"/>
+            <text x="88" y="218" text-anchor="middle" fill="rgba(192,0,107,.35)" font-size="9" font-weight="700">Book Demo</text>
+          </svg>
         </div>
       </div>
     </div>
