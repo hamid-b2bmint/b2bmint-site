@@ -253,12 +253,14 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .s-inner{max-width:1100px;margin:0 auto;padding:0 40px}
 
 /* ── Brand Logos Strip ── */
-.s-logos{background:#fff;padding:40px 0;border-bottom:1px solid rgba(0,0,0,.04)}
+.s-logos{background:var(--forest-deep);padding:52px 0;position:relative;overflow:hidden}
+.s-logos::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(125,255,179,.15),transparent)}
+.s-logos::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(125,255,179,.15),transparent)}
 .s-logos .s-inner{text-align:center}
-.s-logos-label{font-size:12px;font-weight:600;color:rgba(0,0,0,.25);text-transform:uppercase;letter-spacing:2px;margin-bottom:28px}
-.hp-logos{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
-.hp-logos img{height:28px;width:auto;opacity:.35;filter:grayscale(100%);transition:all .4s}
-.hp-logos img:hover{opacity:.7;filter:grayscale(0%)}
+.s-logos-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:3px;margin-bottom:32px}
+.hp-logos{display:flex;align-items:center;justify-content:center;gap:52px;flex-wrap:wrap}
+.hp-logos img{height:36px;width:auto;opacity:.5;transition:all .4s;border-radius:6px}
+.hp-logos img:hover{opacity:.9;transform:scale(1.05)}
 
 /* ── Single Testimonial (large) ── */
 .s-testimonial{background:var(--forest-deep);padding:100px 0;position:relative;overflow:hidden}
@@ -905,7 +907,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   .hp-cta-btn{align-self:center}
   .hp-cta-stats{justify-content:center}
   .hp-logos{gap:28px}
-  .hp-logos img{height:22px}
+  .hp-logos img{height:28px}
   .hp-testi-grid{grid-template-columns:1fr}
   .ft-topbar{padding:40px 20px 0}
   .ft-nav-center{padding:32px 20px}
@@ -1017,14 +1019,13 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <!-- BRAND LOGOS -->
 <section class="s-logos">
   <div class="s-inner">
-    <div class="s-logos-label rv">Trusted by leading SaaS brands</div>
+    <div class="s-logos-label rv">Trusted by growing SaaS brands</div>
     <div class="hp-logos rv" style="transition-delay:.1s">
-      <img src="google.png" alt="Google" style="height:32px">
-      <img src="google.png" alt="HubSpot" style="height:26px">
-      <img src="google.png" alt="Salesforce" style="height:28px">
-      <img src="google.png" alt="Stripe" style="height:28px">
-      <img src="google.png" alt="Notion" style="height:24px">
-      <img src="google.png" alt="Intercom" style="height:26px">
+      <img src="bookyourdatacom_logo.jpeg" alt="BookYourData">
+      <img src="socially-powerful-logo.jpg" alt="Socially Powerful">
+      <img src="kubegrade-logo.svg" alt="KubeGrade">
+      <img src="mailmunch-logo.svg" alt="MailMunch">
+      <img src="appflows-logo.svg" alt="AppFlows">
     </div>
   </div>
 </section>
