@@ -798,7 +798,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .ft-badge{flex-shrink:0;animation:ftBadgeFloat 7s ease-in-out infinite}
 .ft-badge:last-child{animation-delay:-3.5s}
 @keyframes ftBadgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.ft-badge svg{display:block}
+.ft-badge svg{display:block;filter:drop-shadow(0 4px 20px rgba(125,255,179,.1))}
 /* center line + statement */
 .ft-statement{flex:1;display:flex;align-items:center;gap:0;padding:0 20px}
 .ft-statement-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--lime),transparent);opacity:.3;position:relative}
@@ -1543,24 +1543,29 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
     <!-- Decorative badge strip: [SAGE badge] ——— WE BUILD 100% VISIBILITY ——— [MINT badge] -->
     <div class="ft-badge-strip">
-      <!-- Left badge — SAGE emblem -->
+      <!-- Left badge — SAGE shield -->
       <div class="ft-badge">
-        <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
-          <circle cx="80" cy="80" r="72" stroke="var(--lime)" stroke-width="1" opacity=".5"/>
-          <circle cx="80" cy="80" r="58" stroke="var(--lime)" stroke-width=".5" opacity=".3"/>
-          <!-- ornate leaf shape -->
-          <path d="M80 18 C98 48 110 60 110 80 C110 100 98 118 80 142 C62 118 50 100 50 80 C50 60 62 48 80 18Z" stroke="var(--lime)" stroke-width="1.2" fill="rgba(125,255,179,.06)" opacity=".7"/>
-          <!-- cross veins -->
-          <line x1="80" y1="18" x2="80" y2="142" stroke="var(--lime)" stroke-width=".5" opacity=".25"/>
-          <line x1="50" y1="58" x2="110" y2="102" stroke="var(--lime)" stroke-width=".3" opacity=".2"/>
-          <line x1="50" y1="102" x2="110" y2="58" stroke="var(--lime)" stroke-width=".3" opacity=".2"/>
-          <!-- decorative curls left -->
-          <path d="M46 55 C30 50 25 65 35 72 C25 72 22 85 36 88" stroke="var(--lime)" stroke-width=".8" fill="none" opacity=".4" stroke-linecap="round"/>
-          <!-- decorative curls right -->
-          <path d="M114 55 C130 50 135 65 125 72 C135 72 138 85 124 88" stroke="var(--lime)" stroke-width=".8" fill="none" opacity=".4" stroke-linecap="round"/>
+        <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- outer shield shape -->
+          <path d="M90 10 L160 45 L160 100 C160 140 130 165 90 175 C50 165 20 140 20 100 L20 45 Z" fill="rgba(125,255,179,.06)" stroke="#7DFFB3" stroke-width="1.5"/>
+          <!-- inner shield -->
+          <path d="M90 28 L145 55 L145 98 C145 130 120 152 90 160 C60 152 35 130 35 98 L35 55 Z" fill="rgba(125,255,179,.03)" stroke="#7DFFB3" stroke-width=".5" opacity=".4"/>
+          <!-- leaf icon -->
+          <path d="M90 55 C105 70 112 82 112 95 C112 108 102 118 90 125 C78 118 68 108 68 95 C68 82 75 70 90 55Z" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width="1.2"/>
+          <line x1="90" y1="60" x2="90" y2="120" stroke="#7DFFB3" stroke-width=".6" opacity=".4"/>
+          <path d="M78 85 Q90 75 102 85" stroke="#7DFFB3" stroke-width=".5" fill="none" opacity=".3"/>
+          <path d="M75 98 Q90 88 105 98" stroke="#7DFFB3" stroke-width=".5" fill="none" opacity=".3"/>
+          <!-- banner ribbon -->
+          <path d="M40 130 L65 125 L65 145 L40 140 Z" fill="rgba(125,255,179,.08)" stroke="#7DFFB3" stroke-width=".8"/>
+          <path d="M140 130 L115 125 L115 145 L140 140 Z" fill="rgba(125,255,179,.08)" stroke="#7DFFB3" stroke-width=".8"/>
+          <rect x="65" y="122" width="50" height="24" rx="2" fill="rgba(125,255,179,.06)" stroke="#7DFFB3" stroke-width=".8"/>
           <!-- text -->
-          <text x="80" y="77" text-anchor="middle" fill="var(--lime)" font-size="20" font-weight="700" font-family="Recoleta,serif" opacity=".8">SAGE</text>
-          <text x="80" y="92" text-anchor="middle" fill="var(--lime)" font-size="7" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".4">ENGINE</text>
+          <text x="90" y="88" text-anchor="middle" fill="#7DFFB3" font-size="22" font-weight="700" font-family="Recoleta,serif">SAGE</text>
+          <text x="90" y="139" text-anchor="middle" fill="#7DFFB3" font-size="8" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">ENGINE</text>
+          <!-- stars -->
+          <circle cx="75" cy="42" r="2" fill="#7DFFB3" opacity=".5"/>
+          <circle cx="90" cy="38" r="2.5" fill="#7DFFB3" opacity=".6"/>
+          <circle cx="105" cy="42" r="2" fill="#7DFFB3" opacity=".5"/>
         </svg>
       </div>
 
@@ -1571,24 +1576,28 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
         <div class="ft-statement-line"></div>
       </div>
 
-      <!-- Right badge — MINT emblem -->
+      <!-- Right badge — MINT growth crest -->
       <div class="ft-badge">
-        <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
-          <circle cx="80" cy="80" r="72" stroke="var(--lime)" stroke-width="1" opacity=".5"/>
-          <circle cx="80" cy="80" r="58" stroke="var(--lime)" stroke-width=".5" opacity=".3"/>
-          <!-- upward arrow -->
-          <path d="M80 125 L80 45" stroke="var(--lime)" stroke-width="1.5" opacity=".6" stroke-linecap="round"/>
-          <path d="M60 65 L80 42 L100 65" stroke="var(--lime)" stroke-width="1.5" opacity=".6" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- glow dot -->
-          <circle cx="80" cy="36" r="5" fill="var(--lime)" opacity=".15"/>
-          <circle cx="80" cy="36" r="2.5" fill="var(--lime)" opacity=".4"/>
-          <!-- decorative curls left -->
-          <path d="M46 95 C30 90 25 105 35 112 C25 112 22 125 36 128" stroke="var(--lime)" stroke-width=".8" fill="none" opacity=".4" stroke-linecap="round"/>
-          <!-- decorative curls right -->
-          <path d="M114 95 C130 90 135 105 125 112 C135 112 138 125 124 128" stroke="var(--lime)" stroke-width=".8" fill="none" opacity=".4" stroke-linecap="round"/>
+        <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- hexagonal outer frame -->
+          <polygon points="90,8 160,38 160,118 90,172 20,118 20,38" fill="rgba(125,255,179,.05)" stroke="#7DFFB3" stroke-width="1.5"/>
+          <polygon points="90,24 148,48 148,112 90,158 32,112 32,48" fill="rgba(125,255,179,.02)" stroke="#7DFFB3" stroke-width=".5" opacity=".35"/>
+          <!-- upward chart/growth bars -->
+          <rect x="58" y="100" width="12" height="30" rx="2" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width=".8"/>
+          <rect x="74" y="85" width="12" height="45" rx="2" fill="rgba(125,255,179,.12)" stroke="#7DFFB3" stroke-width=".8"/>
+          <rect x="90" y="65" width="12" height="65" rx="2" fill="rgba(125,255,179,.15)" stroke="#7DFFB3" stroke-width="1"/>
+          <rect x="106" y="50" width="12" height="80" rx="2" fill="rgba(125,255,179,.18)" stroke="#7DFFB3" stroke-width="1"/>
+          <!-- arrow on top of last bar -->
+          <path d="M112 50 L112 38 M106 44 L112 36 L118 44" stroke="#7DFFB3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="112" cy="33" r="3" fill="#7DFFB3" opacity=".3"/>
+          <circle cx="112" cy="33" r="1.5" fill="#7DFFB3" opacity=".7"/>
+          <!-- banner ribbon -->
+          <path d="M30 135 L60 130 L60 150 L30 145 Z" fill="rgba(125,255,179,.08)" stroke="#7DFFB3" stroke-width=".8"/>
+          <path d="M150 135 L120 130 L120 150 L150 145 Z" fill="rgba(125,255,179,.08)" stroke="#7DFFB3" stroke-width=".8"/>
+          <rect x="60" y="127" width="60" height="24" rx="2" fill="rgba(125,255,179,.06)" stroke="#7DFFB3" stroke-width=".8"/>
           <!-- text -->
-          <text x="80" y="112" text-anchor="middle" fill="var(--lime)" font-size="16" font-weight="700" font-family="Recoleta,serif" opacity=".8">MINT</text>
-          <text x="80" y="125" text-anchor="middle" fill="var(--lime)" font-size="7" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".4">GROWTH</text>
+          <text x="90" y="144" text-anchor="middle" fill="#7DFFB3" font-size="9" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">GROWTH</text>
+          <text x="90" y="22" text-anchor="middle" fill="#7DFFB3" font-size="18" font-weight="700" font-family="Recoleta,serif" opacity=".6">MINT</text>
         </svg>
       </div>
     </div>
