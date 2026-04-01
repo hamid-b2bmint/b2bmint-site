@@ -815,16 +815,11 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .ft-nl-form button:hover{background:#6ee6a0}
 
 /* ── trust badges row ── */
-.ft-trust-row{max-width:1100px;margin:0 auto;padding:24px 40px;display:flex;justify-content:center;align-items:center;gap:36px;flex-wrap:wrap}
-.ft-trust-badge{display:flex;align-items:center;gap:8px;padding:10px 18px;background:rgba(255,255,255,.04);border-radius:10px;border:1px solid rgba(255,255,255,.06);transition:all .3s}
-.ft-trust-badge:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);transform:translateY(-2px)}
-.ft-trust-badge svg{flex-shrink:0}
-.ft-trust-badge-text{font-size:11px;font-weight:700;color:rgba(255,255,255,.5);line-height:1.2;text-transform:uppercase;letter-spacing:.5px}
-.ft-trust-badge-text span{display:block;font-size:9px;font-weight:600;color:rgba(255,255,255,.25);text-transform:none;letter-spacing:0;margin-top:1px}
-/* trustpilot stars */
-.ft-tp-stars{display:flex;gap:2px}
-.ft-tp-star{width:18px;height:18px;background:#00B67A;display:flex;align-items:center;justify-content:center;border-radius:2px}
-.ft-tp-star svg{width:10px;height:10px}
+.ft-trust-row{max-width:1100px;margin:0 auto;padding:28px 40px;display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
+.ft-trust-badge{transition:all .3s;display:block}
+.ft-trust-badge:hover{transform:translateY(-2px)}
+.ft-trust-badge img{height:60px;width:auto;display:block;opacity:.7;transition:opacity .3s}
+.ft-trust-badge:hover img{opacity:1}
 
 /* ── bottom bar ── */
 .ft-bottom{max-width:1100px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;margin-top:0;flex-wrap:wrap;gap:12px}
@@ -1605,27 +1600,9 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
     <!-- Trust badges -->
     <div class="ft-trust-row">
-      <!-- Google Partner Premier -->
-      <div class="ft-trust-badge">
-        <img src="google-premier.svg" alt="Google Premier Partner 2025" style="height:56px;width:auto">
-      </div>
-      <!-- LinkedIn Partner -->
-      <div class="ft-trust-badge">
-        <img src="linkedin-icon.svg" alt="LinkedIn" style="height:28px;width:auto">
-        <div class="ft-trust-badge-text">Certified<span>Marketing Partner</span></div>
-      </div>
-      <!-- Trustpilot -->
-      <div class="ft-trust-badge">
-        <img src="trustpilot-logo.svg" alt="Trustpilot" style="height:22px;width:auto">
-        <div class="ft-tp-stars">
-          <div class="ft-tp-star"><svg viewBox="0 0 12 12"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.2 3,11 3.5,7.5 1,5 4.5,4.5" fill="#fff"/></svg></div>
-          <div class="ft-tp-star"><svg viewBox="0 0 12 12"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.2 3,11 3.5,7.5 1,5 4.5,4.5" fill="#fff"/></svg></div>
-          <div class="ft-tp-star"><svg viewBox="0 0 12 12"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.2 3,11 3.5,7.5 1,5 4.5,4.5" fill="#fff"/></svg></div>
-          <div class="ft-tp-star"><svg viewBox="0 0 12 12"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.2 3,11 3.5,7.5 1,5 4.5,4.5" fill="#fff"/></svg></div>
-          <div class="ft-tp-star"><svg viewBox="0 0 12 12"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.2 3,11 3.5,7.5 1,5 4.5,4.5" fill="#fff"/></svg></div>
-        </div>
-        <div class="ft-trust-badge-text" style="color:#fff">4.9<span>out of 5</span></div>
-      </div>
+      <div class="ft-trust-badge"><img src="google-premier.svg" alt="Google Premier Partner 2025"></div>
+      <div class="ft-trust-badge"><img src="linkedin-badge.avif" alt="LinkedIn Certified Marketing Partner"></div>
+      <div class="ft-trust-badge"><img src="trustpilot-badge.svg" alt="Trustpilot 4.9"></div>
     </div>
 
     <!-- Bottom bar -->
