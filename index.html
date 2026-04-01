@@ -688,23 +688,32 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-svc-card:nth-child(1) .hp-svc-tag{color:#1A73E8}
 .hp-svc-card:nth-child(2) .hp-svc-tag{color:#E67E00}
 .hp-svc-card:nth-child(3) .hp-svc-tag{color:#7B3DC5}
-/* Supporting services — horizontal scrolling strip */
+/* Supporting services — 3x2 grid matching core cards palette */
 .hp-svc-more-label{margin-top:56px;margin-bottom:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(0,0,0,.25);text-align:center}
-.hp-svc-more{display:flex;gap:12px;overflow-x:auto;padding:4px 0 16px;-ms-overflow-style:none;scrollbar-width:none}
-.hp-svc-more::-webkit-scrollbar{display:none}
-.hp-svc-more-card{display:flex;align-items:center;gap:12px;padding:16px 20px;background:#f9fafb;border-radius:14px;opacity:0;transform:translateY(10px);transition:all .4s ease;cursor:default;flex-shrink:0;min-width:220px}
+.hp-svc-more{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.hp-svc-more-card{display:flex;align-items:flex-start;gap:14px;padding:22px 24px;border-radius:16px;opacity:0;transform:translateY(12px);transition:all .4s ease;cursor:default}
 .hp-svc-more-card.show{opacity:1;transform:translateY(0)}
-.hp-svc-more-card:hover{background:#f0f1f3;transform:translateY(-2px)}
-.hp-svc-more-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.hp-svc-more-icon svg{width:18px;height:18px}
-.hp-svc-more-card:nth-child(1) .hp-svc-more-icon{background:#E8F0FE}.hp-svc-more-card:nth-child(1) .hp-svc-more-icon svg{color:#1A73E8}
-.hp-svc-more-card:nth-child(2) .hp-svc-more-icon{background:#F3E8FF}.hp-svc-more-card:nth-child(2) .hp-svc-more-icon svg{color:#7B3DC5}
-.hp-svc-more-card:nth-child(3) .hp-svc-more-icon{background:#FFF3E0}.hp-svc-more-card:nth-child(3) .hp-svc-more-icon svg{color:#E67E00}
-.hp-svc-more-card:nth-child(4) .hp-svc-more-icon{background:#E8F0FE}.hp-svc-more-card:nth-child(4) .hp-svc-more-icon svg{color:#1A73E8}
-.hp-svc-more-card:nth-child(5) .hp-svc-more-icon{background:#F3E8FF}.hp-svc-more-card:nth-child(5) .hp-svc-more-icon svg{color:#7B3DC5}
-.hp-svc-more-card:nth-child(6) .hp-svc-more-icon{background:#FFF3E0}.hp-svc-more-card:nth-child(6) .hp-svc-more-icon svg{color:#E67E00}
-.hp-svc-more-text h4{font-size:13px;font-weight:700;color:var(--forest-deep);margin-bottom:1px}
-.hp-svc-more-text p{font-size:11px;color:rgba(0,0,0,.4);line-height:1.4}
+.hp-svc-more-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+/* Alternating pastel backgrounds from the core card palette */
+.hp-svc-more-card:nth-child(1){background:#E8F0FE}
+.hp-svc-more-card:nth-child(2){background:#FFF3E0}
+.hp-svc-more-card:nth-child(3){background:#F3E8FF}
+.hp-svc-more-card:nth-child(4){background:#F3E8FF}
+.hp-svc-more-card:nth-child(5){background:#E8F0FE}
+.hp-svc-more-card:nth-child(6){background:#FFF3E0}
+.hp-svc-more-card:nth-child(1):hover{background:#D4E4FC}
+.hp-svc-more-card:nth-child(2):hover{background:#FFE8C8}
+.hp-svc-more-card:nth-child(3):hover{background:#E8D5FF}
+.hp-svc-more-card:nth-child(4):hover{background:#E8D5FF}
+.hp-svc-more-card:nth-child(5):hover{background:#D4E4FC}
+.hp-svc-more-card:nth-child(6):hover{background:#FFE8C8}
+.hp-svc-more-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(255,255,255,.6)}
+.hp-svc-more-icon svg{width:20px;height:20px}
+.hp-svc-more-card:nth-child(1) .hp-svc-more-icon svg,.hp-svc-more-card:nth-child(5) .hp-svc-more-icon svg{color:#1A73E8}
+.hp-svc-more-card:nth-child(2) .hp-svc-more-icon svg,.hp-svc-more-card:nth-child(6) .hp-svc-more-icon svg{color:#E67E00}
+.hp-svc-more-card:nth-child(3) .hp-svc-more-icon svg,.hp-svc-more-card:nth-child(4) .hp-svc-more-icon svg{color:#7B3DC5}
+.hp-svc-more-text h4{font-size:14px;font-weight:700;color:var(--forest-deep);margin-bottom:4px}
+.hp-svc-more-text p{font-size:12px;color:rgba(0,0,0,.45);line-height:1.5}
 
 /* ── S11: FAQ ── */
 .s-faq{background:#FAFAF8}
