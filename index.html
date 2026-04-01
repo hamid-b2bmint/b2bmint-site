@@ -694,24 +694,27 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-svc-more-card{display:flex;align-items:flex-start;gap:14px;padding:22px 24px;border-radius:16px;opacity:0;transform:translateY(12px);transition:all .4s ease;cursor:default}
 .hp-svc-more-card.show{opacity:1;transform:translateY(0)}
 .hp-svc-more-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
-/* Alternating pastel backgrounds from the core card palette */
-.hp-svc-more-card:nth-child(1){background:#E8F0FE}
-.hp-svc-more-card:nth-child(2){background:#FFF3E0}
-.hp-svc-more-card:nth-child(3){background:#F3E8FF}
-.hp-svc-more-card:nth-child(4){background:#F3E8FF}
-.hp-svc-more-card:nth-child(5){background:#E8F0FE}
-.hp-svc-more-card:nth-child(6){background:#FFF3E0}
-.hp-svc-more-card:nth-child(1):hover{background:#D4E4FC}
-.hp-svc-more-card:nth-child(2):hover{background:#FFE8C8}
-.hp-svc-more-card:nth-child(3):hover{background:#E8D5FF}
-.hp-svc-more-card:nth-child(4):hover{background:#E8D5FF}
-.hp-svc-more-card:nth-child(5):hover{background:#D4E4FC}
-.hp-svc-more-card:nth-child(6):hover{background:#FFE8C8}
+/* Each card gets a unique pastel — different from the 3 core cards above */
+.hp-svc-more-card:nth-child(1){background:#C6F5E2}
+.hp-svc-more-card:nth-child(2){background:#FFD6E8}
+.hp-svc-more-card:nth-child(3){background:#FFFDD9}
+.hp-svc-more-card:nth-child(4){background:#FFE0C8}
+.hp-svc-more-card:nth-child(5){background:#CEEBFF}
+.hp-svc-more-card:nth-child(6){background:#E8D8FF}
+.hp-svc-more-card:nth-child(1):hover{background:#B5EDCF}
+.hp-svc-more-card:nth-child(2):hover{background:#FFC4DC}
+.hp-svc-more-card:nth-child(3):hover{background:#FFF9B8}
+.hp-svc-more-card:nth-child(4):hover{background:#FFD0AD}
+.hp-svc-more-card:nth-child(5):hover{background:#BBE0FF}
+.hp-svc-more-card:nth-child(6):hover{background:#DCC8FF}
 .hp-svc-more-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(255,255,255,.6)}
 .hp-svc-more-icon svg{width:20px;height:20px}
-.hp-svc-more-card:nth-child(1) .hp-svc-more-icon svg,.hp-svc-more-card:nth-child(5) .hp-svc-more-icon svg{color:#1A73E8}
-.hp-svc-more-card:nth-child(2) .hp-svc-more-icon svg,.hp-svc-more-card:nth-child(6) .hp-svc-more-icon svg{color:#E67E00}
-.hp-svc-more-card:nth-child(3) .hp-svc-more-icon svg,.hp-svc-more-card:nth-child(4) .hp-svc-more-icon svg{color:#7B3DC5}
+.hp-svc-more-card:nth-child(1) .hp-svc-more-icon svg{color:#0E542C}
+.hp-svc-more-card:nth-child(2) .hp-svc-more-icon svg{color:#C0006B}
+.hp-svc-more-card:nth-child(3) .hp-svc-more-icon svg{color:#8A7200}
+.hp-svc-more-card:nth-child(4) .hp-svc-more-icon svg{color:#A84400}
+.hp-svc-more-card:nth-child(5) .hp-svc-more-icon svg{color:#0043D2}
+.hp-svc-more-card:nth-child(6) .hp-svc-more-icon svg{color:#5B3DC5}
 .hp-svc-more-text h4{font-size:14px;font-weight:700;color:var(--forest-deep);margin-bottom:4px}
 .hp-svc-more-text p{font-size:12px;color:rgba(0,0,0,.45);line-height:1.5}
 
