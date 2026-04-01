@@ -732,50 +732,64 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 /* ── S12: CTA + Footer connected ── */
 .s-cta-footer{position:relative;overflow:hidden}
 
-/* top half — mint bg with content */
-.cta-top{background:var(--mint-bg);padding:80px 0 0;position:relative}
-.cta-top .s-inner{max-width:1100px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:0}
+/* ── CTA top ── */
+.cta-top{background:var(--mint-bg);position:relative;padding:0 0 0}
+.cta-top::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50%;background:var(--forest-deep)}
+.cta-top .s-inner{max-width:1100px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
 
-/* photo — floats over the boundary */
-.hp-cta-photo{position:relative;z-index:3;display:flex;justify-content:center;align-items:flex-end}
-.hp-cta-photo img{width:360px;max-width:100%;display:block;object-fit:contain;filter:drop-shadow(0 20px 40px rgba(9,56,41,.15));position:relative;bottom:-2px}
+/* CTA card — the main visual piece */
+.hp-cta-card{background:var(--forest-deep);border-radius:28px;display:grid;grid-template-columns:1fr 1.1fr;overflow:hidden;position:relative;min-height:480px}
 
-/* content */
-.hp-cta-content{padding:0 20px 100px 40px}
-.hp-cta-eyebrow{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--forest);margin-bottom:20px;opacity:.5}
-.s-cta-footer .s-h{font-family:Recoleta,serif;color:var(--forest-deep);font-size:clamp(32px,4vw,48px);font-weight:700;margin:0 0 16px;line-height:1.1;text-align:left}
-.s-cta-footer .s-sub{color:rgba(9,56,41,.4);font-size:16px;line-height:1.7;margin:0 0 32px;text-align:left;max-width:400px}
-.hp-cta-btn{display:inline-flex;align-items:center;gap:10px;padding:18px 40px;background:var(--forest);color:#fff;font-weight:700;font-size:16px;border-radius:60px;border:none;cursor:pointer;text-decoration:none;transition:all .3s}
-.hp-cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(9,56,41,.2)}
+/* photo side */
+.hp-cta-photo{position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.hp-cta-photo::before{content:'';position:absolute;bottom:0;left:0;right:0;height:70%;background:linear-gradient(180deg,transparent,rgba(125,255,179,.08));pointer-events:none;z-index:1}
+.hp-cta-photo img{position:relative;z-index:2;width:380px;max-width:100%;display:block;object-fit:contain;filter:drop-shadow(0 -10px 40px rgba(0,0,0,.3))}
+/* glow behind photo */
+.hp-cta-glow{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(125,255,179,.12),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);z-index:0}
+
+/* content side */
+.hp-cta-content{padding:60px 48px 60px 32px;display:flex;flex-direction:column;justify-content:center}
+.hp-cta-eyebrow{font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--lime);margin-bottom:20px;opacity:.6}
+.s-cta-footer .s-h{font-family:Recoleta,serif;color:#fff;font-size:clamp(30px,3.5vw,44px);font-weight:700;margin:0 0 16px;line-height:1.12;text-align:left}
+.s-cta-footer .s-sub{color:rgba(255,255,255,.4);font-size:15px;line-height:1.7;margin:0 0 28px;text-align:left;max-width:380px}
+.hp-cta-btn{display:inline-flex;align-items:center;gap:10px;padding:18px 40px;background:var(--lime);color:var(--forest-deep);font-weight:800;font-size:16px;border-radius:60px;border:none;cursor:pointer;text-decoration:none;transition:all .3s;align-self:flex-start}
+.hp-cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(125,255,179,.25)}
 .hp-cta-btn svg{width:18px;height:18px}
-.hp-cta-note{margin-top:14px;font-size:13px;color:rgba(9,56,41,.25);font-weight:500}
+/* proof stats row inside CTA */
+.hp-cta-stats{display:flex;gap:28px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06)}
+.hp-cta-stat{text-align:left}
+.hp-cta-stat .num{font-family:Recoleta,serif;font-size:22px;font-weight:700;color:var(--lime);line-height:1}
+.hp-cta-stat .lbl{font-size:11px;color:rgba(255,255,255,.25);margin-top:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
 
-/* bottom half — dark footer that the photo overlaps into */
+/* ── Footer ── */
 .cta-bottom{background:var(--forest-deep);position:relative;z-index:1}
-
+/* large outlined brand text */
+.ft-brand-art{max-width:1100px;margin:0 auto;padding:56px 40px 0;position:relative;overflow:hidden}
+.ft-outline{font-family:Recoleta,serif;font-size:clamp(56px,9vw,120px);font-weight:700;line-height:.88;letter-spacing:-.03em;-webkit-text-stroke:1px rgba(125,255,179,.08);-webkit-text-fill-color:transparent;user-select:none}
+.ft-outline span{-webkit-text-stroke-color:rgba(125,255,179,.18);-webkit-text-fill-color:rgba(125,255,179,.03)}
 /* footer nav row */
-.ft-row{max-width:1100px;margin:0 auto;padding:48px 40px 0;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
+.ft-row{max-width:1100px;margin:0 auto;padding:40px 40px 0;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
 /* brand col */
 .ft-logo{display:flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:14px}
 .ft-logo-icon{width:28px;height:28px;border-radius:8px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--forest-deep)}
 .ft-logo-text{font-family:Recoleta,serif;font-size:17px;font-weight:700;color:#fff}
 .ft-logo-text span{color:var(--lime)}
-.ft-brand-desc{font-size:13px;line-height:1.6;color:rgba(255,255,255,.25);margin-bottom:20px;max-width:240px}
+.ft-brand-desc{font-size:13px;line-height:1.6;color:rgba(255,255,255,.2);margin-bottom:20px;max-width:240px}
 .ft-socials{display:flex;gap:8px}
-.ft-socials a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:all .3s;text-decoration:none}
+.ft-socials a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;transition:all .3s;text-decoration:none}
 .ft-socials a:hover{border-color:var(--lime);background:rgba(125,255,179,.06);transform:translateY(-2px)}
-.ft-socials a svg{width:14px;height:14px;fill:rgba(255,255,255,.3);transition:fill .3s}
+.ft-socials a svg{width:14px;height:14px;fill:rgba(255,255,255,.25);transition:fill .3s}
 .ft-socials a:hover svg{fill:var(--lime)}
 /* link cols */
-.ft-col-title{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.15);margin-bottom:18px}
+.ft-col-title{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.12);margin-bottom:18px}
 .ft-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
-.ft-links a{color:rgba(255,255,255,.35);text-decoration:none;font-size:14px;font-weight:500;transition:color .3s}
+.ft-links a{color:rgba(255,255,255,.3);text-decoration:none;font-size:14px;font-weight:500;transition:color .3s}
 .ft-links a:hover{color:var(--lime)}
 /* bottom bar */
-.ft-bottom{max-width:1100px;margin:0 auto;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.05);margin-top:40px;flex-wrap:wrap;gap:12px}
-.ft-copy{font-size:12px;color:rgba(255,255,255,.15)}
+.ft-bottom{max-width:1100px;margin:0 auto;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.04);margin-top:40px;flex-wrap:wrap;gap:12px}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.12)}
 .ft-legal{display:flex;gap:20px}
-.ft-legal a{font-size:12px;color:rgba(255,255,255,.15);text-decoration:none;transition:color .3s}
+.ft-legal a{font-size:12px;color:rgba(255,255,255,.12);text-decoration:none;transition:color .3s}
 .ft-legal a:hover{color:rgba(255,255,255,.4)}
 
 /* ── Responsive ── */
@@ -798,11 +812,14 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   .s-cta .s-sub{text-align:center;margin-left:auto;margin-right:auto}
   .hp-cta-eyebrow{text-align:center}
   .hp-cta-note{text-align:center}
-  .cta-top .s-inner{grid-template-columns:1fr}
+  .hp-cta-card{grid-template-columns:1fr;min-height:auto}
   .hp-cta-photo img{width:240px;margin:0 auto}
-  .hp-cta-content{padding:40px 20px 80px;text-align:center}
+  .hp-cta-content{padding:32px 24px 40px;text-align:center;align-items:center}
   .s-cta-footer .s-h,.s-cta-footer .s-sub{text-align:center}
-  .hp-cta-eyebrow,.hp-cta-note{text-align:center}
+  .hp-cta-eyebrow{text-align:center}
+  .hp-cta-btn{align-self:center}
+  .hp-cta-stats{justify-content:center}
+  .ft-brand-art{padding:40px 20px 0}
   .ft-row{grid-template-columns:1fr 1fr;gap:28px;padding:32px 20px 0}
   .ft-bottom{padding:20px;margin-top:28px}
   .ft-bottom{flex-direction:column;text-align:center}
@@ -1411,29 +1428,42 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <!-- S12: CTA + Footer — connected -->
 <div class="s-cta-footer" id="hp-final">
 
-  <!-- Mint CTA area -->
+  <!-- CTA Card on mint → dark transition -->
   <div class="cta-top">
     <div class="s-inner">
-      <div class="hp-cta-photo rv">
-        <img src="hamid-khan.png" alt="Hamid Khan, Founder of B2BMint" loading="lazy">
-      </div>
-      <div class="hp-cta-content">
-        <div class="hp-cta-eyebrow rv">Talk to the founder</div>
-        <h2 class="s-h rv" style="transition-delay:.1s">Ready to get<br>discovered by AI?</h2>
-        <p class="s-sub rv" style="transition-delay:.15s">I&rsquo;ll review your search presence, AI citations, and pipeline &mdash; and show you exactly what to fix. Free. 30 minutes.</p>
-        <a href="https://calendly.com/hamid-b2bmint/30min" class="hp-cta-btn rv" style="transition-delay:.25s">
-          Book a Strategy Call
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <div class="hp-cta-note rv" style="transition-delay:.3s">Hamid Khan &bull; Founder, B2BMint</div>
+      <div class="hp-cta-card rv">
+        <!-- Photo side -->
+        <div class="hp-cta-photo">
+          <div class="hp-cta-glow"></div>
+          <img src="hamid-khan.png" alt="Hamid Khan, Founder of B2BMint" loading="lazy">
+        </div>
+        <!-- Content side -->
+        <div class="hp-cta-content">
+          <div class="hp-cta-eyebrow">Talk to the founder</div>
+          <h2 class="s-h">Ready to get<br>discovered by AI?</h2>
+          <p class="s-sub">I&rsquo;ll personally review your search presence, AI citations, and pipeline &mdash; then map out your next move.</p>
+          <a href="https://calendly.com/hamid-b2bmint/30min" class="hp-cta-btn">
+            Book a Strategy Call
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <div class="hp-cta-stats">
+            <div class="hp-cta-stat"><div class="num">4,244</div><div class="lbl">AI Citations</div></div>
+            <div class="hp-cta-stat"><div class="num">$1.2M</div><div class="lbl">Pipeline</div></div>
+            <div class="hp-cta-stat"><div class="num">47</div><div class="lbl">SaaS Clients</div></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Dark footer — photo overlaps into this -->
+  <!-- Footer -->
   <footer class="cta-bottom">
+    <!-- Large outlined brand text -->
+    <div class="ft-brand-art">
+      <div class="ft-outline">Discover. Rank.<br>Get <span>Chosen.</span></div>
+    </div>
+    <!-- Nav row -->
     <div class="ft-row">
-      <!-- Brand -->
       <div>
         <a href="#" class="ft-logo">
           <div class="ft-logo-icon">B</div>
@@ -1445,7 +1475,6 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
           <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         </div>
       </div>
-      <!-- Navigate -->
       <div>
         <div class="ft-col-title">Navigate</div>
         <ul class="ft-links">
@@ -1455,7 +1484,6 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
           <li><a href="#">FAQ</a></li>
         </ul>
       </div>
-      <!-- Services -->
       <div>
         <div class="ft-col-title">Services</div>
         <ul class="ft-links">
@@ -1465,7 +1493,6 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
           <li><a href="#">Technical SEO</a></li>
         </ul>
       </div>
-      <!-- Connect -->
       <div>
         <div class="ft-col-title">Connect</div>
         <ul class="ft-links">
