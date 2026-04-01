@@ -748,44 +748,50 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-cta-btn svg{width:18px;height:18px}
 .hp-cta-note{margin-top:16px;font-size:13px;color:rgba(10,61,32,.3);font-weight:500}
 
+/* ── Pre-Footer: Founder CTA ── */
+.s-prefooter{background:#fff;padding:0;position:relative;overflow:hidden}
+.pf-inner{max-width:1100px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:0}
+/* left — photo + shapes */
+.pf-photo{position:relative;display:flex;justify-content:center;align-items:flex-end;padding-top:60px}
+.pf-photo img{position:relative;z-index:2;width:320px;max-width:100%;display:block;border-radius:8px 8px 0 0;object-fit:cover;object-position:top}
+/* abstract shapes behind photo */
+.pf-shape{position:absolute;border-radius:50%;z-index:1}
+.pf-shape-1{width:220px;height:220px;background:var(--mint-bg);top:40px;left:10%}
+.pf-shape-2{width:140px;height:140px;background:var(--lime);opacity:.3;bottom:80px;right:8%}
+.pf-shape-3{width:80px;height:80px;border:3px solid var(--forest);opacity:.15;top:80px;right:20%}
+/* right — content */
+.pf-content{padding:80px 0 80px 40px}
+.pf-eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--forest);opacity:.5;margin-bottom:16px}
+.pf-h{font-family:Recoleta,serif;font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--forest-deep);line-height:1.15;margin-bottom:16px}
+.pf-p{font-size:16px;line-height:1.7;color:rgba(0,0,0,.45);margin-bottom:32px;max-width:400px}
+.pf-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--forest);color:#fff;font-weight:700;font-size:15px;border-radius:12px;text-decoration:none;transition:all .3s;border:none;cursor:pointer}
+.pf-btn:hover{background:var(--forest-deep);transform:translateY(-2px);box-shadow:0 8px 24px rgba(14,84,44,.2)}
+.pf-btn svg{width:18px;height:18px}
+
 /* ── Footer ── */
-.s-footer{background:#060D08;color:rgba(255,255,255,.4);position:relative;overflow:hidden}
-
-/* giant brand text */
-.ft-hero-text{position:relative;padding:80px 0 0;overflow:hidden}
-.ft-hero-text .ft-big{display:block;font-family:Recoleta,serif;font-size:clamp(80px,14vw,220px);font-weight:700;line-height:.85;text-align:center;letter-spacing:-.04em;background:linear-gradient(135deg,#0E542C 0%,#1a7a45 25%,#7DFFB3 50%,#D2FFC1 75%,#0E542C 100%);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:ftGrad 8s ease-in-out infinite;padding:0 20px;user-select:none}
-@keyframes ftGrad{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.ft-hero-sub{text-align:center;font-size:15px;color:rgba(255,255,255,.2);margin-top:16px;padding:0 20px}
-
-/* divider */
-.ft-div{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(125,255,179,.1),transparent);margin:56px 0 0}
-
-/* content */
-.ft-content{position:relative;z-index:2;padding:48px 0 0}
-.s-footer .s-inner{max-width:1100px;margin:0 auto;padding:0 40px}
-.ft-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;padding-bottom:44px}
-/* brand */
-.ft-brand-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px;text-decoration:none}
-.ft-brand-icon{width:28px;height:28px;border-radius:8px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--forest-deep)}
-.ft-brand-name{font-family:Recoleta,serif;font-size:18px;font-weight:700;color:#fff}
-.ft-brand-name span{color:var(--lime)}
-.ft-tagline{font-size:13px;line-height:1.7;margin-bottom:24px;max-width:260px;color:rgba(255,255,255,.25)}
-.ft-socials{display:flex;gap:8px}
-.ft-socials a{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;transition:all .3s;text-decoration:none}
-.ft-socials a:hover{background:rgba(125,255,179,.1);transform:translateY(-2px)}
-.ft-socials a svg{width:14px;height:14px;fill:rgba(255,255,255,.3);transition:fill .3s}
+.s-footer{background:var(--forest-deep);color:rgba(255,255,255,.5);position:relative;overflow:hidden}
+.ft-main{max-width:1100px;margin:0 auto;padding:72px 40px 0;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:start}
+/* left — big tagline */
+.ft-tagline-block{padding-bottom:48px}
+.ft-big-tag{font-family:Recoleta,serif;font-size:clamp(36px,5vw,56px);font-weight:700;color:#fff;line-height:1.1;margin-bottom:32px;letter-spacing:-.02em}
+.ft-big-tag span{color:var(--lime)}
+.ft-socials{display:flex;gap:10px;margin-bottom:0}
+.ft-socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:all .3s;text-decoration:none}
+.ft-socials a:hover{border-color:var(--lime);background:rgba(125,255,179,.06);transform:translateY(-2px)}
+.ft-socials a svg{width:16px;height:16px;fill:rgba(255,255,255,.4);transition:fill .3s}
 .ft-socials a:hover svg{fill:var(--lime)}
-/* link cols */
-.ft-col-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.15);margin-bottom:20px}
-.ft-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
-.ft-links a{color:rgba(255,255,255,.3);text-decoration:none;font-size:14px;font-weight:500;transition:color .3s}
+/* right — link columns */
+.ft-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.ft-col-title{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:20px}
+.ft-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px}
+.ft-links a{color:rgba(255,255,255,.4);text-decoration:none;font-size:14.5px;font-weight:500;transition:color .3s}
 .ft-links a:hover{color:var(--lime)}
-/* bottom */
-.ft-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid rgba(255,255,255,.04);flex-wrap:wrap;gap:12px}
-.ft-copy{font-size:12px;color:rgba(255,255,255,.15)}
+/* bottom bar */
+.ft-bottom{max-width:1100px;margin:0 auto;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:12px}
+.ft-copy{font-size:13px;color:rgba(255,255,255,.2)}
 .ft-legal{display:flex;gap:20px}
-.ft-legal a{font-size:12px;color:rgba(255,255,255,.15);text-decoration:none;transition:color .3s}
-.ft-legal a:hover{color:rgba(255,255,255,.4)}
+.ft-legal a{font-size:13px;color:rgba(255,255,255,.2);text-decoration:none;transition:color .3s}
+.ft-legal a:hover{color:rgba(255,255,255,.5)}
 
 /* ── Responsive ── */
 @media(max-width:768px){
@@ -807,8 +813,13 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   .s-cta .s-sub{text-align:center;margin-left:auto;margin-right:auto}
   .hp-cta-eyebrow{text-align:center}
   .hp-cta-note{text-align:center}
-  .ft-hero-text{padding:60px 0 0}
-  .ft-top{grid-template-columns:1fr;gap:28px}
+  .pf-inner{grid-template-columns:1fr;text-align:center}
+  .pf-photo img{width:260px;margin:0 auto}
+  .pf-content{padding:40px 0 60px 0;text-align:center}
+  .pf-p{margin-left:auto;margin-right:auto}
+  .ft-main{grid-template-columns:1fr;gap:40px;padding:48px 20px 0}
+  .ft-cols{grid-template-columns:1fr 1fr;gap:24px}
+  .ft-bottom{padding:20px 20px}
   .ft-bottom{flex-direction:column;text-align:center}
   .ft-legal{justify-content:center}
   .s-footer .s-inner{padding:0 20px}
@@ -1463,59 +1474,62 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   </div>
 </section>
 
+<!-- Pre-Footer: Founder CTA -->
+<section class="s-prefooter">
+  <div class="pf-inner">
+    <div class="pf-photo">
+      <div class="pf-shape pf-shape-1"></div>
+      <div class="pf-shape pf-shape-2"></div>
+      <div class="pf-shape pf-shape-3"></div>
+      <img src="hamid-khan.jpeg" alt="Hamid Khan, Founder of B2BMint" loading="lazy">
+    </div>
+    <div class="pf-content">
+      <div class="pf-eyebrow">Talk to the founder</div>
+      <h3 class="pf-h">Not sure where to<br>start with AI visibility?</h3>
+      <p class="pf-p">Let&rsquo;s talk. I&rsquo;ll review your current search presence, AI citations, and pipeline &mdash; and map out your next move.</p>
+      <a href="https://calendly.com/hamid-b2bmint/30min" class="pf-btn">
+        Book a Strategy Call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer class="s-footer">
-
-  <!-- The one bold move -->
-  <div class="ft-hero-text">
-    <span class="ft-big">B2BMint</span>
-    <p class="ft-hero-sub">Search &amp; AI visibility for B2B SaaS</p>
-  </div>
-  <div class="ft-div"></div>
-
-  <!-- Content -->
-  <div class="ft-content">
-    <div class="s-inner">
-      <div class="ft-top">
-        <!-- Brand -->
-        <div class="ft-brand">
-          <a href="#" class="ft-brand-logo">
-            <div class="ft-brand-icon">B</div>
-            <div class="ft-brand-name">B2B<span>Mint</span></div>
-          </a>
-          <p class="ft-tagline">Search &amp; AI visibility engine for B2B SaaS companies that want to be discovered, cited, and chosen.</p>
-          <div class="ft-socials">
-            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
-            <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          </div>
-        </div>
-        <!-- Navigate -->
-        <div class="ft-col">
-          <div class="ft-col-title">Navigate</div>
-          <ul class="ft-links">
-            <li><a href="#">How It Works</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Results</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
-        <!-- Connect -->
-        <div class="ft-col">
-          <div class="ft-col-title">Connect</div>
-          <ul class="ft-links">
-            <li><a href="https://calendly.com/hamid-b2bmint/30min">Book a Strategy Call</a></li>
-            <li><a href="mailto:hamid@b2bmint.com">hamid@b2bmint.com</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="ft-bottom">
-        <div class="ft-copy">&copy; 2025 B2BMint. All rights reserved.</div>
-        <div class="ft-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-        </div>
+  <div class="ft-main">
+    <!-- Left — big tagline + socials -->
+    <div class="ft-tagline-block">
+      <div class="ft-big-tag">Discover.<br>Rank.<br>Get <span>Chosen.</span></div>
+      <div class="ft-socials">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
       </div>
     </div>
+    <!-- Right — link columns -->
+    <div class="ft-cols">
+      <div>
+        <div class="ft-col-title">B2BMint</div>
+        <ul class="ft-links">
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Results</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-title">Connect</div>
+        <ul class="ft-links">
+          <li><a href="https://calendly.com/hamid-b2bmint/30min">Book a Call</a></li>
+          <li><a href="mailto:hamid@b2bmint.com">hamid@b2bmint.com</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-copy">&copy; 2025 B2BMint. All rights reserved.</div>
   </div>
 </footer>
 
