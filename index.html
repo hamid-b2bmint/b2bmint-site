@@ -340,29 +340,28 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .evo-link.you strong{color:#DC2626}
 .evo-url{font-size:11px;color:#006621;display:block;margin-top:1px}
 .hp-evo-old-tag{margin:8px 20px 16px;display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;background:#FEE2E2;color:#DC2626;padding:4px 12px;border-radius:40px}
-/* New panel — AI answer (dark chat UI) */
-.hp-evo-new{background:#212121;border:none;border-radius:16px;padding:0;overflow:hidden;position:relative;box-shadow:0 4px 16px rgba(0,0,0,.15),0 12px 48px rgba(0,0,0,.1);opacity:0;transform:translateX(30px);transition:opacity .7s ease .3s,transform .7s ease .3s}
+/* New panel — AI answer (branded, light) */
+.hp-evo-new{background:#D2FFC1;border:none;border-radius:16px;padding:0;overflow:hidden;position:relative;box-shadow:0 1px 3px rgba(0,0,0,.04),0 8px 32px rgba(0,0,0,.06);opacity:0;transform:translateX(30px);transition:opacity .7s ease .3s,transform .7s ease .3s}
 .hp-evo-new.show{opacity:1;transform:translateX(0)}
-.hp-evo-new-bar{padding:14px 20px;background:#2a2a2a;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:10px}
-.hp-evo-new-bar .evo-ai-dot{width:10px;height:10px;border-radius:50%;background:#10A37F;box-shadow:0 0 8px rgba(16,163,127,.4);animation:aiPulse 2s ease-in-out infinite}
-@keyframes aiPulse{0%,100%{box-shadow:0 0 8px rgba(16,163,127,.3)}50%{box-shadow:0 0 16px rgba(16,163,127,.5)}}
-.hp-evo-new-bar span{font-size:13px;font-weight:600;color:rgba(255,255,255,.85)}
+.hp-evo-new-bar{padding:14px 20px;background:rgba(14,84,44,.06);border-bottom:1px solid rgba(14,84,44,.06);display:flex;align-items:center;gap:10px}
+.hp-evo-new-bar .evo-ai-dot{width:10px;height:10px;border-radius:50%;background:var(--forest);box-shadow:0 0 8px rgba(14,84,44,.3);animation:aiPulse 2s ease-in-out infinite}
+@keyframes aiPulse{0%,100%{box-shadow:0 0 8px rgba(14,84,44,.2)}50%{box-shadow:0 0 16px rgba(14,84,44,.4)}}
+.hp-evo-new-bar span{font-size:13px;font-weight:700;color:var(--forest-deep)}
 .hp-evo-new-body{padding:24px;position:relative;z-index:1}
-.evo-ai-intro{font-size:14px;color:rgba(255,255,255,.65);margin-bottom:16px;line-height:1.6}
-.evo-ai-pick{background:linear-gradient(135deg,rgba(16,163,127,.12),rgba(16,163,127,.04));border:1px solid rgba(16,163,127,.2);border-radius:12px;padding:18px;margin-bottom:16px;position:relative;overflow:hidden}
-.evo-ai-pick::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:radial-gradient(circle,rgba(16,163,127,.15),transparent 70%);pointer-events:none}
+.evo-ai-intro{font-size:14px;color:rgba(10,61,32,.55);margin-bottom:16px;line-height:1.6}
+.evo-ai-pick{background:rgba(255,255,255,.55);border:1.5px solid rgba(14,84,44,.12);border-radius:12px;padding:18px;margin-bottom:16px;position:relative;overflow:hidden}
 .evo-ai-pick-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.evo-ai-pick-num{width:28px;height:28px;border-radius:8px;background:#10A37F;color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(16,163,127,.3)}
-.evo-ai-pick-name{font-size:16px;font-weight:700;color:#fff}
-.evo-ai-pick-name em{font-style:normal;font-weight:500;color:#10A37F;font-size:12px;margin-left:8px;background:rgba(16,163,127,.12);padding:2px 8px;border-radius:4px}
-.evo-ai-pick-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;padding-left:38px}
+.evo-ai-pick-num{width:28px;height:28px;border-radius:8px;background:var(--forest);color:var(--lime);font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(14,84,44,.2)}
+.evo-ai-pick-name{font-size:16px;font-weight:700;color:var(--forest-deep)}
+.evo-ai-pick-name em{font-style:normal;font-weight:600;color:var(--forest);font-size:12px;margin-left:8px;background:rgba(14,84,44,.08);padding:3px 10px;border-radius:6px}
+.evo-ai-pick-desc{font-size:13px;color:rgba(10,61,32,.55);line-height:1.6;padding-left:38px}
 .evo-ai-check{display:flex;gap:16px;padding:10px 0 4px 38px;flex-wrap:wrap}
-.evo-ai-check span{font-size:11px;color:rgba(16,163,127,.8);display:flex;align-items:center;gap:4px}
+.evo-ai-check span{font-size:11px;color:var(--forest);font-weight:600;display:flex;align-items:center;gap:4px}
 .evo-ai-check svg{width:14px;height:14px}
 .evo-ai-others{padding:0 4px}
-.evo-ai-others div{padding:8px 0;font-size:13px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:10px}
-.evo-ai-others .evo-num{background:rgba(255,255,255,.06);color:rgba(255,255,255,.3)}
-.hp-evo-new-tag{margin:12px 24px 20px;display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;background:rgba(16,163,127,.15);color:#10A37F;padding:5px 14px;border-radius:40px}
+.evo-ai-others div{padding:8px 0;font-size:13px;color:rgba(10,61,32,.4);display:flex;align-items:center;gap:10px}
+.evo-ai-others .evo-num{background:rgba(14,84,44,.06);color:rgba(10,61,32,.35)}
+.hp-evo-new-tag{margin:12px 24px 20px;display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;background:var(--forest);color:var(--lime);padding:5px 14px;border-radius:40px}
 /* Platform strip below the panels */
 .hp-evo-platforms{margin-top:48px;text-align:center}
 .hp-evo-plat-title{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:rgba(0,0,0,.35);margin-bottom:20px}
