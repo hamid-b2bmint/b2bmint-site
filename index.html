@@ -625,44 +625,74 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 /* ── S10: Services ── */
 .s-svc{background:#f9fafb}
 .s-svc .s-p{max-width:600px;margin-bottom:48px}
-/* Core services — 3 dark cards with line illustrations */
-.hp-svc-core{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:0;border-top:1px solid rgba(14,84,44,.1)}
-.hp-svc-card{padding:36px 32px;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:all .5s ease;cursor:default;display:flex;flex-direction:column;gap:28px;background:var(--forest-deep);border-right:1px solid rgba(125,255,179,.06)}
-.hp-svc-card:last-child{border-right:none}
+/* Core services — light interactive cards */
+.hp-svc-core{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:0}
+.hp-svc-card{border-radius:24px;padding:0;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:all .5s ease;cursor:default;display:flex;flex-direction:column}
 .hp-svc-card.show{opacity:1;transform:translateY(0)}
-/* Hover gradient overlay */
-.hp-svc-card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(125,255,179,.06),transparent 50%);opacity:0;transition:opacity .15s ease;pointer-events:none;z-index:1}
-.hp-svc-card:hover::before{opacity:1}
-/* Hover border */
-.hp-svc-card::after{content:'';position:absolute;inset:0;border:1px solid rgba(125,255,179,.08);opacity:0;transition:opacity .15s ease;pointer-events:none;z-index:2}
-.hp-svc-card:hover::after{opacity:1}
+.hp-svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.hp-svc-card:nth-child(1){background:#C6F5E2}
+.hp-svc-card:nth-child(2){background:#CEEBFF}
+.hp-svc-card:nth-child(3){background:#FFD6E8}
 /* Card text */
-.hp-svc-card-text{position:relative;z-index:3}
-.hp-svc-card h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:10px;line-height:1.2;color:rgba(255,255,255,.7);transition:color .15s}
-.hp-svc-card:hover h3{color:#fff}
-.hp-svc-card-text>p{font-size:14px;line-height:1.65;color:rgba(255,255,255,.35);transition:color .15s}
-.hp-svc-card:hover .hp-svc-card-text>p{color:rgba(255,255,255,.55)}
+.hp-svc-card-text{padding:32px 28px 16px;position:relative;z-index:2}
+.hp-svc-card h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:10px;line-height:1.2}
+.hp-svc-card:nth-child(1) h3{color:#063D1A}
+.hp-svc-card:nth-child(2) h3{color:#001D66}
+.hp-svc-card:nth-child(3) h3{color:#8A004E}
+.hp-svc-card-text>p{font-size:14px;line-height:1.65}
+.hp-svc-card:nth-child(1) .hp-svc-card-text>p{color:rgba(6,61,26,.55)}
+.hp-svc-card:nth-child(2) .hp-svc-card-text>p{color:rgba(0,29,102,.5)}
+.hp-svc-card:nth-child(3) .hp-svc-card-text>p{color:rgba(138,0,78,.45)}
 /* Tags */
-.hp-svc-tags{display:flex;flex-wrap:wrap;gap:6px;position:relative;z-index:3}
-.hp-svc-tag{font-size:10px;font-weight:600;padding:4px 10px;border-radius:20px;background:rgba(125,255,179,.06);color:rgba(125,255,179,.4);transition:all .15s}
-.hp-svc-card:hover .hp-svc-tag{background:rgba(125,255,179,.1);color:rgba(125,255,179,.6)}
-/* Illustration area */
-.hp-svc-illust{flex:1;min-height:200px;position:relative;display:flex;align-items:center;justify-content:center;opacity:.3;transition:opacity .15s ease,transform .15s ease}
-.hp-svc-illust svg{width:100%;height:100%;max-height:220px}
-/* Card 1 hover: scale up from bottom */
-.hp-svc-card:nth-child(1):hover .hp-svc-illust{opacity:.6;transform:scale(1.08);transform-origin:bottom}
-/* Card 2 hover: skew perspective tilt */
-.hp-svc-card:nth-child(2):hover .hp-svc-illust{opacity:.6;transform:perspective(400px) rotateY(-8deg) scale(.95);transform-origin:center}
-/* Card 3 hover: fan out */
-.hp-svc-card:nth-child(3):hover .hp-svc-illust{opacity:.6}
-.hp-svc-illust-stack{position:relative;width:100%;height:100%}
-.hp-svc-illust-stack svg{position:absolute;inset:0;transition:transform .15s ease}
-.hp-svc-card:nth-child(3):hover .hp-svc-illust-stack svg:nth-child(1){transform:translateX(-12px) rotate(-3deg)}
-.hp-svc-card:nth-child(3):hover .hp-svc-illust-stack svg:nth-child(3){transform:translateX(12px) rotate(3deg)}
-/* CTA buttons */
-.hp-svc-cta{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border:1px solid rgba(255,255,255,.15);border-radius:999px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.6);text-decoration:none;transition:all .15s;position:relative;z-index:3;width:fit-content;margin-top:auto}
-.hp-svc-cta:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.25);color:#fff}
-.hp-svc-cta svg{width:14px;height:14px}
+.hp-svc-tags{display:flex;flex-wrap:wrap;gap:6px;padding:0 28px 16px;position:relative;z-index:2}
+.hp-svc-tag{font-size:10px;font-weight:600;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.5)}
+.hp-svc-card:nth-child(1) .hp-svc-tag{color:#0E542C}
+.hp-svc-card:nth-child(2) .hp-svc-tag{color:#0043D2}
+.hp-svc-card:nth-child(3) .hp-svc-tag{color:#C0006B}
+/* Interactive mockup area */
+.hp-svc-mock{margin:0 16px 16px;border-radius:14px;overflow:hidden;position:relative;min-height:220px}
+/* Card 1: Live AI chat mockup */
+.svc-chat{background:#1a1a1a;padding:16px;font-size:12px;height:100%}
+.svc-chat-bar{display:flex;align-items:center;gap:6px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:12px}
+.svc-chat-dot{width:7px;height:7px;border-radius:50%;background:#10A37F}
+.svc-chat-name{color:rgba(255,255,255,.5);font-weight:600;font-size:11px}
+.svc-chat-q{color:rgba(255,255,255,.4);margin-bottom:12px;font-size:12px;line-height:1.5}
+.svc-chat-a{color:rgba(255,255,255,.7);font-size:12px;line-height:1.6}
+.svc-chat-brand{color:#10A37F;font-weight:700}
+.svc-chat-cursor{display:inline-block;width:2px;height:14px;background:#10A37F;animation:svcBlink 1s step-end infinite;vertical-align:middle;margin-left:2px}
+@keyframes svcBlink{0%,100%{opacity:1}50%{opacity:0}}
+.svc-chat-cited{display:inline-flex;align-items:center;gap:4px;margin-top:8px;padding:3px 10px;background:rgba(16,163,127,.1);border-radius:6px;font-size:10px;font-weight:700;color:#10A37F}
+.svc-chat-cited svg{width:12px;height:12px}
+/* Card 2: Expanding node map */
+.svc-map{background:rgba(0,67,210,.04);padding:20px;height:100%;position:relative}
+.svc-map-node{position:absolute;display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:9px;font-weight:700;transition:all .4s cubic-bezier(.16,1,.3,1);background:#fff;border:1px solid rgba(0,67,210,.1);color:#0043D2;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.svc-map-node.center{width:80px;height:34px;left:50%;top:10px;transform:translateX(-50%);background:#0043D2;color:#fff;border:none;font-size:10px;z-index:2}
+.svc-map-node.n1{width:70px;height:28px;left:10%;top:55px;opacity:.7}
+.svc-map-node.n2{width:70px;height:28px;right:10%;top:55px;opacity:.7}
+.svc-map-node.n3{width:60px;height:24px;left:5%;top:100px;opacity:.5;font-size:8px}
+.svc-map-node.n4{width:60px;height:24px;left:35%;top:100px;opacity:.5;font-size:8px}
+.svc-map-node.n5{width:60px;height:24px;right:5%;top:100px;opacity:.5;font-size:8px}
+.svc-map-node.n6{width:60px;height:24px;right:30%;top:100px;opacity:.5;font-size:8px}
+.svc-map-line{position:absolute;background:rgba(0,67,210,.08);height:1px;transform-origin:left;transition:all .4s cubic-bezier(.16,1,.3,1)}
+/* Hover: nodes spread and become more visible */
+.hp-svc-card:nth-child(2):hover .svc-map-node.n1{left:5%;top:60px;opacity:1}
+.hp-svc-card:nth-child(2):hover .svc-map-node.n2{right:5%;top:60px;opacity:1}
+.hp-svc-card:nth-child(2):hover .svc-map-node.n3{left:0%;top:110px;opacity:.8}
+.hp-svc-card:nth-child(2):hover .svc-map-node.n4{left:28%;top:115px;opacity:.8}
+.hp-svc-card:nth-child(2):hover .svc-map-node.n5{right:0%;top:110px;opacity:.8}
+.hp-svc-card:nth-child(2):hover .svc-map-node.n6{right:25%;top:115px;opacity:.8}
+.svc-map-label{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-size:9px;color:rgba(0,67,210,.3);font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+/* Card 3: Pipeline with animated counters */
+.svc-pipe{background:rgba(192,0,107,.04);padding:20px;height:100%;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.svc-pipe-row{display:flex;align-items:center;gap:12px;padding:10px 14px;background:rgba(255,255,255,.5);border-radius:10px;transition:all .3s ease}
+.hp-svc-card:nth-child(3):hover .svc-pipe-row{background:rgba(255,255,255,.75);transform:translateX(4px)}
+.svc-pipe-bar{flex:1;height:8px;background:rgba(192,0,107,.06);border-radius:4px;overflow:hidden;position:relative}
+.svc-pipe-fill{height:100%;border-radius:4px;width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+.svc-pipe-fill.f1{background:linear-gradient(90deg,#FFD6E8,#C0006B)}
+.svc-pipe-fill.f2{background:linear-gradient(90deg,#FFD6E8,#C0006B)}
+.svc-pipe-fill.f3{background:linear-gradient(90deg,#FFD6E8,#C0006B)}
+.svc-pipe-label{font-size:10px;color:rgba(138,0,78,.5);font-weight:600;width:70px;flex-shrink:0}
+.svc-pipe-val{font-family:var(--display);font-size:16px;font-weight:700;color:#8A004E;width:50px;text-align:right;flex-shrink:0}
 /* Supporting services */
 .hp-svc-more-label{margin-top:48px;margin-bottom:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(0,0,0,.3);text-align:center}
 .hp-svc-more{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -1207,121 +1237,56 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
     <!-- Core Services -->
     <div class="hp-svc-core" id="svcCore">
-      <!-- Card 1: AI Visibility — network/constellation illustration -->
+      <!-- Card 1: AI Visibility — live chat typing mockup -->
       <div class="hp-svc-card" data-delay="0">
         <div class="hp-svc-card-text">
           <h3>AI Search Visibility</h3>
           <p>Get cited by ChatGPT, Perplexity, Gemini, and Claude as the #1 recommended solution in your category.</p>
         </div>
         <div class="hp-svc-tags"><span class="hp-svc-tag">GEO Strategy</span><span class="hp-svc-tag">Entity Building</span><span class="hp-svc-tag">Citation Tracking</span></div>
-        <div class="hp-svc-illust">
-          <svg viewBox="0 0 300 200" fill="none">
-            <!-- Orbital rings -->
-            <ellipse cx="150" cy="100" rx="120" ry="60" stroke="rgba(125,255,179,.15)" stroke-width=".8"/>
-            <ellipse cx="150" cy="100" rx="85" ry="42" stroke="rgba(125,255,179,.1)" stroke-width=".8"/>
-            <ellipse cx="150" cy="100" rx="50" ry="25" stroke="rgba(125,255,179,.08)" stroke-width=".8"/>
-            <!-- Connection lines -->
-            <line x1="150" y1="100" x2="45" y2="55" stroke="rgba(125,255,179,.2)" stroke-width=".8"/>
-            <line x1="150" y1="100" x2="255" y2="55" stroke="rgba(125,255,179,.2)" stroke-width=".8"/>
-            <line x1="150" y1="100" x2="30" y2="120" stroke="rgba(125,255,179,.2)" stroke-width=".8"/>
-            <line x1="150" y1="100" x2="270" y2="120" stroke="rgba(125,255,179,.2)" stroke-width=".8"/>
-            <line x1="150" y1="100" x2="150" y2="30" stroke="rgba(125,255,179,.2)" stroke-width=".8"/>
-            <line x1="150" y1="100" x2="150" y2="170" stroke="rgba(125,255,179,.2)" stroke-width=".8"/>
-            <!-- Center node -->
-            <circle cx="150" cy="100" r="16" stroke="rgba(125,255,179,.6)" stroke-width="1.5" fill="none"/>
-            <circle cx="150" cy="100" r="4" fill="rgba(125,255,179,.6)"/>
-            <!-- Outer nodes -->
-            <circle cx="45" cy="55" r="6" stroke="rgba(125,255,179,.3)" stroke-width="1" fill="none"/>
-            <circle cx="255" cy="55" r="6" stroke="rgba(125,255,179,.3)" stroke-width="1" fill="none"/>
-            <circle cx="150" cy="30" r="6" stroke="rgba(125,255,179,.3)" stroke-width="1" fill="none"/>
-            <circle cx="30" cy="120" r="6" stroke="rgba(125,255,179,.3)" stroke-width="1" fill="none"/>
-            <circle cx="270" cy="120" r="6" stroke="rgba(125,255,179,.3)" stroke-width="1" fill="none"/>
-            <circle cx="150" cy="170" r="6" stroke="rgba(125,255,179,.3)" stroke-width="1" fill="none"/>
-            <!-- Dots -->
-            <circle cx="45" cy="55" r="2" fill="rgba(125,255,179,.4)"/>
-            <circle cx="255" cy="55" r="2" fill="rgba(125,255,179,.4)"/>
-            <circle cx="150" cy="30" r="2" fill="rgba(125,255,179,.4)"/>
-            <circle cx="30" cy="120" r="2" fill="rgba(125,255,179,.4)"/>
-            <circle cx="270" cy="120" r="2" fill="rgba(125,255,179,.4)"/>
-            <circle cx="150" cy="170" r="2" fill="rgba(125,255,179,.4)"/>
-          </svg>
+        <div class="hp-svc-mock">
+          <div class="svc-chat" id="svcChat">
+            <div class="svc-chat-bar"><div class="svc-chat-dot"></div><span class="svc-chat-name">ChatGPT</span></div>
+            <div class="svc-chat-q">What&rsquo;s the best platform for verified B2B email lists?</div>
+            <div class="svc-chat-a" id="svcChatAnswer"></div>
+          </div>
         </div>
-        <a href="#" class="hp-svc-cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
       </div>
-      <!-- Card 2: Semantic SEO — architecture/grid illustration -->
+      <!-- Card 2: Semantic SEO — expanding topical map -->
       <div class="hp-svc-card" data-delay="150">
         <div class="hp-svc-card-text">
           <h3>Semantic SEO Strategy</h3>
-          <p>Full-category semantic architecture that builds topical authority and dominates search results across Google and AI.</p>
+          <p>Full-category semantic architecture that builds topical authority across Google and AI simultaneously.</p>
         </div>
         <div class="hp-svc-tags"><span class="hp-svc-tag">Topical Maps</span><span class="hp-svc-tag">Semantic Clusters</span><span class="hp-svc-tag">Authority Building</span></div>
-        <div class="hp-svc-illust">
-          <!-- Browser window wireframe -->
-          <svg viewBox="0 0 300 200" fill="none">
-            <!-- Browser frame -->
-            <rect x="20" y="15" width="260" height="170" rx="8" stroke="rgba(125,255,179,.25)" stroke-width="1"/>
-            <!-- Title bar -->
-            <line x1="20" y1="40" x2="280" y2="40" stroke="rgba(125,255,179,.15)" stroke-width=".8"/>
-            <circle cx="38" cy="28" r="4" stroke="rgba(125,255,179,.2)" stroke-width=".8" fill="none"/>
-            <circle cx="52" cy="28" r="4" stroke="rgba(125,255,179,.15)" stroke-width=".8" fill="none"/>
-            <circle cx="66" cy="28" r="4" stroke="rgba(125,255,179,.1)" stroke-width=".8" fill="none"/>
-            <!-- URL bar -->
-            <rect x="82" y="22" width="130" height="12" rx="6" stroke="rgba(125,255,179,.1)" stroke-width=".8" fill="none"/>
-            <!-- Content blocks -->
-            <rect x="35" y="52" width="100" height="8" rx="2" fill="rgba(125,255,179,.12)"/>
-            <rect x="35" y="66" width="160" height="5" rx="2" fill="rgba(125,255,179,.06)"/>
-            <rect x="35" y="76" width="140" height="5" rx="2" fill="rgba(125,255,179,.06)"/>
-            <rect x="35" y="86" width="120" height="5" rx="2" fill="rgba(125,255,179,.06)"/>
-            <!-- Sidebar blocks -->
-            <rect x="200" y="52" width="65" height="40" rx="4" stroke="rgba(125,255,179,.1)" stroke-width=".8" fill="none"/>
-            <rect x="200" y="100" width="65" height="40" rx="4" stroke="rgba(125,255,179,.08)" stroke-width=".8" fill="none"/>
-            <!-- Bottom blocks -->
-            <rect x="35" y="100" width="50" height="30" rx="4" stroke="rgba(125,255,179,.08)" stroke-width=".8" fill="none"/>
-            <rect x="92" y="100" width="50" height="30" rx="4" stroke="rgba(125,255,179,.08)" stroke-width=".8" fill="none"/>
-            <rect x="35" y="140" width="230" height="6" rx="2" fill="rgba(125,255,179,.04)"/>
-            <rect x="35" y="152" width="180" height="6" rx="2" fill="rgba(125,255,179,.04)"/>
-            <rect x="35" y="164" width="200" height="6" rx="2" fill="rgba(125,255,179,.04)"/>
-          </svg>
+        <div class="hp-svc-mock">
+          <div class="svc-map">
+            <div class="svc-map-node center">Your Category</div>
+            <div class="svc-map-node n1">Pillar A</div>
+            <div class="svc-map-node n2">Pillar B</div>
+            <div class="svc-map-node n3">Cluster 1</div>
+            <div class="svc-map-node n4">Cluster 2</div>
+            <div class="svc-map-node n5">Cluster 3</div>
+            <div class="svc-map-node n6">Cluster 4</div>
+            <div class="svc-map-label">Hover to explore the architecture</div>
+          </div>
         </div>
-        <a href="#" class="hp-svc-cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
       </div>
-      <!-- Card 3: Pipeline — stacked document wireframes that fan out on hover -->
+      <!-- Card 3: Pipeline — animated metric bars -->
       <div class="hp-svc-card" data-delay="300">
         <div class="hp-svc-card-text">
           <h3>Pipeline Content Production</h3>
-          <p>BOFU content that converts visitors to demos. Every page is engineered to drive pipeline, not vanity traffic.</p>
+          <p>BOFU content that converts visitors to demos. Every page drives pipeline, not vanity traffic.</p>
         </div>
         <div class="hp-svc-tags"><span class="hp-svc-tag">BOFU Pages</span><span class="hp-svc-tag">Comparison Content</span><span class="hp-svc-tag">Conversion Copy</span></div>
-        <div class="hp-svc-illust">
-          <div class="hp-svc-illust-stack">
-            <!-- 3 stacked document wireframes -->
-            <svg viewBox="0 0 300 200" fill="none" style="left:8px;top:-8px">
-              <rect x="60" y="20" width="180" height="160" rx="8" stroke="rgba(125,255,179,.15)" stroke-width=".8" fill="none"/>
-              <rect x="78" y="40" width="80" height="6" rx="2" fill="rgba(125,255,179,.06)"/>
-              <rect x="78" y="54" width="140" height="4" rx="2" fill="rgba(125,255,179,.04)"/>
-              <rect x="78" y="64" width="120" height="4" rx="2" fill="rgba(125,255,179,.04)"/>
-            </svg>
-            <svg viewBox="0 0 300 200" fill="none" style="left:4px;top:-4px">
-              <rect x="60" y="20" width="180" height="160" rx="8" stroke="rgba(125,255,179,.2)" stroke-width=".8" fill="none"/>
-              <rect x="78" y="40" width="80" height="6" rx="2" fill="rgba(125,255,179,.08)"/>
-              <rect x="78" y="54" width="140" height="4" rx="2" fill="rgba(125,255,179,.05)"/>
-              <rect x="78" y="64" width="120" height="4" rx="2" fill="rgba(125,255,179,.05)"/>
-              <rect x="78" y="78" width="100" height="4" rx="2" fill="rgba(125,255,179,.04)"/>
-            </svg>
-            <svg viewBox="0 0 300 200" fill="none">
-              <rect x="60" y="20" width="180" height="160" rx="8" stroke="rgba(125,255,179,.25)" stroke-width="1" fill="none"/>
-              <rect x="78" y="40" width="90" height="7" rx="2" fill="rgba(125,255,179,.12)"/>
-              <rect x="78" y="56" width="144" height="4" rx="2" fill="rgba(125,255,179,.06)"/>
-              <rect x="78" y="66" width="130" height="4" rx="2" fill="rgba(125,255,179,.06)"/>
-              <rect x="78" y="76" width="110" height="4" rx="2" fill="rgba(125,255,179,.06)"/>
-              <line x1="78" y1="92" x2="222" y2="92" stroke="rgba(125,255,179,.08)" stroke-width=".5"/>
-              <rect x="78" y="102" width="60" height="50" rx="4" stroke="rgba(125,255,179,.1)" stroke-width=".8" fill="none"/>
-              <rect x="148" y="102" width="74" height="50" rx="4" stroke="rgba(125,255,179,.08)" stroke-width=".8" fill="none"/>
-              <rect x="78" y="162" width="144" height="8" rx="4" fill="rgba(125,255,179,.1)"/>
-            </svg>
+        <div class="hp-svc-mock">
+          <div class="svc-pipe" id="svcPipe">
+            <div class="svc-pipe-row"><span class="svc-pipe-label">Impressions</span><div class="svc-pipe-bar"><div class="svc-pipe-fill f1" data-w="95%"></div></div><span class="svc-pipe-val">124K</span></div>
+            <div class="svc-pipe-row"><span class="svc-pipe-label">Clicks</span><div class="svc-pipe-bar"><div class="svc-pipe-fill f2" data-w="65%"></div></div><span class="svc-pipe-val">8.2K</span></div>
+            <div class="svc-pipe-row"><span class="svc-pipe-label">Demos</span><div class="svc-pipe-bar"><div class="svc-pipe-fill f3" data-w="35%"></div></div><span class="svc-pipe-val">47</span></div>
+            <div class="svc-pipe-row"><span class="svc-pipe-label">Pipeline</span><div class="svc-pipe-bar"><div class="svc-pipe-fill f1" data-w="80%"></div></div><span class="svc-pipe-val">$1.2M</span></div>
           </div>
         </div>
-        <a href="#" class="hp-svc-cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
       </div>
     </div>
 
@@ -1723,6 +1688,57 @@ if (tlGrid) {
     });
   }, { threshold: 0.15 });
   tlObs.observe(tlGrid);
+}
+
+// ── Service card: AI chat typing animation ──
+const svcChatEl = document.getElementById('svcChatAnswer');
+if (svcChatEl) {
+  const chatText = 'Based on reviews and accuracy data, <span class="svc-chat-brand">BookYourData</span> is the top option. Known for 97%+ accuracy, strong G2 ratings (4.9/5), and verified real-time data.';
+  const plainText = chatText.replace(/<[^>]+>/g, '');
+  let chatDone = false;
+  const chatObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !chatDone) {
+        chatDone = true;
+        let ci = 0;
+        function typeChat() {
+          if (ci <= plainText.length) {
+            let out = '', vc = 0, si = 0;
+            while (si < chatText.length && vc < ci) {
+              if (chatText[si] === '<') { const end = chatText.indexOf('>', si); out += chatText.slice(si, end + 1); si = end + 1; }
+              else { out += chatText[si]; vc++; si++; }
+            }
+            const opens = (out.match(/<span[^>]*>/g) || []).length;
+            const closes = (out.match(/<\/span>/g) || []).length;
+            for (let x = 0; x < opens - closes; x++) out += '</span>';
+            svcChatEl.innerHTML = out + '<span class="svc-chat-cursor"></span>';
+            ci++;
+            setTimeout(typeChat, 25);
+          } else {
+            svcChatEl.innerHTML = chatText + '<div class="svc-chat-cited"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Cited as #1</div>';
+          }
+        }
+        setTimeout(typeChat, 600);
+      }
+    });
+  }, { threshold: 0.3 });
+  chatObs.observe(svcChatEl);
+}
+
+// ── Service card: Pipeline bar fill animation ──
+const svcPipe = document.getElementById('svcPipe');
+if (svcPipe) {
+  const pipeObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        svcPipe.querySelectorAll('.svc-pipe-fill').forEach((f, i) => {
+          setTimeout(() => { f.style.width = f.dataset.w; }, i * 200);
+        });
+        pipeObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  pipeObs.observe(svcPipe);
 }
 
 // ── Services section animations ──
