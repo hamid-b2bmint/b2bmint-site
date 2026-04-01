@@ -567,11 +567,13 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-case-stat strong{display:block;font-family:var(--display);font-size:22px;font-weight:700;color:var(--forest-deep);line-height:1;margin-bottom:2px}
 .hp-case-stat span{font-size:11px;color:rgba(0,0,0,.4)}
 /* Testimonial */
-.hp-testimonial{margin-top:56px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto;padding:40px;background:#fff;border-radius:20px;border:1px solid rgba(0,0,0,.06);position:relative}
-.hp-testimonial::before{content:'\201C';position:absolute;top:16px;left:28px;font-family:var(--display);font-size:60px;color:rgba(14,84,44,.1);line-height:1}
-.hp-testimonial blockquote{font-size:18px;font-style:italic;line-height:1.7;color:rgba(0,0,0,.6);margin-bottom:16px;position:relative;z-index:1}
-.hp-testimonial cite{font-size:13px;font-weight:600;color:var(--forest);font-style:normal;display:flex;align-items:center;justify-content:center;gap:8px}
-.hp-testimonial cite::before{content:'';width:20px;height:1px;background:var(--forest);opacity:.3}
+.hp-testimonial{margin-top:56px;max-width:740px;margin-left:auto;margin-right:auto;padding:40px 48px;background:#fff;border-radius:20px;border:1px solid rgba(0,0,0,.06);position:relative;display:flex;gap:28px;align-items:flex-start}
+.hp-testimonial::before{content:'\201C';position:absolute;top:12px;left:24px;font-family:var(--display);font-size:60px;color:rgba(14,84,44,.08);line-height:1}
+.hp-testimonial-img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(14,84,44,.08)}
+.hp-testimonial-body{flex:1;position:relative;z-index:1}
+.hp-testimonial blockquote{font-size:17px;font-style:italic;line-height:1.7;color:rgba(0,0,0,.6);margin-bottom:12px}
+.hp-testimonial cite{font-size:13px;font-weight:600;color:var(--forest-deep);font-style:normal;display:block}
+.hp-testimonial cite span{display:block;font-size:12px;font-weight:400;color:rgba(0,0,0,.4);margin-top:2px}
 
 /* ── S9: Who This Is For ── */
 .s-fit{background:var(--mint-bg)}
@@ -1077,8 +1079,11 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
     <!-- Testimonial -->
     <div class="hp-testimonial rv" style="transition-delay:.3s">
-      <blockquote>&ldquo;The $5M in revenue from search isn&rsquo;t just a number. It&rsquo;s the result of a system that compounds every month.&rdquo;</blockquote>
-      <cite>Baris Zeren, CEO, BookYourData</cite>
+      <img class="hp-testimonial-img" src="baris-zeren.jpeg" alt="Baris Zeren">
+      <div class="hp-testimonial-body">
+        <blockquote>&ldquo;We tried two SEO agencies before B2BMint. Both gave us traffic reports and blog posts. B2BMint built a system that got us cited by ChatGPT, ranked on Google, and generated $5M+ in pipeline from search alone. The difference is they think in revenue, not rankings.&rdquo;</blockquote>
+        <cite>Baris Zeren<span>CEO, BookYourData</span></cite>
+      </div>
     </div>
   </div>
 </section>
