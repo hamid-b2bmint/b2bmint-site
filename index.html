@@ -590,15 +590,37 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-testimonial cite span{display:block;font-size:12px;font-weight:400;color:rgba(0,0,0,.4);margin-top:2px}
 
 /* ── S9: Who This Is For ── */
-.s-fit{background:var(--mint-bg)}
-.hp-fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
-.hp-fit-col h3{font-size:16px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:8px}
-.hp-fit-col h3 .y{color:var(--forest);font-size:20px}
-.hp-fit-col h3 .n{color:#c00;font-size:20px}
-.hp-fit-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;font-size:15px;line-height:1.5;color:rgba(0,0,0,.65)}
-.hp-fit-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:2px}
-.hp-fit-icon.yes{background:rgba(14,84,44,.1);color:var(--forest)}
-.hp-fit-icon.no{background:rgba(192,0,0,.1);color:#c00}
+.s-fit{background:#fff}
+.s-fit .s-h{text-align:center}
+.s-fit .s-p{text-align:center;max-width:560px;margin-left:auto;margin-right:auto;margin-bottom:48px}
+.hp-fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:0}
+.hp-fit-col{border-radius:20px;padding:36px 32px;opacity:0;transform:translateY(16px);transition:all .5s ease}
+.hp-fit-col.show{opacity:1;transform:translateY(0)}
+.hp-fit-col.yes-col{background:#D2FFC1}
+.hp-fit-col.no-col{background:#FFE8E2}
+.hp-fit-col h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.hp-fit-col.yes-col h3{color:#063D1A}
+.hp-fit-col.no-col h3{color:#8A1A00}
+.hp-fit-h-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.yes-col .hp-fit-h-icon{background:rgba(14,84,44,.12)}
+.no-col .hp-fit-h-icon{background:rgba(192,0,0,.1)}
+.hp-fit-h-icon svg{width:16px;height:16px}
+.hp-fit-item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;margin-bottom:8px;border-radius:12px;background:rgba(255,255,255,.5);opacity:0;transform:translateX(0);transition:all .3s ease;cursor:default}
+.hp-fit-item.show{opacity:1}
+.hp-fit-item:hover{background:rgba(255,255,255,.85)}
+.hp-fit-icon{flex-shrink:0;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.hp-fit-icon svg{width:12px;height:12px}
+.hp-fit-icon.yes{background:rgba(14,84,44,.12)}
+.hp-fit-icon.yes svg{color:var(--forest)}
+.hp-fit-icon.no{background:rgba(192,0,0,.1)}
+.hp-fit-icon.no svg{color:#c00}
+.hp-fit-item-text{flex:1}
+.hp-fit-item-text strong{display:block;font-size:14px;font-weight:700;margin-bottom:2px}
+.yes-col .hp-fit-item-text strong{color:#063D1A}
+.no-col .hp-fit-item-text strong{color:#8A1A00}
+.hp-fit-item-text span{font-size:12px;line-height:1.4}
+.yes-col .hp-fit-item-text span{color:rgba(6,61,26,.5)}
+.no-col .hp-fit-item-text span{color:rgba(138,26,0,.45)}
 
 /* ── S10: Services ── */
 .s-svc{background:#fff}
@@ -1108,19 +1130,23 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <!-- S9: WHO THIS IS FOR -->
 <section class="s-sec s-fit" id="hp-fit">
   <div class="s-inner">
-    <h2 class="s-h rv" style="text-align:center">Is this for you?</h2>
-    <div class="hp-fit-grid">
-      <div class="hp-fit-col rv" style="transition-delay:.15s">
-        <h3><span class="y">&#10003;</span> Yes, if you&hellip;</h3>
-        <div class="hp-fit-item"><span class="hp-fit-icon yes">&#10003;</span><span>Are a B2B SaaS doing $1M&ndash;$50M ARR</span></div>
-        <div class="hp-fit-item"><span class="hp-fit-icon yes">&#10003;</span><span>Want pipeline, not traffic reports</span></div>
-        <div class="hp-fit-item"><span class="hp-fit-icon yes">&#10003;</span><span>Ready to invest in organic + AI search</span></div>
+    <div class="s-eye rv" style="text-align:center">Who This Is For</div>
+    <h2 class="s-h rv" style="text-align:center;transition-delay:.1s">Is this for you?</h2>
+    <p class="s-p rv" style="transition-delay:.15s">We work with a specific type of company. Here&rsquo;s how to know if SAGE is the right fit.</p>
+    <div class="hp-fit-grid" id="fitGrid">
+      <div class="hp-fit-col yes-col" data-delay="0">
+        <h3><span class="hp-fit-h-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Built for you if&hellip;</h3>
+        <div class="hp-fit-item" data-delay="0"><span class="hp-fit-icon yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span><div class="hp-fit-item-text"><strong>B2B SaaS doing $1M&ndash;$50M ARR</strong><span>You have product-market fit and need a scalable acquisition channel</span></div></div>
+        <div class="hp-fit-item" data-delay="100"><span class="hp-fit-icon yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span><div class="hp-fit-item-text"><strong>You want pipeline, not traffic reports</strong><span>You measure success by demos booked and revenue generated</span></div></div>
+        <div class="hp-fit-item" data-delay="200"><span class="hp-fit-icon yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span><div class="hp-fit-item-text"><strong>Ready to invest in organic + AI</strong><span>You understand compound growth takes 3-6 months to fully kick in</span></div></div>
+        <div class="hp-fit-item" data-delay="300"><span class="hp-fit-icon yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span><div class="hp-fit-item-text"><strong>Your competitors are winning on search</strong><span>You know you should be ranking higher but your current agency can&rsquo;t get you there</span></div></div>
       </div>
-      <div class="hp-fit-col rv" style="transition-delay:.25s">
-        <h3><span class="n">&#10005;</span> Not for you if&hellip;</h3>
-        <div class="hp-fit-item"><span class="hp-fit-icon no">&#10005;</span><span>You&rsquo;re in e-commerce</span></div>
-        <div class="hp-fit-item"><span class="hp-fit-icon no">&#10005;</span><span>You&rsquo;re a pre-PMF startup</span></div>
-        <div class="hp-fit-item"><span class="hp-fit-icon no">&#10005;</span><span>You want &ldquo;quick SEO hacks&rdquo;</span></div>
+      <div class="hp-fit-col no-col" data-delay="200">
+        <h3><span class="hp-fit-h-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c00" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Not the right fit if&hellip;</h3>
+        <div class="hp-fit-item" data-delay="0"><span class="hp-fit-icon no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><div class="hp-fit-item-text"><strong>You&rsquo;re in e-commerce or DTC</strong><span>Our system is built specifically for B2B SaaS buying cycles</span></div></div>
+        <div class="hp-fit-item" data-delay="100"><span class="hp-fit-icon no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><div class="hp-fit-item-text"><strong>You&rsquo;re a pre-PMF startup</strong><span>You need product-market fit before investing in search infrastructure</span></div></div>
+        <div class="hp-fit-item" data-delay="200"><span class="hp-fit-icon no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><div class="hp-fit-item-text"><strong>You want &ldquo;quick SEO hacks&rdquo;</strong><span>We build systems, not shortcuts. If you want tricks, we&rsquo;re not the agency</span></div></div>
+        <div class="hp-fit-item" data-delay="300"><span class="hp-fit-icon no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><div class="hp-fit-item-text"><strong>Your budget is under $5K/month</strong><span>SAGE requires investment to deliver the compound results we promise</span></div></div>
       </div>
     </div>
   </div>
@@ -1544,6 +1570,28 @@ if (tlGrid) {
     });
   }, { threshold: 0.15 });
   tlObs.observe(tlGrid);
+}
+
+// ── Fit section cards + items stagger ──
+const fitGrid = document.getElementById('fitGrid');
+if (fitGrid) {
+  const fitObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        fitGrid.querySelectorAll('.hp-fit-col').forEach(col => {
+          const colDelay = parseInt(col.dataset.delay || '0');
+          setTimeout(() => {
+            col.classList.add('show');
+            col.querySelectorAll('.hp-fit-item').forEach(item => {
+              setTimeout(() => item.classList.add('show'), 200 + parseInt(item.dataset.delay || '0'));
+            });
+          }, colDelay);
+        });
+        fitObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  fitObs.observe(fitGrid);
 }
 
 // ── Proof case study cards stagger ──
