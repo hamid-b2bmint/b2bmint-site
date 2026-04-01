@@ -481,14 +481,19 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-tl-dot.lit svg{opacity:1}
 .hp-tl-when{font-size:13px;font-weight:800;color:var(--forest);margin-bottom:4px;letter-spacing:-.01em}
 .hp-tl-what{font-size:13px;font-weight:600;color:rgba(0,0,0,.6);margin-bottom:6px;max-width:160px;margin-left:auto;margin-right:auto}
-.hp-tl-detail{font-size:11px;color:rgba(0,0,0,.35);max-width:150px;margin:0 auto;line-height:1.4}
+.hp-tl-detail{font-size:12px;color:rgba(0,0,0,.5);max-width:160px;margin:0 auto;line-height:1.5}
 /* Timeline cards below */
 .hp-tl-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
-.hp-tl-card{background:rgba(255,255,255,.55);border-radius:16px;padding:24px 20px;text-align:center;opacity:0;transform:translateY(16px);transition:all .4s ease;cursor:default}
+.hp-tl-card{background:#fff;border-radius:16px;padding:28px 20px;text-align:center;opacity:0;transform:translateY(16px);transition:all .4s ease;cursor:default;border:1px solid rgba(14,84,44,.06);position:relative;overflow:hidden}
 .hp-tl-card.show{opacity:1;transform:translateY(0)}
-.hp-tl-card:hover{background:rgba(255,255,255,.85);transform:translateY(-2px)}
-.hp-tl-card-num{font-family:var(--display);font-size:32px;font-weight:700;color:var(--forest-deep);line-height:1;margin-bottom:6px}
-.hp-tl-card-label{font-size:11px;font-weight:600;color:rgba(0,0,0,.4);text-transform:uppercase;letter-spacing:.08em}
+.hp-tl-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.06)}
+.hp-tl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:3px 3px 0 0}
+.hp-tl-card:nth-child(1)::before{background:#C6F5E2}
+.hp-tl-card:nth-child(2)::before{background:#FFF3C2}
+.hp-tl-card:nth-child(3)::before{background:#FFD6E8}
+.hp-tl-card:nth-child(4)::before{background:#D2FFC1}
+.hp-tl-card-num{font-family:var(--display);font-size:36px;font-weight:700;color:var(--forest-deep);line-height:1;margin-bottom:8px}
+.hp-tl-card-label{font-size:12px;font-weight:600;color:rgba(0,0,0,.45);text-transform:uppercase;letter-spacing:.06em}
 
 /* ── S8: The Proof ── */
 .s-proof{background:#fff}
