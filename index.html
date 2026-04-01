@@ -255,11 +255,11 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .g-text{background:linear-gradient(135deg,var(--forest-deep),#1a6b42,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .g-text-light{background:linear-gradient(135deg,var(--lime),#a8ffd4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-/* V1: dense mint dotted text */
-.dt-text{background:radial-gradient(circle,var(--mint-bg) 1.8px,transparent 1.8px);background-size:3.8px 3.8px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+/* dotted text — bold rose/coral for contrast on light bgs */
+.dt-text{background:radial-gradient(circle,#C4325B 1.8px,transparent 1.8px);background-size:3.8px 3.8px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-/* V2: dense gradient dotted text (forest→lime dots) */
-.dt-grad{background:linear-gradient(90deg,var(--lime),#a8ffd4,var(--mint-bg));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;-webkit-mask-image:radial-gradient(circle,#000 1.8px,transparent 1.8px);-webkit-mask-size:3.8px 3.8px;mask-image:radial-gradient(circle,#000 1.8px,transparent 1.8px);mask-size:3.8px 3.8px}
+/* dotted text — gradient rose→coral shift */
+.dt-grad{background:linear-gradient(90deg,#C4325B,#E85D75);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;-webkit-mask-image:radial-gradient(circle,#000 1.8px,transparent 1.8px);-webkit-mask-size:3.8px 3.8px;mask-image:radial-gradient(circle,#000 1.8px,transparent 1.8px);mask-size:3.8px 3.8px}
 .s-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:14px;background:linear-gradient(135deg,var(--forest-deep),#1a6b42,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .s-h{font-family:var(--display);font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:18px;color:var(--forest-deep)}
 .s-p{font-size:17px;line-height:1.7;color:rgba(0,0,0,.6);max-width:600px}
