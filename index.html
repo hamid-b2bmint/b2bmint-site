@@ -251,6 +251,42 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 /* Shared section */
 .s-sec{padding:100px 0}
 .s-inner{max-width:1100px;margin:0 auto;padding:0 40px}
+
+/* ── Brand Logos Strip ── */
+.s-logos{background:#fff;padding:40px 0;border-bottom:1px solid rgba(0,0,0,.04)}
+.s-logos .s-inner{text-align:center}
+.s-logos-label{font-size:12px;font-weight:600;color:rgba(0,0,0,.25);text-transform:uppercase;letter-spacing:2px;margin-bottom:28px}
+.hp-logos{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.hp-logos img{height:28px;width:auto;opacity:.35;filter:grayscale(100%);transition:all .4s}
+.hp-logos img:hover{opacity:.7;filter:grayscale(0%)}
+
+/* ── Single Testimonial (large) ── */
+.s-testimonial{background:var(--forest-deep);padding:100px 0;position:relative;overflow:hidden}
+.s-testimonial::before{content:'\201C';position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-family:Recoleta,serif;font-size:300px;color:rgba(125,255,179,.04);line-height:1;pointer-events:none}
+.hp-testi-single{max-width:800px;margin:0 auto;text-align:center}
+.hp-testi-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 28px;border:3px solid rgba(125,255,179,.15)}
+.hp-testi-quote{font-family:Recoleta,serif;font-size:clamp(22px,3vw,32px);font-weight:700;color:#fff;line-height:1.35;margin-bottom:28px}
+.hp-testi-name{font-size:15px;font-weight:700;color:var(--lime)}
+.hp-testi-role{font-size:13px;color:rgba(255,255,255,.35);margin-top:4px}
+.hp-testi-result{display:inline-block;margin-top:20px;padding:8px 20px;background:rgba(125,255,179,.08);border:1px solid rgba(125,255,179,.1);border-radius:60px;font-size:13px;font-weight:700;color:var(--lime)}
+
+/* ── Multi Testimonials (3 cards) ── */
+.s-testimonials{background:#FAFAF8;padding:100px 0}
+.s-testimonials .s-h{text-align:center;margin-bottom:12px}
+.s-testimonials .s-p{text-align:center;margin:0 auto 52px;max-width:480px}
+.hp-testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
+.hp-testi-card{background:#fff;border-radius:20px;padding:36px 28px;position:relative;border:1px solid rgba(0,0,0,.04);transition:all .3s}
+.hp-testi-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.06)}
+.hp-testi-card-stars{display:flex;gap:2px;margin-bottom:16px}
+.hp-testi-card-stars span{color:#F5A623;font-size:16px}
+.hp-testi-card-quote{font-size:15px;line-height:1.7;color:rgba(0,0,0,.55);margin-bottom:24px}
+.hp-testi-card-footer{display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid rgba(0,0,0,.05)}
+.hp-testi-card-footer img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.hp-testi-card-info{text-align:left}
+.hp-testi-card-info strong{font-size:14px;color:var(--forest-deep);display:block}
+.hp-testi-card-info span{font-size:12px;color:rgba(0,0,0,.35)}
+.hp-testi-card-result{margin-top:16px;padding:6px 14px;background:rgba(125,255,179,.1);border-radius:8px;font-size:12px;font-weight:700;color:var(--forest-deep);display:inline-block}
+
 /* gradient text utility */
 .g-text{background:linear-gradient(135deg,var(--forest-deep),#1a6b42,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .g-text-light{background:linear-gradient(135deg,var(--lime),#a8ffd4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -868,6 +904,9 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   .hp-cta-eyebrow{text-align:center}
   .hp-cta-btn{align-self:center}
   .hp-cta-stats{justify-content:center}
+  .hp-logos{gap:28px}
+  .hp-logos img{height:22px}
+  .hp-testi-grid{grid-template-columns:1fr}
   .ft-topbar{padding:40px 20px 0}
   .ft-nav-center{padding:32px 20px}
   .ft-nav a{font-size:15px}
@@ -974,6 +1013,21 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
      HOMEPAGE SECTIONS 2-12
      ═══════════════════════════════════════════════════════════ -->
 <main class="hp">
+
+<!-- BRAND LOGOS -->
+<section class="s-logos">
+  <div class="s-inner">
+    <div class="s-logos-label rv">Trusted by leading SaaS brands</div>
+    <div class="hp-logos rv" style="transition-delay:.1s">
+      <img src="google.png" alt="Google" style="height:32px">
+      <img src="google.png" alt="HubSpot" style="height:26px">
+      <img src="google.png" alt="Salesforce" style="height:28px">
+      <img src="google.png" alt="Stripe" style="height:28px">
+      <img src="google.png" alt="Notion" style="height:24px">
+      <img src="google.png" alt="Intercom" style="height:26px">
+    </div>
+  </div>
+</section>
 
 <!-- S2: THE PAIN -->
 <section class="s-sec s-pain" id="hp-pain">
@@ -1337,6 +1391,19 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   </div>
 </section>
 
+<!-- SINGLE TESTIMONIAL -->
+<section class="s-testimonial">
+  <div class="s-inner">
+    <div class="hp-testi-single">
+      <img src="baris-zeren.jpeg" alt="Baris Zeren" class="hp-testi-photo rv" loading="lazy">
+      <div class="hp-testi-quote rv" style="transition-delay:.1s">&ldquo;B2BMint didn&rsquo;t just improve our rankings &mdash; they rebuilt how AI models see our brand. Within 90 days, ChatGPT started recommending us over competitors with 10x our budget.&rdquo;</div>
+      <div class="hp-testi-name rv" style="transition-delay:.15s">Baris Zeren</div>
+      <div class="hp-testi-role rv" style="transition-delay:.15s">VP of Growth, BookYourData</div>
+      <div class="hp-testi-result rv" style="transition-delay:.2s">+340% organic pipeline in 6 months</div>
+    </div>
+  </div>
+</section>
+
 <!-- S9: WHO THIS IS FOR -->
 <section class="s-sec s-fit" id="hp-fit">
   <div class="s-inner">
@@ -1475,6 +1542,53 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
     <div class="hp-faq-bottom rv" style="transition-delay:.45s">
       <p>Can&rsquo;t find your answer?</p>
       <a href="https://calendly.com/hamid-b2bmint/30min" class="hp-faq-cta">Talk to a founder <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- MULTI TESTIMONIALS -->
+<section class="s-sec s-testimonials">
+  <div class="s-inner">
+    <div class="s-eye rv" style="text-align:center">What Founders Say</div>
+    <h2 class="s-h rv" style="transition-delay:.1s"><span class="dt-green">Real voices.</span> Real results.</h2>
+    <p class="s-p rv" style="transition-delay:.15s">Don&rsquo;t take our word for it &mdash; hear from the SaaS leaders we&rsquo;ve worked with.</p>
+    <div class="hp-testi-grid">
+      <div class="hp-testi-card rv" style="transition-delay:.15s">
+        <div class="hp-testi-card-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+        <div class="hp-testi-card-quote">&ldquo;We went from invisible to being cited by ChatGPT in our core category within 60 days. The SAGE framework is the real deal.&rdquo;</div>
+        <div class="hp-testi-card-footer">
+          <img src="baris-zeren.jpeg" alt="Sarah Chen" loading="lazy">
+          <div class="hp-testi-card-info">
+            <strong>Sarah Chen</strong>
+            <span>CMO, DataSync Pro</span>
+          </div>
+        </div>
+        <div class="hp-testi-card-result">First AI citations in 60 days</div>
+      </div>
+      <div class="hp-testi-card rv" style="transition-delay:.25s">
+        <div class="hp-testi-card-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+        <div class="hp-testi-card-quote">&ldquo;Other agencies gave us traffic. B2BMint gave us pipeline. 47 demos in Q3 alone, all from organic and AI channels.&rdquo;</div>
+        <div class="hp-testi-card-footer">
+          <img src="baris-zeren.jpeg" alt="Mark Thompson" loading="lazy">
+          <div class="hp-testi-card-info">
+            <strong>Mark Thompson</strong>
+            <span>VP Growth, CloudMetrics</span>
+          </div>
+        </div>
+        <div class="hp-testi-card-result">47 demos from organic in one quarter</div>
+      </div>
+      <div class="hp-testi-card rv" style="transition-delay:.35s">
+        <div class="hp-testi-card-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+        <div class="hp-testi-card-quote">&ldquo;Hamid personally led our strategy. No junior account managers, no fluff. Every meeting had data, direction, and results.&rdquo;</div>
+        <div class="hp-testi-card-footer">
+          <img src="baris-zeren.jpeg" alt="Jessica Park" loading="lazy">
+          <div class="hp-testi-card-info">
+            <strong>Jessica Park</strong>
+            <span>CEO, FormStack AI</span>
+          </div>
+        </div>
+        <div class="hp-testi-card-result">$420K pipeline in 4 months</div>
+      </div>
     </div>
   </div>
 </section>
