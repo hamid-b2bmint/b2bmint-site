@@ -781,32 +781,32 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .ft-nav a:hover{color:var(--lime);letter-spacing:1.5px}
 
 /* ── decorative badge strip ── */
-.ft-badge-strip{position:relative;padding:32px 40px;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:0}
-/* left badge */
-.ft-badge{flex-shrink:0;opacity:.35;animation:ftBadgeFloat 7s ease-in-out infinite}
+.ft-badge-strip{position:relative;padding:40px 40px 48px;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:0}
+/* badges */
+.ft-badge{flex-shrink:0;animation:ftBadgeFloat 7s ease-in-out infinite}
 .ft-badge:last-child{animation-delay:-3.5s}
-@keyframes ftBadgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes ftBadgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .ft-badge svg{display:block}
 /* center line + statement */
-.ft-statement{flex:1;display:flex;align-items:center;gap:0;padding:0 16px}
-.ft-statement-line{flex:1;height:1px;background:rgba(255,255,255,.12);position:relative}
-.ft-statement-line::before{content:'';position:absolute;width:6px;height:6px;border-radius:50%;background:rgba(125,255,179,.3);top:-2.5px}
+.ft-statement{flex:1;display:flex;align-items:center;gap:0;padding:0 20px}
+.ft-statement-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--lime),transparent);opacity:.3;position:relative}
+.ft-statement-line::before{content:'';position:absolute;width:8px;height:8px;border-radius:50%;background:var(--lime);top:-3.5px;box-shadow:0 0 10px rgba(125,255,179,.4)}
 .ft-statement-line:first-child::before{right:0}
 .ft-statement-line:last-child::before{left:0}
-.ft-statement-text{padding:0 20px;white-space:nowrap;font-family:Recoleta,serif;font-size:clamp(14px,2vw,18px);color:rgba(255,255,255,.5);font-weight:700;letter-spacing:2px;text-transform:uppercase}
-.ft-statement-text strong{color:var(--lime);font-size:1.3em}
+.ft-statement-text{padding:0 24px;white-space:nowrap;font-family:Recoleta,serif;font-size:clamp(16px,2.2vw,22px);color:#fff;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.ft-statement-text strong{color:var(--lime);font-size:1.4em;text-shadow:0 0 20px rgba(125,255,179,.3)}
 
 /* ── bottom bar ── */
 .ft-bottom{max-width:1100px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.05);margin-top:20px;flex-wrap:wrap;gap:12px}
-.ft-bottom-logo{font-family:Recoleta,serif;font-size:15px;font-weight:700;color:rgba(255,255,255,.15)}
-.ft-bottom-logo span{color:rgba(125,255,179,.2)}
-.ft-bottom-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:1px solid rgba(255,255,255,.12);border-radius:60px;color:rgba(255,255,255,.5);font-size:13px;font-weight:700;text-decoration:none;transition:all .3s}
-.ft-bottom-cta:hover{border-color:var(--lime);color:var(--lime);transform:translateY(-2px)}
+.ft-bottom-logo{font-family:Recoleta,serif;font-size:16px;font-weight:700;color:rgba(255,255,255,.3)}
+.ft-bottom-logo span{color:rgba(125,255,179,.4)}
+.ft-bottom-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(125,255,179,.2);border-radius:60px;color:var(--lime);font-size:14px;font-weight:700;text-decoration:none;transition:all .3s}
+.ft-bottom-cta:hover{border-color:var(--lime);background:rgba(125,255,179,.06);transform:translateY(-2px);box-shadow:0 4px 16px rgba(125,255,179,.1)}
 .ft-bottom-cta svg{width:14px;height:14px}
-.ft-copy{font-size:11px;color:rgba(255,255,255,.1)}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.2)}
 .ft-legal{display:flex;gap:16px}
-.ft-legal a{font-size:11px;color:rgba(255,255,255,.1);text-decoration:none;transition:color .3s}
-.ft-legal a:hover{color:rgba(255,255,255,.4)}
+.ft-legal a{font-size:12px;color:rgba(255,255,255,.2);text-decoration:none;transition:color .3s}
+.ft-legal a:hover{color:var(--lime)}
 
 /* ── Responsive ── */
 @media(max-width:768px){
@@ -1505,14 +1505,22 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
     <div class="ft-badge-strip">
       <!-- Left badge — SAGE emblem -->
       <div class="ft-badge">
-        <svg width="140" height="140" viewBox="0 0 140 140" fill="none">
-          <circle cx="70" cy="70" r="64" stroke="rgba(125,255,179,.4)" stroke-width="1"/>
-          <circle cx="70" cy="70" r="52" stroke="rgba(125,255,179,.2)" stroke-width=".5"/>
-          <path d="M70 20 C85 45 95 55 95 70 C95 85 85 100 70 120 C55 100 45 85 45 70 C45 55 55 45 70 20Z" stroke="rgba(125,255,179,.35)" stroke-width="1" fill="rgba(125,255,179,.04)"/>
-          <path d="M50 40 C55 55 55 85 50 100" stroke="rgba(125,255,179,.15)" stroke-width=".5" fill="none"/>
-          <path d="M90 40 C85 55 85 85 90 100" stroke="rgba(125,255,179,.15)" stroke-width=".5" fill="none"/>
-          <text x="70" y="67" text-anchor="middle" fill="rgba(125,255,179,.5)" font-size="16" font-weight="700" font-family="Recoleta,serif">SAGE</text>
-          <text x="70" y="80" text-anchor="middle" fill="rgba(125,255,179,.25)" font-size="6" font-weight="600" letter-spacing="2.5" font-family="Inter,sans-serif">ENGINE</text>
+        <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
+          <circle cx="80" cy="80" r="72" stroke="var(--lime)" stroke-width="1" opacity=".5"/>
+          <circle cx="80" cy="80" r="58" stroke="var(--lime)" stroke-width=".5" opacity=".3"/>
+          <!-- ornate leaf shape -->
+          <path d="M80 18 C98 48 110 60 110 80 C110 100 98 118 80 142 C62 118 50 100 50 80 C50 60 62 48 80 18Z" stroke="var(--lime)" stroke-width="1.2" fill="rgba(125,255,179,.06)" opacity=".7"/>
+          <!-- cross veins -->
+          <line x1="80" y1="18" x2="80" y2="142" stroke="var(--lime)" stroke-width=".5" opacity=".25"/>
+          <line x1="50" y1="58" x2="110" y2="102" stroke="var(--lime)" stroke-width=".3" opacity=".2"/>
+          <line x1="50" y1="102" x2="110" y2="58" stroke="var(--lime)" stroke-width=".3" opacity=".2"/>
+          <!-- decorative curls left -->
+          <path d="M46 55 C30 50 25 65 35 72 C25 72 22 85 36 88" stroke="var(--lime)" stroke-width=".8" fill="none" opacity=".4" stroke-linecap="round"/>
+          <!-- decorative curls right -->
+          <path d="M114 55 C130 50 135 65 125 72 C135 72 138 85 124 88" stroke="var(--lime)" stroke-width=".8" fill="none" opacity=".4" stroke-linecap="round"/>
+          <!-- text -->
+          <text x="80" y="77" text-anchor="middle" fill="var(--lime)" font-size="20" font-weight="700" font-family="Recoleta,serif" opacity=".8">SAGE</text>
+          <text x="80" y="92" text-anchor="middle" fill="var(--lime)" font-size="7" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".4">ENGINE</text>
         </svg>
       </div>
 
@@ -1525,14 +1533,22 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
       <!-- Right badge — MINT emblem -->
       <div class="ft-badge">
-        <svg width="140" height="140" viewBox="0 0 140 140" fill="none">
-          <circle cx="70" cy="70" r="64" stroke="rgba(125,255,179,.4)" stroke-width="1"/>
-          <circle cx="70" cy="70" r="52" stroke="rgba(125,255,179,.2)" stroke-width=".5"/>
-          <path d="M70 30 L70 110 M50 50 L70 30 L90 50" stroke="rgba(125,255,179,.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="70" cy="25" r="5" stroke="rgba(125,255,179,.3)" stroke-width="1" fill="rgba(125,255,179,.06)"/>
-          <path d="M55 70 L45 85 M85 70 L95 85" stroke="rgba(125,255,179,.15)" stroke-width=".5"/>
-          <text x="70" y="105" text-anchor="middle" fill="rgba(125,255,179,.5)" font-size="12" font-weight="700" font-family="Recoleta,serif">MINT</text>
-          <text x="70" y="116" text-anchor="middle" fill="rgba(125,255,179,.25)" font-size="6" font-weight="600" letter-spacing="2.5" font-family="Inter,sans-serif">GROWTH</text>
+        <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
+          <circle cx="80" cy="80" r="72" stroke="var(--lime)" stroke-width="1" opacity=".5"/>
+          <circle cx="80" cy="80" r="58" stroke="var(--lime)" stroke-width=".5" opacity=".3"/>
+          <!-- upward arrow -->
+          <path d="M80 125 L80 45" stroke="var(--lime)" stroke-width="1.5" opacity=".6" stroke-linecap="round"/>
+          <path d="M60 65 L80 42 L100 65" stroke="var(--lime)" stroke-width="1.5" opacity=".6" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- glow dot -->
+          <circle cx="80" cy="36" r="5" fill="var(--lime)" opacity=".15"/>
+          <circle cx="80" cy="36" r="2.5" fill="var(--lime)" opacity=".4"/>
+          <!-- decorative curls left -->
+          <path d="M46 95 C30 90 25 105 35 112 C25 112 22 125 36 128" stroke="var(--lime)" stroke-width=".8" fill="none" opacity=".4" stroke-linecap="round"/>
+          <!-- decorative curls right -->
+          <path d="M114 95 C130 90 135 105 125 112 C135 112 138 125 124 128" stroke="var(--lime)" stroke-width=".8" fill="none" opacity=".4" stroke-linecap="round"/>
+          <!-- text -->
+          <text x="80" y="112" text-anchor="middle" fill="var(--lime)" font-size="16" font-weight="700" font-family="Recoleta,serif" opacity=".8">MINT</text>
+          <text x="80" y="125" text-anchor="middle" fill="var(--lime)" font-size="7" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".4">GROWTH</text>
         </svg>
       </div>
     </div>
