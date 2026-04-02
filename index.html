@@ -172,7 +172,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .mock-bg{position:absolute;inset:0;background-image:url('bg-mint.jpg');background-size:cover;background-position:center;background-color:#D2FFC1}
 .mock-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(210,255,193,.55) 0%,rgba(210,255,193,.35) 15%,rgba(210,255,193,.45) 35%,rgba(210,255,193,.65) 50%,rgba(210,255,193,.88) 65%,rgba(210,255,193,.97) 80%,rgba(210,255,193,1) 100%);z-index:1}
 .mock-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 250px at 50% -5%,rgba(255,255,240,.25) 0%,transparent 70%);z-index:2}
-.mock-content{position:relative;z-index:10;width:50%;height:100%;display:flex;flex-direction:column;overflow:visible}
+.mock-content{position:relative;z-index:10;width:50%;height:100%;display:flex;flex-direction:column;overflow:hidden}
 
 /* LEFT SIDE — starts hidden, slides in when crisp-screen slides right */
 .mock-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.16,1,.3,1) .3s;padding:60px 20px 40px 48px;display:flex;flex-direction:column;justify-content:center}
@@ -193,14 +193,16 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .mock-left .cta-w{text-align:left}
 .mock-left .cta-btn{font-size:14px;padding:14px 30px}
 
-/* RIGHT SIDE — positioned in the right 50% over the crisp-screen */
-.mock-right{position:absolute;right:0;top:0;width:50%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 24px;overflow:visible;z-index:15;opacity:0;transition:opacity .6s .5s}
+/* RIGHT SIDE — positioned in the right 50% */
+.mock-right{position:absolute;right:0;top:0;width:50%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 32px;overflow:hidden;z-index:15;opacity:0;transition:opacity .6s .5s}
 .mock-right.show{opacity:1}
-.mock-top{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:14px;width:100%;position:relative}
-.mock-right .chat-box{width:100%;max-width:420px;flex-shrink:0}
-.mock-right .card-left{padding-top:0;margin:0;align-items:center;flex-shrink:0}
-.mock-right .card-right{padding-top:0;margin:0;align-items:center;flex-shrink:0}
-.mock-right .a-card{width:160px;padding:16px}
+.mock-top{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;max-width:440px}
+.mock-right .chat-box{width:100%;max-width:440px}
+.mock-right .card-left,.mock-right .card-right{padding:0;margin:0;align-items:center}
+.mock-right .a-card{width:220px;padding:16px 18px}
+.mock-right .a-title{font-size:14px;gap:8px}
+.mock-right .a-icon{width:28px;height:28px;border-radius:8px}
+.mock-right .a-desc{font-size:12px}
 
 /* Cards */
 .card-left{display:flex;flex-direction:column;align-items:flex-end;padding-top:30px;margin-right:-10px;z-index:20;opacity:0;transform:translateX(-30px);will-change:opacity,transform}
@@ -218,12 +220,12 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .c-dots{display:flex;gap:6px}.c-dot{width:11px;height:11px;border-radius:50%}.c-dot:nth-child(1){background:#FF5F57}.c-dot:nth-child(2){background:#FEBC2E}.c-dot:nth-child(3){background:#28C840}
 .c-url{flex:1;margin-left:8px;padding:6px 14px;background:rgba(255,255,255,.05);border-radius:8px;font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:6px}
 .c-lock{color:#28C840;font-size:11px}
-.c-body{padding:18px 20px 14px;min-height:auto}
+.c-body{padding:16px 18px 12px}
 .c-msg{margin-bottom:16px}.c-msg:last-child{margin-bottom:0}
 .c-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:3px 10px;border-radius:5px;display:inline-block;margin-bottom:8px}
 .c-label.user{color:rgba(255,255,255,.4);background:rgba(255,255,255,.05)}
 .c-label.ai{color:#10A37F;background:rgba(16,163,127,.12)}
-.c-text{font-size:14.5px;line-height:1.7;color:rgba(255,255,255,.75)}
+.c-text{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.75)}
 .c-text .brand{color:var(--lime);font-weight:700}
 .cursor{display:inline-block;width:2px;height:16px;background:rgba(255,255,255,.6);margin-left:2px;vertical-align:text-bottom;animation:blink .8s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
