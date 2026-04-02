@@ -170,12 +170,20 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .mock-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.16,1,.3,1) .2s;padding:40px 40px 40px 48px;display:flex;flex-direction:column;justify-content:center;height:100%}
 .mock-split.active .mock-left{opacity:1;transform:translateX(0)}
 .mock-h{font-family:Recoleta,serif;font-size:clamp(24px,2.8vw,36px);font-weight:700;color:var(--forest-deep);line-height:1.15;margin-bottom:14px}
-.mock-p{font-size:15px;color:rgba(0,0,0,.45);line-height:1.7;margin-bottom:28px;max-width:420px}
+.mock-p{font-size:15px;color:rgba(0,0,0,.45);line-height:1.7;margin-bottom:20px;max-width:420px}
 .mock-right{transition:all 1s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;align-items:center;padding-top:0}
-.mock-split.active .mock-right{padding:20px 24px 20px 0;align-items:flex-end}
+.mock-split.active .mock-right{padding:20px 24px 20px 0;align-items:center}
 .mock-split.active .mock-right .chat-box{width:100%;max-width:480px}
-.mock-split.active .mock-right .mock-top{flex-direction:column;align-items:center;gap:12px}
-.mock-split.active .mock-right .card-left,.mock-split.active .mock-right .card-right{display:none}
+.mock-split.active .mock-right .mock-top{flex-direction:column;align-items:center;gap:10px}
+.mock-split.active .mock-right .card-left{padding-top:0;margin:0;transform:none;opacity:1;align-items:center}
+.mock-split.active .mock-right .card-right{padding-top:0;margin:0;transform:none;opacity:1;align-items:center}
+/* left side plats/stats alignment */
+.mock-left .plats{justify-content:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.mock-left .met-wrap{max-width:100%}
+.mock-left .met-grid{grid-template-columns:1fr 1fr;gap:10px}
+/* left side CTA */
+.mock-left .cta-w{text-align:left}
+.mock-left .cta-btn{font-size:15px;padding:16px 36px}
 
 .mock-top{display:flex;align-items:flex-start;justify-content:center;gap:20px;width:100%;position:relative}
 
@@ -1885,10 +1893,28 @@ function startAutoPlay(){
   if(autoPlayStarted)return;
   autoPlayStarted=true;
 
-  // Show left card
+  // Show left card immediately
   s(cL,{opacity:1,transform:'translateX(0)'});
 
-  // Type user message
+  // Move plats+stats to left side IMMEDIATELY
+  platsTarget.appendChild(plats);
+  s(plats,{opacity:1,transform:'translateY(0)'});
+  chips.forEach((c,i)=>setTimeout(()=>c.classList.add('v'),i*80));
+  setTimeout(()=>cBadge.classList.add('v'),chips.length*80);
+
+  metTarget.appendChild(metW);
+  s(metW,{opacity:1,transform:'translateY(0)'});
+  mets.forEach((c,i)=>setTimeout(()=>c.classList.add('v'),i*100));
+
+  // Move CTA to left side
+  const ctaTarget=document.getElementById('metTarget');
+  ctaTarget.parentNode.appendChild(ctaW);
+  setTimeout(()=>{
+    s(ctaW,{opacity:1,transform:'translateY(0)'});
+    ticks.forEach((t,i)=>setTimeout(()=>t.classList.add('pop'),i*80));
+  },500);
+
+  // Type user message (FAST)
   mU.style.opacity='1';
   let uIdx=0;
   const uTimer=setInterval(()=>{
@@ -1896,7 +1922,6 @@ function startAutoPlay(){
     tyU(uIdx/Q.length);
     if(uIdx>=Q.length){
       clearInterval(uTimer);
-      // After user done, start AI response
       setTimeout(()=>{
         mA.style.opacity='1';
         const pl=A.replace(/<[^>]+>/g,'');
@@ -1906,40 +1931,15 @@ function startAutoPlay(){
           tyA(aIdx/pl.length);
           if(aIdx>=pl.length){
             clearInterval(aTimer);
-            // Show cited badge
             setTimeout(()=>{
               s(cit,{opacity:1,transform:'scale(1)'});
-              // Show right card
-              setTimeout(()=>{
-                s(cR,{opacity:1,transform:'translateX(0)'});
-                // Move plats+stats to left side and reveal
-                setTimeout(()=>{
-                  platsTarget.appendChild(plats);
-                  s(plats,{opacity:1,transform:'translateY(0)'});
-                  chips.forEach((c,i)=>setTimeout(()=>c.classList.add('v'),i*100));
-                  setTimeout(()=>{
-                    cBadge.classList.add('v');
-                    // Stats
-                    setTimeout(()=>{
-                      metTarget.appendChild(metW);
-                      s(metW,{opacity:1,transform:'translateY(0)'});
-                      mets.forEach((c,i)=>setTimeout(()=>c.classList.add('v'),i*120));
-                      // CTA
-                      setTimeout(()=>{
-                        s(ctaW,{opacity:1,transform:'translateY(0)'});
-                        ticks.forEach((t,i)=>setTimeout(()=>t.classList.add('pop'),i*100));
-                        setTimeout(()=>sm.classList.add('v'),500);
-                      },600);
-                    },400);
-                  },chips.length*100+100);
-                },400);
-              },300);
-            },400);
+              s(cR,{opacity:1,transform:'translateX(0)'});
+            },300);
           }
-        },25);
-      },500);
+        },15);
+      },300);
     }
-  },45);
+  },30);
 }
 
 
@@ -1983,16 +1983,16 @@ function tick(){
   shint.style.opacity=1-r(p,0,0.04);
 
   // Fade overlay during zoom
-  ov.style.opacity=1-r(p,0.30,0.50);
+  ov.style.opacity=1-r(p,0.25,0.45);
 
-  // Crossfade to mockup layer (48-56%)
-  heroVideo.style.opacity=1-r(p,0.48,0.56);
-  const mockIn=r(p,0.48,0.56);
+  // Crossfade to mockup layer (44-50%) — tight, no black gap
+  heroVideo.style.opacity=1-r(p,0.44,0.50);
+  const mockIn=r(p,0.44,0.50);
   mock.style.opacity=mockIn;
   mock.classList.toggle('visible',mockIn>0.1);
 
-  // ═══ SPLIT TRANSITION (60-75%) ═══
-  const splitP=r(p,0.60,0.75);
+  // ═══ SPLIT TRANSITION (55-65%) ═══
+  const splitP=r(p,0.55,0.65);
   if(splitP>0&&!splitDone){
     splitDone=true;
     mockSplit.classList.add('active');
