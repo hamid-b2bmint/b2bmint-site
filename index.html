@@ -311,10 +311,13 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .cf-aio .cursor{background:rgba(0,0,0,.5)!important}
 
 /* Platform indicator strip */
-.plat-dots{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px}
-.plat-dot{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.6);border:2px solid transparent;display:flex;align-items:center;justify-content:center;transition:all .3s;opacity:.4;cursor:default}
-.plat-dot.pd-active{opacity:1;border-color:var(--forest);background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.12)}
-.plat-dot img,.plat-dot svg{width:16px;height:16px;object-fit:contain}
+.plat-dots{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px}
+.plat-dot{height:34px;border-radius:20px;background:rgba(255,255,255,.65);border:1.5px solid rgba(0,0,0,.06);display:flex;align-items:center;gap:6px;padding:0 12px;transition:all .3s;opacity:.45;cursor:pointer;user-select:none}
+.plat-dot:hover{opacity:.75;background:rgba(255,255,255,.85)}
+.plat-dot.pd-active{opacity:1;border-color:var(--forest);background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+.plat-dot img,.plat-dot svg{width:18px;height:18px;object-fit:contain;flex-shrink:0}
+.plat-dot .pd-name{font-size:11px;font-weight:600;color:var(--forest-deep);white-space:nowrap;display:none}
+.plat-dot.pd-active .pd-name{display:block}
 
 /* Platforms */
 .plats{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;flex-wrap:wrap;z-index:12;opacity:0;transform:translateY(20px)}
@@ -1127,11 +1130,11 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
           <div class="card-left" id="cL"><div class="a-card"><div class="a-eye">Your ICP</div><div class="a-title"><div class="a-icon" style="background:#D2FFC1"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#093829" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><span>Your buyer<br>searched this</span></div><div class="a-desc">SaaS buyers ask AI before they Google. This is where deals start.</div></div></div>
           <div class="chat-box" id="carouselBox"><div class="chat-frame" id="carouselFrame"><div class="c-bar"><div class="c-dots"><div class="c-dot"></div><div class="c-dot"></div><div class="c-dot"></div></div><div class="c-url"><span class="c-lock">&#x1F512;</span> <span id="cbUrl">chatgpt.com</span></div></div><div class="c-body"><div class="c-msg msg-u" id="mU"><div class="c-label user">YOU</div><div class="c-text" id="tU"></div></div><div class="c-msg msg-a" id="mA"><div class="c-label ai" id="cbLabel">CHATGPT</div><div class="c-text" id="tA"></div><div class="cited" id="cit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Cited as #1</div></div></div><div class="c-foot"><span class="c-vdot"></span> <span id="cbFoot">Real result. Real client. Verifiable on G2.</span></div></div></div>
           <div class="plat-dots" id="platDots">
-            <div class="plat-dot pd-active" data-idx="0"><img src="logos/chatgpt-logo.avif" alt="ChatGPT"></div>
-            <div class="plat-dot" data-idx="1"><img src="logos/claude-logo.png" alt="Claude"></div>
-            <div class="plat-dot" data-idx="2"><img src="logos/perplexity-logo.png" alt="Perplexity"></div>
-            <div class="plat-dot" data-idx="3"><svg viewBox="0 0 24 24"><defs><linearGradient id="gm1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="50%" stop-color="#9B72CB"/><stop offset="100%" stop-color="#D96570"/></linearGradient></defs><path fill="url(#gm1)" d="M12 2C12 7.52 7.52 12 2 12c5.52 0 10 4.48 10 10 0-5.52 4.48-10 10-10-5.52 0-10-4.48-10-10z"/></svg></div>
-            <div class="plat-dot" data-idx="4"><svg viewBox="0 0 24 24"><defs><linearGradient id="gm2" x1="0" y1="0" x2=".5" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="100%" stop-color="#34A853"/></linearGradient></defs><path fill="url(#gm2)" d="M12 2C12 7.52 7.52 12 2 12c5.52 0 10 4.48 10 10 0-5.52 4.48-10 10-10-5.52 0-10-4.48-10-10z"/><path fill="url(#gm2)" opacity=".5" d="M18 4c0 2.76-2.24 5-5 5 2.76 0 5 2.24 5 5 0-2.76 2.24-5 5-5-2.76 0-5-2.24-5-5z"/></svg></div>
+            <div class="plat-dot pd-active" data-idx="0"><img src="logos/chatgpt-logo.avif" alt="ChatGPT"><span class="pd-name">ChatGPT</span></div>
+            <div class="plat-dot" data-idx="1"><img src="logos/claude-logo.png" alt="Claude"><span class="pd-name">Claude</span></div>
+            <div class="plat-dot" data-idx="2"><img src="logos/perplexity-logo.png" alt="Perplexity"><span class="pd-name">Perplexity</span></div>
+            <div class="plat-dot" data-idx="3"><svg viewBox="0 0 24 24"><defs><linearGradient id="gm1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="50%" stop-color="#9B72CB"/><stop offset="100%" stop-color="#D96570"/></linearGradient></defs><path fill="url(#gm1)" d="M12 2C12 7.52 7.52 12 2 12c5.52 0 10 4.48 10 10 0-5.52 4.48-10 10-10-5.52 0-10-4.48-10-10z"/></svg><span class="pd-name">Gemini</span></div>
+            <div class="plat-dot" data-idx="4"><svg viewBox="0 0 24 24"><defs><linearGradient id="gm2" x1="0" y1="0" x2=".5" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="100%" stop-color="#34A853"/></linearGradient></defs><path fill="url(#gm2)" d="M12 2C12 7.52 7.52 12 2 12c5.52 0 10 4.48 10 10 0-5.52 4.48-10 10-10-5.52 0-10-4.48-10-10z"/><path fill="url(#gm2)" opacity=".5" d="M18 4c0 2.76-2.24 5-5 5 2.76 0 5 2.24 5 5 0-2.76 2.24-5 5-5-2.76 0-5-2.24-5-5z"/></svg><span class="pd-name">AI Overviews</span></div>
           </div>
           <div class="card-right" id="cR"><div class="a-card"><div class="a-eye">Your Brand</div><div class="a-title"><div class="a-icon" style="background:#FFF8E0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#DAA520" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><span>You're the #1<br>answer</span></div><div class="a-desc">Not buried on page 8. The recommended answer, everywhere.</div></div></div>
         </div>
@@ -2110,6 +2113,19 @@ const cbUrl=document.getElementById('cbUrl');
 const cbLabel=document.getElementById('cbLabel');
 const cbFoot=document.getElementById('cbFoot');
 const platDots=document.querySelectorAll('.plat-dot');
+
+// Click-to-navigate: user clicks a platform icon → jump to that chatbox
+platDots.forEach(dot=>{
+  dot.addEventListener('click',()=>{
+    if(!carouselRunning)return;
+    const idx=parseInt(dot.dataset.idx);
+    if(idx===carouselIdx)return;
+    // Cancel pending auto-advance
+    if(carouselTimer)clearTimeout(carouselTimer);
+    carouselIdx=idx;
+    showPlatform(idx);
+  });
+});
 
 function applyPlatformTheme(idx){
   const p=PLATFORMS[idx];
