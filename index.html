@@ -194,15 +194,16 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .mock-left .cta-btn{font-size:14px;padding:14px 30px}
 
 /* RIGHT SIDE — positioned in the right 50% */
-.mock-right{position:absolute;right:0;top:0;width:50%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 32px;overflow:hidden;z-index:15;opacity:0;transition:opacity .6s .5s}
+.mock-right{position:absolute;right:0;top:0;width:50%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 32px;overflow:visible;z-index:15;opacity:0;transition:opacity .6s .5s}
 .mock-right.show{opacity:1}
-.mock-top{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;max-width:440px}
-.mock-right .chat-box{width:100%;max-width:440px}
-.mock-right .card-left,.mock-right .card-right{padding:0;margin:0;align-items:center}
-.mock-right .a-card{width:220px;padding:16px 18px}
+.mock-top{position:relative;width:100%;max-width:440px}
+.mock-right .chat-box{width:100%;max-width:440px;position:relative;z-index:10}
+.mock-right .card-left{position:absolute;top:-20px;left:-60px;z-index:20;padding:0;margin:0}
+.mock-right .card-right{position:absolute;bottom:-20px;right:-40px;z-index:20;padding:0;margin:0}
+.mock-right .a-card{width:180px;padding:16px;box-shadow:0 8px 30px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.08)}
 .mock-right .a-title{font-size:14px;gap:8px}
 .mock-right .a-icon{width:28px;height:28px;border-radius:8px}
-.mock-right .a-desc{font-size:12px}
+.mock-right .a-desc{font-size:11px;line-height:1.4}
 
 /* Cards */
 .card-left{display:flex;flex-direction:column;align-items:flex-end;padding-top:30px;margin-right:-10px;z-index:20;opacity:0;transform:translateX(-30px);will-change:opacity,transform}
