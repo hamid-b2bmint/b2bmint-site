@@ -2071,6 +2071,16 @@ function tick(){
 let ticking=false;
 window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(()=>{tick();ticking=false;});ticking=true;}},{passive:true});
 
+// ═══ NAVBAR — separate from tick(), always runs ═══
+window.addEventListener('scroll',()=>{
+  const st=window.scrollY;
+  const stageH=document.querySelector('.scroll-stage').offsetHeight;
+  if(heroDone || st>stageH-window.innerHeight){
+    navbar.style.opacity='1';
+    navbar.classList.add('nav-solid');
+  }
+},{passive:true});
+
 tick();
 </script>
 
