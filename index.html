@@ -25,8 +25,7 @@
 html{-webkit-font-smoothing:antialiased}
 body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hidden}
 
-.scroll-stage{position:relative;height:500vh;transition:height .3s}
-.scroll-stage.done{height:100vh}
+.scroll-stage{position:relative;height:500vh}
 .scroll-viewport{position:sticky;top:0;height:100vh;width:100%;overflow:hidden}
 
 /* ═══════════════════════════════════════════
@@ -1877,7 +1876,7 @@ const mockLeft=document.getElementById('mockLeft');
 const platsTarget=document.getElementById('platsTarget');
 const metTarget=document.getElementById('metTarget');
 
-let uT=0,aT=0,lp=-1,tt=false,lastDrawnFrame=0,autoPlayStarted=false,prevSt=0,pastHero=false,heroDone=false;
+let uT=0,aT=0,lp=-1,tt=false,lastDrawnFrame=0,autoPlayStarted=false,prevSt=0,animCompleted=false;
 const eo=t=>1-Math.pow(1-t,3);
 const eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const r=(v,a,b)=>Math.max(0,Math.min(1,(v-a)/(b-a)));
@@ -1980,51 +1979,73 @@ function tick(){
     crispScreen.style.opacity='1';
   }
 
-  // Fade text + navbar (0→15%) — only on downward scroll through hero
+  // Track scroll direction
+  const scrollingUp=st<prevSt;
+  prevSt=st;
+
+  // If animation completed and scrolling UP — freeze final state, show navbar
+  if(animCompleted&&scrollingUp&&p>0.05){
+    navbar.style.opacity='1';
+    navbar.classList.add('nav-solid');
+    // Keep everything in final state — don't reverse
+    heroVideo.style.opacity='0';
+    crispScreen.classList.add('slide-right');
+    mock.style.opacity='1';
+    mock.classList.add('visible');
+    mockLeft.classList.add('show');
+    const mr=document.querySelector('.mock-right');
+    if(mr)mr.classList.add('show');
+    s(htxt,{opacity:0});
+    return;
+  }
+
+  // Reset when back at very top
+  if(p<0.03&&animCompleted){
+    animCompleted=false;
+    autoPlayStarted=false;
+    navbar.classList.remove('nav-solid');
+    crispScreen.classList.remove('slide-right');
+    mock.style.opacity='0';
+    mock.classList.remove('visible');
+    mockLeft.classList.remove('show');
+    const mr=document.querySelector('.mock-right');
+    if(mr)mr.classList.remove('show');
+    uT=0;aT=0;tU.innerHTML='';tA.innerHTML='';
+    mU.style.opacity='0';mA.style.opacity='0';
+    s(cL,{opacity:0,transform:'translateX(-30px)'});
+    s(cR,{opacity:0,transform:'translateX(30px)'});
+    s(cit,{opacity:0,transform:'scale(.8)'});
+    s(plats,{opacity:0,transform:'translateY(20px)'});
+    s(metW,{opacity:0,transform:'translateY(24px)'});
+    s(ctaW,{opacity:0,transform:'translateY(20px)'});
+    chips.forEach(c=>c.classList.remove('v'));
+    cBadge.classList.remove('v');
+    mets.forEach(c=>c.classList.remove('v'));
+    ticks.forEach(t=>t.classList.remove('pop'));
+    sm.classList.remove('v');
+  }
+
+  // Normal downward animation
   const textFade=1-r(p,0,0.15);
   s(htxt,{opacity:textFade,transform:`translateY(${-r(p,0,0.50)*60}px)`});
   laptopAnno.style.opacity=1-r(p,0,0.12);
   shint.style.opacity=1-r(p,0,0.04);
 
-  // Navbar: track if we've been past the hero
-  const stageH=document.querySelector('.scroll-stage').offsetHeight;
-  const scrollingUp=st<prevSt;
-  prevSt=st;
-
-  if(st>stageH){pastHero=true;}
-
-  if(pastHero&&scrollingUp){
-    // Coming back from content — keep navbar visible with solid bg
-    navbar.style.opacity='1';
-    navbar.classList.add('nav-solid');
-  } else if(st>stageH){
-    // Past hero scrolling down — show navbar with solid bg
-    navbar.style.opacity='1';
-    navbar.classList.add('nav-solid');
-  } else if(p<0.05){
-    // At top of page — show transparent navbar
+  // Navbar during hero
+  if(p<0.05){
     navbar.style.opacity='1';
     navbar.classList.remove('nav-solid');
-    if(st<50)pastHero=false;
   } else {
-    // During hero animation — fade out
     navbar.style.opacity=textFade;
     navbar.classList.remove('nav-solid');
   }
 
-  // Fade overlay during zoom
+  // Fade overlay
   ov.style.opacity=1-r(p,0.25,0.45);
 
-  // At end of zoom: slide crisp-screen to right half + reveal left content
+  // Slide crisp-screen to right + reveal split
   const slideP=r(p,0.50,0.58);
   heroVideo.style.opacity=1-r(p,0.48,0.55);
-
-  if(heroDone){
-    // Hero is done — keep navbar visible, don't reverse anything
-    navbar.style.opacity='1';
-    navbar.classList.add('nav-solid');
-    return;
-  }
 
   if(slideP>0.3&&!crispScreen.classList.contains('slide-right')){
     crispScreen.classList.add('slide-right');
@@ -2034,16 +2055,10 @@ function tick(){
     const mockRight=document.querySelector('.mock-right');
     if(mockRight)mockRight.classList.add('show');
     setTimeout(startAutoPlay,800);
-    // Mark hero as DONE — collapse scroll-stage so no reverse animation
-    setTimeout(()=>{
-      heroDone=true;
-      const stage=document.querySelector('.scroll-stage');
-      stage.classList.add('done');
-      // Scroll to the content sections smoothly
-      window.scrollTo({top:stage.offsetHeight,behavior:'auto'});
-    },1200);
+    // Mark animation as completed
+    animCompleted=true;
   }
-  if(slideP<0.1&&!heroDone&&crispScreen.classList.contains('slide-right')){
+  if(slideP<0.1&&!animCompleted&&crispScreen.classList.contains('slide-right')){
     crispScreen.classList.remove('slide-right');
     mock.style.opacity='0';
     mock.classList.remove('visible');
@@ -2071,11 +2086,11 @@ function tick(){
 let ticking=false;
 window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(()=>{tick();ticking=false;});ticking=true;}},{passive:true});
 
-// ═══ NAVBAR — separate from tick(), always runs ═══
+// ═══ NAVBAR — separate listener, always runs ═══
 window.addEventListener('scroll',()=>{
   const st=window.scrollY;
   const stageH=document.querySelector('.scroll-stage').offsetHeight;
-  if(heroDone || st>stageH-window.innerHeight){
+  if(animCompleted && st>stageH*0.3){
     navbar.style.opacity='1';
     navbar.classList.add('nav-solid');
   }
