@@ -25,7 +25,7 @@
 html{-webkit-font-smoothing:antialiased}
 body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hidden}
 
-.scroll-stage{position:relative;height:1100vh}
+.scroll-stage{position:relative;height:500vh}
 .scroll-viewport{position:sticky;top:0;height:100vh;width:100%;overflow:hidden}
 
 /* ═══════════════════════════════════════════
@@ -163,6 +163,19 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .mock-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(210,255,193,.55) 0%,rgba(210,255,193,.35) 15%,rgba(210,255,193,.45) 35%,rgba(210,255,193,.65) 50%,rgba(210,255,193,.88) 65%,rgba(210,255,193,.97) 80%,rgba(210,255,193,1) 100%);z-index:1}
 .mock-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 250px at 50% -5%,rgba(255,255,240,.25) 0%,transparent 70%);z-index:2}
 .mock-content{position:relative;z-index:10;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;padding-top:32px;overflow-y:auto}
+
+/* split layout */
+.mock-split{display:flex;flex-direction:column;align-items:center;width:100%;transition:all 1s cubic-bezier(.16,1,.3,1)}
+.mock-split.active{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:start;height:100%}
+.mock-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.16,1,.3,1) .2s;padding:40px 40px 40px 48px;display:flex;flex-direction:column;justify-content:center;height:100%}
+.mock-split.active .mock-left{opacity:1;transform:translateX(0)}
+.mock-h{font-family:Recoleta,serif;font-size:clamp(24px,2.8vw,36px);font-weight:700;color:var(--forest-deep);line-height:1.15;margin-bottom:14px}
+.mock-p{font-size:15px;color:rgba(0,0,0,.45);line-height:1.7;margin-bottom:28px;max-width:420px}
+.mock-right{transition:all 1s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;align-items:center;padding-top:0}
+.mock-split.active .mock-right{padding:20px 24px 20px 0;align-items:flex-end}
+.mock-split.active .mock-right .chat-box{width:100%;max-width:480px}
+.mock-split.active .mock-right .mock-top{flex-direction:column;align-items:center;gap:12px}
+.mock-split.active .mock-right .card-left,.mock-split.active .mock-right .card-right{display:none}
 
 .mock-top{display:flex;align-items:flex-start;justify-content:center;gap:20px;width:100%;position:relative}
 
@@ -994,23 +1007,29 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
     <div class="mockup-layer" id="mockup">
       <div class="mock-bg"></div>
       <div class="mock-content">
+        <div class="mock-split" id="mockSplit">
+        <!-- LEFT SIDE (hidden until split) -->
+        <div class="mock-left" id="mockLeft">
+          <h2 class="mock-h">AI is rewriting how<br>buyers find you.</h2>
+          <p class="mock-p">Your next customer isn&rsquo;t Googling anymore &mdash; they&rsquo;re asking ChatGPT. This is what happens when SAGE makes you the answer.</p>
+          <div id="platsTarget"></div>
+          <div id="metTarget"></div>
+        </div>
+        <!-- RIGHT SIDE (chat + cards) -->
+        <div class="mock-right" id="mockRight">
         <div class="mock-top">
           <div class="card-left" id="cL"><div class="a-card"><div class="a-eye">Your ICP</div><div class="a-title"><div class="a-icon" style="background:#D2FFC1"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#093829" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><span>Your buyer<br>searched this</span></div><div class="a-desc">SaaS buyers ask AI before they Google. This is where deals start.</div></div></div>
           <div class="chat-box"><div class="chat-frame"><div class="c-bar"><div class="c-dots"><div class="c-dot"></div><div class="c-dot"></div><div class="c-dot"></div></div><div class="c-url"><span class="c-lock">&#x1F512;</span> chatgpt.com</div></div><div class="c-body"><div class="c-msg msg-u" id="mU"><div class="c-label user">YOU</div><div class="c-text" id="tU"></div></div><div class="c-msg msg-a" id="mA"><div class="c-label ai">CHATGPT</div><div class="c-text" id="tA"></div><div class="cited" id="cit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Cited as #1</div></div></div><div class="c-foot"><span class="c-vdot"></span> Real result. Real client. Verifiable on G2.</div></div></div>
           <div class="card-right" id="cR"><div class="a-card"><div class="a-eye">Your Brand</div><div class="a-title"><div class="a-icon" style="background:#FFF8E0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#DAA520" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><span>You're the #1<br>answer</span></div><div class="a-desc">Not buried on page 8. The recommended answer, everywhere.</div></div></div>
         </div>
+        </div><!-- /mock-right -->
+        </div><!-- /mock-split -->
         <div class="plats" id="plats">
-          <!-- ChatGPT -->
           <div class="plat"><div class="p-chk"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="p-logo"><img src="logos/chatgpt-logo.avif" alt="ChatGPT"></div><span class="p-name">ChatGPT</span></div>
-          <!-- Claude -->
           <div class="plat"><div class="p-chk"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="p-logo"><img src="logos/claude-logo.png" alt="Claude"></div><span class="p-name">Claude</span></div>
-          <!-- Perplexity -->
           <div class="plat"><div class="p-chk"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="p-logo"><img src="logos/perplexity-logo.png" alt="Perplexity"></div><span class="p-name">Perplexity</span></div>
-          <!-- Gemini — Google 4-point star -->
           <div class="plat"><div class="p-chk"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="p-logo"><svg viewBox="0 0 24 24"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="50%" stop-color="#9B72CB"/><stop offset="100%" stop-color="#D96570"/></linearGradient></defs><path fill="url(#g1)" d="M12 2C12 7.52 7.52 12 2 12c5.52 0 10 4.48 10 10 0-5.52 4.48-10 10-10-5.52 0-10-4.48-10-10z"/></svg></div><span class="p-name">Gemini</span></div>
-          <!-- AI Overviews — Google AI sparkle -->
           <div class="plat"><div class="p-chk"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="p-logo"><svg viewBox="0 0 24 24"><defs><linearGradient id="g2" x1="0" y1="0" x2=".5" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="100%" stop-color="#34A853"/></linearGradient></defs><path fill="url(#g2)" d="M12 2C12 7.52 7.52 12 2 12c5.52 0 10 4.48 10 10 0-5.52 4.48-10 10-10-5.52 0-10-4.48-10-10z"/><path fill="url(#g2)" opacity=".5" d="M18 4c0 2.76-2.24 5-5 5 2.76 0 5 2.24 5 5 0-2.76 2.24-5 5-5-2.76 0-5-2.24-5-5z"/></svg></div><span class="p-name">AI Overviews</span></div>
-          <!-- Google — full color G logo -->
           <div class="plat"><div class="p-chk"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="p-logo"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div><span class="p-name">Google</span></div>
           <div class="cited-b" id="cBadge">Cited on 6/6</div>
         </div>
@@ -1840,13 +1859,18 @@ const cit=document.getElementById('cit'),cL=document.getElementById('cL'),cR=doc
 const plats=document.getElementById('plats'),chips=document.querySelectorAll('.plat'),cBadge=document.getElementById('cBadge');
 const metW=document.getElementById('metW'),mets=document.querySelectorAll('.met');
 const ctaW=document.getElementById('ctaW'),ticks=document.querySelectorAll('.c-tick'),sm=document.getElementById('sm');
+const mockSplit=document.getElementById('mockSplit');
+const mockLeft=document.getElementById('mockLeft');
+const platsTarget=document.getElementById('platsTarget');
+const metTarget=document.getElementById('metTarget');
 
-let uT=0,aT=0,lp=-1,tt=false,lastDrawnFrame=0;
+let uT=0,aT=0,lp=-1,tt=false,lastDrawnFrame=0,autoPlayStarted=false,splitDone=false;
 const eo=t=>1-Math.pow(1-t,3);
 const eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const r=(v,a,b)=>Math.max(0,Math.min(1,(v-a)/(b-a)));
 const s=(e,p)=>{for(const[k,v] of Object.entries(p))e.style[k]=v};
 
+// Typing functions (now used by auto-play)
 function tyU(p){const c=Math.floor(p*Q.length);if(c!==uT){uT=c;tU.innerHTML=Q.slice(0,c)+(c<Q.length?'<span class="cursor"></span>':'');}}
 function tyA(p){
   const pl=A.replace(/<[^>]+>/g,''),tc=Math.floor(p*pl.length);
@@ -1856,6 +1880,68 @@ function tyA(p){
   o+=(tc<pl.length?'<span class="cursor"></span>':'');tA.innerHTML=o;}
 }
 
+// ═══ AUTO-PLAY: runs the chat + reveals automatically ═══
+function startAutoPlay(){
+  if(autoPlayStarted)return;
+  autoPlayStarted=true;
+
+  // Show left card
+  s(cL,{opacity:1,transform:'translateX(0)'});
+
+  // Type user message
+  mU.style.opacity='1';
+  let uIdx=0;
+  const uTimer=setInterval(()=>{
+    uIdx++;
+    tyU(uIdx/Q.length);
+    if(uIdx>=Q.length){
+      clearInterval(uTimer);
+      // After user done, start AI response
+      setTimeout(()=>{
+        mA.style.opacity='1';
+        const pl=A.replace(/<[^>]+>/g,'');
+        let aIdx=0;
+        const aTimer=setInterval(()=>{
+          aIdx++;
+          tyA(aIdx/pl.length);
+          if(aIdx>=pl.length){
+            clearInterval(aTimer);
+            // Show cited badge
+            setTimeout(()=>{
+              s(cit,{opacity:1,transform:'scale(1)'});
+              // Show right card
+              setTimeout(()=>{
+                s(cR,{opacity:1,transform:'translateX(0)'});
+                // Move plats+stats to left side and reveal
+                setTimeout(()=>{
+                  platsTarget.appendChild(plats);
+                  s(plats,{opacity:1,transform:'translateY(0)'});
+                  chips.forEach((c,i)=>setTimeout(()=>c.classList.add('v'),i*100));
+                  setTimeout(()=>{
+                    cBadge.classList.add('v');
+                    // Stats
+                    setTimeout(()=>{
+                      metTarget.appendChild(metW);
+                      s(metW,{opacity:1,transform:'translateY(0)'});
+                      mets.forEach((c,i)=>setTimeout(()=>c.classList.add('v'),i*120));
+                      // CTA
+                      setTimeout(()=>{
+                        s(ctaW,{opacity:1,transform:'translateY(0)'});
+                        ticks.forEach((t,i)=>setTimeout(()=>t.classList.add('pop'),i*100));
+                        setTimeout(()=>sm.classList.add('v'),500);
+                      },600);
+                    },400);
+                  },chips.length*100+100);
+                },400);
+              },300);
+            },400);
+          }
+        },25);
+      },500);
+    }
+  },45);
+}
+
 
 function tick(){
   const st=window.scrollY;
@@ -1863,21 +1949,19 @@ function tick(){
   const p=Math.max(0,Math.min(1,st/sh));
   if(p===lp)return;lp=p;
 
-  // ═══ MERCURY TECHNIQUE: Draw frame by scroll position ═══
-  const videoProgress = r(p, 0, 0.25);
+  // ═══ MERCURY TECHNIQUE: Draw frame by scroll position (0-50% of reduced height) ═══
+  const videoProgress = r(p, 0, 0.50);
   const frameIdx = Math.floor(videoProgress * (frameImages.length - 1));
   lastDrawnFrame = frameIdx;
   drawFrame(frameIdx);
 
-  // Crisp screen: position exactly on the laptop screen using OpenCV-measured bounds.
-  // Coordinates are % of 1920×720 frame, converted to viewport via same cover math as canvas.
+  // Crisp screen tracking
   {
     const ST=[58.5,58.5,57.2,56.2,55.1,54.2,53.2,52.1,51.0,49.9,48.8,47.6,46.8,45.7,43.9,40.1,36.9,33.5,29.9,25.8,21.8,16.9,12.5,7.9,3.1,0,0,0,0];
     const SR=[48.3,48.3,47.9,47.4,46.9,46.4,45.9,45.4,44.9,44.4,43.9,43.3,42.8,42.3,41.5,39.8,38.3,36.7,35.1,33.3,31.5,29.6,27.7,25.7,23.6,21.4,19.2,17.6,15.9];
     const SB=[37.1,37.1,36.7,36.1,35.7,35.3,34.7,34.3,33.9,33.5,32.9,32.5,32.1,31.7,31.0,29.0,27.2,25.3,23.3,21.4,19.4,17.6,15.6,13.8,11.8,9.7,7.8,5.8,4.0];
     const SL=[48.9,48.9,48.4,48.1,47.8,47.4,47.0,46.7,46.3,45.9,45.5,45.2,44.8,44.4,43.5,41.9,40.4,38.6,37.1,35.4,33.6,31.9,29.8,28.0,26.2,24.2,22.5,20.9,19.3];
     const fi=Math.min(frameIdx,ST.length-1);
-    // Convert frame-space % to viewport-space using canvas cover transform
     const cw=canvas.width,ch=canvas.height,fw=1920,fh=720;
     const sc=Math.max(cw/fw,ch/fh);
     const ox=(cw-fw*sc)/2,oy=(ch-fh*sc)/2;
@@ -1891,40 +1975,50 @@ function tick(){
     crispScreen.style.opacity='1';
   }
 
-  // Fade text + navbar (0→8%)
-  const textFade=1-r(p,0,0.08);
-  s(htxt,{opacity:textFade,transform:`translateY(${-r(p,0,0.25)*60}px)`});
+  // Fade text + navbar (0→15%)
+  const textFade=1-r(p,0,0.15);
+  s(htxt,{opacity:textFade,transform:`translateY(${-r(p,0,0.50)*60}px)`});
   navbar.style.opacity=textFade;
-  laptopAnno.style.opacity=1-r(p,0,0.06);
-  shint.style.opacity=1-r(p,0,0.02);
+  laptopAnno.style.opacity=1-r(p,0,0.12);
+  shint.style.opacity=1-r(p,0,0.04);
 
   // Fade overlay during zoom
-  ov.style.opacity=1-r(p,0.15,0.25);
+  ov.style.opacity=1-r(p,0.30,0.50);
 
-  // Crossfade to mockup layer at end of zoom (scroll 24-28%)
-  heroVideo.style.opacity=1-r(p,0.24,0.28);
-  const mockIn=r(p,0.24,0.28);
+  // Crossfade to mockup layer (48-56%)
+  heroVideo.style.opacity=1-r(p,0.48,0.56);
+  const mockIn=r(p,0.48,0.56);
   mock.style.opacity=mockIn;
   mock.classList.toggle('visible',mockIn>0.1);
 
-  // Content animations (same timing as before)
-  const ut=r(p,0.30,0.40);mU.style.opacity=ut>0?1:0;if(ut>0)tyU(ut);
-  const lc=eo(r(p,0.40,0.44));s(cL,{opacity:lc,transform:`translateX(${-30+lc*30}px)`});
-  const at=r(p,0.42,0.56);mA.style.opacity=at>0?1:0;if(at>0)tyA(at);
-  const ci=eo(r(p,0.56,0.59));s(cit,{opacity:ci,transform:`scale(${.8+ci*.2})`});
-  const rc=eo(r(p,0.59,0.63));s(cR,{opacity:rc,transform:`translateX(${30-rc*30}px)`});
-  const pa=eo(r(p,0.63,0.66));s(plats,{opacity:pa,transform:`translateY(${20-pa*20}px)`});
-  // Platform chips — all appear together with fast stagger
-  const pa2=r(p,0.64,0.66);
-  if(pa2>=1&&!plats.dataset.done){plats.dataset.done='1';chips.forEach((c,i)=>setTimeout(()=>c.classList.add('v'),i*100));setTimeout(()=>cBadge.classList.add('v'),chips.length*100);}
-  if(pa2<0.5){delete plats.dataset.done;chips.forEach(c=>c.classList.remove('v'));cBadge.classList.remove('v');}
-  // Scorecards — all appear together with fast stagger
-  const ma=eo(r(p,0.77,0.80));s(metW,{opacity:ma,transform:`translateY(${24-ma*24}px)`});
-  if(ma>=0.5&&!metW.dataset.done){metW.dataset.done='1';mets.forEach((c,i)=>setTimeout(()=>c.classList.add('v'),i*120));}
-  if(ma<0.3){delete metW.dataset.done;mets.forEach(c=>c.classList.remove('v'));}
-  const cta=eo(r(p,0.87,0.92));s(ctaW,{opacity:cta,transform:`translateY(${20-cta*20}px)`});
-  if(cta>=1&&!tt){tt=true;ticks.forEach((t,i)=>setTimeout(()=>t.classList.add('pop'),i*100));setTimeout(()=>sm.classList.add('v'),ticks.length*100+200);}
-  if(cta<0.5){tt=false;ticks.forEach(t=>t.classList.remove('pop'));sm.classList.remove('v');}
+  // ═══ SPLIT TRANSITION (60-75%) ═══
+  const splitP=r(p,0.60,0.75);
+  if(splitP>0&&!splitDone){
+    splitDone=true;
+    mockSplit.classList.add('active');
+    // Start auto-play after transition completes
+    setTimeout(startAutoPlay,1000);
+  }
+  if(splitP<=0&&splitDone){
+    splitDone=false;
+    autoPlayStarted=false;
+    mockSplit.classList.remove('active');
+    // Reset everything
+    uT=0;aT=0;
+    tU.innerHTML='';tA.innerHTML='';
+    mU.style.opacity='0';mA.style.opacity='0';
+    s(cL,{opacity:0,transform:'translateX(-30px)'});
+    s(cR,{opacity:0,transform:'translateX(30px)'});
+    s(cit,{opacity:0,transform:'scale(.8)'});
+    s(plats,{opacity:0,transform:'translateY(20px)'});
+    s(metW,{opacity:0,transform:'translateY(24px)'});
+    s(ctaW,{opacity:0,transform:'translateY(20px)'});
+    chips.forEach(c=>c.classList.remove('v'));
+    cBadge.classList.remove('v');
+    mets.forEach(c=>c.classList.remove('v'));
+    ticks.forEach(t=>t.classList.remove('pop'));
+    sm.classList.remove('v');
+  }
 }
 
 let ticking=false;
