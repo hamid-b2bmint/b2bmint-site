@@ -1876,7 +1876,7 @@ const mockLeft=document.getElementById('mockLeft');
 const platsTarget=document.getElementById('platsTarget');
 const metTarget=document.getElementById('metTarget');
 
-let uT=0,aT=0,lp=-1,tt=false,lastDrawnFrame=0,autoPlayStarted=false,prevSt=0,animCompleted=false;
+let uT=0,aT=0,lp=-1,tt=false,lastDrawnFrame=0,autoPlayStarted=false,prevSt=0,animCompleted=false,slideLocked=false;
 const eo=t=>1-Math.pow(1-t,3);
 const eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const r=(v,a,b)=>Math.max(0,Math.min(1,(v-a)/(b-a)));
@@ -1948,6 +1948,9 @@ function startAutoPlay(){
 
 
 function tick(){
+  // Once animation is locked or completed, skip ALL animation logic
+  if(slideLocked||animCompleted)return;
+
   const st=window.scrollY;
   const sh=document.querySelector('.scroll-stage').offsetHeight-window.innerHeight;
   const p=Math.max(0,Math.min(1,st/sh));
@@ -1981,13 +1984,6 @@ function tick(){
 
   prevSt=st;
 
-  // If animation completed — hero is now static, stop all animation logic
-  if(animCompleted){
-    navbar.style.opacity='1';
-    navbar.classList.remove('nav-solid');
-    return;
-  }
-
   // Normal downward animation
   const textFade=1-r(p,0,0.15);
   s(htxt,{opacity:textFade,transform:`translateY(${-r(p,0,0.50)*60}px)`});
@@ -2010,7 +2006,8 @@ function tick(){
   const slideP=r(p,0.50,0.58);
   heroVideo.style.opacity=1-r(p,0.48,0.55);
 
-  if(slideP>0.3&&!crispScreen.classList.contains('slide-right')){
+  if(slideP>0.3&&!slideLocked&&!crispScreen.classList.contains('slide-right')){
+    slideLocked=true; // Lock IMMEDIATELY — no reversal possible
     crispScreen.classList.add('slide-right');
     mock.style.opacity='1';
     mock.classList.add('visible');
@@ -2023,79 +2020,59 @@ function tick(){
       animCompleted=true;
       const stage=document.querySelector('.scroll-stage');
       const vp=document.querySelector('.scroll-viewport');
+      const oldH=stage.offsetHeight;
 
       // 1. Draw the initial frame (landscape with laptop)
       drawFrame(0);
 
-      // 2. Hide EVERYTHING inside the viewport except the video/canvas
+      // 2. Clear ALL inline styles on viewport children
       const allChildren=vp.children;
       for(let i=0;i<allChildren.length;i++){
         allChildren[i].style.cssText='';
       }
 
-      // 3. Show only what we need
+      // 3. Show only canvas + overlay
       heroVideo.style.cssText='position:absolute;inset:0;z-index:1;opacity:1';
       ov.style.cssText='position:absolute;inset:0;z-index:2;pointer-events:none;opacity:1;background:linear-gradient(180deg,rgba(5,10,8,.6) 0%,rgba(5,10,8,.15) 35%,rgba(5,10,8,.0) 50%,rgba(5,10,8,.0) 65%,rgba(5,10,8,.15) 80%,rgba(5,10,8,.5) 100%)';
-      crispScreen.style.display='none';
 
-      // 4. Show hero text
+      // 4. Hide animated elements via display:none (overrides any inline styles)
+      crispScreen.style.display='none';
+      mock.style.display='none';
+      laptopAnno.style.display='none';
+      shint.style.display='none';
+
+      // 5. Show hero text cleanly
       htxt.style.cssText='position:absolute;top:0;left:0;right:0;height:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:10;padding:0 40px;opacity:1;transform:none';
 
-      // 5. Hide mockup layer completely
-      mock.style.display='none';
-
-      // 6. Hide other hero elements
-      if(document.getElementById('laptopAnno'))document.getElementById('laptopAnno').style.display='none';
-      if(document.getElementById('shint'))document.getElementById('shint').style.display='none';
-
-      // 7. Collapse scroll-stage: no more sticky, just 100vh
+      // 6. Collapse scroll-stage + remove sticky
       stage.style.height='100vh';
       vp.style.position='relative';
+
+      // 7. Compensate scroll position so user doesn't see a jump
+      const diff=oldH-stage.offsetHeight;
+      if(window.scrollY>oldH){
+        window.scrollTo(0,Math.max(0,window.scrollY-diff));
+      }
 
       // 8. Show navbar
       navbar.style.opacity='1';
       navbar.classList.remove('nav-solid');
     },6000);
   }
-  if(slideP<0.1&&!animCompleted&&crispScreen.classList.contains('slide-right')){
-    crispScreen.classList.remove('slide-right');
-    mock.style.opacity='0';
-    mock.classList.remove('visible');
-    mockLeft.classList.remove('show');
-    const mockRight=document.querySelector('.mock-right');
-    if(mockRight)mockRight.classList.remove('show');
-    autoPlayStarted=false;
-    uT=0;aT=0;
-    tU.innerHTML='';tA.innerHTML='';
-    mU.style.opacity='0';mA.style.opacity='0';
-    s(cL,{opacity:0,transform:'translateX(-30px)'});
-    s(cR,{opacity:0,transform:'translateX(30px)'});
-    s(cit,{opacity:0,transform:'scale(.8)'});
-    s(plats,{opacity:0,transform:'translateY(20px)'});
-    s(metW,{opacity:0,transform:'translateY(24px)'});
-    s(ctaW,{opacity:0,transform:'translateY(20px)'});
-    chips.forEach(c=>c.classList.remove('v'));
-    cBadge.classList.remove('v');
-    mets.forEach(c=>c.classList.remove('v'));
-    ticks.forEach(t=>t.classList.remove('pop'));
-    sm.classList.remove('v');
-  }
+  // Reversal block removed — slideLocked prevents scroll-back from undoing animation
 }
 
 let ticking=false;
 window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(()=>{tick();ticking=false;});ticking=true;}},{passive:true});
 
-// ═══ NAVBAR — separate listener, always runs ═══
+// ═══ NAVBAR — separate listener, always runs (works during slideLocked AND animCompleted) ═══
 window.addEventListener('scroll',()=>{
-  if(animCompleted){
+  if(slideLocked||animCompleted){
     const st=window.scrollY;
-    // At hero (top) — transparent navbar
+    navbar.style.opacity='1';
     if(st<100){
-      navbar.style.opacity='1';
       navbar.classList.remove('nav-solid');
     } else {
-      // In content sections — solid navbar
-      navbar.style.opacity='1';
       navbar.classList.add('nav-solid');
     }
   }
