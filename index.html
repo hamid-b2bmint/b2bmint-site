@@ -253,14 +253,12 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .s-inner{max-width:1100px;margin:0 auto;padding:0 40px}
 
 /* ── Brand Logos Strip ── */
-.s-logos{background:var(--forest-deep);padding:52px 0;position:relative;overflow:hidden}
-.s-logos::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(125,255,179,.15),transparent)}
-.s-logos::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(125,255,179,.15),transparent)}
+.s-logos{background:#F2FBF0;padding:48px 0;position:relative}
 .s-logos .s-inner{text-align:center}
-.s-logos-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:3px;margin-bottom:32px}
-.hp-logos{display:flex;align-items:center;justify-content:center;gap:52px;flex-wrap:wrap}
-.hp-logos img{height:36px;width:auto;opacity:.5;transition:all .4s;border-radius:6px}
-.hp-logos img:hover{opacity:.9;transform:scale(1.05)}
+.s-logos-label{font-size:11px;font-weight:700;color:var(--forest-deep);opacity:.3;text-transform:uppercase;letter-spacing:3px;margin-bottom:32px}
+.hp-logos{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap}
+.hp-logos img{height:36px;width:auto;opacity:.6;filter:grayscale(100%);transition:all .4s;border-radius:6px}
+.hp-logos img:hover{opacity:1;filter:grayscale(0%);transform:scale(1.06)}
 
 /* ── Single Testimonial (large) ── */
 .s-testimonial{background:var(--forest-deep);padding:100px 0;position:relative;overflow:hidden}
