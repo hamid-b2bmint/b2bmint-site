@@ -65,7 +65,12 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   background:linear-gradient(90deg,rgba(5,10,8,.5) 0%,transparent 22%,transparent 78%,rgba(5,10,8,.5) 100%)}
 
 /* Navbar */
-.navbar{position:absolute;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 40px}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;transition:background .3s,box-shadow .3s}
+.navbar.nav-solid{background:rgba(255,255,255,.95);backdrop-filter:blur(12px);box-shadow:0 1px 8px rgba(0,0,0,.06)}
+.navbar.nav-solid .nav-logo-text{color:var(--forest-deep)}
+.navbar.nav-solid .nav-link{color:rgba(0,0,0,.6)}
+.navbar.nav-solid .nav-link:hover{color:var(--forest-deep)}
+.navbar.nav-solid .nav-cta{border-color:var(--forest-deep);color:var(--forest-deep)}
 .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
 .nav-logo-icon{width:28px;height:28px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:var(--forest-deep)}
 .nav-logo-text{font-size:18px;font-weight:800;color:var(--white);letter-spacing:-.02em}
@@ -1870,7 +1875,7 @@ const mockLeft=document.getElementById('mockLeft');
 const platsTarget=document.getElementById('platsTarget');
 const metTarget=document.getElementById('metTarget');
 
-let uT=0,aT=0,lp=-1,tt=false,lastDrawnFrame=0,autoPlayStarted=false;
+let uT=0,aT=0,lp=-1,tt=false,lastDrawnFrame=0,autoPlayStarted=false,prevSt=0,pastHero=false;
 const eo=t=>1-Math.pow(1-t,3);
 const eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const r=(v,a,b)=>Math.max(0,Math.min(1,(v-a)/(b-a)));
@@ -1973,12 +1978,37 @@ function tick(){
     crispScreen.style.opacity='1';
   }
 
-  // Fade text + navbar (0→15%)
+  // Fade text + navbar (0→15%) — only on downward scroll through hero
   const textFade=1-r(p,0,0.15);
   s(htxt,{opacity:textFade,transform:`translateY(${-r(p,0,0.50)*60}px)`});
-  navbar.style.opacity=textFade;
   laptopAnno.style.opacity=1-r(p,0,0.12);
   shint.style.opacity=1-r(p,0,0.04);
+
+  // Navbar: track if we've been past the hero
+  const stageH=document.querySelector('.scroll-stage').offsetHeight;
+  const scrollingUp=st<prevSt;
+  prevSt=st;
+
+  if(st>stageH){pastHero=true;}
+
+  if(pastHero&&scrollingUp){
+    // Coming back from content — keep navbar visible with solid bg
+    navbar.style.opacity='1';
+    navbar.classList.add('nav-solid');
+  } else if(st>stageH){
+    // Past hero scrolling down — show navbar with solid bg
+    navbar.style.opacity='1';
+    navbar.classList.add('nav-solid');
+  } else if(p<0.05){
+    // At top of page — show transparent navbar
+    navbar.style.opacity='1';
+    navbar.classList.remove('nav-solid');
+    if(st<50)pastHero=false;
+  } else {
+    // During hero animation — fade out
+    navbar.style.opacity=textFade;
+    navbar.classList.remove('nav-solid');
+  }
 
   // Fade overlay during zoom
   ov.style.opacity=1-r(p,0.25,0.45);
