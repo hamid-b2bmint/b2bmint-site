@@ -25,7 +25,8 @@
 html{-webkit-font-smoothing:antialiased}
 body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hidden}
 
-.scroll-stage{position:relative;height:500vh}
+.scroll-stage{position:relative;height:500vh;transition:height .3s}
+.scroll-stage.done{height:100vh}
 .scroll-viewport{position:sticky;top:0;height:100vh;width:100%;overflow:hidden}
 
 /* ═══════════════════════════════════════════
@@ -1875,7 +1876,7 @@ const mockLeft=document.getElementById('mockLeft');
 const platsTarget=document.getElementById('platsTarget');
 const metTarget=document.getElementById('metTarget');
 
-let uT=0,aT=0,lp=-1,tt=false,lastDrawnFrame=0,autoPlayStarted=false,prevSt=0,pastHero=false;
+let uT=0,aT=0,lp=-1,tt=false,lastDrawnFrame=0,autoPlayStarted=false,prevSt=0,pastHero=false,heroDone=false;
 const eo=t=>1-Math.pow(1-t,3);
 const eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const r=(v,a,b)=>Math.max(0,Math.min(1,(v-a)/(b-a)));
@@ -2017,19 +2018,26 @@ function tick(){
   const slideP=r(p,0.50,0.58);
   heroVideo.style.opacity=1-r(p,0.48,0.55);
 
+  if(heroDone)return; // Once hero is done, stop recalculating — no reverse
+
   if(slideP>0.3&&!crispScreen.classList.contains('slide-right')){
     crispScreen.classList.add('slide-right');
-    // Show left side content (mockup layer)
     mock.style.opacity='1';
     mock.classList.add('visible');
     mockLeft.classList.add('show');
-    // Show right side chat overlay (on top of slid crisp-screen)
     const mockRight=document.querySelector('.mock-right');
     if(mockRight)mockRight.classList.add('show');
-    // Start auto-play
     setTimeout(startAutoPlay,800);
+    // Mark hero as DONE — collapse scroll-stage so no reverse animation
+    setTimeout(()=>{
+      heroDone=true;
+      const stage=document.querySelector('.scroll-stage');
+      stage.classList.add('done');
+      // Scroll to the content sections smoothly
+      window.scrollTo({top:stage.offsetHeight,behavior:'auto'});
+    },1200);
   }
-  if(slideP<0.1&&crispScreen.classList.contains('slide-right')){
+  if(slideP<0.1&&!heroDone&&crispScreen.classList.contains('slide-right')){
     crispScreen.classList.remove('slide-right');
     mock.style.opacity='0';
     mock.classList.remove('visible');
