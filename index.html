@@ -260,15 +260,26 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-logos img{height:36px;width:auto;opacity:.6;filter:grayscale(100%);transition:all .4s;border-radius:6px}
 .hp-logos img:hover{opacity:1;filter:grayscale(0%);transform:scale(1.06)}
 
-/* ── Single Testimonial (large) ── */
-.s-testimonial{background:var(--forest-deep);padding:100px 0;position:relative;overflow:hidden}
-.s-testimonial::before{content:'\201C';position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-family:Recoleta,serif;font-size:300px;color:rgba(125,255,179,.04);line-height:1;pointer-events:none}
-.hp-testi-single{max-width:800px;margin:0 auto;text-align:center}
-.hp-testi-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 28px;border:3px solid rgba(125,255,179,.15)}
-.hp-testi-quote{font-family:Recoleta,serif;font-size:clamp(22px,3vw,32px);font-weight:700;color:#fff;line-height:1.35;margin-bottom:28px}
-.hp-testi-name{font-size:15px;font-weight:700;color:var(--lime)}
-.hp-testi-role{font-size:13px;color:rgba(255,255,255,.35);margin-top:4px}
-.hp-testi-result{display:inline-block;margin-top:20px;padding:8px 20px;background:rgba(125,255,179,.08);border:1px solid rgba(125,255,179,.1);border-radius:60px;font-size:13px;font-weight:700;color:var(--lime)}
+/* ── Single Testimonial (large, split layout) ── */
+.s-testimonial{background:var(--forest-deep);padding:0;position:relative;overflow:hidden}
+.hp-testi-split{max-width:1100px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:.8fr 1fr;gap:0;align-items:stretch;min-height:500px}
+/* left — photo + company */
+.hp-testi-left{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:60px 40px 0;background:linear-gradient(180deg,rgba(125,255,179,.04),rgba(125,255,179,.08))}
+.hp-testi-left img{width:240px;max-width:100%;display:block;object-fit:contain;filter:grayscale(100%) contrast(1.1) drop-shadow(0 10px 30px rgba(0,0,0,.3));position:relative;z-index:2}
+.hp-testi-left::before{content:'';position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(180deg,transparent,rgba(125,255,179,.06));z-index:1}
+.hp-testi-company{position:absolute;top:28px;left:28px;z-index:3}
+.hp-testi-company img{height:32px;width:auto;border-radius:6px;opacity:.6}
+/* right — quote */
+.hp-testi-right{display:flex;flex-direction:column;justify-content:center;padding:60px 40px 60px 48px;position:relative}
+.hp-testi-right::before{content:'\201C';position:absolute;top:20px;left:40px;font-family:Recoleta,serif;font-size:160px;color:rgba(125,255,179,.06);line-height:1;pointer-events:none}
+.hp-testi-stars{display:flex;gap:3px;margin-bottom:20px}
+.hp-testi-stars span{color:#F5A623;font-size:18px}
+.hp-testi-quote{font-family:Recoleta,serif;font-size:clamp(20px,2.5vw,28px);font-weight:700;color:#fff;line-height:1.4;margin-bottom:32px;position:relative;z-index:1}
+.hp-testi-meta{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+.hp-testi-meta-text strong{font-size:16px;color:var(--lime);display:block}
+.hp-testi-meta-text span{font-size:13px;color:rgba(255,255,255,.35)}
+.hp-testi-result{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:rgba(125,255,179,.08);border:1px solid rgba(125,255,179,.12);border-radius:12px;font-size:14px;font-weight:700;color:var(--lime)}
+.hp-testi-result svg{width:18px;height:18px;stroke:var(--lime);fill:none;stroke-width:2}
 
 /* ── Multi Testimonials (3 cards) ── */
 .s-testimonials{background:#FFF3E0;padding:100px 0}
@@ -906,6 +917,10 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   .hp-cta-stats{justify-content:center}
   .hp-logos{gap:28px}
   .hp-logos img{height:28px}
+  .hp-testi-split{grid-template-columns:1fr;padding:0 20px}
+  .hp-testi-left{padding:40px 20px 0}
+  .hp-testi-left img{width:180px}
+  .hp-testi-right{padding:40px 20px 48px}
   .hp-testi-grid{grid-template-columns:1fr}
   .ft-topbar{padding:40px 20px 0}
   .ft-nav-center{padding:32px 20px}
@@ -1384,13 +1399,26 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
 <!-- SINGLE TESTIMONIAL -->
 <section class="s-testimonial">
-  <div class="s-inner">
-    <div class="hp-testi-single">
-      <img src="baris-zeren.jpeg" alt="Baris Zeren" class="hp-testi-photo rv" loading="lazy">
+  <div class="hp-testi-split">
+    <!-- Left — photo -->
+    <div class="hp-testi-left rv">
+      <div class="hp-testi-company"><img src="bookyourdatacom_logo.jpeg" alt="BookYourData" loading="lazy"></div>
+      <img src="baris-zeren.jpeg" alt="Baris Zeren" loading="lazy">
+    </div>
+    <!-- Right — quote -->
+    <div class="hp-testi-right">
+      <div class="hp-testi-stars rv"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
       <div class="hp-testi-quote rv" style="transition-delay:.1s">&ldquo;B2BMint didn&rsquo;t just improve our rankings &mdash; they rebuilt how AI models see our brand. Within 90 days, ChatGPT started recommending us over competitors with 10x our budget.&rdquo;</div>
-      <div class="hp-testi-name rv" style="transition-delay:.15s">Baris Zeren</div>
-      <div class="hp-testi-role rv" style="transition-delay:.15s">VP of Growth, BookYourData</div>
-      <div class="hp-testi-result rv" style="transition-delay:.2s">+340% organic pipeline in 6 months</div>
+      <div class="hp-testi-meta rv" style="transition-delay:.15s">
+        <div class="hp-testi-meta-text">
+          <strong>Baris Zeren</strong>
+          <span>VP of Growth, BookYourData</span>
+        </div>
+      </div>
+      <div class="hp-testi-result rv" style="transition-delay:.2s">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        +340% organic pipeline in 6 months
+      </div>
     </div>
   </div>
 </section>
