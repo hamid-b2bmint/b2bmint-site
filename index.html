@@ -2018,7 +2018,12 @@ function tick(){
   const slideP=r(p,0.50,0.58);
   heroVideo.style.opacity=1-r(p,0.48,0.55);
 
-  if(heroDone)return; // Once hero is done, stop recalculating — no reverse
+  if(heroDone){
+    // Hero is done — keep navbar visible, don't reverse anything
+    navbar.style.opacity='1';
+    navbar.classList.add('nav-solid');
+    return;
+  }
 
   if(slideP>0.3&&!crispScreen.classList.contains('slide-right')){
     crispScreen.classList.add('slide-right');
