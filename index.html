@@ -2030,10 +2030,17 @@ function tick(){
     // After auto-play finishes, make hero static
     setTimeout(()=>{
       animCompleted=true;
-      document.querySelector('.scroll-stage').classList.add('static');
-      // Draw first frame as static background
+      const stage=document.querySelector('.scroll-stage');
+      stage.classList.add('static');
+      // Reset all inline styles JS set during animation
       drawFrame(0);
-      // Show navbar
+      heroVideo.style.opacity='1';
+      ov.style.opacity='1';
+      mock.style.opacity='0';
+      mock.style.display='none';
+      crispScreen.style.display='none';
+      htxt.style.opacity='1';
+      htxt.style.transform='none';
       navbar.style.opacity='1';
       navbar.classList.remove('nav-solid');
     },6000);
