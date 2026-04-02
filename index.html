@@ -26,15 +26,6 @@ html{-webkit-font-smoothing:antialiased}
 body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hidden}
 
 .scroll-stage{position:relative;height:500vh}
-.scroll-stage.static{height:100vh;overflow:hidden}
-.scroll-stage.static .scroll-viewport{position:relative}
-.scroll-stage.static .hero-video{opacity:1 !important}
-.scroll-stage.static .hero-overlay{opacity:1 !important}
-.scroll-stage.static .crisp-screen{display:none}
-.scroll-stage.static .mockup-layer{display:none}
-.scroll-stage.static .hero-text{opacity:1 !important;transform:none !important}
-.scroll-stage.static .laptop-anno{display:none}
-.scroll-stage.static .scroll-hint{display:none}
 .scroll-viewport{position:sticky;top:0;height:100vh;width:100%;overflow:hidden}
 
 /* ═══════════════════════════════════════════
@@ -2031,16 +2022,37 @@ function tick(){
     setTimeout(()=>{
       animCompleted=true;
       const stage=document.querySelector('.scroll-stage');
-      stage.classList.add('static');
-      // Reset all inline styles JS set during animation
+      const vp=document.querySelector('.scroll-viewport');
+
+      // 1. Draw the initial frame (landscape with laptop)
       drawFrame(0);
-      heroVideo.style.opacity='1';
-      ov.style.opacity='1';
-      mock.style.opacity='0';
-      mock.style.display='none';
+
+      // 2. Hide EVERYTHING inside the viewport except the video/canvas
+      const allChildren=vp.children;
+      for(let i=0;i<allChildren.length;i++){
+        allChildren[i].style.cssText='';
+      }
+
+      // 3. Show only what we need
+      heroVideo.style.cssText='position:absolute;inset:0;z-index:1;opacity:1';
+      ov.style.cssText='position:absolute;inset:0;z-index:2;pointer-events:none;opacity:1;background:linear-gradient(180deg,rgba(5,10,8,.6) 0%,rgba(5,10,8,.15) 35%,rgba(5,10,8,.0) 50%,rgba(5,10,8,.0) 65%,rgba(5,10,8,.15) 80%,rgba(5,10,8,.5) 100%)';
       crispScreen.style.display='none';
-      htxt.style.opacity='1';
-      htxt.style.transform='none';
+
+      // 4. Show hero text
+      htxt.style.cssText='position:absolute;top:0;left:0;right:0;height:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:10;padding:0 40px;opacity:1;transform:none';
+
+      // 5. Hide mockup layer completely
+      mock.style.display='none';
+
+      // 6. Hide other hero elements
+      if(document.getElementById('laptopAnno'))document.getElementById('laptopAnno').style.display='none';
+      if(document.getElementById('shint'))document.getElementById('shint').style.display='none';
+
+      // 7. Collapse scroll-stage: no more sticky, just 100vh
+      stage.style.height='100vh';
+      vp.style.position='relative';
+
+      // 8. Show navbar
       navbar.style.opacity='1';
       navbar.classList.remove('nav-solid');
     },6000);
