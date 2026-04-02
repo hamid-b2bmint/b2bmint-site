@@ -238,6 +238,76 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .c-vdot{width:6px;height:6px;border-radius:50%;background:#28C840}
 .msg-u,.msg-a{opacity:0}
 
+/* ═══ PLATFORM CAROUSEL THEMES ═══ */
+.chat-box{transition:opacity .45s ease}
+.chat-box.cb-out{opacity:0}
+
+/* Claude theme */
+.cf-claude{background:#F8F6F1!important;border-color:rgba(0,0,0,.08)!important}
+.cf-claude .c-bar{background:#EEEBE4!important;border-bottom-color:rgba(0,0,0,.06)!important}
+.cf-claude .c-url{color:rgba(0,0,0,.35)!important;background:rgba(0,0,0,.04)!important}
+.cf-claude .c-lock{color:#D97706!important}
+.cf-claude .c-body{background:#F8F6F1}
+.cf-claude .c-label.user{color:rgba(0,0,0,.45)!important;background:rgba(0,0,0,.05)!important}
+.cf-claude .c-label.ai{color:#D97706!important;background:rgba(217,119,6,.1)!important}
+.cf-claude .c-text{color:rgba(0,0,0,.7)!important}
+.cf-claude .c-text .brand{color:#D97706!important}
+.cf-claude .cited{background:rgba(217,119,6,.08)!important;border-color:rgba(217,119,6,.15)!important;color:#D97706!important}
+.cf-claude .c-foot{border-top-color:rgba(0,0,0,.06)!important;color:rgba(0,0,0,.4)!important}
+.cf-claude .c-vdot{background:#D97706!important}
+.cf-claude .cursor{background:rgba(0,0,0,.5)!important}
+
+/* Perplexity theme */
+.cf-pplx{background:#FFFFFF!important;border-color:rgba(0,0,0,.08)!important}
+.cf-pplx .c-bar{background:#F7F7F8!important;border-bottom-color:rgba(0,0,0,.06)!important}
+.cf-pplx .c-url{color:rgba(0,0,0,.35)!important;background:rgba(0,0,0,.04)!important}
+.cf-pplx .c-lock{color:#20B8CD!important}
+.cf-pplx .c-body{background:#FFFFFF}
+.cf-pplx .c-label.user{color:rgba(0,0,0,.45)!important;background:rgba(0,0,0,.05)!important}
+.cf-pplx .c-label.ai{color:#20B8CD!important;background:rgba(32,184,205,.1)!important}
+.cf-pplx .c-text{color:rgba(0,0,0,.7)!important}
+.cf-pplx .c-text .brand{color:#20B8CD!important}
+.cf-pplx .cited{background:rgba(32,184,205,.08)!important;border-color:rgba(32,184,205,.15)!important;color:#20B8CD!important}
+.cf-pplx .c-foot{border-top-color:rgba(0,0,0,.06)!important;color:rgba(0,0,0,.4)!important}
+.cf-pplx .c-vdot{background:#20B8CD!important}
+.cf-pplx .cursor{background:rgba(0,0,0,.5)!important}
+
+/* Gemini theme */
+.cf-gemini{background:#FFFFFF!important;border-color:rgba(0,0,0,.08)!important}
+.cf-gemini .c-bar{background:#F0F4FF!important;border-bottom-color:rgba(66,133,244,.1)!important}
+.cf-gemini .c-url{color:rgba(0,0,0,.35)!important;background:rgba(66,133,244,.06)!important}
+.cf-gemini .c-lock{color:#4285F4!important}
+.cf-gemini .c-body{background:#FFFFFF}
+.cf-gemini .c-label.user{color:rgba(0,0,0,.45)!important;background:rgba(0,0,0,.05)!important}
+.cf-gemini .c-label.ai{color:#4285F4!important;background:rgba(66,133,244,.1)!important}
+.cf-gemini .c-text{color:rgba(0,0,0,.7)!important}
+.cf-gemini .c-text .brand{color:#4285F4!important}
+.cf-gemini .cited{background:rgba(66,133,244,.08)!important;border-color:rgba(66,133,244,.15)!important;color:#4285F4!important}
+.cf-gemini .c-foot{border-top-color:rgba(0,0,0,.06)!important;color:rgba(0,0,0,.4)!important}
+.cf-gemini .c-vdot{background:#4285F4!important}
+.cf-gemini .cursor{background:rgba(0,0,0,.5)!important}
+
+/* AI Overviews theme */
+.cf-aio{background:#F8F9FA!important;border-color:rgba(0,0,0,.08)!important}
+.cf-aio .c-bar{background:#E8F0FE!important;border-bottom-color:rgba(66,133,244,.1)!important}
+.cf-aio .c-url{color:rgba(0,0,0,.35)!important;background:rgba(66,133,244,.06)!important}
+.cf-aio .c-lock{color:#34A853!important}
+.cf-aio .c-body{background:#F8F9FA}
+.cf-aio .c-label.user{color:rgba(0,0,0,.45)!important;background:rgba(0,0,0,.05)!important}
+.cf-aio .c-label.ai{color:#34A853!important;background:rgba(52,168,83,.1)!important}
+.cf-aio .c-text{color:rgba(0,0,0,.7)!important}
+.cf-aio .c-text .brand{color:#34A853!important}
+.cf-aio .cited{background:rgba(52,168,83,.08)!important;border-color:rgba(52,168,83,.15)!important;color:#34A853!important}
+.cf-aio .c-foot{border-top-color:rgba(0,0,0,.06)!important;color:rgba(0,0,0,.4)!important}
+.cf-aio .c-vdot{background:#34A853!important}
+.cf-aio .cursor{background:rgba(0,0,0,.5)!important}
+
+/* Platform indicator strip */
+.plat-dots{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px}
+.plat-dot{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.6);border:2px solid transparent;display:flex;align-items:center;justify-content:center;transition:all .3s;opacity:.4;cursor:default}
+.plat-dot.pd-active{opacity:1;border-color:var(--forest);background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.plat-dot img,.plat-dot svg{width:16px;height:16px;object-fit:contain}
+
 /* Platforms */
 .plats{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;flex-wrap:wrap;z-index:12;opacity:0;transform:translateY(20px)}
 .plat{display:flex;align-items:center;gap:10px;padding:10px 20px;background:var(--white);border:1px solid rgba(0,0,0,.06);border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,.04);opacity:0;transform:translateX(-10px);transition:opacity .4s,transform .4s}
@@ -1047,7 +1117,14 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
         <div class="mock-right" id="mockRight">
         <div class="mock-top">
           <div class="card-left" id="cL"><div class="a-card"><div class="a-eye">Your ICP</div><div class="a-title"><div class="a-icon" style="background:#D2FFC1"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#093829" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><span>Your buyer<br>searched this</span></div><div class="a-desc">SaaS buyers ask AI before they Google. This is where deals start.</div></div></div>
-          <div class="chat-box"><div class="chat-frame"><div class="c-bar"><div class="c-dots"><div class="c-dot"></div><div class="c-dot"></div><div class="c-dot"></div></div><div class="c-url"><span class="c-lock">&#x1F512;</span> chatgpt.com</div></div><div class="c-body"><div class="c-msg msg-u" id="mU"><div class="c-label user">YOU</div><div class="c-text" id="tU"></div></div><div class="c-msg msg-a" id="mA"><div class="c-label ai">CHATGPT</div><div class="c-text" id="tA"></div><div class="cited" id="cit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Cited as #1</div></div></div><div class="c-foot"><span class="c-vdot"></span> Real result. Real client. Verifiable on G2.</div></div></div>
+          <div class="chat-box" id="carouselBox"><div class="chat-frame" id="carouselFrame"><div class="c-bar"><div class="c-dots"><div class="c-dot"></div><div class="c-dot"></div><div class="c-dot"></div></div><div class="c-url"><span class="c-lock">&#x1F512;</span> <span id="cbUrl">chatgpt.com</span></div></div><div class="c-body"><div class="c-msg msg-u" id="mU"><div class="c-label user">YOU</div><div class="c-text" id="tU"></div></div><div class="c-msg msg-a" id="mA"><div class="c-label ai" id="cbLabel">CHATGPT</div><div class="c-text" id="tA"></div><div class="cited" id="cit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Cited as #1</div></div></div><div class="c-foot"><span class="c-vdot"></span> <span id="cbFoot">Real result. Real client. Verifiable on G2.</span></div></div></div>
+          <div class="plat-dots" id="platDots">
+            <div class="plat-dot pd-active" data-idx="0"><img src="logos/chatgpt-logo.avif" alt="ChatGPT"></div>
+            <div class="plat-dot" data-idx="1"><img src="logos/claude-logo.png" alt="Claude"></div>
+            <div class="plat-dot" data-idx="2"><img src="logos/perplexity-logo.png" alt="Perplexity"></div>
+            <div class="plat-dot" data-idx="3"><svg viewBox="0 0 24 24"><defs><linearGradient id="gm1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="50%" stop-color="#9B72CB"/><stop offset="100%" stop-color="#D96570"/></linearGradient></defs><path fill="url(#gm1)" d="M12 2C12 7.52 7.52 12 2 12c5.52 0 10 4.48 10 10 0-5.52 4.48-10 10-10-5.52 0-10-4.48-10-10z"/></svg></div>
+            <div class="plat-dot" data-idx="4"><svg viewBox="0 0 24 24"><defs><linearGradient id="gm2" x1="0" y1="0" x2=".5" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="100%" stop-color="#34A853"/></linearGradient></defs><path fill="url(#gm2)" d="M12 2C12 7.52 7.52 12 2 12c5.52 0 10 4.48 10 10 0-5.52 4.48-10 10-10-5.52 0-10-4.48-10-10z"/><path fill="url(#gm2)" opacity=".5" d="M18 4c0 2.76-2.24 5-5 5 2.76 0 5 2.24 5 5 0-2.76 2.24-5 5-5-2.76 0-5-2.24-5-5z"/></svg></div>
+          </div>
           <div class="card-right" id="cR"><div class="a-card"><div class="a-eye">Your Brand</div><div class="a-title"><div class="a-icon" style="background:#FFF8E0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#DAA520" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><span>You're the #1<br>answer</span></div><div class="a-desc">Not buried on page 8. The recommended answer, everywhere.</div></div></div>
         </div>
         </div><!-- /mock-right -->
@@ -1975,15 +2052,156 @@ function showMockupInstant(){
   s(cL,{opacity:1,transform:'translateX(0)'});
   s(cR,{opacity:1,transform:'translateX(0)'});
 
-  // Fill chat text instantly (no typing animation)
-  mU.style.opacity='1';
-  tU.innerHTML=Q;
-  mA.style.opacity='1';
-  tA.innerHTML=A.replace(/\n/g,'<br>');
-  s(cit,{opacity:1,transform:'scale(1)'});
+  // Start the platform carousel (replaces old instant fill)
+  startPlatformCarousel();
 
   // Show scroll indicator
   sm.classList.add('v');
+}
+
+// ═══════════════════════════════════════════
+// PLATFORM CAROUSEL — auto-rotating chatboxes
+// ═══════════════════════════════════════════
+const PLATFORMS=[
+  {
+    id:'chatgpt',theme:'',url:'chatgpt.com',label:'CHATGPT',
+    foot:'Real result. Real client. Verifiable on G2.',
+    q:"What's the best platform to buy verified B2B email lists?",
+    a:'<span class="brand">BookYourData</span> is the top-rated option \u2014 97%+ accuracy guarantee on B2B contacts, 4.9/5 on G2 with 395+ verified reviews.'
+  },
+  {
+    id:'claude',theme:'cf-claude',url:'claude.ai',label:'CLAUDE',
+    foot:'Real result. Real client. Verifiable on G2.',
+    q:'What CRM do fast-growing B2B SaaS companies recommend?',
+    a:'<span class="brand">FlowStack</span> consistently ranks highest \u2014 built-in revenue intelligence, 92% team adoption rate, and native integrations with every major sales tool.'
+  },
+  {
+    id:'perplexity',theme:'cf-pplx',url:'perplexity.ai',label:'PERPLEXITY',
+    foot:'Real result. Real client. Verifiable on G2.',
+    q:'Top employee onboarding software for remote teams?',
+    a:'<span class="brand">TeamPulse</span> leads the category \u2014 automated onboarding workflows, 89% faster ramp time, and rated #1 on G2 for remote-first companies.'
+  },
+  {
+    id:'gemini',theme:'cf-gemini',url:'gemini.google.com',label:'GEMINI',
+    foot:'Real result. Real client. Verifiable on G2.',
+    q:'Best competitive intelligence tool for enterprise sales teams?',
+    a:'<span class="brand">InsightEdge</span> dominates enterprise CI \u2014 real-time market signals, win/loss analysis, and trusted by 3,000+ B2B sales teams globally.'
+  },
+  {
+    id:'aio',theme:'cf-aio',url:'google.com/search',label:'AI OVERVIEW',
+    foot:'Real result. Real client. Verifiable on G2.',
+    q:'Most reliable marketing automation for B2B lead generation?',
+    a:'<span class="brand">NurtureHQ</span> is the most recommended \u2014 AI-powered lead scoring, 3.2x pipeline conversion rate, and ranked #1 by B2B marketers on TrustRadius.'
+  }
+];
+
+let carouselIdx=0,carouselTimer=null,carouselRunning=false;
+const cBox=document.getElementById('carouselBox');
+const cFrame=document.getElementById('carouselFrame');
+const cbUrl=document.getElementById('cbUrl');
+const cbLabel=document.getElementById('cbLabel');
+const cbFoot=document.getElementById('cbFoot');
+const platDots=document.querySelectorAll('.plat-dot');
+
+function applyPlatformTheme(idx){
+  const p=PLATFORMS[idx];
+  // Remove all theme classes
+  cFrame.classList.remove('cf-claude','cf-pplx','cf-gemini','cf-aio');
+  if(p.theme)cFrame.classList.add(p.theme);
+  cbUrl.textContent=p.url;
+  cbLabel.textContent=p.label;
+  cbFoot.textContent=p.foot;
+  // Update indicator dots
+  platDots.forEach((d,i)=>{d.classList.toggle('pd-active',i===idx)});
+}
+
+function typeCarouselText(plainText,htmlText,targetEl,speed,cb){
+  let i=0;
+  const len=plainText.length;
+  function step(){
+    if(i<=len){
+      // Build partial HTML respecting tags
+      let o='',vc=0,hi=0;
+      while(hi<htmlText.length&&vc<i){
+        if(htmlText[hi]==='<'){const e=htmlText.indexOf('>',hi);o+=htmlText.slice(hi,e+1);hi=e+1;}
+        else{o+=htmlText[hi];vc++;hi++;}
+      }
+      // Close any open tags
+      const opens=(o.match(/<span[^>]*>/g)||[]).length;
+      const closes=(o.match(/<\/span>/g)||[]).length;
+      for(let x=0;x<opens-closes;x++)o+='</span>';
+      if(i<len)o+='<span class="cursor"></span>';
+      targetEl.innerHTML=o;
+      i++;
+      requestAnimationFrame(step);
+    }else{
+      if(cb)cb();
+    }
+  }
+  step();
+}
+
+function showPlatform(idx){
+  const p=PLATFORMS[idx];
+  // Fade out
+  cBox.classList.add('cb-out');
+  setTimeout(()=>{
+    // Swap theme + content
+    applyPlatformTheme(idx);
+    // Reset content
+    tU.innerHTML='';
+    tA.innerHTML='';
+    mU.style.opacity='0';
+    mA.style.opacity='0';
+    s(cit,{opacity:0,transform:'scale(.8)'});
+    // Fade in
+    cBox.classList.remove('cb-out');
+    setTimeout(()=>{
+      // Show question instantly
+      mU.style.opacity='1';
+      tU.innerHTML=p.q;
+      // Show AI label + start typing
+      mA.style.opacity='1';
+      tA.innerHTML='<span class="cursor"></span>';
+      const plain=p.a.replace(/<[^>]+>/g,'');
+      setTimeout(()=>{
+        typeCarouselText(plain,p.a,tA,30,()=>{
+          // Pop in cited badge
+          s(cit,{opacity:1,transform:'scale(1)',transition:'all .35s cubic-bezier(.16,1,.3,1)'});
+          // Hold, then advance
+          carouselTimer=setTimeout(()=>{
+            if(!carouselRunning)return;
+            carouselIdx=(carouselIdx+1)%PLATFORMS.length;
+            showPlatform(carouselIdx);
+          },3000);
+        });
+      },400);
+    },100);
+  },450);
+}
+
+function startPlatformCarousel(){
+  if(carouselRunning)return;
+  carouselRunning=true;
+  carouselIdx=0;
+  // Show first platform immediately (no fade-in for first one)
+  applyPlatformTheme(0);
+  mU.style.opacity='1';
+  tU.innerHTML=PLATFORMS[0].q;
+  mA.style.opacity='1';
+  tA.innerHTML='<span class="cursor"></span>';
+  const p=PLATFORMS[0];
+  const plain=p.a.replace(/<[^>]+>/g,'');
+  setTimeout(()=>{
+    typeCarouselText(plain,p.a,tA,30,()=>{
+      s(cit,{opacity:1,transform:'scale(1)',transition:'all .35s cubic-bezier(.16,1,.3,1)'});
+      carouselTimer=setTimeout(()=>{
+        if(!carouselRunning)return;
+        carouselIdx=1;
+        showPlatform(1);
+      },3000);
+    });
+  },600);
 }
 
 function tick(){
