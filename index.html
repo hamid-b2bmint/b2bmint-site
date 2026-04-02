@@ -1904,18 +1904,10 @@ function makeHeroStatic(){
   const curScroll=window.scrollY;
 
   // 1. MOVE mockup layer OUT of scroll-viewport → standalone section before main.hp
-  //    Convert from absolute overlay to normal flow section
-  mock.style.cssText='position:relative;width:100%;min-height:100vh;opacity:1;pointer-events:auto;z-index:3;display:flex';
-  // mock-right needs to work in flow layout, not absolute
-  const mr=document.getElementById('mockRight');
-  if(mr)mr.style.cssText='position:relative;right:auto;top:auto;width:50%;height:auto;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;opacity:1;z-index:15';
-  // mock-content (left side) also needs proper sizing
-  const mc=document.querySelector('.mock-content');
-  if(mc)mc.style.cssText='position:relative;z-index:10;width:50%;min-height:100vh;display:flex;flex-direction:column;overflow:visible';
-  // mock-bg needs to cover the whole section
-  const mbg=document.querySelector('.mock-bg');
-  if(mbg)mbg.style.cssText='position:absolute;inset:0;background-image:url(bg-mint.jpg);background-size:cover;background-position:center;background-color:#D2FFC1;z-index:0';
-
+  //    Just set position:relative so it flows in the page. Children keep their original CSS:
+  //    mock-bg = absolute, covers section. mock-content = 50% width left.
+  //    mock-right = absolute, right:0, width:50% (positions relative to mockup-layer).
+  mock.style.cssText='position:relative;width:100%;height:100vh;opacity:1;pointer-events:auto;z-index:3';
   stage.parentNode.insertBefore(mock,mainEl);
 
   // 2. Clean up scroll-viewport (hero only)
