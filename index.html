@@ -26,6 +26,15 @@ html{-webkit-font-smoothing:antialiased}
 body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hidden}
 
 .scroll-stage{position:relative;height:500vh}
+.scroll-stage.static{height:100vh;overflow:hidden}
+.scroll-stage.static .scroll-viewport{position:relative}
+.scroll-stage.static .hero-video{opacity:1 !important}
+.scroll-stage.static .hero-overlay{opacity:1 !important}
+.scroll-stage.static .crisp-screen{display:none}
+.scroll-stage.static .mockup-layer{display:none}
+.scroll-stage.static .hero-text{opacity:1 !important;transform:none !important}
+.scroll-stage.static .laptop-anno{display:none}
+.scroll-stage.static .scroll-hint{display:none}
 .scroll-viewport{position:sticky;top:0;height:100vh;width:100%;overflow:hidden}
 
 /* ═══════════════════════════════════════════
@@ -1979,50 +1988,13 @@ function tick(){
     crispScreen.style.opacity='1';
   }
 
-  // Track scroll direction
-  const scrollingUp=st<prevSt;
   prevSt=st;
 
-  // If animation completed and scrolling UP — freeze final state, show navbar
-  if(animCompleted&&scrollingUp&&p>0.05){
+  // If animation completed — hero is now static, stop all animation logic
+  if(animCompleted){
     navbar.style.opacity='1';
-    navbar.classList.add('nav-solid');
-    // Keep everything in final state — don't reverse
-    heroVideo.style.opacity='0';
-    crispScreen.classList.add('slide-right');
-    mock.style.opacity='1';
-    mock.classList.add('visible');
-    mockLeft.classList.add('show');
-    const mr=document.querySelector('.mock-right');
-    if(mr)mr.classList.add('show');
-    s(htxt,{opacity:0});
-    return;
-  }
-
-  // Reset when back at very top
-  if(p<0.03&&animCompleted){
-    animCompleted=false;
-    autoPlayStarted=false;
     navbar.classList.remove('nav-solid');
-    crispScreen.classList.remove('slide-right');
-    mock.style.opacity='0';
-    mock.classList.remove('visible');
-    mockLeft.classList.remove('show');
-    const mr=document.querySelector('.mock-right');
-    if(mr)mr.classList.remove('show');
-    uT=0;aT=0;tU.innerHTML='';tA.innerHTML='';
-    mU.style.opacity='0';mA.style.opacity='0';
-    s(cL,{opacity:0,transform:'translateX(-30px)'});
-    s(cR,{opacity:0,transform:'translateX(30px)'});
-    s(cit,{opacity:0,transform:'scale(.8)'});
-    s(plats,{opacity:0,transform:'translateY(20px)'});
-    s(metW,{opacity:0,transform:'translateY(24px)'});
-    s(ctaW,{opacity:0,transform:'translateY(20px)'});
-    chips.forEach(c=>c.classList.remove('v'));
-    cBadge.classList.remove('v');
-    mets.forEach(c=>c.classList.remove('v'));
-    ticks.forEach(t=>t.classList.remove('pop'));
-    sm.classList.remove('v');
+    return;
   }
 
   // Normal downward animation
@@ -2055,8 +2027,16 @@ function tick(){
     const mockRight=document.querySelector('.mock-right');
     if(mockRight)mockRight.classList.add('show');
     setTimeout(startAutoPlay,800);
-    // Mark animation as completed
-    animCompleted=true;
+    // After auto-play finishes, make hero static
+    setTimeout(()=>{
+      animCompleted=true;
+      document.querySelector('.scroll-stage').classList.add('static');
+      // Draw first frame as static background
+      drawFrame(0);
+      // Show navbar
+      navbar.style.opacity='1';
+      navbar.classList.remove('nav-solid');
+    },6000);
   }
   if(slideP<0.1&&!animCompleted&&crispScreen.classList.contains('slide-right')){
     crispScreen.classList.remove('slide-right');
@@ -2088,11 +2068,17 @@ window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(()=>{ti
 
 // ═══ NAVBAR — separate listener, always runs ═══
 window.addEventListener('scroll',()=>{
-  const st=window.scrollY;
-  const stageH=document.querySelector('.scroll-stage').offsetHeight;
-  if(animCompleted && st>stageH*0.3){
-    navbar.style.opacity='1';
-    navbar.classList.add('nav-solid');
+  if(animCompleted){
+    const st=window.scrollY;
+    // At hero (top) — transparent navbar
+    if(st<100){
+      navbar.style.opacity='1';
+      navbar.classList.remove('nav-solid');
+    } else {
+      // In content sections — solid navbar
+      navbar.style.opacity='1';
+      navbar.classList.add('nav-solid');
+    }
   }
 },{passive:true});
 
