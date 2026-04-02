@@ -2015,46 +2015,50 @@ function tick(){
     const mockRight=document.querySelector('.mock-right');
     if(mockRight)mockRight.classList.add('show');
     setTimeout(startAutoPlay,800);
-    // After auto-play finishes, make hero static
+    // After auto-play finishes, make hero static + preserve mockup as standalone section
     setTimeout(()=>{
       animCompleted=true;
       const stage=document.querySelector('.scroll-stage');
       const vp=document.querySelector('.scroll-viewport');
+      const mainEl=document.querySelector('main.hp');
       const oldH=stage.offsetHeight;
+      const curScroll=window.scrollY;
 
-      // 1. Draw the initial frame (landscape with laptop)
+      // 1. MOVE mockup layer OUT of scroll-viewport → its own section before main.hp
+      mock.style.cssText='position:relative;width:100%;height:100vh;opacity:1;pointer-events:auto;z-index:3';
+      stage.parentNode.insertBefore(mock,mainEl);
+
+      // 2. Now clean up the scroll-viewport (hero only)
       drawFrame(0);
-
-      // 2. Clear ALL inline styles on viewport children
+      // Clear ALL inline styles on remaining viewport children
       const allChildren=vp.children;
       for(let i=0;i<allChildren.length;i++){
         allChildren[i].style.cssText='';
       }
-
-      // 3. Show only canvas + overlay
       heroVideo.style.cssText='position:absolute;inset:0;z-index:1;opacity:1';
       ov.style.cssText='position:absolute;inset:0;z-index:2;pointer-events:none;opacity:1;background:linear-gradient(180deg,rgba(5,10,8,.6) 0%,rgba(5,10,8,.15) 35%,rgba(5,10,8,.0) 50%,rgba(5,10,8,.0) 65%,rgba(5,10,8,.15) 80%,rgba(5,10,8,.5) 100%)';
+      htxt.style.cssText='position:absolute;top:0;left:0;right:0;height:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:10;padding:0 40px;opacity:1;transform:none';
 
-      // 4. Hide animated elements via display:none (overrides any inline styles)
+      // 3. Hide animation-only elements
       crispScreen.style.display='none';
-      mock.style.display='none';
       laptopAnno.style.display='none';
       shint.style.display='none';
 
-      // 5. Show hero text cleanly
-      htxt.style.cssText='position:absolute;top:0;left:0;right:0;height:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:10;padding:0 40px;opacity:1;transform:none';
-
-      // 6. Collapse scroll-stage + remove sticky
+      // 4. Collapse scroll-stage to just 100vh (hero only) + remove sticky
       stage.style.height='100vh';
       vp.style.position='relative';
 
-      // 7. Compensate scroll position so user doesn't see a jump
-      const diff=oldH-stage.offsetHeight;
-      if(window.scrollY>oldH){
-        window.scrollTo(0,Math.max(0,window.scrollY-diff));
+      // 5. Compensate scroll: stage went from oldH to 100vh, but mockup (100vh) is now outside
+      // Net change = oldH - 100vh - 100vh(mockup) = oldH - 200vh worth of content
+      // Actually: before we had 500vh stage. Now we have 100vh stage + 100vh mockup = 200vh total.
+      // So we lost 300vh. Compensate if user is past the hero.
+      const newTotalHero=stage.offsetHeight+mock.offsetHeight; // 100vh + 100vh = 200vh
+      const diff=oldH-newTotalHero;
+      if(curScroll>newTotalHero){
+        window.scrollTo(0,Math.max(0,curScroll-diff));
       }
 
-      // 8. Show navbar
+      // 6. Show navbar
       navbar.style.opacity='1';
       navbar.classList.remove('nav-solid');
     },6000);
