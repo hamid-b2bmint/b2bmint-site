@@ -308,7 +308,14 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .dt-blue{background:radial-gradient(circle,#2D8BF5 1.8px,transparent 1.8px);background-size:3.8px 3.8px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .dt-amber{background:radial-gradient(circle,#E87B2F 1.8px,transparent 1.8px);background-size:3.8px 3.8px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .dt-green{background:radial-gradient(circle,#1AAD6B 1.8px,transparent 1.8px);background-size:3.8px 3.8px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.s-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:14px;background:linear-gradient(135deg,var(--forest-deep),#1a6b42,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.s-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:14px;background:linear-gradient(135deg,var(--forest-deep),#1a6b42,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:flex;align-items:center;gap:10px}
+.s-eye::before{content:'';width:20px;height:4px;border-radius:4px;flex-shrink:0;background:var(--forest)}
+/* pill accent colors */
+.s-eye.eye-rose::before{background:#C4325B}
+.s-eye.eye-purple::before{background:#7B5CF5}
+.s-eye.eye-blue::before{background:#2D8BF5}
+.s-eye.eye-amber::before{background:#E87B2F}
+.s-eye.eye-green::before{background:#1AAD6B}
 .s-h{font-family:var(--display);font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:18px;color:var(--forest-deep)}
 .s-p{font-size:17px;line-height:1.7;color:rgba(0,0,0,.6);max-width:600px}
 .s-card{border-radius:20px;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.04),0 12px 48px rgba(0,0,0,.06);padding:36px;background:#fff}
@@ -1048,7 +1055,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   <div class="s-inner">
     <div class="s-grid2">
       <div>
-        <div class="s-eye rv">The Problem</div>
+        <div class="s-eye eye-rose rv">The Problem</div>
         <h2 class="s-h rv" style="transition-delay:.1s">Your agency gave you traffic reports. Your CFO asked about <span class="dt-rose">pipeline.</span></h2>
         <p class="s-p rv" style="transition-delay:.2s">$50K+ spent. 68 blog posts. 12 months of &ldquo;it takes time.&rdquo; Zero demos from search. Your agency optimized for keywords. Your buyers moved to AI.</p>
         <div class="s-pain-signs rv" style="transition-delay:.25s">
@@ -1080,7 +1087,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
   <div class="s-inner">
     <div class="s-grid2">
       <div>
-        <div class="s-eye rv">The Invisible Loss</div>
+        <div class="s-eye eye-purple rv">The Invisible Loss</div>
         <h2 class="s-h rv" style="transition-delay:.1s">A competitor with a weaker product is <span class="dt-purple">winning your buyers.</span></h2>
         <p class="s-p rv" style="transition-delay:.2s">They don&rsquo;t have a better product. They have better content architecture. They show up when AI answers. You don&rsquo;t.</p>
         <div class="s-loss-quote rv" style="transition-delay:.3s">&ldquo;We kept losing deals to a startup half our size. Turns out, ChatGPT was recommending them for every query in our category.&rdquo;</div>
@@ -1132,7 +1139,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <!-- S5: SEARCH EVOLUTION -->
 <section class="s-sec s-evo" id="hp-evo">
   <div class="s-inner">
-    <div class="s-eye rv">From Search to Answers</div>
+    <div class="s-eye eye-blue rv">From Search to Answers</div>
     <h2 class="s-h rv" style="transition-delay:.1s">Search used to mean ten blue links. Now it means <span class="dt-blue">one recommended answer.</span></h2>
     <div class="hp-evo-sub rv" style="transition-delay:.15s">The entire buying journey shifted. Your buyers ask AI for recommendations before they ever open Google.</div>
     <div class="hp-evo-wrap">
@@ -1204,7 +1211,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <!-- S6: THE SYSTEM -->
 <section class="s-sec s-sys" id="hp-sys">
   <div class="s-inner">
-    <div class="s-eye rv">The SAGE Engine</div>
+    <div class="s-eye eye-amber rv">The SAGE Engine</div>
     <h2 class="s-h rv" style="transition-delay:.1s">One engine. Every search platform. <span class="dt-amber">Predictable pipeline.</span></h2>
     <p class="s-p rv" style="transition-delay:.2s">Most agencies optimize for Google and ignore AI. We built SAGE to dominate both simultaneously. One system that builds authority, captures every buyer search, and converts it into revenue.</p>
 
@@ -1284,7 +1291,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <!-- S7: THE TIMELINE -->
 <section class="s-sec s-tl" id="hp-tl">
   <div class="s-inner">
-    <div class="s-eye rv">The Timeline</div>
+    <div class="s-eye eye-rose rv">The Timeline</div>
     <h2 class="s-h rv" style="transition-delay:.1s">Results in <span class="dt-rose">weeks, not months.</span></h2>
     <p class="s-p rv" style="transition-delay:.2s">No 12-month &ldquo;trust the process&rdquo; pitch. Here&rsquo;s exactly what happens and when, backed by real client data.</p>
 
@@ -1328,7 +1335,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <!-- S8: THE PROOF -->
 <section class="s-sec s-proof" id="hp-proof">
   <div class="s-inner">
-    <div class="s-eye rv">The Proof</div>
+    <div class="s-eye eye-green rv">The Proof</div>
     <h2 class="s-h rv" style="transition-delay:.1s"><span class="dt-green">Real numbers</span> from real clients.</h2>
     <p class="s-p rv" style="transition-delay:.15s">Not projections. Not &ldquo;potential.&rdquo; These are verified results from SaaS companies running the SAGE engine.</p>
 
@@ -1426,7 +1433,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <!-- S9: WHO THIS IS FOR -->
 <section class="s-sec s-fit" id="hp-fit">
   <div class="s-inner">
-    <div class="s-eye rv" style="text-align:center">Who This Is For</div>
+    <div class="s-eye eye-purple rv" style="text-align:center;justify-content:center">Who This Is For</div>
     <h2 class="s-h rv" style="text-align:center;transition-delay:.1s">Is this <span class="dt-purple">for you?</span></h2>
     <p class="s-p rv" style="transition-delay:.15s">We work with a specific type of company. Here&rsquo;s how to know if SAGE is the right fit.</p>
     <div class="hp-fit-grid" id="fitGrid">
@@ -1451,7 +1458,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <!-- S10: SERVICES -->
 <section class="s-sec s-svc" id="hp-svc">
   <div class="s-inner">
-    <div class="s-eye rv">What We Build</div>
+    <div class="s-eye eye-blue rv">What We Build</div>
     <h2 class="s-h rv" style="transition-delay:.1s">Search, visibility, and everything that connects them to <span class="dt-blue">pipeline.</span></h2>
     <p class="s-p rv" style="transition-delay:.15s">Three core engines. Six supporting systems. All working together inside SAGE.</p>
 
@@ -1529,7 +1536,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <!-- S11: FAQ -->
 <section class="s-sec s-faq" id="hp-faq">
   <div class="s-inner">
-    <div class="s-eye rv" style="text-align:center">Questions</div>
+    <div class="s-eye eye-amber rv" style="text-align:center;justify-content:center">Questions</div>
     <h2 class="s-h rv" style="transition-delay:.1s"><span class="dt-amber">Straight</span> answers.</h2>
     <p class="s-p rv" style="transition-delay:.15s">No fluff. Here&rsquo;s what SaaS founders actually ask before signing.</p>
     <div class="hp-faq-list">
@@ -1568,7 +1575,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <!-- MULTI TESTIMONIALS -->
 <section class="s-sec s-testimonials">
   <div class="s-inner">
-    <div class="s-eye rv" style="text-align:center">What Founders Say</div>
+    <div class="s-eye eye-green rv" style="text-align:center;justify-content:center">What Founders Say</div>
     <h2 class="s-h rv" style="transition-delay:.1s"><span class="dt-green">Real voices.</span> Real results.</h2>
     <p class="s-p rv" style="transition-delay:.15s">Don&rsquo;t take our word for it &mdash; hear from the SaaS leaders we&rsquo;ve worked with.</p>
     <div class="hp-testi-grid">
