@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>B2BMint — Font Comparison</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&f[]=cabinet-grotesk@700,800&f[]=general-sans@600,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;min-height:100vh}
+.top{padding:48px 40px 32px;text-align:center;border-bottom:1px solid rgba(255,255,255,.06)}
+.top h1{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#7DFFB3;margin-bottom:8px}
+.top p{color:#555;font-size:14px}
+.fonts{max-width:1100px;margin:0 auto;padding:40px}
+.font-card{border:1px solid rgba(255,255,255,.06);border-radius:20px;margin-bottom:32px;overflow:hidden;transition:border-color .3s}
+.font-card:hover{border-color:rgba(125,255,179,.15)}
+.font-head{padding:16px 28px;background:rgba(255,255,255,.02);display:flex;justify-content:space-between;align-items:center}
+.font-name{font-size:13px;font-weight:700;color:#7DFFB3;text-transform:uppercase;letter-spacing:2px}
+.font-meta{font-size:11px;color:#444}
+.font-body{padding:40px 40px 48px}
+.font-body h2{line-height:1.1;letter-spacing:-.02em;margin-bottom:16px}
+.font-body p{font-size:15px;color:#555;line-height:1.6;max-width:500px;font-family:'Inter',sans-serif}
+.previews{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:24px;border-radius:12px;overflow:hidden}
+.preview{padding:32px 28px}
+.preview.dark{background:#111}
+.preview.light{background:#f8f8f6}
+.preview.dark h3{color:#fff}
+.preview.light h3{color:#111}
+.preview h3{line-height:1.1;letter-spacing:-.02em}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-left:8px}
+.tag-hot{background:rgba(255,80,80,.15);color:#ff5050}
+.tag-rec{background:rgba(125,255,179,.1);color:#7DFFB3}
+.tag-new{background:rgba(100,150,255,.15);color:#6496ff}
+</style>
+</head>
+<body>
+
+<div class="top">
+<h1>Font Showdown</h1>
+<p>Same heading, 5 fonts. Your actual B2BMint copy. Pick the one that hits hardest.</p>
+</div>
+
+<div class="fonts">
+
+<!-- 1. JetBrains Mono -->
+<div class="font-card">
+<div class="font-head">
+<span class="font-name">1. JetBrains Mono <span class="tag tag-hot">Bold choice</span></span>
+<span class="font-meta">Monospace &bull; Used by Graphite.io</span>
+</div>
+<div class="font-body">
+<h2 style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:clamp(28px,4vw,48px);color:#fff">Your agency gave you traffic reports. Your CFO asked about pipeline.</h2>
+<p>Monospace headings = instant developer credibility. Unusual, memorable, techy. Nobody in the SEO agency space uses this.</p>
+</div>
+<div class="previews">
+<div class="preview dark"><h3 style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:28px">AI is rewriting how buyers find you.</h3></div>
+<div class="preview light"><h3 style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:28px">Real numbers from real clients.</h3></div>
+</div>
+</div>
+
+<!-- 2. Space Grotesk -->
+<div class="font-card">
+<div class="font-head">
+<span class="font-name">2. Space Grotesk <span class="tag tag-rec">Recommended</span></span>
+<span class="font-meta">Geometric Sans &bull; Premium SaaS feel</span>
+</div>
+<div class="font-body">
+<h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,4vw,48px);color:#fff">Your agency gave you traffic reports. Your CFO asked about pipeline.</h2>
+<p>Geometric with personality. The "g" and "a" letterforms are distinctive. Clean enough for enterprise, interesting enough to remember.</p>
+</div>
+<div class="previews">
+<div class="preview dark"><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:28px">AI is rewriting how buyers find you.</h3></div>
+<div class="preview light"><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:28px">Real numbers from real clients.</h3></div>
+</div>
+</div>
+
+<!-- 3. Satoshi -->
+<div class="font-card">
+<div class="font-head">
+<span class="font-name">3. Satoshi <span class="tag tag-hot">Trending</span></span>
+<span class="font-meta">Modern Geometric &bull; Used by Linear, Framer</span>
+</div>
+<div class="font-body">
+<h2 style="font-family:'Satoshi',sans-serif;font-weight:900;font-size:clamp(28px,4vw,48px);color:#fff">Your agency gave you traffic reports. Your CFO asked about pipeline.</h2>
+<p>THE startup font of 2024-2026. Clean, geometric, slightly rounded. If you want to look like a $100M SaaS company, this is the font.</p>
+</div>
+<div class="previews">
+<div class="preview dark"><h3 style="font-family:'Satoshi',sans-serif;font-weight:900;font-size:28px">AI is rewriting how buyers find you.</h3></div>
+<div class="preview light"><h3 style="font-family:'Satoshi',sans-serif;font-weight:900;font-size:28px">Real numbers from real clients.</h3></div>
+</div>
+</div>
+
+<!-- 4. Cabinet Grotesk -->
+<div class="font-card">
+<div class="font-head">
+<span class="font-name">4. Cabinet Grotesk <span class="tag tag-new">Unique</span></span>
+<span class="font-meta">Display Sans &bull; Punchy, distinctive</span>
+</div>
+<div class="font-body">
+<h2 style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:clamp(28px,4vw,48px);color:#fff">Your agency gave you traffic reports. Your CFO asked about pipeline.</h2>
+<p>Bold and quirky. The letterforms have subtle character that makes them stand out. Great for agencies that want personality.</p>
+</div>
+<div class="previews">
+<div class="preview dark"><h3 style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:28px">AI is rewriting how buyers find you.</h3></div>
+<div class="preview light"><h3 style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:28px">Real numbers from real clients.</h3></div>
+</div>
+</div>
+
+<!-- 5. General Sans -->
+<div class="font-card">
+<div class="font-head">
+<span class="font-name">5. General Sans</span>
+<span class="font-meta">Clean Sans &bull; Versatile, modern</span>
+</div>
+<div class="font-body">
+<h2 style="font-family:'General Sans',sans-serif;font-weight:700;font-size:clamp(28px,4vw,48px);color:#fff">Your agency gave you traffic reports. Your CFO asked about pipeline.</h2>
+<p>Clean and confident without being boring. Works at every size. The safe-but-modern choice.</p>
+</div>
+<div class="previews">
+<div class="preview dark"><h3 style="font-family:'General Sans',sans-serif;font-weight:700;font-size:28px">AI is rewriting how buyers find you.</h3></div>
+<div class="preview light"><h3 style="font-family:'General Sans',sans-serif;font-weight:700;font-size:28px">Real numbers from real clients.</h3></div>
+</div>
+</div>
+
+<!-- BONUS: Current Recoleta for reference -->
+<div class="font-card" style="border-color:rgba(255,255,255,.03);opacity:.5">
+<div class="font-head">
+<span class="font-name" style="color:#555">Current — Recoleta</span>
+<span class="font-meta">For reference</span>
+</div>
+<div class="font-body">
+<h2 style="font-family:Georgia,serif;font-weight:700;font-size:clamp(28px,4vw,48px);color:#555">Your agency gave you traffic reports. Your CFO asked about pipeline.</h2>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
