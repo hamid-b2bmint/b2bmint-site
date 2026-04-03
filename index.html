@@ -167,7 +167,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 /* ═══════════════════════════════════════════
    MOCKUP LAYER — appears after zoom completes
    ═══════════════════════════════════════════ */
-.mockup-layer{position:absolute;inset:0;z-index:3;opacity:0;will-change:opacity;pointer-events:none}
+.mockup-layer{position:absolute;inset:0;z-index:3;opacity:0;will-change:opacity;pointer-events:none;overflow:hidden}
 .mockup-layer.visible{pointer-events:auto}
 .mock-bg{position:absolute;inset:0;background-image:url('bg-mint.jpg');background-size:cover;background-position:center;background-color:#D2FFC1}
 .mock-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(210,255,193,.55) 0%,rgba(210,255,193,.35) 15%,rgba(210,255,193,.45) 35%,rgba(210,255,193,.65) 50%,rgba(210,255,193,.88) 65%,rgba(210,255,193,.97) 80%,rgba(210,255,193,1) 100%);z-index:1}
@@ -195,8 +195,8 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .mock-right.show{opacity:1}
 .mock-top{position:relative;width:100%;max-width:500px}
 .mock-right .chat-box{width:100%;max-width:500px;position:relative;z-index:10}
-.mock-right .card-left{position:absolute;top:50px;left:-180px;z-index:20;padding:0;margin:0}
-.mock-right .card-right{position:absolute;bottom:30px;right:-175px;z-index:20;padding:0;margin:0}
+.mock-right .card-left{position:absolute;top:50px;left:-100px;z-index:20;padding:0;margin:0}
+.mock-right .card-right{position:absolute;bottom:55px;right:-100px;z-index:20;padding:0;margin:0}
 
 /* Annotation connector — ICP card → user query */
 .mock-right .card-left::after{content:'';position:absolute;top:40%;left:100%;width:40px;border-top:1.5px dashed var(--forest);opacity:.3}
@@ -205,7 +205,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 /* Annotation connector — Brand card → brand mention */
 .mock-right .card-right::after{content:'';position:absolute;top:30%;right:100%;width:40px;border-top:1.5px dashed #DAA520;opacity:.35}
 .mock-right .card-right::before{content:'';position:absolute;top:30%;right:calc(100% + 40px);width:8px;height:8px;border-radius:50%;background:#DAA520;transform:translateY(-50%);opacity:.5;box-shadow:0 0 0 4px rgba(218,165,32,.12)}
-.mock-right .a-card{width:160px;padding:12px;box-shadow:0 8px 30px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.08)}
+.mock-right .a-card{width:150px;padding:10px 12px;box-shadow:0 8px 30px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.08)}
 .mock-right .a-title{font-size:12px;gap:6px}
 .mock-right .a-icon{width:24px;height:24px;border-radius:7px}
 .mock-right .a-desc{font-size:10px;line-height:1.35}
