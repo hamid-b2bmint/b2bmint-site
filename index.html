@@ -2295,8 +2295,9 @@ function tick(){
     showMockupInstant();
   }
 
-  // Once user scrolls past 90%, make hero static and extract mockup as standalone section
-  if(p>0.90&&slideTriggered){
+  // Once slide animation is complete (~58%), make hero static promptly
+  // Previous threshold of 0.90 created ~128vh of dead scrolling where nothing changed
+  if(p>0.62&&slideTriggered){
     makeHeroStatic();
   }
 }
