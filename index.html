@@ -169,26 +169,26 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
    ═══════════════════════════════════════════ */
 .mockup-layer{position:absolute;inset:0;z-index:3;opacity:0;will-change:opacity;pointer-events:none;overflow:hidden}
 .mockup-layer.visible{pointer-events:auto}
-.mock-bg{position:absolute;inset:0;background-image:url('bg-mint.jpg');background-size:cover;background-position:center;background-color:#D2FFC1}
-.mock-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(210,255,193,.55) 0%,rgba(210,255,193,.35) 15%,rgba(210,255,193,.45) 35%,rgba(210,255,193,.65) 50%,rgba(210,255,193,.88) 65%,rgba(210,255,193,.97) 80%,rgba(210,255,193,1) 100%);z-index:1}
-.mock-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 250px at 50% -5%,rgba(255,255,240,.25) 0%,transparent 70%);z-index:2}
+.mock-bg{position:absolute;inset:0;background:#fff}
 .mock-content{position:relative;z-index:10;width:50%;height:100%;display:flex;flex-direction:column;overflow:visible}
 
-/* LEFT SIDE — starts hidden, slides in when crisp-screen slides right */
-.mock-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.16,1,.3,1) .3s;padding:32px 20px 24px 48px;display:flex;flex-direction:column;justify-content:center;flex:1;overflow:hidden}
+/* LEFT SIDE — clean white bg with strong typography */
+.mock-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.16,1,.3,1) .3s;padding:48px 32px 32px 52px;display:flex;flex-direction:column;justify-content:center;flex:1;overflow:hidden;background:#fff}
 .mock-left.show{opacity:1;transform:translateX(0)}
-.mock-h{font-family:Recoleta,serif;font-size:clamp(22px,2.5vw,32px);font-weight:700;color:var(--forest-deep);line-height:1.15;margin-bottom:10px}
-.mock-p{font-size:14px;color:rgba(0,0,0,.45);line-height:1.6;margin-bottom:14px;max-width:420px}
+.mock-left-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--forest);opacity:.4;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.mock-left-eye::before{content:'';width:16px;height:3px;border-radius:3px;background:var(--lime)}
+.mock-h{font-family:Recoleta,serif;font-size:clamp(24px,2.8vw,36px);font-weight:700;color:var(--forest-deep);line-height:1.12;margin-bottom:12px}
+.mock-p{font-size:15px;color:rgba(0,0,0,.4);line-height:1.65;margin-bottom:20px;max-width:400px}
 .mock-left #platsTarget{display:none}
-.mock-left .met-wrap{max-width:100%;margin-top:14px}
-.mock-left .met-grid{grid-template-columns:repeat(4,1fr);gap:6px}
-.mock-left .met{padding:10px 8px}
-.mock-left .m-val{font-size:20px}
-.mock-left .m-lbl{font-size:10px;margin-top:3px}
-.mock-left .m-eye{font-size:9px;margin-bottom:3px}
-.mock-left .cta-w{text-align:left;margin-top:16px}
-.mock-left .cta-btn{font-size:14px;padding:14px 30px}
-.mock-left .cta-sub{justify-content:flex-start;margin-top:8px;gap:16px}
+.mock-left .met-wrap{max-width:100%;margin-top:8px}
+.mock-left .met-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+.mock-left .met{padding:16px 14px;border-radius:12px}
+.mock-left .m-val{font-size:24px}
+.mock-left .m-lbl{font-size:11px;margin-top:4px}
+.mock-left .m-eye{font-size:9px;margin-bottom:4px}
+.mock-left .cta-w{text-align:left;margin-top:20px}
+.mock-left .cta-btn{font-size:15px;padding:16px 36px}
+.mock-left .cta-sub{justify-content:flex-start;margin-top:10px;gap:16px;font-size:12px}
 
 /* RIGHT SIDE — positioned in the right 50% */
 .mock-right{position:absolute;right:-100%;top:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 32px;overflow:visible;z-index:15;opacity:0;transition:opacity .6s .5s;box-sizing:border-box}
@@ -1114,6 +1114,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       <div class="mock-content">
         <!-- LEFT SIDE (hidden until scroll triggers .show) -->
         <div class="mock-left" id="mockLeft">
+          <div class="mock-left-eye">The SAGE Effect</div>
           <h2 class="mock-h">AI is rewriting how<br>buyers find you.</h2>
           <p class="mock-p">Your next customer isn&rsquo;t Googling anymore &mdash; they&rsquo;re asking ChatGPT. This is what happens when SAGE makes you the answer.</p>
           <div id="platsTarget"></div>
