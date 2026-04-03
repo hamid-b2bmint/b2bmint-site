@@ -6,7 +6,8 @@
 <title>B2BMint — Scroll Hero</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&f[]=cabinet-grotesk@700,800&f[]=general-sans@600,700&display=swap" rel="stylesheet">
 <style>
 @font-face {
   font-family: 'Recoleta';
@@ -440,8 +441,14 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .s-eye.eye-amber::before{background:#E87B2F}
 .s-eye.eye-green::before{background:#1AAD6B}
 .s-h{font-family:var(--display);font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:18px;color:var(--forest-deep)}
-/* Degular Display heading — Zapier's actual font */
-.s-h-inter{font-family:'Degular Display',sans-serif !important;font-weight:700 !important;font-size:clamp(32px,4.5vw,56px) !important;letter-spacing:-.02em !important;line-height:1.1 !important;color:var(--forest-deep) !important}
+/* Font test classes — one per section for comparison */
+.s-h-f1{font-family:'JetBrains Mono',monospace !important;font-weight:700 !important;font-size:clamp(26px,3.5vw,44px) !important;letter-spacing:-.02em !important;line-height:1.12 !important}
+.s-h-f2{font-family:'Space Grotesk',sans-serif !important;font-weight:700 !important;font-size:clamp(30px,4.2vw,52px) !important;letter-spacing:-.03em !important;line-height:1.08 !important}
+.s-h-f3{font-family:'Satoshi',sans-serif !important;font-weight:900 !important;font-size:clamp(30px,4.2vw,52px) !important;letter-spacing:-.02em !important;line-height:1.08 !important}
+.s-h-f4{font-family:'Cabinet Grotesk',sans-serif !important;font-weight:800 !important;font-size:clamp(30px,4.2vw,52px) !important;letter-spacing:-.02em !important;line-height:1.1 !important}
+.s-h-f5{font-family:'General Sans',sans-serif !important;font-weight:700 !important;font-size:clamp(30px,4.2vw,52px) !important;letter-spacing:-.02em !important;line-height:1.1 !important}
+/* Labels */
+.font-label{display:inline-block;font-family:'Inter',sans-serif !important;font-size:10px !important;font-weight:700 !important;letter-spacing:2px !important;text-transform:uppercase !important;background:rgba(125,255,179,.1);color:var(--lime);padding:4px 10px;border-radius:6px;margin-bottom:8px;line-height:1 !important}
 .s-p{font-size:17px;line-height:1.7;color:rgba(0,0,0,.6);max-width:600px}
 .s-card{border-radius:20px;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.04),0 12px 48px rgba(0,0,0,.06);padding:36px;background:#fff}
 .s-grid2{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
@@ -1193,7 +1200,8 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
     <div class="s-grid2">
       <div>
         <div class="s-eye eye-rose rv">The Problem</div>
-        <h2 class="s-h s-h-inter rv" style="transition-delay:.1s">Your agency gave you traffic reports. Your CFO asked about <span class="dt-rose">pipeline.</span></h2>
+        <div class="font-label">Font 1: JetBrains Mono</div>
+        <h2 class="s-h s-h-f1 rv" style="transition-delay:.1s">Your agency gave you traffic reports. Your CFO asked about <span class="dt-rose">pipeline.</span></h2>
         <p class="s-p rv" style="transition-delay:.2s">$50K+ spent. 68 blog posts. 12 months of &ldquo;it takes time.&rdquo; Zero demos from search. Your agency optimized for keywords. Your buyers moved to AI.</p>
         <div class="s-pain-signs rv" style="transition-delay:.25s">
           <div class="s-pain-signs-title">Sound familiar?</div>
@@ -1225,7 +1233,8 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
     <div class="s-grid2">
       <div>
         <div class="s-eye eye-purple rv">The Invisible Loss</div>
-        <h2 class="s-h rv" style="transition-delay:.1s">A competitor with a weaker product is <span class="dt-purple">winning your buyers.</span></h2>
+        <div class="font-label">Font 2: Space Grotesk</div>
+        <h2 class="s-h s-h-f2 rv" style="transition-delay:.1s">A competitor with a weaker product is <span class="dt-purple">winning your buyers.</span></h2>
         <p class="s-p rv" style="transition-delay:.2s">They don&rsquo;t have a better product. They have better content architecture. They show up when AI answers. You don&rsquo;t.</p>
         <div class="s-loss-quote rv" style="transition-delay:.3s">&ldquo;We kept losing deals to a startup half our size. Turns out, ChatGPT was recommending them for every query in our category.&rdquo;</div>
       </div>
@@ -1277,7 +1286,8 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <section class="s-sec s-evo" id="hp-evo">
   <div class="s-inner">
     <div class="s-eye eye-blue rv">From Search to Answers</div>
-    <h2 class="s-h rv" style="transition-delay:.1s">Search used to mean ten blue links. Now it means <span class="dt-blue">one recommended answer.</span></h2>
+    <div class="font-label">Font 3: Satoshi</div>
+    <h2 class="s-h s-h-f3 rv" style="transition-delay:.1s">Search used to mean ten blue links. Now it means <span class="dt-blue">one recommended answer.</span></h2>
     <div class="hp-evo-sub rv" style="transition-delay:.15s">The entire buying journey shifted. Your buyers ask AI for recommendations before they ever open Google.</div>
     <div class="hp-evo-wrap">
       <!-- OLD: Google SERP -->
@@ -1349,7 +1359,8 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <section class="s-sec s-sys" id="hp-sys">
   <div class="s-inner">
     <div class="s-eye eye-amber rv">The SAGE Engine</div>
-    <h2 class="s-h rv" style="transition-delay:.1s">One engine. Every search platform. <span class="dt-amber">Predictable pipeline.</span></h2>
+    <div class="font-label">Font 4: Cabinet Grotesk</div>
+    <h2 class="s-h s-h-f4 rv" style="transition-delay:.1s">One engine. Every search platform. <span class="dt-amber">Predictable pipeline.</span></h2>
     <p class="s-p rv" style="transition-delay:.2s">Most agencies optimize for Google and ignore AI. We built SAGE to dominate both simultaneously. One system that builds authority, captures every buyer search, and converts it into revenue.</p>
 
     <!-- SAGE badge -->
@@ -1429,7 +1440,8 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 <section class="s-sec s-tl" id="hp-tl">
   <div class="s-inner">
     <div class="s-eye eye-rose rv">The Timeline</div>
-    <h2 class="s-h rv" style="transition-delay:.1s">Results in <span class="dt-rose">weeks, not months.</span></h2>
+    <div class="font-label">Font 5: General Sans</div>
+    <h2 class="s-h s-h-f5 rv" style="transition-delay:.1s">Results in <span class="dt-rose">weeks, not months.</span></h2>
     <p class="s-p rv" style="transition-delay:.2s">No 12-month &ldquo;trust the process&rdquo; pitch. Here&rsquo;s exactly what happens and when, backed by real client data.</p>
 
     <div class="hp-tl-grid" id="tlGrid">
