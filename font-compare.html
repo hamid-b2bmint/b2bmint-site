@@ -2,120 +2,114 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>B2BMint — Font Comparison</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&f[]=cabinet-grotesk@700,800&f[]=general-sans@600,700&display=swap" rel="stylesheet">
+<title>B2BMint — Font Showdown Round 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Syne:wght@700;800&family=DM+Serif+Display&family=Instrument+Serif:ital@0;1&family=Archivo+Black&family=Plus+Jakarta+Sans:wght@700;800&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600;700&f[]=fraunces@700;800;900&f[]=zodiak@700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#D2FFC1;color:#093829;min-height:100vh;padding:0}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#093829;color:#fff;min-height:100vh}
+.hero{padding:60px 48px 40px;text-align:center;border-bottom:1px solid rgba(125,255,179,.06)}
+.hero h1{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:4px;color:#7DFFB3;margin-bottom:6px}
+.hero p{color:rgba(255,255,255,.3);font-size:13px}
 
-.section{padding:80px 60px;border-bottom:2px solid rgba(9,56,41,.06);position:relative}
-.section:nth-child(even){background:rgba(9,56,41,.02)}
+.grid{display:grid;grid-template-columns:1fr 1fr;max-width:1200px;margin:0 auto}
+.card{padding:52px 44px;border:1px solid rgba(125,255,179,.04);position:relative;transition:background .3s}
+.card:hover{background:rgba(125,255,179,.02)}
 
-.label{display:inline-flex;align-items:center;gap:8px;margin-bottom:24px}
-.label-pill{width:20px;height:4px;border-radius:4px;background:#C4325B}
-.label-text{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:3px;color:#093829;opacity:.35}
-.label-tag{font-size:10px;font-weight:700;background:rgba(9,56,41,.08);color:#093829;padding:3px 10px;border-radius:6px;margin-left:8px}
-.label-tag.rec{background:rgba(125,255,179,.4);color:#093829}
+.card-num{position:absolute;top:16px;right:20px;font-size:80px;font-weight:900;color:rgba(125,255,179,.04);line-height:1;font-family:'Plus Jakarta Sans',sans-serif}
+.card-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:rgba(125,255,179,.4);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.card-label::before{content:'';width:14px;height:3px;border-radius:3px;background:#7DFFB3}
 
-h2{color:#093829;margin-bottom:20px;line-height:1.1;letter-spacing:-.02em}
-h2 span{color:#C4325B}
+h2{margin-bottom:16px;line-height:1.08}
+h2 .hl{color:#7DFFB3}
 
-p.sub{font-size:15px;color:rgba(9,56,41,.4);line-height:1.65;max-width:500px;margin-bottom:0;font-family:'Inter',sans-serif}
+.desc{font-size:12px;color:rgba(255,255,255,.25);line-height:1.6;max-width:400px;font-family:'Plus Jakarta Sans',sans-serif;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.04)}
 
-.number{position:absolute;top:20px;right:40px;font-size:120px;font-weight:900;color:rgba(9,56,41,.03);font-family:'Inter',sans-serif;line-height:1}
+/* special badges */
+.badge{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:3px 8px;border-radius:4px;margin-left:6px;vertical-align:middle}
+.badge-fire{background:rgba(255,80,50,.15);color:#ff5032}
+.badge-star{background:rgba(125,255,179,.12);color:#7DFFB3}
+.badge-new{background:rgba(100,150,255,.12);color:#6496ff}
+.badge-hot{background:rgba(255,200,50,.12);color:#ffc832}
 
-/* Pain section elements */
-.pain-signs{margin-top:28px}
-.pain-sign{display:flex;align-items:center;gap:12px;padding:8px 0;font-size:14px;color:rgba(9,56,41,.6)}
-.pain-sign::before{content:'✕';color:#c00;font-size:12px;font-weight:700;width:22px;height:22px;background:rgba(204,0,0,.06);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+/* Full-width showcase for the winner */
+.showcase{grid-column:1/-1;padding:64px 48px;background:rgba(125,255,179,.03);border:1px solid rgba(125,255,179,.08)}
+.showcase .card-label{color:#7DFFB3;opacity:1}
 </style>
 </head>
 <body>
 
-<!-- Font 1: JetBrains Mono -->
-<div class="section">
-<span class="number">01</span>
-<div class="label">
-<span class="label-pill"></span>
-<span class="label-text">The Problem</span>
-<span class="label-tag">JetBrains Mono</span>
-</div>
-<h2 style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:clamp(28px,4vw,46px)">Your agency gave you traffic reports. Your CFO asked about <span>pipeline.</span></h2>
-<p class="sub">$50K+ spent. 68 blog posts. 12 months of "it takes time." Zero demos from search. Your agency optimized for keywords. Your buyers moved to AI.</p>
-<div class="pain-signs">
-<div class="pain-sign">Blog posts ranking on page 4 that nobody reads</div>
-<div class="pain-sign">Monthly reports showing "impressions up" but zero demos</div>
-<div class="pain-sign">Competitors showing up in AI answers while you're invisible</div>
-</div>
+<div class="hero">
+<h1>Round 2 — The Real Contenders</h1>
+<p>8 fonts that actually have personality. Same heading. Your mint bg on dark. Pick one.</p>
 </div>
 
-<!-- Font 2: Space Grotesk -->
-<div class="section">
-<span class="number">02</span>
-<div class="label">
-<span class="label-pill"></span>
-<span class="label-text">The Problem</span>
-<span class="label-tag">Space Grotesk</span>
-</div>
-<h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,4vw,48px);letter-spacing:-.03em">Your agency gave you traffic reports. Your CFO asked about <span>pipeline.</span></h2>
-<p class="sub">$50K+ spent. 68 blog posts. 12 months of "it takes time." Zero demos from search. Your agency optimized for keywords. Your buyers moved to AI.</p>
-<div class="pain-signs">
-<div class="pain-sign">Blog posts ranking on page 4 that nobody reads</div>
-<div class="pain-sign">Monthly reports showing "impressions up" but zero demos</div>
-<div class="pain-sign">Competitors showing up in AI answers while you're invisible</div>
-</div>
+<div class="grid">
+
+<!-- 1. Clash Display -->
+<div class="card showcase">
+<span class="card-num">01</span>
+<div class="card-label">Clash Display <span class="badge badge-star">Top Pick</span></div>
+<h2 style="font-family:'Clash Display',sans-serif;font-weight:700;font-size:clamp(28px,3.8vw,46px);letter-spacing:-.02em;color:#fff">Your agency gave you traffic reports. Your CFO asked about <span class="hl">pipeline.</span></h2>
+<p class="desc">THE design-world font of 2024-2026. Geometric with attitude. The "a" is iconic. Used by the coolest startups. Bold without being aggressive.</p>
 </div>
 
-<!-- Font 3: Satoshi -->
-<div class="section">
-<span class="number">03</span>
-<div class="label">
-<span class="label-pill"></span>
-<span class="label-text">The Problem</span>
-<span class="label-tag rec">Satoshi — Recommended</span>
-</div>
-<h2 style="font-family:'Satoshi',sans-serif;font-weight:900;font-size:clamp(28px,4vw,50px);letter-spacing:-.02em">Your agency gave you traffic reports. Your CFO asked about <span>pipeline.</span></h2>
-<p class="sub">$50K+ spent. 68 blog posts. 12 months of "it takes time." Zero demos from search. Your agency optimized for keywords. Your buyers moved to AI.</p>
-<div class="pain-signs">
-<div class="pain-sign">Blog posts ranking on page 4 that nobody reads</div>
-<div class="pain-sign">Monthly reports showing "impressions up" but zero demos</div>
-<div class="pain-sign">Competitors showing up in AI answers while you're invisible</div>
-</div>
+<!-- 2. Bricolage Grotesque -->
+<div class="card">
+<span class="card-num">02</span>
+<div class="card-label">Bricolage Grotesque <span class="badge badge-fire">Unique</span></div>
+<h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.8vw,46px);letter-spacing:-.02em;color:#fff">Your agency gave you traffic reports. Your CFO asked about <span class="hl">pipeline.</span></h2>
+<p class="desc">Quirky editorial feel. Each letter has subtle personality — look at the "g" and "y". Feels like a premium magazine. Google Font = free.</p>
 </div>
 
-<!-- Font 4: Cabinet Grotesk -->
-<div class="section">
-<span class="number">04</span>
-<div class="label">
-<span class="label-pill"></span>
-<span class="label-text">The Problem</span>
-<span class="label-tag">Cabinet Grotesk</span>
-</div>
-<h2 style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:clamp(28px,4vw,50px);letter-spacing:-.02em">Your agency gave you traffic reports. Your CFO asked about <span>pipeline.</span></h2>
-<p class="sub">$50K+ spent. 68 blog posts. 12 months of "it takes time." Zero demos from search. Your agency optimized for keywords. Your buyers moved to AI.</p>
-<div class="pain-signs">
-<div class="pain-sign">Blog posts ranking on page 4 that nobody reads</div>
-<div class="pain-sign">Monthly reports showing "impressions up" but zero demos</div>
-<div class="pain-sign">Competitors showing up in AI answers while you're invisible</div>
-</div>
+<!-- 3. Syne -->
+<div class="card">
+<span class="card-num">03</span>
+<div class="card-label">Syne <span class="badge badge-new">Bold</span></div>
+<h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,3.8vw,46px);letter-spacing:-.01em;color:#fff">Your agency gave you traffic reports. Your CFO asked about <span class="hl">pipeline.</span></h2>
+<p class="desc">Dramatic and futuristic. Wide letterforms with a tech/space vibe. Makes everything feel important. Very distinctive — nobody else in your space uses this.</p>
 </div>
 
-<!-- Font 5: General Sans -->
-<div class="section">
-<span class="number">05</span>
-<div class="label">
-<span class="label-pill"></span>
-<span class="label-text">The Problem</span>
-<span class="label-tag">General Sans</span>
+<!-- 4. Fraunces -->
+<div class="card">
+<span class="card-num">04</span>
+<div class="card-label">Fraunces <span class="badge badge-hot">Creative</span></div>
+<h2 style="font-family:'Fraunces',serif;font-weight:900;font-size:clamp(28px,3.8vw,46px);letter-spacing:-.01em;color:#fff;font-style:normal">Your agency gave you traffic reports. Your CFO asked about <span class="hl">pipeline.</span></h2>
+<p class="desc">Soft, wonky serif with TONS of personality. The weight 900 is thick and juicy. Warm, human, memorable. Nothing like any agency site out there.</p>
 </div>
-<h2 style="font-family:'General Sans',sans-serif;font-weight:700;font-size:clamp(28px,4vw,50px);letter-spacing:-.02em">Your agency gave you traffic reports. Your CFO asked about <span>pipeline.</span></h2>
-<p class="sub">$50K+ spent. 68 blog posts. 12 months of "it takes time." Zero demos from search. Your agency optimized for keywords. Your buyers moved to AI.</p>
-<div class="pain-signs">
-<div class="pain-sign">Blog posts ranking on page 4 that nobody reads</div>
-<div class="pain-sign">Monthly reports showing "impressions up" but zero demos</div>
-<div class="pain-sign">Competitors showing up in AI answers while you're invisible</div>
+
+<!-- 5. Unbounded -->
+<div class="card">
+<span class="card-num">05</span>
+<div class="card-label">Unbounded <span class="badge badge-new">Modern</span></div>
+<h2 style="font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(24px,3.2vw,40px);letter-spacing:-.01em;color:#fff">Your agency gave you traffic reports. Your CFO asked about <span class="hl">pipeline.</span></h2>
+<p class="desc">Super rounded, ultra modern, feels like a tech brand. Very wide and heavy. Great for short punchy headings. Google Font = free.</p>
 </div>
+
+<!-- 6. Instrument Serif -->
+<div class="card">
+<span class="card-num">06</span>
+<div class="card-label">Instrument Serif <span class="badge badge-star">Elegant</span></div>
+<h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,4vw,50px);letter-spacing:-.01em;color:#fff">Your agency gave you traffic reports. Your CFO asked about <span class="hl">pipeline.</span></h2>
+<p class="desc">Thin, elegant, editorial. The italic is stunning. Feels like the New York Times or a high-end magazine. Trust and authority in every letter.</p>
+</div>
+
+<!-- 7. Zodiak -->
+<div class="card">
+<span class="card-num">07</span>
+<div class="card-label">Zodiak <span class="badge badge-fire">Statement</span></div>
+<h2 style="font-family:'Zodiak',serif;font-weight:800;font-size:clamp(28px,3.8vw,46px);letter-spacing:-.01em;color:#fff">Your agency gave you traffic reports. Your CFO asked about <span class="hl">pipeline.</span></h2>
+<p class="desc">High-contrast serif with sharp edges. Commanding and authoritative. The thick-thin strokes demand attention. From Fontshare = free.</p>
+</div>
+
+<!-- 8. Archivo Black -->
+<div class="card">
+<span class="card-num">08</span>
+<div class="card-label">Archivo Black <span class="badge badge-hot">Impact</span></div>
+<h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.8vw,46px);letter-spacing:-.02em;color:#fff;text-transform:none">Your agency gave you traffic reports. Your CFO asked about <span class="hl">pipeline.</span></h2>
+<p class="desc">Pure impact. Heavy, compressed, unapologetic. Every word hits like a billboard. When you want your heading to punch people in the face.</p>
+</div>
+
 </div>
 
 </body>
