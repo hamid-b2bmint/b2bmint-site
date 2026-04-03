@@ -197,20 +197,17 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .mock-right.show{opacity:1}
 .mock-top{position:relative;width:100%;max-width:500px}
 .mock-right .chat-box{width:100%;max-width:500px;position:relative;z-index:10}
-.mock-right .card-left{position:absolute;top:30px;left:-220px;z-index:20;padding:0;margin:0}
-.mock-right .card-right{position:absolute;bottom:30px;right:-220px;z-index:20;padding:0;margin:0}
+.mock-right .card-left{position:absolute;top:20px;left:-160px;z-index:20;padding:0;margin:0}
+.mock-right .card-right{position:absolute;bottom:60px;right:-140px;z-index:20;padding:0;margin:0}
+/* hide the dashed connector lines/arrows on cards */
+.mock-right .a-card::before,.mock-right .a-card::after{display:none !important}
+.card-left .anno-line,.card-left .anno-dot,.card-right .anno-line,.card-right .anno-dot{display:none !important}
 
-/* Annotation connector — ICP card → user query */
-.mock-right .card-left::after{content:'';position:absolute;top:40%;left:100%;width:40px;border-top:1.5px dashed var(--forest);opacity:.3}
-.mock-right .card-left::before{content:'';position:absolute;top:40%;left:calc(100% + 40px);width:8px;height:8px;border-radius:50%;background:var(--forest);transform:translateY(-50%);opacity:.5;box-shadow:0 0 0 4px rgba(9,56,41,.12)}
-
-/* Annotation connector — Brand card → brand mention */
-.mock-right .card-right::after{content:'';position:absolute;top:30%;right:100%;width:40px;border-top:1.5px dashed #DAA520;opacity:.35}
-.mock-right .card-right::before{content:'';position:absolute;top:30%;right:calc(100% + 40px);width:8px;height:8px;border-radius:50%;background:#DAA520;transform:translateY(-50%);opacity:.5;box-shadow:0 0 0 4px rgba(218,165,32,.12)}
-.mock-right .a-card{width:150px;padding:10px 12px;box-shadow:0 8px 30px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.08)}
-.mock-right .a-title{font-size:12px;gap:6px}
-.mock-right .a-icon{width:24px;height:24px;border-radius:7px}
-.mock-right .a-desc{font-size:10px;line-height:1.35}
+/* Connectors removed — clean cards */
+.mock-right .a-card{width:170px;padding:16px;box-shadow:0 8px 30px rgba(0,0,0,.15),0 2px 8px rgba(0,0,0,.08);border-radius:14px;border:1px solid rgba(0,0,0,.04)}
+.mock-right .a-title{font-size:13px;gap:8px}
+.mock-right .a-icon{width:28px;height:28px;border-radius:8px}
+.mock-right .a-desc{font-size:11px;line-height:1.45;color:rgba(0,0,0,.4)}
 
 /* Cards */
 .card-left{display:flex;flex-direction:column;align-items:flex-end;padding-top:30px;margin-right:-10px;z-index:20;opacity:0;transform:translateX(-30px);will-change:opacity,transform}
