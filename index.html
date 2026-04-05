@@ -170,36 +170,39 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .mockup-layer{position:absolute;inset:0;z-index:3;opacity:0;will-change:opacity;pointer-events:none;overflow:hidden}
 .mockup-layer.visible{pointer-events:auto}
 .mock-bg{position:absolute;inset:0;background:#093829}
-.mock-content{position:relative;z-index:10;width:52%;height:100%;display:flex;flex-direction:column;overflow:visible}
+.mock-content{position:relative;z-index:10;width:48%;height:100%;display:flex;flex-direction:column;overflow:visible}
 
-/* LEFT SIDE */
-.mock-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.16,1,.3,1) .3s;padding:28px 24px 24px 44px;display:flex;flex-direction:column;justify-content:center;flex:1;overflow:hidden;position:relative}
+/* LEFT SIDE — clean: heading + copy + CTA only */
+.mock-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.16,1,.3,1) .3s;padding:0 32px 0 48px;display:flex;flex-direction:column;justify-content:center;flex:1;overflow:hidden;position:relative}
 .mock-left.show{opacity:1;transform:translateX(0)}
 
-.mock-left-eye{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;color:var(--lime);opacity:.5;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.mock-left-eye{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;color:var(--lime);opacity:.5;margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .mock-left-eye::before{content:'';width:20px;height:4px;border-radius:4px;background:var(--lime)}
-.mock-h{font-family:var(--display);font-size:clamp(26px,3vw,40px);font-weight:700;color:#fff;line-height:1.1;margin-bottom:12px}
-.mock-p{font-size:15px;color:rgba(255,255,255,.35);line-height:1.6;margin-bottom:20px;max-width:380px}
+.mock-h{font-family:var(--display);font-size:clamp(28px,3.5vw,44px);font-weight:700;color:#fff;line-height:1.08;margin-bottom:16px}
+.mock-p{font-size:16px;color:rgba(255,255,255,.4);line-height:1.65;margin-bottom:28px;max-width:400px}
 
-/* 3 mini proof cards */
-.mock-proofs{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
-.mock-proof{display:flex;align-items:center;gap:14px;padding:14px 16px;background:rgba(125,255,179,.06);border:1px solid rgba(125,255,179,.08);border-radius:12px;transition:all .3s}
-.mock-proof:hover{background:rgba(125,255,179,.1);border-color:rgba(125,255,179,.15);transform:translateX(4px)}
-.mock-proof-num{font-family:var(--display);font-size:24px;font-weight:700;color:var(--lime);line-height:1;min-width:60px}
-.mock-proof-text{font-size:12px;color:rgba(255,255,255,.4);line-height:1.35}
-.mock-proof-text strong{color:rgba(255,255,255,.7);display:block;font-size:13px;margin-bottom:1px}
+/* stats inline row */
+.mock-stats-row{display:flex;gap:24px;margin-bottom:28px}
+.mock-stat-item{display:flex;flex-direction:column}
+.mock-stat-item .num{font-family:var(--display);font-size:28px;font-weight:700;color:var(--lime);line-height:1}
+.mock-stat-item .lbl{font-size:11px;color:rgba(255,255,255,.25);margin-top:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+
+/* buttons row */
+.mock-btns{display:flex;gap:12px;align-items:center;margin-bottom:16px}
 
 .mock-left #platsTarget{display:none}
 .mock-left .met-wrap{display:none}
-.mock-left .cta-w{text-align:left;margin-top:4px}
+.mock-left .cta-w{text-align:left}
 .mock-left .cta-btn{font-size:15px;padding:16px 36px;background:var(--lime);color:var(--forest-deep);font-weight:800}
 .mock-left .cta-btn:hover{box-shadow:0 8px 28px rgba(125,255,179,.25)}
-.mock-left .cta-sub{justify-content:flex-start;margin-top:8px;gap:14px;font-size:11px;color:rgba(255,255,255,.2)}
-.mock-left .cta-chk{color:var(--lime)}
+.mock-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:16px 28px;background:transparent;border:1.5px solid rgba(255,255,255,.15);color:#fff;font-weight:700;font-size:14px;border-radius:60px;text-decoration:none;transition:all .3s;cursor:pointer}
+.mock-btn-secondary:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.04)}
+.mock-btn-secondary svg{width:16px;height:16px}
+.mock-left .cta-sub{display:none}
 .mock-left .scroll-m{color:var(--lime)}
 
 /* RIGHT SIDE — positioned in the right 50% */
-.mock-right{position:absolute;right:-96%;top:0;width:96%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 20px 20px 0;overflow:visible;z-index:15;opacity:0;transition:opacity .6s .5s;box-sizing:border-box}
+.mock-right{position:absolute;right:-104%;top:0;width:104%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 40px;overflow:visible;z-index:15;opacity:0;transition:opacity .6s .5s;box-sizing:border-box}
 .mock-right.show{opacity:1}
 .mock-top{position:relative;width:100%;max-width:500px}
 .mock-right .chat-box{width:100%;max-width:500px;position:relative;z-index:10}
@@ -1117,13 +1120,17 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       <div class="mock-content">
         <!-- LEFT SIDE (hidden until scroll triggers .show) -->
         <div class="mock-left" id="mockLeft">
-          <div class="mock-left-eye">The SAGE Effect</div>
-          <h2 class="mock-h">This is what happens when AI recommends you.</h2>
-          <p class="mock-p">Real results from real SaaS companies using the SAGE engine to dominate search and AI visibility.</p>
-          <div class="mock-proofs">
-            <div class="mock-proof"><div class="mock-proof-num">4,244</div><div class="mock-proof-text"><strong>AI Citations Built</strong>Across ChatGPT, Claude, Perplexity, Gemini</div></div>
-            <div class="mock-proof"><div class="mock-proof-num">$1.2M</div><div class="mock-proof-text"><strong>Pipeline Generated</strong>From organic and AI channels in months 4-6</div></div>
-            <div class="mock-proof"><div class="mock-proof-num">47</div><div class="mock-proof-text"><strong>SaaS Companies</strong>Trust B2BMint for search and AI presence</div></div>
+          <div class="mock-left-eye">Live Demo</div>
+          <h2 class="mock-h">See how SAGE makes AI recommend you.</h2>
+          <p class="mock-p">Watch a real AI conversation where your brand becomes the #1 answer. This is what your buyers see.</p>
+          <div class="mock-stats-row">
+            <div class="mock-stat-item"><div class="num">4,244</div><div class="lbl">AI Citations</div></div>
+            <div class="mock-stat-item"><div class="num">$1.2M</div><div class="lbl">Pipeline</div></div>
+            <div class="mock-stat-item"><div class="num">47</div><div class="lbl">SaaS Clients</div></div>
+          </div>
+          <div class="mock-btns">
+            <a href="https://calendly.com/hamid-b2bmint/30min" class="cta-btn" style="font-size:15px;padding:16px 36px;background:var(--lime);color:var(--forest-deep)">Book a Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:16px;height:16px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="#hp-pain" class="mock-btn-secondary">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></a>
           </div>
           <div id="platsTarget"></div>
           <div id="metTarget"></div>
