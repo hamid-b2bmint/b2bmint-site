@@ -197,6 +197,27 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .mock-btn-sub span{display:flex;align-items:center;gap:4px}
 .mock-btn-sub svg{width:12px;height:12px;stroke:var(--lime);fill:none;stroke-width:2.5}
 
+/* result cards */
+.mock-results{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
+.mock-result{padding:16px 18px;border-radius:14px;flex:1;min-width:120px;position:relative;overflow:hidden;transition:transform .3s}
+.mock-result:hover{transform:translateY(-3px)}
+.mock-result::after{content:'';position:absolute;top:-12px;right:-12px;width:50px;height:50px;border-radius:50%;opacity:.12;pointer-events:none}
+.mr-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;opacity:.7}
+.mr-num{font-family:var(--display);font-size:28px;font-weight:700;line-height:1;margin-bottom:6px}
+.mr-desc{font-size:11px;line-height:1.4;opacity:.55}
+/* green */
+.mr-green{background:#C8F7B0;border:1.5px solid #3DA035}
+.mr-green::after{background:#3DA035}
+.mr-green .mr-label{color:#1A6B20}.mr-green .mr-num{color:#0A4420}.mr-green .mr-desc{color:#1A6B20}
+/* blue */
+.mr-blue{background:#CEEBFF;border:1.5px solid #2B6FD0}
+.mr-blue::after{background:#2B6FD0}
+.mr-blue .mr-label{color:#0A3A7A}.mr-blue .mr-num{color:#0A3A7A}.mr-blue .mr-desc{color:#0A3A7A}
+/* gold */
+.mr-gold{background:#FFF9B8;border:1.5px solid #C9A800}
+.mr-gold::after{background:#C9A800}
+.mr-gold .mr-label{color:#6B5500}.mr-gold .mr-num{color:#5C4D00}.mr-gold .mr-desc{color:#6B5500}
+
 .mock-left #platsTarget{display:none}
 .mock-left .met-wrap{display:none}
 .mock-left .cta-w{display:none}
@@ -1127,6 +1148,12 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
           <div class="mock-btns">
             <a href="https://calendly.com/hamid-b2bmint/30min" class="mock-btn-primary">Get your AI visibility audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             <div class="mock-btn-sub"><span><svg viewBox="0 0 24 24" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Free</span><span><svg viewBox="0 0 24 24" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> 30 min</span><span><svg viewBox="0 0 24 24" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Founder-led</span></div>
+          </div>
+          <!-- Result cards -->
+          <div class="mock-results">
+            <div class="mock-result mr-green"><div class="mr-label">Avg. Client Result</div><div class="mr-num">340%</div><div class="mr-desc">More demos from organic search within 6 months of SAGE activation</div></div>
+            <div class="mock-result mr-blue"><div class="mr-label">AI Visibility</div><div class="mr-num">6/6</div><div class="mr-desc">Clients cited on ChatGPT, Claude, Perplexity, Gemini, AI Overviews &amp; Google</div></div>
+            <div class="mock-result mr-gold"><div class="mr-label">Pipeline Impact</div><div class="mr-num">$1.2M</div><div class="mr-desc">Average pipeline generated from search and AI channels in months 4-6</div></div>
           </div>
           <div id="platsTarget"></div>
           <div id="metTarget"></div>
