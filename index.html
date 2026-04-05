@@ -236,8 +236,8 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .mock-right.show{opacity:1}
 .mock-top{position:relative;width:100%;max-width:500px}
 .mock-right .chat-box{width:100%;max-width:500px;position:relative;z-index:10}
-.mock-right .card-left{position:absolute;top:20px;left:-160px;z-index:20;padding:0;margin:0}
-.mock-right .card-right{position:absolute;bottom:60px;right:-140px;z-index:20;padding:0;margin:0}
+.mock-right .card-left{display:none}
+.mock-right .card-right{display:none}
 /* hide the dashed connector lines/arrows on cards */
 .mock-right .a-card::before,.mock-right .a-card::after{display:none !important}
 .card-left .anno-line,.card-left .anno-dot,.card-right .anno-line,.card-right .anno-dot{display:none !important}
@@ -350,12 +350,14 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
 /* Platform indicator strip */
 .plat-dots{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px}
-.plat-dot{height:44px;border-radius:22px;background:#fff;border:1.5px solid rgba(0,0,0,.06);display:flex;align-items:center;gap:8px;padding:0 16px;transition:all .3s;opacity:1;cursor:pointer;user-select:none;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.plat-dot:hover{background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.1)}
-.plat-dot.pd-active{border-color:var(--forest);background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+.plat-dot{height:44px;border-radius:22px;background:#fff;border:1.5px solid rgba(0,0,0,.06);display:flex;align-items:center;gap:8px;padding:0 16px;transition:all .3s;opacity:1;cursor:pointer;user-select:none;box-shadow:0 2px 8px rgba(0,0,0,.06);position:relative;overflow:hidden}
+.plat-dot:hover{box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.plat-dot.pd-active{border-color:var(--forest);box-shadow:0 4px 16px rgba(0,0,0,.12)}
 .plat-dot img,.plat-dot svg{width:24px;height:24px;object-fit:contain;flex-shrink:0}
-.plat-dot .pd-name{font-size:13px;font-weight:700;color:var(--forest-deep);white-space:nowrap;display:none}
-.plat-dot.pd-active .pd-name{display:block}
+.plat-dot .pd-name{font-size:13px;font-weight:700;color:var(--forest-deep);white-space:nowrap}
+/* progress bar on active dot */
+.plat-dot::after{content:'';position:absolute;bottom:0;left:0;height:2px;width:0;background:var(--lime);transition:none}
+.plat-dot.pd-active::after{width:100%;transition:width 6s linear}
 
 /* Platforms */
 .plats{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:14px;flex-wrap:wrap;z-index:12;opacity:0;transform:translateY(20px)}
@@ -2214,41 +2216,32 @@ function typeCarouselText(plainText,htmlText,targetEl,speed,cb){
 
 function showPlatform(idx){
   const p=PLATFORMS[idx];
-  // Fade out
-  cBox.classList.add('cb-out');
+  // Instant swap — no fade, no blink
+  applyPlatformTheme(idx);
+  // Reset progress bar by removing and re-adding active class
+  platDots.forEach(d=>{d.classList.remove('pd-active');d.offsetHeight;});
+  platDots[idx].classList.add('pd-active');
+  // Reset content
+  s(cit,{opacity:0,transform:'scale(.8)',transition:'none'});
+  // Show question instantly
+  mU.style.opacity='1';
+  tU.innerHTML=p.q;
+  // Show AI label + start typing
+  mA.style.opacity='1';
+  tA.innerHTML='<span class="cursor"></span>';
+  const plain=p.a.replace(/<[^>]+>/g,'');
   setTimeout(()=>{
-    // Swap theme + content
-    applyPlatformTheme(idx);
-    // Reset content
-    tU.innerHTML='';
-    tA.innerHTML='';
-    mU.style.opacity='0';
-    mA.style.opacity='0';
-    s(cit,{opacity:0,transform:'scale(.8)'});
-    // Fade in
-    cBox.classList.remove('cb-out');
-    setTimeout(()=>{
-      // Show question instantly
-      mU.style.opacity='1';
-      tU.innerHTML=p.q;
-      // Show AI label + start typing
-      mA.style.opacity='1';
-      tA.innerHTML='<span class="cursor"></span>';
-      const plain=p.a.replace(/<[^>]+>/g,'');
-      setTimeout(()=>{
-        typeCarouselText(plain,p.a,tA,30,()=>{
-          // Pop in cited badge
-          s(cit,{opacity:1,transform:'scale(1)',transition:'all .35s cubic-bezier(.16,1,.3,1)'});
-          // Hold, then advance
-          carouselTimer=setTimeout(()=>{
-            if(!carouselRunning)return;
-            carouselIdx=(carouselIdx+1)%PLATFORMS.length;
-            showPlatform(carouselIdx);
-          },3000);
-        });
-      },400);
-    },100);
-  },450);
+    typeCarouselText(plain,p.a,tA,30,()=>{
+      // Pop in cited badge
+      s(cit,{opacity:1,transform:'scale(1)',transition:'all .35s cubic-bezier(.16,1,.3,1)'});
+      // Hold, then advance
+      carouselTimer=setTimeout(()=>{
+        if(!carouselRunning)return;
+        carouselIdx=(carouselIdx+1)%PLATFORMS.length;
+        showPlatform(carouselIdx);
+      },3000);
+    });
+  },200);
 }
 
 function startPlatformCarousel(){
