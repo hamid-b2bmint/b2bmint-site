@@ -186,37 +186,45 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .mock-h .mock-hl{color:var(--lime)}
 
 /* paragraph */
-.mock-p{font-size:17px;color:rgba(255,255,255,.4);line-height:1.65;margin-bottom:32px;max-width:400px}
+.mock-p{font-size:17px;color:rgba(255,255,255,.55);line-height:1.65;margin-bottom:32px;max-width:400px}
 
 /* single CTA — big, bold, confident */
 .mock-btns{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 .mock-btn-primary{display:inline-flex;align-items:center;gap:10px;padding:18px 44px;background:var(--lime);color:var(--forest-deep);font-weight:800;font-size:16px;border-radius:14px;text-decoration:none;transition:all .4s cubic-bezier(.16,1,.3,1);border:none;cursor:pointer}
 .mock-btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(125,255,179,.2)}
 .mock-btn-primary svg{width:18px;height:18px}
-.mock-btn-sub{font-size:13px;color:rgba(255,255,255,.2);display:flex;align-items:center;gap:16px}
+.mock-btn-sub{font-size:13px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:16px}
 .mock-btn-sub span{display:flex;align-items:center;gap:4px}
 .mock-btn-sub svg{width:12px;height:12px;stroke:var(--lime);fill:none;stroke-width:2.5}
 
 /* result cards */
-.mock-results{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
-.mock-result{padding:16px 18px;border-radius:14px;flex:1;min-width:120px;position:relative;overflow:hidden;transition:transform .3s}
-.mock-result:hover{transform:translateY(-3px)}
-.mock-result::after{content:'';position:absolute;top:-12px;right:-12px;width:50px;height:50px;border-radius:50%;opacity:.12;pointer-events:none}
-.mr-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;opacity:.7}
-.mr-num{font-family:var(--display);font-size:28px;font-weight:700;line-height:1;margin-bottom:6px}
-.mr-desc{font-size:11px;line-height:1.4;opacity:.55}
+.mock-results{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.mock-result{padding:20px 20px;border-radius:16px;flex:1;min-width:130px;position:relative;overflow:hidden;transition:all .35s cubic-bezier(.16,1,.3,1)}
+.mock-result:hover{transform:translateY(-4px)}
+.mock-result::after{content:'';position:absolute;top:-15px;right:-15px;width:60px;height:60px;border-radius:50%;opacity:.15;pointer-events:none}
+.mr-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.mr-icon svg{width:15px;height:15px;stroke-width:2}
+.mr-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px}
+.mr-num{font-family:var(--display);font-size:32px;font-weight:700;line-height:1;margin-bottom:6px}
+.mr-desc{font-size:11px;line-height:1.45}
 /* green */
-.mr-green{background:#C8F7B0;border:1.5px solid #3DA035}
+.mr-green{background:#C8F7B0;border:2px solid #3DA035}
 .mr-green::after{background:#3DA035}
-.mr-green .mr-label{color:#1A6B20}.mr-green .mr-num{color:#0A4420}.mr-green .mr-desc{color:#1A6B20}
+.mr-green:hover{box-shadow:0 10px 28px rgba(61,160,53,.2)}
+.mr-green .mr-icon{background:rgba(10,68,32,.1)}.mr-green .mr-icon svg{stroke:#0A4420}
+.mr-green .mr-label{color:#3DA035}.mr-green .mr-num{color:#0A4420}.mr-green .mr-desc{color:rgba(10,68,32,.6)}
 /* blue */
-.mr-blue{background:#CEEBFF;border:1.5px solid #2B6FD0}
+.mr-blue{background:#CEEBFF;border:2px solid #2B6FD0}
 .mr-blue::after{background:#2B6FD0}
-.mr-blue .mr-label{color:#0A3A7A}.mr-blue .mr-num{color:#0A3A7A}.mr-blue .mr-desc{color:#0A3A7A}
+.mr-blue:hover{box-shadow:0 10px 28px rgba(43,111,208,.2)}
+.mr-blue .mr-icon{background:rgba(10,58,122,.1)}.mr-blue .mr-icon svg{stroke:#0A3A7A}
+.mr-blue .mr-label{color:#2B6FD0}.mr-blue .mr-num{color:#0A3A7A}.mr-blue .mr-desc{color:rgba(10,58,122,.6)}
 /* gold */
-.mr-gold{background:#FFF9B8;border:1.5px solid #C9A800}
+.mr-gold{background:#FFF9B8;border:2px solid #C9A800}
 .mr-gold::after{background:#C9A800}
-.mr-gold .mr-label{color:#6B5500}.mr-gold .mr-num{color:#5C4D00}.mr-gold .mr-desc{color:#6B5500}
+.mr-gold:hover{box-shadow:0 10px 28px rgba(201,168,0,.2)}
+.mr-gold .mr-icon{background:rgba(92,77,0,.1)}.mr-gold .mr-icon svg{stroke:#5C4D00}
+.mr-gold .mr-label{color:#C9A800}.mr-gold .mr-num{color:#5C4D00}.mr-gold .mr-desc{color:rgba(92,77,0,.6)}
 
 .mock-left #platsTarget{display:none}
 .mock-left .met-wrap{display:none}
@@ -1143,7 +1151,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
         <!-- LEFT SIDE (hidden until scroll triggers .show) -->
         <div class="mock-left" id="mockLeft">
           <div class="mock-left-eye">Live on 5 AI platforms</div>
-          <h2 class="mock-h">This is what your buyers see when they ask <span class="mock-hl">AI about you.</span></h2>
+          <h2 class="mock-h">This is what your buyers see when they ask <span class="dt-green">AI about you.</span></h2>
           <p class="mock-p">Real conversations. Real citations. Real pipeline. Watch SAGE turn AI into your best sales channel.</p>
           <div class="mock-btns">
             <a href="https://calendly.com/hamid-b2bmint/30min" class="mock-btn-primary">Get your AI visibility audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1151,9 +1159,9 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
           </div>
           <!-- Result cards -->
           <div class="mock-results">
-            <div class="mock-result mr-green"><div class="mr-label">Avg. Client Result</div><div class="mr-num">340%</div><div class="mr-desc">More demos from organic search within 6 months of SAGE activation</div></div>
-            <div class="mock-result mr-blue"><div class="mr-label">AI Visibility</div><div class="mr-num">6/6</div><div class="mr-desc">Clients cited on ChatGPT, Claude, Perplexity, Gemini, AI Overviews &amp; Google</div></div>
-            <div class="mock-result mr-gold"><div class="mr-label">Pipeline Impact</div><div class="mr-num">$1.2M</div><div class="mr-desc">Average pipeline generated from search and AI channels in months 4-6</div></div>
+            <div class="mock-result mr-green"><div class="mr-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div class="mr-label">Avg. Client Result</div><div class="mr-num">340%</div><div class="mr-desc">More demos from organic search within 6 months</div></div>
+            <div class="mock-result mr-blue"><div class="mr-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20 15 15 0 010-20"/></svg></div><div class="mr-label">AI Visibility</div><div class="mr-num">6/6</div><div class="mr-desc">Cited on every major AI platform and Google</div></div>
+            <div class="mock-result mr-gold"><div class="mr-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div class="mr-label">Pipeline Impact</div><div class="mr-num">$1.2M</div><div class="mr-desc">Avg. pipeline from search and AI in months 4-6</div></div>
           </div>
           <div id="platsTarget"></div>
           <div id="metTarget"></div>
