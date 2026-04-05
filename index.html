@@ -169,28 +169,36 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
    ═══════════════════════════════════════════ */
 .mockup-layer{position:absolute;inset:0;z-index:3;opacity:0;will-change:opacity;pointer-events:none;overflow:hidden}
 .mockup-layer.visible{pointer-events:auto}
-.mock-bg{position:absolute;inset:0;background:#fff}
+.mock-bg{position:absolute;inset:0;background:#093829}
 .mock-content{position:relative;z-index:10;width:50%;height:100%;display:flex;flex-direction:column;overflow:visible}
 
-/* LEFT SIDE — white branded panel */
-.mock-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.16,1,.3,1) .3s;padding:40px 32px 32px 48px;display:flex;flex-direction:column;justify-content:center;flex:1;overflow:hidden;position:relative;background:#fff}
+/* LEFT SIDE */
+.mock-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.16,1,.3,1) .3s;padding:36px 28px 28px 44px;display:flex;flex-direction:column;justify-content:center;flex:1;overflow:hidden;position:relative}
 .mock-left.show{opacity:1;transform:translateX(0)}
-.mock-left-eye{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;color:var(--forest-deep);opacity:.3;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+
+/* Big number highlight */
+.mock-big-stat{margin-bottom:20px}
+.mock-big-num{font-family:var(--display);font-size:clamp(56px,7vw,80px);font-weight:700;color:var(--lime);line-height:1;letter-spacing:-.03em}
+.mock-big-label{font-size:14px;color:rgba(255,255,255,.35);margin-top:6px}
+
+.mock-left-eye{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;color:var(--lime);opacity:.5;margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .mock-left-eye::before{content:'';width:20px;height:4px;border-radius:4px;background:var(--lime)}
-.mock-h{font-family:var(--display);font-size:clamp(28px,3.2vw,42px);font-weight:700;color:var(--forest-deep);line-height:1.1;margin-bottom:14px}
-.mock-p{font-size:16px;color:rgba(0,0,0,.4);line-height:1.65;margin-bottom:24px;max-width:420px}
+.mock-h{font-family:var(--display);font-size:clamp(24px,2.8vw,36px);font-weight:700;color:#fff;line-height:1.12;margin-bottom:12px}
+.mock-p{font-size:15px;color:rgba(255,255,255,.35);line-height:1.65;margin-bottom:20px;max-width:400px}
+
+/* inline trust row */
+.mock-trust{display:flex;gap:20px;margin-bottom:20px;flex-wrap:wrap}
+.mock-trust-item{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.3);font-weight:600}
+.mock-trust-item svg{width:14px;height:14px;stroke:var(--lime);fill:none;stroke-width:2.5}
+
 .mock-left #platsTarget{display:none}
-.mock-left .met-wrap{max-width:100%;margin-top:4px}
-.mock-left .met-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-.mock-left .met{padding:16px 14px;border-radius:12px;border-width:1.5px}
-.mock-left .m-val{font-size:24px}
-.mock-left .m-lbl{font-size:11px;margin-top:4px}
-.mock-left .m-eye{font-size:9px;margin-bottom:4px}
-.mock-left .cta-w{text-align:left;margin-top:20px}
-.mock-left .cta-btn{font-size:15px;padding:16px 36px;background:var(--forest-deep);color:#fff}
-.mock-left .cta-sub{justify-content:flex-start;margin-top:10px;gap:16px;font-size:12px;color:rgba(0,0,0,.25)}
-.mock-left .cta-chk{color:var(--forest-deep)}
-.mock-left .scroll-m{color:var(--forest-deep)}
+.mock-left .met-wrap{display:none}
+.mock-left .cta-w{text-align:left;margin-top:4px}
+.mock-left .cta-btn{font-size:15px;padding:16px 36px;background:var(--lime);color:var(--forest-deep);font-weight:800}
+.mock-left .cta-btn:hover{box-shadow:0 8px 28px rgba(125,255,179,.25)}
+.mock-left .cta-sub{justify-content:flex-start;margin-top:10px;gap:14px;font-size:11px;color:rgba(255,255,255,.2)}
+.mock-left .cta-chk{color:var(--lime)}
+.mock-left .scroll-m{color:var(--lime)}
 
 /* RIGHT SIDE — positioned in the right 50% */
 .mock-right{position:absolute;right:-100%;top:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 32px;overflow:visible;z-index:15;opacity:0;transition:opacity .6s .5s;box-sizing:border-box}
@@ -1111,9 +1119,18 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       <div class="mock-content">
         <!-- LEFT SIDE (hidden until scroll triggers .show) -->
         <div class="mock-left" id="mockLeft">
+          <div class="mock-big-stat">
+            <div class="mock-big-num">4,244</div>
+            <div class="mock-big-label">AI citations built across 5 platforms</div>
+          </div>
           <div class="mock-left-eye">The SAGE Effect</div>
           <h2 class="mock-h">AI is rewriting how<br>buyers find you.</h2>
           <p class="mock-p">Your next customer is asking ChatGPT before they ever Google. SAGE makes sure you're the answer they get.</p>
+          <div class="mock-trust">
+            <div class="mock-trust-item"><svg viewBox="0 0 24 24" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>90-day trial</div>
+            <div class="mock-trust-item"><svg viewBox="0 0 24 24" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>You own everything</div>
+            <div class="mock-trust-item"><svg viewBox="0 0 24 24" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Founder-led</div>
+          </div>
           <div id="platsTarget"></div>
           <div id="metTarget"></div>
         </div>
