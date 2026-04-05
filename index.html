@@ -172,33 +172,33 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .mock-bg{position:absolute;inset:0;background:#093829}
 .mock-content{position:relative;z-index:10;width:48%;height:100%;display:flex;flex-direction:column;overflow:visible}
 
-/* LEFT SIDE — clean: heading + copy + CTA only */
-.mock-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.16,1,.3,1) .3s;padding:0 32px 0 48px;display:flex;flex-direction:column;justify-content:center;flex:1;overflow:hidden;position:relative}
+/* LEFT SIDE */
+.mock-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.16,1,.3,1) .3s;padding:0 28px 0 48px;display:flex;flex-direction:column;justify-content:center;flex:1;overflow:hidden;position:relative}
 .mock-left.show{opacity:1;transform:translateX(0)}
 
 .mock-left-eye{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;color:var(--lime);opacity:.5;margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .mock-left-eye::before{content:'';width:20px;height:4px;border-radius:4px;background:var(--lime)}
 .mock-h{font-family:var(--display);font-size:clamp(28px,3.5vw,44px);font-weight:700;color:#fff;line-height:1.08;margin-bottom:16px}
-.mock-p{font-size:16px;color:rgba(255,255,255,.4);line-height:1.65;margin-bottom:28px;max-width:400px}
+.mock-p{font-size:16px;color:rgba(255,255,255,.4);line-height:1.65;margin-bottom:24px;max-width:380px}
 
 /* stats inline row */
-.mock-stats-row{display:flex;gap:24px;margin-bottom:28px}
+.mock-stats-row{display:flex;gap:28px;margin-bottom:24px;padding:16px 0;border-top:1px solid rgba(125,255,179,.08);border-bottom:1px solid rgba(125,255,179,.08)}
 .mock-stat-item{display:flex;flex-direction:column}
-.mock-stat-item .num{font-family:var(--display);font-size:28px;font-weight:700;color:var(--lime);line-height:1}
-.mock-stat-item .lbl{font-size:11px;color:rgba(255,255,255,.25);margin-top:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.mock-stat-item .num{font-family:var(--display);font-size:26px;font-weight:700;color:var(--lime);line-height:1}
+.mock-stat-item .lbl{font-size:10px;color:rgba(255,255,255,.2);margin-top:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
 
 /* buttons row */
-.mock-btns{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+.mock-btns{display:flex;gap:12px;align-items:center}
+.mock-btn-primary{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--lime);color:var(--forest-deep);font-weight:800;font-size:15px;border-radius:60px;text-decoration:none;transition:all .3s;border:none;cursor:pointer}
+.mock-btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(125,255,179,.25)}
+.mock-btn-primary svg{width:16px;height:16px}
+.mock-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:16px 28px;background:transparent;border:1.5px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);font-weight:700;font-size:14px;border-radius:60px;text-decoration:none;transition:all .3s;cursor:pointer}
+.mock-btn-secondary:hover{border-color:rgba(255,255,255,.25);color:#fff}
+.mock-btn-secondary svg{width:16px;height:16px}
 
 .mock-left #platsTarget{display:none}
 .mock-left .met-wrap{display:none}
-.mock-left .cta-w{text-align:left}
-.mock-left .cta-btn{font-size:15px;padding:16px 36px;background:var(--lime);color:var(--forest-deep);font-weight:800}
-.mock-left .cta-btn:hover{box-shadow:0 8px 28px rgba(125,255,179,.25)}
-.mock-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:16px 28px;background:transparent;border:1.5px solid rgba(255,255,255,.15);color:#fff;font-weight:700;font-size:14px;border-radius:60px;text-decoration:none;transition:all .3s;cursor:pointer}
-.mock-btn-secondary:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.04)}
-.mock-btn-secondary svg{width:16px;height:16px}
-.mock-left .cta-sub{display:none}
+.mock-left .cta-w{display:none}
 .mock-left .scroll-m{color:var(--lime)}
 
 /* RIGHT SIDE — positioned in the right 50% */
@@ -1129,7 +1129,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
             <div class="mock-stat-item"><div class="num">47</div><div class="lbl">SaaS Clients</div></div>
           </div>
           <div class="mock-btns">
-            <a href="https://calendly.com/hamid-b2bmint/30min" class="cta-btn" style="font-size:15px;padding:16px 36px;background:var(--lime);color:var(--forest-deep)">Book a Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:16px;height:16px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="https://calendly.com/hamid-b2bmint/30min" class="mock-btn-primary">Book a Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             <a href="#hp-pain" class="mock-btn-secondary">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></a>
           </div>
           <div id="platsTarget"></div>
@@ -1165,10 +1165,7 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
           <div class="met p"><div class="m-eye">Organic Growth</div><div class="m-val">3,300%</div><div class="m-lbl">Traffic growth, zero paid ads</div></div>
           <div class="met b"><div class="m-eye">Efficiency</div><div class="m-val">67%</div><div class="m-lbl">Lower customer acquisition cost vs paid</div></div>
         </div></div>
-        <div class="cta-w" id="ctaW">
-          <button class="cta-btn">Book Your Free AI Visibility Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
-          <div class="cta-sub"><span class="c-tick"><span class="cta-chk">&#10003;</span> Free</span><span class="c-tick"><span class="cta-chk">&#10003;</span> 30 min</span><span class="c-tick"><span class="cta-chk">&#10003;</span> Founder-led</span><span class="c-tick"><span class="cta-chk">&#10003;</span> Zero obligation</span></div>
-        </div>
+        <div class="cta-w" id="ctaW" style="display:none"></div>
       </div>
     </div>
 
