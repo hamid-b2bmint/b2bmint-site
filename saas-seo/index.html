@@ -229,27 +229,22 @@ img{max-width:100%;height:auto}
 /* ── S9: Results ── */
 .seo-results{background:#fff}
 .seo-case{border-radius:24px;padding:36px 32px;margin-bottom:24px;position:relative;overflow:hidden}
-.seo-case:nth-child(1){background:#C6F5E2}
-.seo-case:nth-child(2){background:#CEEBFF}
-.seo-case:nth-child(3){background:#FFD6E8}
+.seo-case:nth-child(1){background:#CEEBFF}
+.seo-case:nth-child(2){background:#FFD6E8}
 .seo-case-badge{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:4px 10px;border-radius:20px;margin-bottom:12px}
-.seo-case:nth-child(1) .seo-case-badge{background:rgba(9,56,41,.1);color:var(--forest-deep)}
-.seo-case:nth-child(2) .seo-case-badge{background:rgba(0,67,210,.08);color:#0043D2}
-.seo-case:nth-child(3) .seo-case-badge{background:rgba(192,0,107,.08);color:#C0006B}
+.seo-case:nth-child(1) .seo-case-badge{background:rgba(0,67,210,.08);color:#0043D2}
+.seo-case:nth-child(2) .seo-case-badge{background:rgba(192,0,107,.08);color:#C0006B}
 .seo-case h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:6px}
-.seo-case:nth-child(1) h3{color:#063D1A}
-.seo-case:nth-child(2) h3{color:#001D66}
-.seo-case:nth-child(3) h3{color:#8A004E}
+.seo-case:nth-child(1) h3{color:#001D66}
+.seo-case:nth-child(2) h3{color:#8A004E}
 .seo-case-sub{font-size:14px;margin-bottom:20px}
-.seo-case:nth-child(1) .seo-case-sub{color:rgba(6,61,26,.5)}
-.seo-case:nth-child(2) .seo-case-sub{color:rgba(0,29,102,.45)}
-.seo-case:nth-child(3) .seo-case-sub{color:rgba(138,0,78,.4)}
+.seo-case:nth-child(1) .seo-case-sub{color:rgba(0,29,102,.45)}
+.seo-case:nth-child(2) .seo-case-sub{color:rgba(138,0,78,.4)}
 .seo-case-stats{display:flex;flex-wrap:wrap;gap:10px}
 .seo-case-stat{padding:12px 16px;border-radius:12px;background:rgba(255,255,255,.5)}
 .seo-case-stat strong{display:block;font-family:var(--display);font-size:20px;font-weight:700;line-height:1;margin-bottom:2px}
-.seo-case:nth-child(1) .seo-case-stat strong{color:var(--forest-deep)}
-.seo-case:nth-child(2) .seo-case-stat strong{color:#0043D2}
-.seo-case:nth-child(3) .seo-case-stat strong{color:#C0006B}
+.seo-case:nth-child(1) .seo-case-stat strong{color:#0043D2}
+.seo-case:nth-child(2) .seo-case-stat strong{color:#C0006B}
 .seo-case-stat span{font-size:11px;color:rgba(0,0,0,.4)}
 
 /* ── S10: AI Search Advantage ── */
@@ -296,23 +291,80 @@ img{max-width:100%;height:auto}
 .seo-faq-item.open .seo-fa{max-height:300px;padding:0 22px 20px}
 .seo-fa p{font-size:14px;line-height:1.7;color:rgba(0,0,0,.55)}
 
-/* ── S13: Final CTA ── */
-.seo-final{background:var(--mint-bg);padding:100px 0;text-align:center}
-.seo-final h2{font-family:var(--display);font-size:clamp(28px,4vw,44px);font-weight:700;color:var(--forest-deep);margin-bottom:16px;line-height:1.15}
-.seo-final-sub{font-size:16px;color:rgba(9,56,41,.5);max-width:500px;margin:0 auto 32px;line-height:1.7}
-.seo-final-cta{display:inline-flex;align-items:center;gap:14px;padding:20px 48px;background:var(--forest-deep);color:var(--lime);font-weight:800;font-size:18px;border-radius:16px;text-decoration:none;box-shadow:0 6px 30px rgba(9,56,41,.2);transition:all .3s}
-.seo-final-cta:hover{transform:translateY(-3px);box-shadow:0 12px 44px rgba(9,56,41,.3)}
-.seo-final-micro{margin-top:16px;font-size:13px;color:rgba(9,56,41,.4)}
-.seo-final-promise{margin-top:24px;font-size:14px;color:rgba(9,56,41,.45);font-weight:500}
-
-/* ── Footer (minimal version for inner pages) ── */
-.seo-footer{background:var(--forest-deep);padding:40px 0;text-align:center}
-.seo-footer-logo{font-family:var(--display);font-size:18px;font-weight:700;color:#fff;margin-bottom:8px}
-.seo-footer-logo span{color:var(--lime)}
-.seo-footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:16px}
-.seo-footer-links a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
-.seo-footer-links a:hover{color:var(--lime)}
-.seo-footer-copy{font-size:12px;color:rgba(255,255,255,.3)}
+/* ── CTA + Footer (same as homepage) ── */
+.s-cta-footer{position:relative;overflow:hidden}
+.cta-top{background:var(--mint-bg);position:relative;padding:100px 0 0;overflow:hidden}
+.cta-top::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(9,56,41,.04) 0%,transparent 60%);pointer-events:none}
+.cta-top .s-inner{position:relative;z-index:2}
+.hp-cta-top-text{text-align:center;margin-bottom:48px}
+.hp-cta-eyebrow{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--forest-deep);margin-bottom:16px;opacity:.4}
+.s-cta-footer .s-h{font-family:var(--display);color:var(--forest-deep);font-size:clamp(32px,4.5vw,52px);font-weight:700;margin:0 auto 16px;line-height:1.08;text-align:center;max-width:700px}
+.s-cta-footer .s-sub{color:rgba(9,56,41,.4);font-size:16px;line-height:1.7;margin:0 auto 32px;text-align:center;max-width:500px}
+.hp-cta-btn{display:inline-flex;align-items:center;gap:12px;padding:20px 48px;background:var(--forest-deep);color:#fff;font-weight:800;font-size:17px;border-radius:60px;border:none;cursor:pointer;text-decoration:none;transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 20px rgba(9,56,41,.15)}
+.hp-cta-btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 40px rgba(9,56,41,.25)}
+.hp-cta-btn svg{width:18px;height:18px}
+.hp-cta-micro{margin-top:16px;font-size:13px;color:rgba(9,56,41,.25);text-align:center}
+.hp-cta-card{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-top:48px}
+.hp-cta-photo{position:relative;display:flex;align-items:flex-end;justify-content:center;margin-bottom:-2px}
+.hp-cta-photo img{position:relative;z-index:3;width:380px;max-width:100%;display:block;object-fit:contain;filter:grayscale(100%) contrast(1.1) drop-shadow(0 8px 30px rgba(9,56,41,.15))}
+.hp-cta-proof{display:flex;flex-direction:column;gap:12px;padding-bottom:40px}
+.hp-cta-proof-card{background:#fff;border:1px solid rgba(9,56,41,.06);border-radius:16px;padding:20px 24px;display:flex;align-items:center;gap:20px;transition:all .3s;box-shadow:0 2px 8px rgba(9,56,41,.04)}
+.hp-cta-proof-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(9,56,41,.08);border-color:rgba(9,56,41,.1)}
+.hp-cta-proof-num{font-family:var(--display);font-size:28px;font-weight:700;color:var(--forest-deep);line-height:1;min-width:70px}
+.hp-cta-proof-text{font-size:13px;color:rgba(9,56,41,.35);line-height:1.4}
+.hp-cta-proof-text strong{color:var(--forest-deep);font-weight:600;display:block;margin-bottom:2px;font-size:14px}
+/* Footer */
+.cta-bottom{background:var(--forest-deep);position:relative;z-index:1;overflow:hidden}
+.ft-topbar{max-width:1100px;margin:0 auto;padding:56px 40px 0;display:flex;justify-content:space-between;align-items:center}
+.ft-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.ft-logo-icon{width:32px;height:32px;border-radius:10px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--forest-deep)}
+.ft-logo-text{font-family:var(--display);font-size:20px;font-weight:700;color:#fff}
+.ft-logo-text span{color:var(--lime)}
+.ft-socials{display:flex;gap:10px}
+.ft-socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;transition:all .3s;text-decoration:none}
+.ft-socials a:hover{border-color:var(--lime);background:rgba(125,255,179,.08);transform:translateY(-2px)}
+.ft-socials a svg{width:16px;height:16px;fill:rgba(255,255,255,.55);transition:fill .3s}
+.ft-socials a:hover svg{fill:var(--lime)}
+.ft-nav-center{text-align:center;padding:48px 40px;max-width:700px;margin:0 auto}
+.ft-nav{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;align-items:center}
+.ft-nav a{color:rgba(255,255,255,.5);text-decoration:none;font-size:17px;font-weight:600;transition:all .3s;display:inline-block;letter-spacing:.3px}
+.ft-nav a:hover{color:var(--lime);letter-spacing:1.5px}
+.ft-badge-strip{position:relative;padding:40px 40px 48px;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:0}
+.ft-badge{flex-shrink:0;animation:ftBadgeFloat 7s ease-in-out infinite}
+.ft-badge:last-child{animation-delay:-3.5s}
+@keyframes ftBadgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.ft-badge svg{display:block;filter:drop-shadow(0 4px 20px rgba(125,255,179,.1))}
+.ft-statement{flex:1;display:flex;align-items:center;gap:0;padding:0 20px}
+.ft-statement-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--lime),transparent);opacity:.3;position:relative}
+.ft-statement-line::before{content:'';position:absolute;width:8px;height:8px;border-radius:50%;background:var(--lime);top:-3.5px;box-shadow:0 0 10px rgba(125,255,179,.4)}
+.ft-statement-line:first-child::before{right:0}
+.ft-statement-line:last-child::before{left:0}
+.ft-statement-text{padding:0 24px;white-space:nowrap;font-family:var(--display);font-size:clamp(16px,2.2vw,22px);color:#fff;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.ft-statement-text strong{color:var(--lime);font-size:1.4em;text-shadow:0 0 20px rgba(125,255,179,.3)}
+.ft-newsletter{max-width:1100px;margin:0 auto;padding:0 40px}
+.ft-nl-inner{display:flex;justify-content:space-between;align-items:center;gap:32px;padding:28px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.ft-nl-text{font-size:14px;color:rgba(255,255,255,.35);font-weight:500}
+.ft-nl-form{display:flex;gap:0;flex-shrink:0}
+.ft-nl-form input{padding:12px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-right:none;border-radius:10px 0 0 10px;color:#fff;font-size:14px;font-family:var(--sans);outline:none;width:240px;transition:border-color .3s}
+.ft-nl-form input::placeholder{color:rgba(255,255,255,.2)}
+.ft-nl-form input:focus{border-color:rgba(125,255,179,.3)}
+.ft-nl-form button{padding:12px 24px;background:var(--lime);color:var(--forest-deep);font-weight:700;font-size:14px;border:none;border-radius:0 10px 10px 0;cursor:pointer;font-family:var(--sans);transition:all .3s;white-space:nowrap}
+.ft-nl-form button:hover{background:#6ee6a0}
+.ft-trust-row{max-width:1100px;margin:0 auto;padding:28px 40px;display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
+.ft-trust-badge{transition:all .3s;display:block}
+.ft-trust-badge:hover{transform:translateY(-2px)}
+.ft-trust-badge img{height:60px;width:auto;display:block;opacity:.7;transition:opacity .3s}
+.ft-trust-badge:hover img{opacity:1}
+.ft-bottom{max-width:1100px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ft-bottom-logo{font-family:var(--display);font-size:16px;font-weight:700;color:rgba(255,255,255,.3)}
+.ft-bottom-logo span{color:rgba(125,255,179,.4)}
+.ft-bottom-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(125,255,179,.2);border-radius:60px;color:var(--lime);font-size:14px;font-weight:700;text-decoration:none;transition:all .3s}
+.ft-bottom-cta:hover{border-color:var(--lime);background:rgba(125,255,179,.06);transform:translateY(-2px);box-shadow:0 4px 16px rgba(125,255,179,.1)}
+.ft-bottom-cta svg{width:14px;height:14px}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.2)}
+.ft-legal{display:flex;gap:16px}
+.ft-legal a{font-size:12px;color:rgba(255,255,255,.2);text-decoration:none;transition:color .2s}
+.ft-legal a:hover{color:var(--lime)}
 
 /* ── Responsive ── */
 @media(max-width:768px){
@@ -599,18 +651,6 @@ img{max-width:100%;height:auto}
     <div class="s-eye eye-green rv">The Results</div>
     <h2 class="s-h rv" style="transition-delay:.1s">Three SaaS companies. One system. <span class="dt-green">Verified numbers.</span></h2>
     <div class="seo-case rv" style="transition-delay:.2s">
-      <div class="seo-case-badge">B2B SaaS &bull; Anonymous</div>
-      <h3>Email Marketing SaaS</h3>
-      <div class="seo-case-sub">$3M ARR. Series A. Previous agency: $50K, 68 blog posts, zero demos. Zero AI presence.</div>
-      <div class="seo-case-stats">
-        <div class="seo-case-stat"><strong>4,244</strong><span>AI citations</span></div>
-        <div class="seo-case-stat"><strong>$1.2M</strong><span>Pipeline</span></div>
-        <div class="seo-case-stat"><strong>+89%</strong><span>More demos</span></div>
-        <div class="seo-case-stat"><strong>3,300%</strong><span>Traffic growth</span></div>
-        <div class="seo-case-stat"><strong>67%</strong><span>Lower CAC</span></div>
-      </div>
-    </div>
-    <div class="seo-case rv" style="transition-delay:.3s">
       <div class="seo-case-badge">Data Platform &bull; Named</div>
       <h3>BookYourData</h3>
       <div class="seo-case-sub">Bootstrapped. Started ~$1M revenue. Organic became the primary growth channel.</div>
@@ -743,29 +783,112 @@ img{max-width:100%;height:auto}
   </div>
 </section>
 
-<!-- S13: FINAL CTA -->
-<section class="seo-final">
-  <div class="s-inner">
-    <h2 class="rv">See your AI visibility gaps before you spend a dollar.</h2>
-    <p class="seo-final-sub rv" style="transition-delay:.1s">One call. We show you exactly where your competitors are being cited by AI and where you're invisible. Real data. No pitch.</p>
-    <a href="https://calendly.com/hamid-b2bmint/30min" class="seo-final-cta rv" style="transition-delay:.2s">Book Your Free AI Visibility Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="20" height="20"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <div class="seo-final-micro rv" style="transition-delay:.25s">Free &bull; 30 min &bull; Founder-led &bull; Zero obligation</div>
-    <p class="seo-final-promise rv" style="transition-delay:.3s">90 days. All assets stay with you. If it doesn't move the needle, we part as friends.</p>
+<!-- S13: CTA + Footer -->
+<div class="s-cta-footer" id="seo-final">
+  <div class="cta-top">
+    <div class="s-inner">
+      <div class="hp-cta-top-text">
+        <div class="hp-cta-eyebrow rv">Talk to the founder</div>
+        <h2 class="s-h rv" style="transition-delay:.1s">See your AI visibility gaps before<br>you spend a <span class="dt-green">dollar.</span></h2>
+        <p class="s-sub rv" style="transition-delay:.15s">One call. I'll show you exactly where your competitors are being cited by AI, where you're invisible, and how to fix it.</p>
+        <a href="https://calendly.com/hamid-b2bmint/30min" class="hp-cta-btn rv" style="transition-delay:.2s">
+          Book Your Free AI Visibility Audit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <div class="hp-cta-micro rv" style="transition-delay:.25s">Free &bull; 30 min &bull; Founder-led &bull; Zero obligation</div>
+      </div>
+      <div class="hp-cta-card rv" style="transition-delay:.3s">
+        <div class="hp-cta-photo">
+          <img src="hamid-khan.png" alt="Hamid Khan, Founder of B2BMint" loading="lazy">
+        </div>
+        <div class="hp-cta-proof">
+          <div class="hp-cta-proof-card">
+            <div class="hp-cta-proof-num">4,244</div>
+            <div class="hp-cta-proof-text"><strong>AI Citations Built</strong>Across ChatGPT, Claude, Perplexity, Gemini &amp; Google</div>
+          </div>
+          <div class="hp-cta-proof-card">
+            <div class="hp-cta-proof-num">$1.2M</div>
+            <div class="hp-cta-proof-text"><strong>Pipeline Generated</strong>From organic search and AI visibility alone</div>
+          </div>
+          <div class="hp-cta-proof-card">
+            <div class="hp-cta-proof-num">47</div>
+            <div class="hp-cta-proof-text"><strong>SaaS Companies</strong>Trust B2BMint to build their search &amp; AI presence</div>
+          </div>
+          <div class="hp-cta-proof-card">
+            <div class="hp-cta-proof-num">90d</div>
+            <div class="hp-cta-proof-text"><strong>Trial Period</strong>All assets stay with you. You own everything from day one.</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
 
-<!-- Footer -->
-<footer class="seo-footer">
-  <div class="seo-footer-logo">B2B<span>Mint</span></div>
-  <div class="seo-footer-links">
-    <a href="/">Home</a>
-    <a href="/saas-seo/">SaaS SEO</a>
-    <a href="#">About</a>
-    <a href="#">Case Studies</a>
-    <a href="https://calendly.com/hamid-b2bmint/30min">Book a Call</a>
-  </div>
-  <div class="seo-footer-copy">&copy; 2025 B2BMint. All rights reserved.</div>
-</footer>
+  <footer class="cta-bottom">
+    <div class="ft-topbar">
+      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+        <a href="/" class="ft-logo">
+          <div class="ft-logo-icon">B</div>
+          <div class="ft-logo-text">B2B<span>Mint</span></div>
+        </a>
+        <span style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.5">7209 Lancaster Pike, Ste 4 #3125<br>Hockessin, DE 19707</span>
+      </div>
+      <div class="ft-socials">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-nav-center">
+      <ul class="ft-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/saas-seo/">SaaS SEO</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="ft-badge-strip">
+      <div class="ft-badge">
+        <svg width="180" height="180" viewBox="0 0 180 180" fill="none"><path d="M90 10 L160 45 L160 100 C160 140 130 165 90 175 C50 165 20 140 20 100 L20 45 Z" fill="rgba(125,255,179,.06)" stroke="#7DFFB3" stroke-width="1.5"/><path d="M90 28 L145 55 L145 98 C145 130 120 152 90 160 C60 152 35 130 35 98 L35 55 Z" fill="rgba(125,255,179,.03)" stroke="#7DFFB3" stroke-width=".5" opacity=".4"/><path d="M90 55 C105 70 112 82 112 95 C112 108 102 118 90 125 C78 118 68 108 68 95 C68 82 75 70 90 55Z" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width="1.2"/><line x1="90" y1="60" x2="90" y2="120" stroke="#7DFFB3" stroke-width=".6" opacity=".4"/><text x="90" y="88" text-anchor="middle" fill="#7DFFB3" font-size="22" font-weight="700" font-family="Space Grotesk,sans-serif">SAGE</text><text x="90" y="139" text-anchor="middle" fill="#7DFFB3" font-size="8" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">ENGINE</text><circle cx="75" cy="42" r="2" fill="#7DFFB3" opacity=".5"/><circle cx="90" cy="38" r="2.5" fill="#7DFFB3" opacity=".6"/><circle cx="105" cy="42" r="2" fill="#7DFFB3" opacity=".5"/></svg>
+      </div>
+      <div class="ft-statement">
+        <div class="ft-statement-line"></div>
+        <div class="ft-statement-text">We build <strong>100%</strong> visibility</div>
+        <div class="ft-statement-line"></div>
+      </div>
+      <div class="ft-badge">
+        <svg width="180" height="180" viewBox="0 0 180 180" fill="none"><polygon points="90,8 160,38 160,118 90,172 20,118 20,38" fill="rgba(125,255,179,.05)" stroke="#7DFFB3" stroke-width="1.5"/><polygon points="90,24 148,48 148,112 90,158 32,112 32,48" fill="rgba(125,255,179,.02)" stroke="#7DFFB3" stroke-width=".5" opacity=".35"/><rect x="58" y="100" width="12" height="30" rx="2" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width=".8"/><rect x="74" y="85" width="12" height="45" rx="2" fill="rgba(125,255,179,.12)" stroke="#7DFFB3" stroke-width=".8"/><rect x="90" y="65" width="12" height="65" rx="2" fill="rgba(125,255,179,.15)" stroke="#7DFFB3" stroke-width="1"/><rect x="106" y="50" width="12" height="80" rx="2" fill="rgba(125,255,179,.18)" stroke="#7DFFB3" stroke-width="1"/><path d="M112 50 L112 38 M106 44 L112 36 L118 44" stroke="#7DFFB3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="144" text-anchor="middle" fill="#7DFFB3" font-size="9" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">GROWTH</text><text x="90" y="22" text-anchor="middle" fill="#7DFFB3" font-size="18" font-weight="700" font-family="Space Grotesk,sans-serif" opacity=".6">MINT</text></svg>
+      </div>
+    </div>
+    <div class="ft-newsletter">
+      <div class="ft-nl-inner">
+        <div class="ft-nl-left">
+          <span class="ft-nl-text">Subscribe to our SEO &amp; AI visibility newsletter</span>
+        </div>
+        <form class="ft-nl-form" onsubmit="return false">
+          <input type="email" placeholder="Enter your email">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="ft-trust-row">
+      <div class="ft-trust-badge"><img src="google-premier.svg" alt="Google Premier Partner 2025"></div>
+      <div class="ft-trust-badge"><img src="linkedin-badge.avif" alt="LinkedIn Certified Marketing Partner"></div>
+      <div class="ft-trust-badge"><img src="trustpilot-badge.svg" alt="Trustpilot 4.9" style="height:40px"></div>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-bottom-logo">B2B<span>Mint</span></div>
+      <a href="https://calendly.com/hamid-b2bmint/30min" class="ft-bottom-cta">Book a Strategy Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="ft-legal">
+        <div class="ft-copy">&copy; 2025 B2BMint</div>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+</div>
 
 <script>
 // Reveal on scroll
