@@ -778,36 +778,60 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 .hp-ba-vs{display:flex;align-items:center;justify-content:center;padding:0 16px}
 .hp-ba-vs-circle{width:52px;height:52px;border-radius:50%;background:var(--forest-deep);color:var(--lime);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;box-shadow:0 4px 16px rgba(10,61,32,.2)}
 /* Case study cards */
-.hp-cases{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
-.hp-case{border-radius:20px;padding:0;overflow:hidden;opacity:0;transform:translateY(16px);transition:all .5s ease;cursor:default;position:relative}
+/* Case studies — horizontal landscape layout */
+.hp-cases-divider{margin:64px auto 32px;text-align:center;display:flex;align-items:center;justify-content:center;gap:16px;max-width:700px}
+.hp-cases-divider::before,.hp-cases-divider::after{content:'';flex:1;height:1px;background:rgba(0,0,0,.08)}
+.hp-cases-divider span{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(0,0,0,.35)}
+
+.hp-cases{display:flex;flex-direction:column;gap:24px;margin-top:0}
+.hp-case{border-radius:24px;padding:0;overflow:hidden;opacity:0;transform:translateY(16px);transition:all .5s ease;cursor:default;position:relative;display:grid;grid-template-columns:1.5fr 1fr;align-items:stretch}
 .hp-case.show{opacity:1;transform:translateY(0)}
-.hp-case:hover{transform:translateY(-4px)}
+.hp-case:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.08)}
 .hp-case:nth-child(1){background:#C6F5E2}
 .hp-case:nth-child(2){background:#CEEBFF}
 .hp-case:nth-child(3){background:#FFD6E8}
 .hp-case:nth-child(1):hover{background:#B5EDCF}
 .hp-case:nth-child(2):hover{background:#BBE0FF}
 .hp-case:nth-child(3):hover{background:#FFC4DC}
-.hp-case-head{padding:28px 28px 16px;position:relative}
-.hp-case-badge{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:4px 10px;border-radius:20px;margin-bottom:12px}
-.hp-case:nth-child(1) .hp-case-badge{background:rgba(14,84,44,.1);color:#093829}
-.hp-case:nth-child(2) .hp-case-badge{background:rgba(0,67,210,.08);color:#0043D2}
-.hp-case:nth-child(3) .hp-case-badge{background:rgba(192,0,107,.08);color:#C0006B}
-.hp-case h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:6px}
+
+/* Left: Graph section */
+.hp-case-graph{padding:28px;display:flex;align-items:center;justify-content:center;position:relative;min-height:260px}
+.hp-case-graph img{width:100%;height:auto;border-radius:14px;border:1px solid rgba(0,0,0,.06);box-shadow:0 6px 24px rgba(0,0,0,.08);display:block}
+
+/* Right: Content section */
+.hp-case-content{padding:32px 32px 32px 8px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.hp-case-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;padding:5px 12px;border-radius:20px;align-self:flex-start}
+.hp-case-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7}
+.hp-case:nth-child(1) .hp-case-badge{background:rgba(14,84,44,.12);color:#063D1A}
+.hp-case:nth-child(2) .hp-case-badge{background:rgba(0,67,210,.1);color:#001D66}
+.hp-case:nth-child(3) .hp-case-badge{background:rgba(192,0,107,.1);color:#8A004E}
+
+.hp-case h3{font-family:var(--display);font-size:26px;font-weight:700;line-height:1.1;margin:0}
 .hp-case:nth-child(1) h3{color:#063D1A}
 .hp-case:nth-child(2) h3{color:#001D66}
 .hp-case:nth-child(3) h3{color:#8A004E}
-.hp-case .hp-case-sub{font-size:13px;line-height:1.5}
-.hp-case:nth-child(1) .hp-case-sub{color:rgba(6,61,26,.5)}
-.hp-case:nth-child(2) .hp-case-sub{color:rgba(0,29,102,.45)}
-.hp-case:nth-child(3) .hp-case-sub{color:rgba(138,0,78,.4)}
-.hp-case-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:4px 28px 28px}
-.hp-case-stat{padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.5)}
-.hp-case-stat strong{display:block;font-family:var(--display);font-size:24px;font-weight:700;line-height:1;margin-bottom:3px}
-.hp-case:nth-child(1) .hp-case-stat strong{color:#093829}
-.hp-case:nth-child(2) .hp-case-stat strong{color:#0043D2}
+
+.hp-case-sub{font-size:14px;line-height:1.55;margin:0}
+.hp-case:nth-child(1) .hp-case-sub{color:rgba(6,61,26,.6)}
+.hp-case:nth-child(2) .hp-case-sub{color:rgba(0,29,102,.55)}
+.hp-case:nth-child(3) .hp-case-sub{color:rgba(138,0,78,.55)}
+
+/* Hero stats — only 2 big numbers */
+.hp-case-hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.hp-case-hero-stats .hp-case-stat{padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.55);backdrop-filter:blur(4px)}
+.hp-case-stat strong{display:block;font-family:var(--display);font-size:28px;font-weight:700;line-height:1;margin-bottom:4px}
+.hp-case:nth-child(1) .hp-case-stat strong{color:#063D1A}
+.hp-case:nth-child(2) .hp-case-stat strong{color:#001D66}
 .hp-case:nth-child(3) .hp-case-stat strong{color:#8A004E}
-.hp-case-stat span{font-size:11px;color:rgba(0,0,0,.4)}
+.hp-case-stat span{font-size:11px;font-weight:600;color:rgba(0,0,0,.5)}
+
+/* Read more link */
+.hp-case-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;margin-top:6px;transition:gap .3s}
+.hp-case-link:hover{gap:10px}
+.hp-case-link svg{width:14px;height:14px}
+.hp-case:nth-child(1) .hp-case-link{color:#063D1A}
+.hp-case:nth-child(2) .hp-case-link{color:#001D66}
+.hp-case:nth-child(3) .hp-case-link{color:#8A004E}
 /* Testimonial */
 .hp-testimonial{margin-top:56px;max-width:740px;margin-left:auto;margin-right:auto;padding:40px 48px;background:#fff;border-radius:20px;border:1px solid rgba(0,0,0,.06);position:relative;display:flex;gap:28px;align-items:flex-start}
 .hp-testimonial::before{content:'\201C';position:absolute;top:12px;left:24px;font-family:var(--display);font-size:60px;color:rgba(14,84,44,.08);line-height:1}
@@ -1063,7 +1087,9 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
 /* ── Responsive ── */
 @media(max-width:768px){
-  .s-grid2,.hp-evo-panels,.hp-ba-row,.hp-cases,.hp-fit-grid,.hp-svc-core,.hp-svc-more{grid-template-columns:1fr}
+  .s-grid2,.hp-evo-panels,.hp-ba-row,.hp-fit-grid,.hp-svc-core,.hp-svc-more{grid-template-columns:1fr}
+  .hp-case{grid-template-columns:1fr}
+  .hp-case-content{padding:24px}
   .hp-sys-pipeline{grid-template-columns:1fr;gap:24px}
   .hp-sys-arrow{transform:rotate(90deg);padding:8px 0}
   .hp-sys-plats{grid-template-columns:1fr 1fr}
@@ -1533,34 +1559,39 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
       </div>
     </div>
 
-    <!-- Case Studies -->
+    <!-- Divider -->
+    <div class="hp-cases-divider"><span>Real stories from real clients</span></div>
+
+    <!-- Case Studies — horizontal landscape -->
     <div class="hp-cases" id="proofCases">
       <div class="hp-case" data-delay="0">
-        <div class="hp-case-head">
+        <div class="hp-case-graph">
+          <img src="email-marketing-saas.jpeg" alt="Email SaaS GSC growth" loading="lazy">
+        </div>
+        <div class="hp-case-content">
           <div class="hp-case-badge">B2B SaaS</div>
           <h3>Email SaaS</h3>
-          <div class="hp-case-sub">4,244 AI citations. $1.2M pipeline in 6 months.</div>
-        </div>
-        <img src="email-marketing-saas.jpeg" alt="Email SaaS GSC growth" loading="lazy" style="width:100%;border-radius:10px;margin:12px 0;border:1px solid rgba(0,0,0,.04)">
-        <div class="hp-case-stats">
-          <div class="hp-case-stat"><strong>4,244</strong><span>AI citations</span></div>
-          <div class="hp-case-stat"><strong>$1.2M</strong><span>Pipeline</span></div>
-          <div class="hp-case-stat"><strong>+89%</strong><span>More demos</span></div>
-          <div class="hp-case-stat"><strong>3,300%</strong><span>Traffic growth</span></div>
+          <p class="hp-case-sub">From zero AI visibility to 4,244 citations and $1.2M in pipeline — in just 6 months.</p>
+          <div class="hp-case-hero-stats">
+            <div class="hp-case-stat"><strong>4,244</strong><span>AI citations</span></div>
+            <div class="hp-case-stat"><strong>$1.2M</strong><span>Pipeline generated</span></div>
+          </div>
+          <a href="#" class="hp-case-link">View full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
       <div class="hp-case" data-delay="150">
-        <div class="hp-case-head">
+        <div class="hp-case-graph">
+          <img src="vc-graph.png" alt="BookYourData GSC growth" loading="lazy">
+        </div>
+        <div class="hp-case-content">
           <div class="hp-case-badge">Data Platform</div>
           <h3>BookYourData</h3>
-          <div class="hp-case-sub">$1M to $5M+ revenue. 511 AI Overview citations.</div>
-        </div>
-        <img src="vc-graph.png" alt="BookYourData GSC growth" loading="lazy" style="width:100%;border-radius:10px;margin:12px 0;border:1px solid rgba(0,0,0,.04)">
-        <div class="hp-case-stats">
-          <div class="hp-case-stat"><strong>511</strong><span>AI Overview citations</span></div>
-          <div class="hp-case-stat"><strong>891</strong><span>Top-3 keywords</span></div>
-          <div class="hp-case-stat"><strong>26K</strong><span>Monthly traffic</span></div>
-          <div class="hp-case-stat"><strong>$5M+</strong><span>Revenue from search</span></div>
+          <p class="hp-case-sub">Grew from $1M to $5M+ in revenue by dominating search and becoming the #1 cited source in AI Overviews.</p>
+          <div class="hp-case-hero-stats">
+            <div class="hp-case-stat"><strong>$5M+</strong><span>Revenue from search</span></div>
+            <div class="hp-case-stat"><strong>511</strong><span>AI Overview citations</span></div>
+          </div>
+          <a href="#" class="hp-case-link">View full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </div>
