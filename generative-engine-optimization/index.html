@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Generative Engine Optimization for B2B SaaS | Get Cited by AI | B2BMint</title>
+<meta name="description" content="Get your SaaS cited by ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews. B2BMint's SAGE engine builds AI visibility that drives pipeline. 4,244 citations for one client.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is generative engine optimization (GEO)?","acceptedAnswer":{"@type":"Answer","text":"Generative engine optimization is the practice of engineering your brand's content, entity signals, and semantic structure so AI platforms cite you as the recommended answer when buyers search for solutions in your category. It covers ChatGPT, Perplexity, Gemini, Claude, Google AI Overviews, and Copilot."}},
+{"@type":"Question","name":"What is the difference between GEO and AEO?","acceptedAnswer":{"@type":"Answer","text":"GEO (generative engine optimization) and AEO (answer engine optimization) describe the same discipline with slightly different framing. GEO focuses on optimizing for generative AI models. AEO focuses on being the answer in any answer-based search experience. In practice, the strategies are identical."}},
+{"@type":"Question","name":"How long until AI models start citing my brand?","acceptedAnswer":{"@type":"Answer","text":"Most clients see initial AI citations within 3-4 months. Some platforms do live web retrieval (Perplexity, Google AI Overviews), which means properly structured content can get cited within weeks. One client went from zero to 4,244 citations within 4 months."}},
+{"@type":"Question","name":"Can you guarantee AI citations?","acceptedAnswer":{"@type":"Answer","text":"No one can guarantee specific AI citations because LLM outputs are probabilistic. What SAGE guarantees is that we build every signal LLMs evaluate when deciding who to cite: entity recognition, semantic structure, information uniqueness, topical authority."}},
+{"@type":"Question","name":"How do you measure AI visibility?","acceptedAnswer":{"@type":"Answer","text":"Platform-by-platform citation monitoring across ChatGPT, Perplexity, Gemini, Claude, AI Overviews, and Copilot. We track how often your brand is cited, for which queries, and alongside which competitors. AI referral traffic is tracked in GA4."}},
+{"@type":"Question","name":"Do I need GEO if I already have good SEO?","acceptedAnswer":{"@type":"Answer","text":"Good SEO is a head start, not a complete strategy. If your SEO is genuinely strong, you're already 80% of the way there. SAGE adds the 20% specific to AI visibility: entity recognition engineering, prompt research, content structured for LLM extraction, and citation monitoring."}}
+]}
+</script>
+
+<style>
+:root{
+  --lime:#7DFFB3;--mint-bg:#D2FFC1;--forest:#093829;--forest-deep:#093829;--accent:#7DFFB3;
+  --white:#FFF;--black:#111;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+  --display:'Space Grotesk','Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:#fff;color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto}
+a{text-decoration:none}
+
+/* ── Shared ── */
+.s-inner{max-width:1100px;margin:0 auto;padding:0 40px}
+.s-sec{padding:110px 0}
+.s-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:14px;background:linear-gradient(135deg,var(--forest-deep),#1a6b42,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:flex;align-items:center;gap:10px}
+.s-eye::before{content:'';width:20px;height:4px;border-radius:4px;flex-shrink:0;background:var(--forest)}
+.s-eye.eye-rose::before{background:#C4325B}
+.s-eye.eye-purple::before{background:#7B5CF5}
+.s-eye.eye-blue::before{background:#2D8BF5}
+.s-eye.eye-amber::before{background:#E87B2F}
+.s-eye.eye-green::before{background:#1AAD6B}
+.s-eye.center{justify-content:center;text-align:center}
+.s-h{font-family:var(--display);font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:18px;color:var(--forest-deep)}
+.dt-rose{background:radial-gradient(circle,#C4325B 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-purple{background:radial-gradient(circle,#7B5CF5 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-blue{background:radial-gradient(circle,#2D8BF5 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-amber{background:radial-gradient(circle,#E87B2F 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-green{background:radial-gradient(circle,#1AAD6B 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Soothing reveal — slower */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.rv.show{opacity:1;transform:translateY(0)}
+
+/* ── Navbar (starts white on this page) ── */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);box-shadow:0 1px 8px rgba(0,0,0,.04);transition:all .3s}
+.nav-logo{display:flex;align-items:center;gap:8px}
+.nav-logo-icon{width:28px;height:28px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:var(--forest-deep)}
+.nav-logo-text{font-size:18px;font-weight:800;color:var(--forest-deep);letter-spacing:-.02em}
+.nav-logo-text span{color:var(--forest)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-link{font-size:14px;font-weight:500;color:rgba(0,0,0,.5);transition:color .2s}
+.nav-link:hover{color:var(--forest-deep)}
+.nav-cta{padding:10px 24px;background:transparent;border:1.5px solid var(--forest-deep);border-radius:10px;font-size:13px;font-weight:600;color:var(--forest-deep);transition:all .2s}
+.nav-cta:hover{background:var(--forest-deep);color:var(--white)}
+
+/* ── S1: Hero (white, airy) ── */
+.geo-hero{padding:160px 0 100px;background:linear-gradient(180deg,rgba(210,255,193,.15) 0%,#fff 40%);position:relative}
+.geo-hero .s-inner{max-width:800px;text-align:center}
+.geo-hero-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--forest);opacity:.4;margin-bottom:20px}
+.geo-hero h1{font-family:var(--display);font-size:clamp(34px,4.5vw,54px);font-weight:700;line-height:1.1;letter-spacing:-.03em;color:var(--forest-deep);margin-bottom:24px}
+.geo-hero-sub{font-size:17px;line-height:1.85;color:rgba(0,0,0,.45);max-width:640px;margin:0 auto 36px}
+.geo-hero-cta{display:inline-flex;align-items:center;gap:12px;padding:18px 44px;background:var(--forest-deep);color:var(--lime);font-weight:800;font-size:16px;border-radius:60px;box-shadow:0 4px 20px rgba(9,56,41,.12);transition:all .4s cubic-bezier(.16,1,.3,1)}
+.geo-hero-cta:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 40px rgba(9,56,41,.2)}
+.geo-hero-cta svg{width:18px;height:18px}
+/* Trust strip */
+.geo-trust{display:flex;align-items:center;justify-content:center;gap:28px;margin-top:48px;flex-wrap:wrap}
+.geo-trust-item{font-size:13px;font-weight:600;color:rgba(9,56,41,.35)}
+.geo-trust-item strong{color:var(--forest-deep)}
+.geo-trust-item img{height:22px;opacity:.4;vertical-align:middle;margin-right:6px}
+/* Platform strip */
+.geo-platforms{display:flex;align-items:center;justify-content:center;gap:32px;margin-top:36px;flex-wrap:wrap}
+.geo-plat{font-size:12px;font-weight:600;color:rgba(0,0,0,.25);letter-spacing:.04em;transition:color .3s}
+.geo-plat:hover{color:rgba(0,0,0,.5)}
+
+/* ── S2: Data / Deals You're Losing ── */
+.geo-data{background:#f9fafb}
+.geo-data-intro{font-size:17px;line-height:1.85;color:rgba(0,0,0,.45);max-width:720px;margin-bottom:48px}
+.geo-stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.geo-stat-card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:20px;padding:32px 24px;transition:all .4s}
+.geo-stat-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06);border-color:rgba(9,56,41,.1)}
+.geo-stat-card strong{display:block;font-family:var(--display);font-size:clamp(36px,4vw,52px);font-weight:700;color:var(--forest-deep);line-height:1;margin-bottom:12px}
+.geo-stat-card p{font-size:14px;line-height:1.65;color:rgba(0,0,0,.45)}
+.geo-data-compound{margin-top:40px;font-size:16px;line-height:1.85;color:rgba(0,0,0,.4);max-width:720px;font-style:italic}
+.geo-data-compound strong{color:var(--forest-deep);font-style:normal}
+.geo-soft-cta{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:14px;font-weight:600;color:var(--forest-deep);opacity:.5;transition:all .3s}
+.geo-soft-cta:hover{opacity:1}
+.geo-soft-cta svg{width:16px;height:16px;transition:transform .3s}
+.geo-soft-cta:hover svg{transform:translateX(4px)}
+
+/* ── S3: Proof Block (dark, cinematic) ── */
+.geo-proof{background:var(--forest-deep);padding:120px 0;position:relative;overflow:hidden}
+.geo-proof::before{content:'';position:absolute;top:-30%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(125,255,179,.06),transparent 55%);pointer-events:none}
+.geo-proof .s-inner{position:relative;z-index:2}
+.geo-proof-headline{font-family:var(--display);font-size:clamp(22px,3vw,32px);font-weight:700;color:#fff;text-align:center;margin-bottom:48px;line-height:1.3;max-width:700px;margin-left:auto;margin-right:auto}
+.geo-proof-headline em{font-style:normal;color:var(--lime)}
+/* Platform cards */
+.geo-proof-platforms{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:48px}
+.geo-proof-plat{background:rgba(125,255,179,.05);border:1px solid rgba(125,255,179,.08);border-radius:16px;padding:24px 16px;text-align:center;transition:all .4s}
+.geo-proof-plat:hover{background:rgba(125,255,179,.1);transform:translateY(-3px)}
+.geo-proof-plat strong{display:block;font-family:var(--display);font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--lime);line-height:1;margin-bottom:6px}
+.geo-proof-plat span{font-size:11px;font-weight:500;color:rgba(255,255,255,.35)}
+/* Before/after narrative */
+.geo-proof-narrative{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:48px;padding-top:48px;border-top:1px solid rgba(125,255,179,.06)}
+.geo-proof-before,.geo-proof-after{padding:24px 0}
+.geo-proof-before h4,.geo-proof-after h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:16px}
+.geo-proof-before h4{color:rgba(255,255,255,.25)}
+.geo-proof-after h4{color:var(--lime);opacity:.6}
+.geo-proof-before p,.geo-proof-after p{font-size:15px;line-height:1.7;color:rgba(255,255,255,.35)}
+.geo-proof-after p{color:rgba(255,255,255,.5)}
+.geo-proof-after p strong{color:var(--lime)}
+/* Metrics row */
+.geo-proof-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:48px}
+.geo-proof-metric{text-align:center;padding:16px}
+.geo-proof-metric strong{display:block;font-family:var(--display);font-size:24px;font-weight:700;color:var(--lime);margin-bottom:4px}
+.geo-proof-metric span{font-size:11px;color:rgba(255,255,255,.3)}
+/* Testimonial */
+.geo-proof-quote{max-width:700px;margin:0 auto;text-align:center;padding-top:40px;border-top:1px solid rgba(125,255,179,.06)}
+.geo-proof-quote blockquote{font-size:17px;font-style:italic;line-height:1.7;color:rgba(255,255,255,.45);margin-bottom:16px}
+.geo-proof-quote cite{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);font-style:normal}
+.geo-proof-quote cite span{color:rgba(255,255,255,.25);display:block;font-weight:400;margin-top:2px;font-size:12px}
+.geo-proof-note{text-align:center;margin-top:32px;font-size:13px;color:rgba(125,255,179,.35);font-weight:500}
+
+/* ── S4: How LLMs Decide ── */
+.geo-factors{background:#fff}
+.geo-factor-blocks{display:flex;flex-direction:column;gap:64px;margin-top:48px}
+.geo-factor{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.geo-factor:nth-child(even){direction:rtl}
+.geo-factor:nth-child(even) > *{direction:ltr}
+.geo-factor-num{font-family:var(--display);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.geo-factor:nth-child(1) .geo-factor-num{color:#2D8BF5}
+.geo-factor:nth-child(2) .geo-factor-num{color:#7B5CF5}
+.geo-factor:nth-child(3) .geo-factor-num{color:#E87B2F}
+.geo-factor:nth-child(4) .geo-factor-num{color:#1AAD6B}
+.geo-factor-text h3{font-family:var(--display);font-size:24px;font-weight:700;color:var(--forest-deep);margin-bottom:14px;line-height:1.2}
+.geo-factor-text p{font-size:15px;line-height:1.85;color:rgba(0,0,0,.45);margin-bottom:16px}
+.geo-factor-sage{font-size:14px;line-height:1.7;color:rgba(0,0,0,.55);padding:16px 20px;background:#f9fafb;border-radius:12px;border-left:3px solid}
+.geo-factor:nth-child(1) .geo-factor-sage{border-color:#2D8BF5}
+.geo-factor:nth-child(2) .geo-factor-sage{border-color:#7B5CF5}
+.geo-factor:nth-child(3) .geo-factor-sage{border-color:#E87B2F}
+.geo-factor:nth-child(4) .geo-factor-sage{border-color:#1AAD6B}
+/* Factor visuals */
+.geo-factor-visual{border-radius:20px;padding:48px;text-align:center;transition:all .3s}
+.geo-factor:hover .geo-factor-visual{transform:scale(1.02)}
+.geo-factor:nth-child(1) .geo-factor-visual{background:#EDF5FF}
+.geo-factor:nth-child(2) .geo-factor-visual{background:#F3EDFF}
+.geo-factor:nth-child(3) .geo-factor-visual{background:#FFF5ED}
+.geo-factor:nth-child(4) .geo-factor-visual{background:#EDFFF5}
+.geo-fv-big{font-family:var(--display);font-size:64px;font-weight:700;line-height:1}
+.geo-factor:nth-child(1) .geo-fv-big{color:#2D8BF5}
+.geo-factor:nth-child(2) .geo-fv-big{color:#7B5CF5}
+.geo-factor:nth-child(3) .geo-fv-big{color:#E87B2F}
+.geo-factor:nth-child(4) .geo-fv-big{color:#1AAD6B}
+.geo-fv-label{font-size:14px;color:rgba(0,0,0,.35);margin-top:8px}
+
+/* ── S5: 80% Overlap ── */
+.geo-overlap{background:#f9fafb}
+/* Venn diagram */
+.geo-venn{display:flex;justify-content:center;align-items:center;margin:48px auto;max-width:700px;position:relative;min-height:340px}
+.geo-venn-circle{width:320px;height:320px;border-radius:50%;position:absolute;display:flex;align-items:center;padding:28px}
+.geo-venn-left{background:rgba(45,139,245,.08);border:2px solid rgba(45,139,245,.15);left:calc(50% - 260px);justify-content:flex-start;padding-left:32px}
+.geo-venn-right{background:rgba(26,173,107,.08);border:2px solid rgba(26,173,107,.15);right:calc(50% - 260px);justify-content:flex-end;padding-right:32px}
+.geo-venn-center{position:relative;z-index:2;background:rgba(255,255,255,.9);border-radius:16px;padding:20px 24px;box-shadow:0 4px 20px rgba(0,0,0,.06);max-width:220px;text-align:center}
+.geo-venn-center-label{font-family:var(--display);font-size:32px;font-weight:700;color:var(--forest-deep);line-height:1}
+.geo-venn-center-sub{font-size:11px;color:rgba(0,0,0,.35);margin-top:4px;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.geo-venn-center ul{list-style:none;margin-top:12px;text-align:left}
+.geo-venn-center li{font-size:11px;color:rgba(0,0,0,.4);padding:2px 0;line-height:1.4}
+.geo-venn-side{max-width:100px}
+.geo-venn-side h5{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.geo-venn-left .geo-venn-side h5{color:#2D8BF5}
+.geo-venn-right .geo-venn-side h5{color:#1AAD6B}
+.geo-venn-side li{font-size:10px;color:rgba(0,0,0,.35);padding:2px 0;list-style:none;line-height:1.4}
+/* Comparison */
+.geo-compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.geo-compare-col{border-radius:20px;padding:32px 28px}
+.geo-compare-col.no{background:#FFE8E2}
+.geo-compare-col.yes{background:#D2FFC1}
+.geo-compare-col h3{font-family:var(--display);font-size:18px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.geo-compare-col.no h3{color:#8A1A00}
+.geo-compare-col.yes h3{color:#063D1A}
+.geo-compare-item{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;margin-bottom:8px;border-radius:10px;background:rgba(255,255,255,.5);font-size:14px;line-height:1.5}
+.geo-compare-col.no .geo-compare-item{color:rgba(138,26,0,.6)}
+.geo-compare-col.yes .geo-compare-item{color:rgba(6,61,26,.6)}
+.geo-compare-icon{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.geo-compare-icon svg{width:11px;height:11px}
+.geo-compare-col.no .geo-compare-icon{background:rgba(192,0,0,.1);color:#c00}
+.geo-compare-col.yes .geo-compare-icon{background:rgba(14,84,44,.1);color:var(--forest)}
+.geo-overlap-close{text-align:center;margin-top:40px;font-family:var(--display);font-size:18px;font-weight:700;color:var(--forest-deep)}
+
+/* ── S6: Six Platforms ── */
+.geo-six{background:#fff}
+.geo-six-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.geo-six-card{border:1px solid rgba(0,0,0,.06);border-radius:20px;padding:28px 24px;background:#fff;transition:all .4s}
+.geo-six-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06);border-color:rgba(0,0,0,.1)}
+.geo-six-card-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.geo-six-card-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.geo-six-card:nth-child(1) .geo-six-card-dot{background:#10A37F}
+.geo-six-card:nth-child(2) .geo-six-card-dot{background:#1A73E8}
+.geo-six-card:nth-child(3) .geo-six-card-dot{background:#4285F4}
+.geo-six-card:nth-child(4) .geo-six-card-dot{background:#8E44EF}
+.geo-six-card:nth-child(5) .geo-six-card-dot{background:#D97706}
+.geo-six-card:nth-child(6) .geo-six-card-dot{background:#0078D4}
+.geo-six-card h3{font-family:var(--display);font-size:17px;font-weight:700;color:var(--forest-deep)}
+.geo-six-card p{font-size:14px;line-height:1.7;color:rgba(0,0,0,.45)}
+.geo-six-proof{margin-top:40px;text-align:center;font-size:15px;color:rgba(0,0,0,.4);line-height:1.7}
+.geo-six-proof strong{color:var(--forest-deep)}
+
+/* ── S7: Results ── */
+.geo-results{background:#f9fafb}
+.geo-cs-cards{display:flex;flex-direction:column;gap:24px;margin-top:48px}
+.geo-cs{border-radius:24px;padding:40px 36px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;transition:all .4s}
+.geo-cs:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.06)}
+.geo-cs:nth-child(1){background:#CEEBFF}
+.geo-cs:nth-child(2){background:#D2FFC1}
+.geo-cs:nth-child(3){background:#FFD6E8}
+.geo-cs-badge{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:5px 14px;border-radius:20px;margin-bottom:10px}
+.geo-cs:nth-child(1) .geo-cs-badge{background:rgba(0,67,210,.08);color:#0043D2}
+.geo-cs:nth-child(2) .geo-cs-badge{background:rgba(9,56,41,.08);color:var(--forest-deep)}
+.geo-cs:nth-child(3) .geo-cs-badge{background:rgba(192,0,107,.08);color:#C0006B}
+.geo-cs h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:6px;line-height:1.15}
+.geo-cs:nth-child(1) h3{color:#001D66}
+.geo-cs:nth-child(2) h3{color:#063D1A}
+.geo-cs:nth-child(3) h3{color:#8A004E}
+.geo-cs-sub{font-size:14px;line-height:1.6;margin-bottom:16px}
+.geo-cs:nth-child(1) .geo-cs-sub{color:rgba(0,29,102,.45)}
+.geo-cs:nth-child(2) .geo-cs-sub{color:rgba(6,61,26,.45)}
+.geo-cs:nth-child(3) .geo-cs-sub{color:rgba(138,0,78,.4)}
+.geo-cs-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;transition:all .3s}
+.geo-cs-link svg{width:16px;height:16px;transition:transform .3s}
+.geo-cs-link:hover svg{transform:translateX(4px)}
+.geo-cs:nth-child(1) .geo-cs-link{color:#0043D2}
+.geo-cs:nth-child(2) .geo-cs-link{color:var(--forest-deep)}
+.geo-cs:nth-child(3) .geo-cs-link{color:#C0006B}
+.geo-cs-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.geo-cs-stat{padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.55)}
+.geo-cs-stat strong{display:block;font-family:var(--display);font-size:20px;font-weight:700;line-height:1;margin-bottom:3px}
+.geo-cs:nth-child(1) .geo-cs-stat strong{color:#0043D2}
+.geo-cs:nth-child(2) .geo-cs-stat strong{color:var(--forest-deep)}
+.geo-cs:nth-child(3) .geo-cs-stat strong{color:#C0006B}
+.geo-cs-stat span{font-size:11px;color:rgba(0,0,0,.4)}
+
+/* ── S8: What GEO Agencies Get Wrong ── */
+.geo-wrong{background:#fff}
+.geo-wrong-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px}
+.geo-wrong-card{border-radius:20px;padding:32px 28px;transition:all .3s}
+.geo-wrong-card:hover{transform:translateY(-3px)}
+.geo-wrong-card:nth-child(1){background:#FFE8E2}
+.geo-wrong-card:nth-child(2){background:#FFFDD9}
+.geo-wrong-card:nth-child(3){background:#E8D8FF}
+.geo-wrong-card:nth-child(4){background:#D2FFC1}
+.geo-wrong-card h3{font-family:var(--display);font-size:18px;font-weight:700;margin-bottom:10px;line-height:1.2}
+.geo-wrong-card:nth-child(1) h3{color:#8A1A00}
+.geo-wrong-card:nth-child(2) h3{color:#5C4D00}
+.geo-wrong-card:nth-child(3) h3{color:#4A2D8A}
+.geo-wrong-card:nth-child(4) h3{color:#063D1A}
+.geo-wrong-card p{font-size:14px;line-height:1.7}
+.geo-wrong-card:nth-child(1) p{color:rgba(138,26,0,.5)}
+.geo-wrong-card:nth-child(2) p{color:rgba(92,77,0,.5)}
+.geo-wrong-card:nth-child(3) p{color:rgba(74,45,138,.45)}
+.geo-wrong-card:nth-child(4) p{color:rgba(6,61,26,.55)}
+.geo-wrong-card:nth-child(4):hover{box-shadow:0 12px 40px rgba(9,56,41,.08)}
+
+/* ── S9: FAQ ── */
+.geo-faq{background:var(--mint-bg)}
+.geo-faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:900px;margin:40px auto 0}
+.geo-faq-item{background:rgba(255,255,255,.5);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .3s}
+.geo-faq-item:hover{background:rgba(255,255,255,.7)}
+.geo-faq-item.open{background:rgba(255,255,255,.8)}
+.geo-fq{display:flex;justify-content:space-between;align-items:flex-start;padding:20px 22px;font-size:15px;font-weight:700;color:var(--forest-deep);user-select:none;gap:12px;line-height:1.35}
+.geo-fq .geo-fq-icon{width:26px;height:26px;border-radius:50%;background:rgba(9,56,41,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;color:var(--forest);transition:all .3s}
+.geo-faq-item.open .geo-fq-icon{background:var(--forest-deep);color:var(--lime);transform:rotate(45deg)}
+.geo-fa{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1),padding .3s;padding:0 22px}
+.geo-faq-item.open .geo-fa{max-height:400px;padding:0 22px 20px}
+.geo-fa p{font-size:14px;line-height:1.7;color:rgba(0,0,0,.5)}
+
+/* ── CTA + Footer (shared) ── */
+.s-cta-footer{position:relative;overflow:hidden}
+.cta-top{background:var(--mint-bg);position:relative;padding:100px 0 0;overflow:hidden}
+.cta-top::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(9,56,41,.04) 0%,transparent 60%);pointer-events:none}
+.cta-top .s-inner{position:relative;z-index:2}
+.hp-cta-top-text{text-align:center;margin-bottom:48px}
+.hp-cta-eyebrow{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--forest-deep);margin-bottom:16px;opacity:.4}
+.s-cta-footer .s-h{font-family:var(--display);color:var(--forest-deep);font-size:clamp(32px,4.5vw,52px);font-weight:700;margin:0 auto 16px;line-height:1.08;text-align:center;max-width:700px}
+.s-cta-footer .s-sub{color:rgba(9,56,41,.4);font-size:16px;line-height:1.7;margin:0 auto 32px;text-align:center;max-width:500px}
+.hp-cta-btn{display:inline-flex;align-items:center;gap:12px;padding:20px 48px;background:var(--forest-deep);color:#fff;font-weight:800;font-size:17px;border-radius:60px;border:none;cursor:pointer;transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 20px rgba(9,56,41,.15)}
+.hp-cta-btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 40px rgba(9,56,41,.25)}
+.hp-cta-btn svg{width:18px;height:18px}
+.hp-cta-micro{margin-top:16px;font-size:13px;color:rgba(9,56,41,.25);text-align:center}
+.hp-cta-card{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-top:48px}
+.hp-cta-photo{position:relative;display:flex;align-items:flex-end;justify-content:center;margin-bottom:-2px}
+.hp-cta-photo img{position:relative;z-index:3;width:380px;max-width:100%;display:block;object-fit:contain;filter:grayscale(100%) contrast(1.1) drop-shadow(0 8px 30px rgba(9,56,41,.15))}
+.hp-cta-proof{display:flex;flex-direction:column;gap:12px;padding-bottom:40px}
+.hp-cta-proof-card{background:#fff;border:1px solid rgba(9,56,41,.06);border-radius:16px;padding:20px 24px;display:flex;align-items:center;gap:20px;transition:all .3s;box-shadow:0 2px 8px rgba(9,56,41,.04)}
+.hp-cta-proof-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(9,56,41,.08)}
+.hp-cta-proof-num{font-family:var(--display);font-size:28px;font-weight:700;color:var(--forest-deep);line-height:1;min-width:70px}
+.hp-cta-proof-text{font-size:13px;color:rgba(9,56,41,.35);line-height:1.4}
+.hp-cta-proof-text strong{color:var(--forest-deep);font-weight:600;display:block;margin-bottom:2px;font-size:14px}
+.cta-bottom{background:var(--forest-deep);position:relative;z-index:1;overflow:hidden}
+.ft-topbar{max-width:1100px;margin:0 auto;padding:56px 40px 0;display:flex;justify-content:space-between;align-items:center}
+.ft-logo{display:flex;align-items:center;gap:10px}
+.ft-logo-icon{width:32px;height:32px;border-radius:10px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--forest-deep)}
+.ft-logo-text{font-family:var(--display);font-size:20px;font-weight:700;color:#fff}
+.ft-logo-text span{color:var(--lime)}
+.ft-socials{display:flex;gap:10px}
+.ft-socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.ft-socials a:hover{border-color:var(--lime);background:rgba(125,255,179,.08);transform:translateY(-2px)}
+.ft-socials a svg{width:16px;height:16px;fill:rgba(255,255,255,.55);transition:fill .3s}
+.ft-socials a:hover svg{fill:var(--lime)}
+.ft-nav-center{text-align:center;padding:48px 40px;max-width:700px;margin:0 auto}
+.ft-nav{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;align-items:center}
+.ft-nav a{color:rgba(255,255,255,.5);font-size:17px;font-weight:600;transition:all .3s;display:inline-block;letter-spacing:.3px}
+.ft-nav a:hover{color:var(--lime);letter-spacing:1.5px}
+.ft-badge-strip{position:relative;padding:40px 40px 48px;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:0}
+.ft-badge{flex-shrink:0;animation:ftBadgeFloat 7s ease-in-out infinite}
+.ft-badge:last-child{animation-delay:-3.5s}
+@keyframes ftBadgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.ft-badge svg{display:block;filter:drop-shadow(0 4px 20px rgba(125,255,179,.1))}
+.ft-statement{flex:1;display:flex;align-items:center;gap:0;padding:0 20px}
+.ft-statement-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--lime),transparent);opacity:.3;position:relative}
+.ft-statement-line::before{content:'';position:absolute;width:8px;height:8px;border-radius:50%;background:var(--lime);top:-3.5px;box-shadow:0 0 10px rgba(125,255,179,.4)}
+.ft-statement-line:first-child::before{right:0}
+.ft-statement-line:last-child::before{left:0}
+.ft-statement-text{padding:0 24px;white-space:nowrap;font-family:var(--display);font-size:clamp(16px,2.2vw,22px);color:#fff;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.ft-statement-text strong{color:var(--lime);font-size:1.4em;text-shadow:0 0 20px rgba(125,255,179,.3)}
+.ft-newsletter{max-width:1100px;margin:0 auto;padding:0 40px}
+.ft-nl-inner{display:flex;justify-content:space-between;align-items:center;gap:32px;padding:28px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.ft-nl-text{font-size:14px;color:rgba(255,255,255,.35);font-weight:500}
+.ft-nl-form{display:flex;gap:0;flex-shrink:0}
+.ft-nl-form input{padding:12px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-right:none;border-radius:10px 0 0 10px;color:#fff;font-size:14px;font-family:var(--sans);outline:none;width:240px;transition:border-color .3s}
+.ft-nl-form input::placeholder{color:rgba(255,255,255,.2)}
+.ft-nl-form input:focus{border-color:rgba(125,255,179,.3)}
+.ft-nl-form button{padding:12px 24px;background:var(--lime);color:var(--forest-deep);font-weight:700;font-size:14px;border:none;border-radius:0 10px 10px 0;cursor:pointer;font-family:var(--sans);transition:all .3s;white-space:nowrap}
+.ft-nl-form button:hover{background:#6ee6a0}
+.ft-trust-row{max-width:1100px;margin:0 auto;padding:28px 40px;display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
+.ft-trust-badge{transition:all .3s;display:block}
+.ft-trust-badge:hover{transform:translateY(-2px)}
+.ft-trust-badge img{height:60px;width:auto;display:block;opacity:.7;transition:opacity .3s}
+.ft-trust-badge:hover img{opacity:1}
+.ft-bottom{max-width:1100px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ft-bottom-logo{font-family:var(--display);font-size:16px;font-weight:700;color:rgba(255,255,255,.3)}
+.ft-bottom-logo span{color:rgba(125,255,179,.4)}
+.ft-bottom-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(125,255,179,.2);border-radius:60px;color:var(--lime);font-size:14px;font-weight:700;transition:all .3s}
+.ft-bottom-cta:hover{border-color:var(--lime);background:rgba(125,255,179,.06);transform:translateY(-2px)}
+.ft-bottom-cta svg{width:14px;height:14px}
+.ft-legal{display:flex;gap:16px}
+.ft-legal a{font-size:12px;color:rgba(255,255,255,.2);transition:color .2s}
+.ft-legal a:hover{color:var(--lime)}
+
+/* ── Responsive ── */
+@media(max-width:768px){
+  .s-inner{padding:0 20px}
+  .s-sec{padding:70px 0}
+  .geo-hero{padding:120px 0 70px}
+  .geo-stat-row{grid-template-columns:1fr}
+  .geo-proof-platforms{grid-template-columns:1fr 1fr;gap:10px}
+  .geo-proof-platforms .geo-proof-plat:last-child{grid-column:1/-1}
+  .geo-proof-narrative{grid-template-columns:1fr}
+  .geo-proof-metrics{grid-template-columns:1fr 1fr}
+  .geo-factor,.geo-factor:nth-child(even){grid-template-columns:1fr;direction:ltr}
+  .geo-factor:nth-child(even) > *{direction:ltr}
+  .geo-venn{flex-direction:column;min-height:auto;gap:16px}
+  .geo-venn-circle{position:relative;left:auto;right:auto;width:100%;height:auto;padding:24px;border-radius:16px}
+  .geo-venn-center{max-width:100%}
+  .geo-compare{grid-template-columns:1fr}
+  .geo-six-grid{grid-template-columns:1fr}
+  .geo-cs{grid-template-columns:1fr;padding:28px 24px}
+  .geo-wrong-grid{grid-template-columns:1fr}
+  .geo-faq-grid{grid-template-columns:1fr}
+  .hp-cta-card{grid-template-columns:1fr}
+  .hp-cta-proof{padding-bottom:0}
+  .ft-topbar{flex-direction:column;gap:24px;align-items:flex-start}
+  .ft-badge-strip{flex-direction:column;gap:24px}
+  .ft-statement{padding:0;width:100%}
+  .ft-nl-inner{flex-direction:column;align-items:flex-start}
+  .ft-trust-row{gap:24px}
+  .ft-bottom{flex-direction:column;align-items:center;text-align:center}
+  .navbar{padding:14px 20px}
+  .nav-links{display:none}
+  .geo-trust{flex-direction:column;gap:12px}
+  .geo-platforms{gap:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <a href="/" class="nav-logo"><div class="nav-logo-icon">B</div><div class="nav-logo-text">B2B<span>Mint</span></div></a>
+  <div class="nav-links">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/saas-seo/" class="nav-link">SaaS SEO</a>
+    <a href="/case-studies/" class="nav-link">Case Studies</a>
+    <a href="https://calendly.com/hamid-b2bmint/30min" class="nav-cta">Book Free Audit</a>
+  </div>
+</nav>
+
+<!-- S1: HERO -->
+<section class="geo-hero">
+  <div class="s-inner">
+    <div class="geo-hero-eye rv">Generative Engine Optimization for B2B SaaS</div>
+    <h1 class="rv" style="transition-delay:.1s">Get Your SaaS Cited by ChatGPT, Perplexity, and Every AI Platform Your Buyers Use</h1>
+    <p class="geo-hero-sub rv" style="transition-delay:.15s">58% of B2B buyers now use AI for software recommendations. When they ask "what's the best tool for [your category]?", the brand that gets cited wins the shortlist. The brand that doesn't never knows it lost.</p>
+    <div class="rv" style="transition-delay:.2s;text-align:center">
+      <a href="https://calendly.com/hamid-b2bmint/30min" class="geo-hero-cta">Book Your Free AI Visibility Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="geo-trust rv" style="transition-delay:.3s">
+      <div class="geo-trust-item"><strong>4,244</strong> AI citations for one client</div>
+      <div class="geo-trust-item">Cited across <strong>6 platforms</strong></div>
+      <div class="geo-trust-item"><strong>$1.2M</strong> pipeline from organic</div>
+    </div>
+    <div class="geo-platforms rv" style="transition-delay:.4s">
+      <span class="geo-plat">ChatGPT</span>
+      <span class="geo-plat">Perplexity</span>
+      <span class="geo-plat">Google AI Overviews</span>
+      <span class="geo-plat">Gemini</span>
+      <span class="geo-plat">Claude</span>
+      <span class="geo-plat">Copilot</span>
+    </div>
+  </div>
+</section>
+
+<!-- S2: THE DATA -->
+<section class="s-sec geo-data">
+  <div class="s-inner">
+    <div class="s-eye eye-rose rv">The Shift</div>
+    <h2 class="s-h rv" style="transition-delay:.1s">The deals you're losing right now <span class="dt-rose">(and the data that proves it)</span></h2>
+    <p class="geo-data-intro rv" style="transition-delay:.15s">When a VP of Marketing asks ChatGPT "what's the best email marketing tool for mid-market SaaS?", the answer shapes their shortlist before they ever visit a website. This isn't a future trend. It's measurable right now.</p>
+    <div class="geo-stat-row rv" style="transition-delay:.2s">
+      <div class="geo-stat-card"><strong>58%</strong><p>of consumers now rely on AI for product recommendations. Up from 25% in 2023. Your buyers are in this group.</p></div>
+      <div class="geo-stat-card"><strong>12%</strong><p>of pages ranking in Google's top 3 are actually cited by ChatGPT or Claude for the same queries. Ranking doesn't mean you exist in AI search.</p></div>
+      <div class="geo-stat-card"><strong>60%</strong><p>of Google searches now result in zero clicks as AI summaries take over. Your traffic may look stable while buyer visibility collapses.</p></div>
+      <div class="geo-stat-card"><strong>6-18mo</strong><p>The visibility lag. LLMs train on content from 6-18 months ago. Authority your competitors build today becomes their citation advantage in future models.</p></div>
+    </div>
+    <p class="geo-data-compound rv" style="transition-delay:.3s"><strong>This isn't manufactured urgency.</strong> It's how the training pipeline works. The cost of waiting isn't zero. It's compounding.</p>
+    <a href="https://calendly.com/hamid-b2bmint/30min" class="geo-soft-cta rv" style="transition-delay:.35s">See where you're invisible <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<!-- S3: PROOF BLOCK (dark, cinematic) -->
+<section class="geo-proof">
+  <div class="s-inner">
+    <p class="geo-proof-headline rv">From zero AI presence to <em>4,244 citations</em> across 5 platforms in 4 months.</p>
+    <div class="geo-proof-platforms rv" style="transition-delay:.1s">
+      <div class="geo-proof-plat"><strong>2,300</strong><span>AI Overviews</span></div>
+      <div class="geo-proof-plat"><strong>1,700</strong><span>ChatGPT</span></div>
+      <div class="geo-proof-plat"><strong>120</strong><span>Perplexity</span></div>
+      <div class="geo-proof-plat"><strong>89</strong><span>Gemini</span></div>
+      <div class="geo-proof-plat"><strong>35</strong><span>Copilot</span></div>
+    </div>
+    <div class="geo-proof-narrative rv" style="transition-delay:.2s">
+      <div class="geo-proof-before">
+        <h4>Before SAGE</h4>
+        <p>$3M ARR. Series A. 45 employees. Previous agency spent $50K over 12 months. 68 blog posts. 73 clicks per day. Zero demos from organic. Zero AI presence.</p>
+      </div>
+      <div class="geo-proof-after">
+        <h4>After SAGE</h4>
+        <p><strong>4,244 AI citations.</strong> <strong>$1.2M pipeline</strong> from organic in months 4-6. <strong>89% more demo requests.</strong> <strong>67% lower CAC</strong> versus paid channels. Position 47 to position 3 in 8 days on the main pillar page.</p>
+      </div>
+    </div>
+    <div class="geo-proof-metrics rv" style="transition-delay:.3s">
+      <div class="geo-proof-metric"><strong>4,244</strong><span>Total AI Citations</span></div>
+      <div class="geo-proof-metric"><strong>$1.2M</strong><span>Pipeline (Months 4-6)</span></div>
+      <div class="geo-proof-metric"><strong>89%</strong><span>More Demo Requests</span></div>
+      <div class="geo-proof-metric"><strong>67%</strong><span>Lower CAC vs Paid</span></div>
+    </div>
+    <div class="geo-proof-quote rv" style="transition-delay:.35s">
+      <blockquote>&ldquo;The $5M in revenue from search isn't just a number. It's validation that authority-driven SEO actually works. Our CAC dropped 39% while lead quality went through the roof.&rdquo;</blockquote>
+      <cite>Baris Zeren<span>CEO &amp; Founder, BookYourData</span></cite>
+    </div>
+    <p class="geo-proof-note rv" style="transition-delay:.4s">No other GEO agency publishes AI citation counts broken down by individual platform.</p>
+  </div>
+</section>
+
+<!-- S4: HOW LLMs DECIDE -->
+<section class="s-sec geo-factors">
+  <div class="s-inner">
+    <div class="s-eye eye-purple rv" style="text-align:center;justify-content:center">The Technical Foundation</div>
+    <h2 class="s-h rv" style="transition-delay:.1s;text-align:center">How LLMs decide which brands to <span class="dt-purple">cite.</span></h2>
+    <div class="geo-factor-blocks">
+      <div class="geo-factor rv" style="transition-delay:.15s">
+        <div class="geo-factor-text">
+          <div class="geo-factor-num">Factor 1</div>
+          <h3>Entity recognition</h3>
+          <p>Before an LLM can recommend your brand, it needs to recognize your brand as a distinct entity. Not just a name on a website. A recognized entity with attributes, category associations, and relationships to other entities in your space.</p>
+          <div class="geo-factor-sage">SAGE establishes your brand through enhanced Organization schema, entity-attribute mapping, and Wikidata presence. These signals make LLMs classify your brand correctly.</div>
+        </div>
+        <div class="geo-factor-visual"><div class="geo-fv-big">?&rarr;&#x2713;</div><div class="geo-fv-label">Unknown to recognized entity</div></div>
+      </div>
+      <div class="geo-factor rv" style="transition-delay:.2s">
+        <div class="geo-factor-text">
+          <div class="geo-factor-num">Factor 2</div>
+          <h3>Semantic structure</h3>
+          <p>LLMs extract information differently than Google indexes it. They look for clean hierarchies, explicit definitions, direct answers, and structured content they can pull from without guessing.</p>
+          <div class="geo-factor-sage">SAGE structures every page with declaration-first answers, clear entity classifications, and content formatted so AI models can pull attributable claims.</div>
+        </div>
+        <div class="geo-factor-visual"><div class="geo-fv-big">{&nbsp;}</div><div class="geo-fv-label">Structured for extraction</div></div>
+      </div>
+      <div class="geo-factor rv" style="transition-delay:.25s">
+        <div class="geo-factor-text">
+          <div class="geo-factor-num">Factor 3</div>
+          <h3>Information uniqueness</h3>
+          <p>LLMs prioritize content with original research, unique data points, and proprietary frameworks. If your content says what 50 other articles say, the LLM has no reason to cite you specifically.</p>
+          <div class="geo-factor-sage">SAGE helps produce original angles, proprietary data, and first-party insights. Our client's 4,244 citations happened because the content contained unique comparison data that didn't exist elsewhere.</div>
+        </div>
+        <div class="geo-factor-visual"><div class="geo-fv-big">1/50</div><div class="geo-fv-label">The one original source wins</div></div>
+      </div>
+      <div class="geo-factor rv" style="transition-delay:.3s">
+        <div class="geo-factor-text">
+          <div class="geo-factor-num">Factor 4</div>
+          <h3>Topical authority</h3>
+          <p>A single page won't make an LLM cite you as a category authority. Once semantic coverage crosses roughly 60% of a topic cluster, both Google and AI models start treating you as the default authority.</p>
+          <div class="geo-factor-sage">SAGE builds this through semantic topical mapping, pillar-cluster architecture, and a 71-rule quality framework applied to every page before publication.</div>
+        </div>
+        <div class="geo-factor-visual"><div class="geo-fv-big">60%</div><div class="geo-fv-label">Coverage threshold for authority</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S5: 80% OVERLAP -->
+<section class="s-sec geo-overlap">
+  <div class="s-inner">
+    <div class="s-eye eye-amber rv" style="text-align:center;justify-content:center">Why One System, Not Two</div>
+    <h2 class="s-h rv" style="transition-delay:.1s;text-align:center">80% of the work that ranks you on Google is the same work that gets you <span class="dt-amber">cited by AI.</span></h2>
+    <div class="geo-venn rv" style="transition-delay:.2s">
+      <div class="geo-venn-circle geo-venn-left">
+        <div class="geo-venn-side">
+          <h5>Google Only (10%)</h5>
+          <ul><li>Backlink signals</li><li>Core Web Vitals</li><li>Crawl optimization</li></ul>
+        </div>
+      </div>
+      <div class="geo-venn-center">
+        <div class="geo-venn-center-label">80%</div>
+        <div class="geo-venn-center-sub">Shared Foundation</div>
+        <ul>
+          <li>Semantic architecture</li>
+          <li>Entity optimization</li>
+          <li>BOFU content</li>
+          <li>Schema markup</li>
+          <li>Topical authority</li>
+          <li>Content depth</li>
+          <li>Internal linking</li>
+        </ul>
+      </div>
+      <div class="geo-venn-circle geo-venn-right">
+        <div class="geo-venn-side">
+          <h5>AI Only (10%)</h5>
+          <ul><li>Prompt research</li><li>LLM source targeting</li><li>AI crawlability</li><li>Citation monitoring</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="geo-compare rv" style="transition-delay:.3s">
+      <div class="geo-compare-col no">
+        <h3><span class="geo-compare-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>What you don't need</h3>
+        <div class="geo-compare-item"><span class="geo-compare-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Two agencies (SEO + GEO)</div>
+        <div class="geo-compare-item"><span class="geo-compare-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Two separate budgets</div>
+        <div class="geo-compare-item"><span class="geo-compare-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Duplicated foundational work</div>
+      </div>
+      <div class="geo-compare-col yes">
+        <h3><span class="geo-compare-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>What you need</h3>
+        <div class="geo-compare-item"><span class="geo-compare-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>One system that builds the authority both platforms reward</div>
+        <div class="geo-compare-item"><span class="geo-compare-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>One budget, two channels</div>
+        <div class="geo-compare-item"><span class="geo-compare-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Pipeline attribution across both</div>
+      </div>
+    </div>
+    <p class="geo-overlap-close rv" style="transition-delay:.4s">One system. One budget. Two channels.</p>
+  </div>
+</section>
+
+<!-- S6: SIX PLATFORMS -->
+<section class="s-sec geo-six">
+  <div class="s-inner">
+    <div class="s-eye eye-blue rv" style="text-align:center;justify-content:center">Platform Coverage</div>
+    <h2 class="s-h rv" style="transition-delay:.1s;text-align:center">Six platforms. Monitored. Optimized. <span class="dt-blue">Connected to pipeline.</span></h2>
+    <div class="geo-six-grid rv" style="transition-delay:.2s">
+      <div class="geo-six-card"><div class="geo-six-card-head"><div class="geo-six-card-dot"></div><h3>ChatGPT</h3></div><p>The most-used AI for software research. 87% of its web citations match Bing's top 10 organic results. Your content needs to rank and be structured for extraction.</p></div>
+      <div class="geo-six-card"><div class="geo-six-card-head"><div class="geo-six-card-dot"></div><h3>Perplexity</h3></div><p>AI search with transparent source citations. Does live web retrieval on every query. Fresh, well-structured content gets priority. Growing fast among research-focused buyers.</p></div>
+      <div class="geo-six-card"><div class="geo-six-card-head"><div class="geo-six-card-dot"></div><h3>Google AI Overviews</h3></div><p>AI summaries appearing directly in Google results. 60% of searches now result in zero clicks. The AI Overview determines whether buyers see your brand or only competitors.</p></div>
+      <div class="geo-six-card"><div class="geo-six-card-head"><div class="geo-six-card-dot"></div><h3>Gemini</h3></div><p>Google's AI across Search, Workspace, and Android. Evaluates topical authority and entity signals plus structured data that helps it extract clean, citable answers.</p></div>
+      <div class="geo-six-card"><div class="geo-six-card-head"><div class="geo-six-card-dot"></div><h3>Claude</h3></div><p>Anthropic's AI, increasingly used for in-depth vendor evaluation by technical buyers. Evaluates content depth, factual accuracy, and source quality.</p></div>
+      <div class="geo-six-card"><div class="geo-six-card-head"><div class="geo-six-card-dot"></div><h3>Copilot</h3></div><p>Microsoft's AI in Bing, Edge, and Microsoft 365. Enterprise buyers encounter Copilot recommendations during their daily workflow in the Microsoft ecosystem.</p></div>
+    </div>
+    <p class="geo-six-proof rv" style="transition-delay:.3s">One client. All platforms tracked. <strong>4,244 total citations.</strong> No other agency reports this level of platform-specific detail.</p>
+  </div>
+</section>
+
+<!-- S7: RESULTS -->
+<section class="s-sec geo-results">
+  <div class="s-inner">
+    <div class="s-eye eye-green rv" style="text-align:center;justify-content:center">The Results</div>
+    <h2 class="s-h rv" style="transition-delay:.1s;text-align:center">Three SaaS companies. One system. <span class="dt-green">Verified numbers.</span></h2>
+    <div class="geo-cs-cards">
+      <div class="geo-cs rv" style="transition-delay:.2s">
+        <div><div class="geo-cs-badge">Email Marketing SaaS</div><h3>Zero AI presence to 4,244 citations</h3><p class="geo-cs-sub">$3M ARR Series A. Previous agency had zero AI strategy. After SAGE, became the most AI-cited brand in their category.</p><a href="#" class="geo-cs-link">View Full Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="geo-cs-stats"><div class="geo-cs-stat"><strong>4,244</strong><span>AI Citations</span></div><div class="geo-cs-stat"><strong>2,300</strong><span>AI Overviews</span></div><div class="geo-cs-stat"><strong>1,700</strong><span>ChatGPT</span></div><div class="geo-cs-stat"><strong>$1.2M</strong><span>Pipeline</span></div><div class="geo-cs-stat"><strong>89%</strong><span>More Demos</span></div><div class="geo-cs-stat"><strong>67%</strong><span>Lower CAC</span></div></div>
+      </div>
+      <div class="geo-cs rv" style="transition-delay:.3s">
+        <div><div class="geo-cs-badge">Data Platform &bull; Named</div><h3>BookYourData: $1M to $5M+ revenue</h3><p class="geo-cs-sub">Bootstrapped. 3+ years. #1 for "buy email list" in the US. Publicly verifiable on bookyourdata.com and G2.</p><a href="/case-studies/bookyourdata/" class="geo-cs-link">View Full Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="geo-cs-stats"><div class="geo-cs-stat"><strong>511</strong><span>AI Overviews</span></div><div class="geo-cs-stat"><strong>145</strong><span>ChatGPT</span></div><div class="geo-cs-stat"><strong>891</strong><span>Top-3 Keywords</span></div><div class="geo-cs-stat"><strong>$5M+</strong><span>Revenue</span></div><div class="geo-cs-stat"><strong>400%</strong><span>Lead Growth</span></div><div class="geo-cs-stat"><strong>#1</strong><span>"buy email list"</span></div></div>
+      </div>
+      <div class="geo-cs rv" style="transition-delay:.4s">
+        <div><div class="geo-cs-badge">Agency &bull; Named</div><h3>Socially Powerful: $50M+ revenue</h3><p class="geo-cs-sub">$50M+ influencer marketing agency. Page 1 for "influencer marketing agency" in the UK.</p><a href="/case-studies/socially-powerful/" class="geo-cs-link">View Full Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="geo-cs-stats"><div class="geo-cs-stat"><strong>8x</strong><span>Lead Growth</span></div><div class="geo-cs-stat"><strong>26K+</strong><span>Monthly Visitors</span></div><div class="geo-cs-stat"><strong>Page 1</strong><span>UK Agency Keyword</span></div><div class="geo-cs-stat"><strong>35%</strong><span>Lower CAC</span></div><div class="geo-cs-stat"><strong>180%</strong><span>Traffic Growth</span></div><div class="geo-cs-stat"><strong>$50M+</strong><span>Client Revenue</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S8: WHAT OTHER GEO AGENCIES GET WRONG -->
+<section class="s-sec geo-wrong">
+  <div class="s-inner">
+    <div class="s-eye eye-rose rv" style="text-align:center;justify-content:center">The GEO Landscape</div>
+    <h2 class="s-h rv" style="transition-delay:.1s;text-align:center">What other GEO agencies <span class="dt-rose">get wrong.</span></h2>
+    <div class="geo-wrong-grid rv" style="transition-delay:.2s">
+      <div class="geo-wrong-card"><h3>The bolt-on agencies</h3><p>SEO agencies that added a "GEO" service page last year. Core methodology is still traditional SEO. The GEO layer is surface-level optimizations bolted onto a foundation that wasn't built for AI. The foundation is wrong, so the GEO layer underperforms.</p></div>
+      <div class="geo-wrong-card"><h3>The standalone GEO agencies</h3><p>Treat GEO as completely separate from SEO. Build AI-specific strategies without integrating into organic search architecture. 80% of what drives AI citations is the same work that drives Google rankings. Running them separately means duplicating work or building on nothing.</p></div>
+      <div class="geo-wrong-card"><h3>The "evolution of SEO" agencies</h3><p>Position GEO as a natural extension of existing SEO. Closest to right, but lack technical depth. Can't articulate what semantic frames are, how entity-attribute mapping works, or what the 60% coverage threshold means. Correct positioning, thin methodology.</p></div>
+      <div class="geo-wrong-card"><h3>Where SAGE fits</h3><p>Built from the ground up for the reality that Google and AI evaluate the same authority signals. Semantic frame analysis, lexical coverage mapping, entity-attribute prioritization, 71-rule quality framework. One system. One budget. Two channels.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- S9: FAQ -->
+<section class="s-sec geo-faq">
+  <div class="s-inner">
+    <div class="s-eye eye-amber rv" style="text-align:center;justify-content:center">Questions About GEO</div>
+    <h2 class="s-h rv" style="transition-delay:.1s;text-align:center">Straight answers.</h2>
+    <div class="geo-faq-grid">
+      <div class="geo-faq-item rv" style="transition-delay:.15s"><div class="geo-fq"><span>What is generative engine optimization (GEO)?</span><span class="geo-fq-icon">+</span></div><div class="geo-fa"><p>Generative engine optimization is the practice of engineering your brand's content, entity signals, and semantic structure so AI platforms cite you as the recommended answer. It covers ChatGPT, Perplexity, Gemini, Claude, Google AI Overviews, and Copilot. 80% of the foundational work is the same work that drives Google rankings. SAGE handles both from one unified system.</p></div></div>
+      <div class="geo-faq-item rv" style="transition-delay:.2s"><div class="geo-fq"><span>What's the difference between GEO and AEO?</span><span class="geo-fq-icon">+</span></div><div class="geo-fa"><p>GEO and AEO describe the same discipline with slightly different framing. GEO focuses on generative AI models. AEO focuses on being the answer in any answer-based search experience. In practice, the strategies are identical. B2BMint uses GEO as the primary term because it more accurately describes the technical mechanism.</p></div></div>
+      <div class="geo-faq-item rv" style="transition-delay:.25s"><div class="geo-fq"><span>How long until AI models start citing my brand?</span><span class="geo-fq-icon">+</span></div><div class="geo-fa"><p>Most clients see initial AI citations within 3-4 months. Some platforms do live web retrieval (Perplexity, AI Overviews), meaning properly structured content can get cited within weeks. One client went from zero to 4,244 citations within 4 months.</p></div></div>
+      <div class="geo-faq-item rv" style="transition-delay:.3s"><div class="geo-fq"><span>Can you guarantee AI citations?</span><span class="geo-fq-icon">+</span></div><div class="geo-fa"><p>No one can guarantee specific citations because LLM outputs are probabilistic. What SAGE guarantees is that we build every signal LLMs evaluate: entity recognition, semantic structure, information uniqueness, topical authority. Our track record (4,244 citations for one client) is the evidence.</p></div></div>
+      <div class="geo-faq-item rv" style="transition-delay:.35s"><div class="geo-fq"><span>How do you measure AI visibility?</span><span class="geo-fq-icon">+</span></div><div class="geo-fa"><p>Platform-by-platform citation monitoring across all six platforms. We track how often your brand is cited, for which queries, and alongside which competitors. AI referral traffic is tracked in GA4. Citation reports are delivered alongside pipeline reports.</p></div></div>
+      <div class="geo-faq-item rv" style="transition-delay:.4s"><div class="geo-fq"><span>How much should I budget for GEO?</span><span class="geo-fq-icon">+</span></div><div class="geo-fa"><p>SAGE doesn't price GEO separately from SEO because 80% of the work is the same. One engagement, both channels. Every engagement starts as a 90-day trial. All assets stay with you. Measure the investment against pipeline, not citation counts or traffic.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- S10: CTA + FOOTER -->
+<div class="s-cta-footer">
+  <div class="cta-top">
+    <div class="s-inner">
+      <div class="hp-cta-top-text">
+        <div class="hp-cta-eyebrow rv">Talk to the founder</div>
+        <h2 class="s-h rv" style="transition-delay:.1s">See your AI visibility gaps before<br>you spend a <span class="dt-green">dollar.</span></h2>
+        <p class="s-sub rv" style="transition-delay:.15s">On the first call, we show you exactly where your competitors are being cited and where you're invisible. Platform by platform. Real data. No slides.</p>
+        <a href="https://calendly.com/hamid-b2bmint/30min" class="hp-cta-btn rv" style="transition-delay:.2s">Book Your Free AI Visibility Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="hp-cta-micro rv" style="transition-delay:.25s">Free &bull; 30 min &bull; Founder-led &bull; Zero obligation</div>
+      </div>
+      <div class="hp-cta-card rv" style="transition-delay:.3s">
+        <div class="hp-cta-photo"><img src="/hamid-khan.png" alt="Hamid Khan, Founder of B2BMint" loading="lazy"></div>
+        <div class="hp-cta-proof">
+          <div class="hp-cta-proof-card"><div class="hp-cta-proof-num">4,244</div><div class="hp-cta-proof-text"><strong>AI Citations Built</strong>Across ChatGPT, Claude, Perplexity, Gemini &amp; Google</div></div>
+          <div class="hp-cta-proof-card"><div class="hp-cta-proof-num">$1.2M</div><div class="hp-cta-proof-text"><strong>Pipeline Generated</strong>From organic search and AI visibility alone</div></div>
+          <div class="hp-cta-proof-card"><div class="hp-cta-proof-num">47</div><div class="hp-cta-proof-text"><strong>SaaS Companies</strong>Trust B2BMint to build their search &amp; AI presence</div></div>
+          <div class="hp-cta-proof-card"><div class="hp-cta-proof-num">90d</div><div class="hp-cta-proof-text"><strong>Trial Period</strong>All assets stay with you. You own everything from day one.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="cta-bottom">
+    <div class="ft-topbar"><div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap"><a href="/" class="ft-logo"><div class="ft-logo-icon">B</div><div class="ft-logo-text">B2B<span>Mint</span></div></a><span style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.5">7209 Lancaster Pike, Ste 4 #3125<br>Hockessin, DE 19707</span></div><div class="ft-socials"><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a><a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></div></div>
+    <div class="ft-nav-center"><ul class="ft-nav"><li><a href="/">Home</a></li><li><a href="/saas-seo/">SaaS SEO</a></li><li><a href="/generative-engine-optimization/">GEO</a></li><li><a href="/case-studies/">Case Studies</a></li><li><a href="#">FAQ</a></li><li><a href="#">Blog</a></li></ul></div>
+    <div class="ft-badge-strip"><div class="ft-badge"><svg width="180" height="180" viewBox="0 0 180 180" fill="none"><path d="M90 10 L160 45 L160 100 C160 140 130 165 90 175 C50 165 20 140 20 100 L20 45 Z" fill="rgba(125,255,179,.06)" stroke="#7DFFB3" stroke-width="1.5"/><path d="M90 28 L145 55 L145 98 C145 130 120 152 90 160 C60 152 35 130 35 98 L35 55 Z" fill="rgba(125,255,179,.03)" stroke="#7DFFB3" stroke-width=".5" opacity=".4"/><path d="M90 55 C105 70 112 82 112 95 C112 108 102 118 90 125 C78 118 68 108 68 95 C68 82 75 70 90 55Z" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width="1.2"/><line x1="90" y1="60" x2="90" y2="120" stroke="#7DFFB3" stroke-width=".6" opacity=".4"/><text x="90" y="88" text-anchor="middle" fill="#7DFFB3" font-size="22" font-weight="700" font-family="Space Grotesk,sans-serif">SAGE</text><text x="90" y="139" text-anchor="middle" fill="#7DFFB3" font-size="8" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">ENGINE</text></svg></div><div class="ft-statement"><div class="ft-statement-line"></div><div class="ft-statement-text">We build <strong>100%</strong> visibility</div><div class="ft-statement-line"></div></div><div class="ft-badge"><svg width="180" height="180" viewBox="0 0 180 180" fill="none"><polygon points="90,8 160,38 160,118 90,172 20,118 20,38" fill="rgba(125,255,179,.05)" stroke="#7DFFB3" stroke-width="1.5"/><polygon points="90,24 148,48 148,112 90,158 32,112 32,48" fill="rgba(125,255,179,.02)" stroke="#7DFFB3" stroke-width=".5" opacity=".35"/><rect x="58" y="100" width="12" height="30" rx="2" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width=".8"/><rect x="74" y="85" width="12" height="45" rx="2" fill="rgba(125,255,179,.12)" stroke="#7DFFB3" stroke-width=".8"/><rect x="90" y="65" width="12" height="65" rx="2" fill="rgba(125,255,179,.15)" stroke="#7DFFB3" stroke-width="1"/><rect x="106" y="50" width="12" height="80" rx="2" fill="rgba(125,255,179,.18)" stroke="#7DFFB3" stroke-width="1"/><path d="M112 50 L112 38 M106 44 L112 36 L118 44" stroke="#7DFFB3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="144" text-anchor="middle" fill="#7DFFB3" font-size="9" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">GROWTH</text><text x="90" y="22" text-anchor="middle" fill="#7DFFB3" font-size="18" font-weight="700" font-family="Space Grotesk,sans-serif" opacity=".6">MINT</text></svg></div></div>
+    <div class="ft-newsletter"><div class="ft-nl-inner"><div class="ft-nl-left"><span class="ft-nl-text">Subscribe to our SEO &amp; AI visibility newsletter</span></div><form class="ft-nl-form" onsubmit="return false"><input type="email" placeholder="Enter your email"><button type="submit">Subscribe</button></form></div></div>
+    <div class="ft-trust-row"><div class="ft-trust-badge"><img src="/google-premier.svg" alt="Google Premier Partner 2025"></div><div class="ft-trust-badge"><img src="/linkedin-badge.avif" alt="LinkedIn Certified Marketing Partner"></div><div class="ft-trust-badge"><img src="/trustpilot-badge.svg" alt="Trustpilot 4.9" style="height:40px"></div></div>
+    <div class="ft-bottom"><div class="ft-bottom-logo">B2B<span>Mint</span></div><a href="https://calendly.com/hamid-b2bmint/30min" class="ft-bottom-cta">Book a Strategy Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><div class="ft-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+  </footer>
+</div>
+
+<script>
+// Soothing reveals
+const rvObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');rvObs.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.geo-faq-item').forEach(item=>{
+  item.querySelector('.geo-fq').addEventListener('click',()=>{
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.geo-faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen)item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
