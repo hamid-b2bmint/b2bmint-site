@@ -57,20 +57,30 @@ a{text-decoration:none}
 .rv{opacity:0;transform:translateY(16px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .rv.show{opacity:1;transform:translateY(0)}
 
-/* ── Navbar (starts white on this page) ── */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);box-shadow:0 1px 8px rgba(0,0,0,.04);transition:all .3s}
+/* ── Navbar (solid bg on inner pages) ── */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);box-shadow:0 1px 8px rgba(0,0,0,.06);transition:all .3s}
 .nav-logo{display:flex;align-items:center;gap:8px}
 .nav-logo-icon{width:28px;height:28px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:var(--forest-deep)}
 .nav-logo-text{font-size:18px;font-weight:800;color:var(--forest-deep);letter-spacing:-.02em}
 .nav-logo-text span{color:var(--forest)}
 .nav-links{display:flex;align-items:center;gap:32px}
-.nav-link{font-size:14px;font-weight:500;color:rgba(0,0,0,.5);transition:color .2s}
+.nav-link{font-size:14px;font-weight:500;color:rgba(0,0,0,.6);transition:color .2s}
 .nav-link:hover{color:var(--forest-deep)}
 .nav-cta{padding:10px 24px;background:transparent;border:1.5px solid var(--forest-deep);border-radius:10px;font-size:13px;font-weight:600;color:var(--forest-deep);transition:all .2s}
 .nav-cta:hover{background:var(--forest-deep);color:var(--white)}
 
+/* ── Testimonial Spotlight ── */
+.geo-testi{background:#fff;padding:60px 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.geo-testi-inner{max-width:800px;margin:0 auto;padding:0 40px;display:flex;align-items:flex-start;gap:28px}
+.geo-testi img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(9,56,41,.08)}
+.geo-testi-body{flex:1}
+.geo-testi blockquote{font-size:18px;font-style:italic;line-height:1.7;color:rgba(0,0,0,.6);margin-bottom:12px}
+.geo-testi cite{font-size:13px;font-weight:600;color:var(--forest-deep);font-style:normal;display:block}
+.geo-testi cite span{display:block;font-size:12px;font-weight:400;color:rgba(0,0,0,.4);margin-top:2px}
+
 /* ── S1: Hero (split layout, left text + right visual) ── */
-.geo-hero{padding:160px 0 100px;background:linear-gradient(180deg,rgba(210,255,193,.15) 0%,#fff 40%);position:relative}
+.geo-hero{padding:160px 0 100px;background:var(--mint-bg);position:relative;overflow:hidden}
+.geo-hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(125,255,179,.3),transparent 60%);pointer-events:none}
 .geo-hero .s-inner{max-width:1200px}
 .geo-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 .geo-hero-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--forest);opacity:.4;margin-bottom:20px;display:flex;align-items:center;gap:10px}
@@ -415,7 +425,7 @@ a{text-decoration:none}
   .navbar{padding:14px 20px}
   .nav-links{display:none}
   .geo-trust{flex-direction:column;gap:12px}
-  .geo-platforms{gap:16px}
+  .geo-testi-inner{flex-direction:column;align-items:center;text-align:center}
 }
 </style>
 </head>
@@ -461,6 +471,17 @@ a{text-decoration:none}
         <div class="geo-trust-item">Cited across <strong>6 platforms</strong></div>
         <div class="geo-trust-item"><strong>$1.2M</strong> pipeline from organic</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL SPOTLIGHT -->
+<section class="geo-testi rv">
+  <div class="geo-testi-inner">
+    <img src="/baris-zeren.jpeg" alt="Baris Zeren" loading="lazy">
+    <div class="geo-testi-body">
+      <blockquote>&ldquo;The $5M in revenue from search isn't just a number. It's validation that authority-driven SEO actually works. Our CAC dropped 39% while lead quality went through the roof.&rdquo;</blockquote>
+      <cite>Baris Zeren<span>CEO &amp; Founder, BookYourData</span></cite>
     </div>
   </div>
 </section>
