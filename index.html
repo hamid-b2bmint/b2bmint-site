@@ -487,28 +487,34 @@ body{font-family:var(--sans);background:#0B1A0F;color:var(--white);overflow-x:hi
 
 /* ── S2: The Pain ── */
 .s-pain{background:var(--mint-bg)}
-.s-pain .s-quote{margin-top:48px;font-size:16px;font-style:italic;color:rgba(0,0,0,.55);border-left:3px solid var(--forest);padding-left:20px;max-width:700px;line-height:1.6;opacity:0;transform:translateY(16px);transition:opacity .6s ease .2s,transform .6s ease .2s}
+.s-pain .s-quote{margin-top:48px;font-size:18px;font-style:italic;color:rgba(0,0,0,.5);border-left:4px solid var(--forest);padding:20px 24px;max-width:700px;line-height:1.7;opacity:0;transform:translateY(16px);transition:opacity .6s ease .2s,transform .6s ease .2s;background:rgba(255,255,255,.35);border-radius:0 14px 14px 0}
 .s-pain .s-quote.show{opacity:1;transform:translateY(0)}
-.s-pain .s-quote span{font-weight:600;color:var(--forest-deep);font-style:normal}
+.s-pain .s-quote span{font-weight:700;color:var(--forest-deep);font-style:normal}
 .hp-rc-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--forest);margin-bottom:8px}
-.hp-rc-grade{font-size:11px;color:#c00;font-weight:700;background:rgba(204,0,0,.08);padding:4px 12px;border-radius:20px;margin-bottom:20px;display:inline-block;animation:gradePulse 2.5s ease-in-out infinite}
+.hp-rc-grade{font-size:11px;color:#c00;font-weight:700;background:rgba(204,0,0,.08);padding:5px 14px;border-radius:20px;margin-bottom:20px;display:inline-block;animation:gradePulse 2.5s ease-in-out infinite}
 @keyframes gradePulse{0%,100%{box-shadow:0 0 0 0 rgba(204,0,0,0)}50%{box-shadow:0 0 0 6px rgba(204,0,0,.08)}}
-.hp-rc-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.06);opacity:0;transform:translateX(16px);transition:opacity .4s ease,transform .4s ease}
+.hp-rc-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.06);opacity:0;transform:translateX(16px);transition:opacity .4s ease,transform .4s ease}
 .hp-rc-row.show{opacity:1;transform:translateX(0)}
 .hp-rc-row:last-child{border-bottom:none}
-.hp-rc-label{font-size:14px;color:rgba(0,0,0,.65);display:flex;align-items:center;gap:8px}
-.hp-rc-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.hp-rc-label{font-size:14px;color:rgba(0,0,0,.6);display:flex;align-items:center;gap:10px;font-weight:500}
+.hp-rc-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 .hp-rc-dot.red{background:#E53E3E}.hp-rc-dot.amber{background:#DD9A00}.hp-rc-dot.green{background:#22A858}
-.hp-rc-val{font-size:14px;font-weight:700;color:#c00}
+.hp-rc-val{font-size:15px;font-weight:800;color:#c00}
 .hp-rc-val.ok{color:var(--forest)}
 .hp-rc-val.amber{color:#B8860B}
 .s-pain-signs{margin-top:28px}
-.s-pain-signs-title{font-size:13px;font-weight:700;color:var(--forest-deep);margin-bottom:14px;text-transform:uppercase;letter-spacing:.08em}
-.s-pain-sign{display:flex;align-items:flex-start;gap:12px;padding:10px 0;opacity:0;transform:translateX(-12px);transition:opacity .4s ease,transform .4s ease}
+.s-pain-signs-title{font-size:12px;font-weight:700;color:var(--forest-deep);margin-bottom:16px;text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;gap:8px}
+.s-pain-signs-title::after{content:'';flex:1;height:1px;background:rgba(0,0,0,.08)}
+.s-pain-sign{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;margin-bottom:6px;border-radius:12px;opacity:0;transform:translateX(-12px);transition:all .4s ease;cursor:default}
 .s-pain-sign.show{opacity:1;transform:translateX(0)}
-.s-pain-sign-icon{width:22px;height:22px;border-radius:50%;background:rgba(204,0,0,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.s-pain-sign-icon svg{width:12px;height:12px}
-.s-pain-sign span{font-size:14px;color:rgba(0,0,0,.7);line-height:1.5}
+.s-pain-sign:hover{background:rgba(204,0,0,.03)}
+.s-pain-sign-icon{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:background .3s}
+.s-pain-sign-icon svg{width:14px;height:14px}
+.s-pain-sign:nth-child(2) .s-pain-sign-icon{background:rgba(204,0,0,.06)}
+.s-pain-sign:nth-child(3) .s-pain-sign-icon{background:rgba(204,0,0,.08)}
+.s-pain-sign:nth-child(4) .s-pain-sign-icon{background:rgba(204,0,0,.1)}
+.s-pain-sign:nth-child(5) .s-pain-sign-icon{background:rgba(204,0,0,.14)}
+.s-pain-sign span{font-size:15px;color:rgba(0,0,0,.65);line-height:1.5;font-weight:500}
 
 /* ── S3: Invisible Loss ── */
 .s-loss{background:#fff}
