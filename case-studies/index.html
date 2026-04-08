@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Case Studies | Real SaaS Results From SAGE | B2BMint</title>
+<meta name="description" content="Verified results from SaaS companies using B2BMint's SAGE system. $72M+ pipeline generated. 4,244 AI citations. Named, checkable clients.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --lime:#7DFFB3;--mint-bg:#D2FFC1;--forest:#093829;--forest-deep:#093829;--accent:#7DFFB3;
+  --white:#FFF;--black:#111;--red:#FA4028;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+  --display:'Space Grotesk','Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:#fff;color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto}
+a{text-decoration:none}
+
+/* ── Shared Components ── */
+.s-inner{max-width:1100px;margin:0 auto;padding:0 40px}
+.s-sec{padding:100px 0}
+.s-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:14px;background:linear-gradient(135deg,var(--forest-deep),#1a6b42,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:flex;align-items:center;gap:10px}
+.s-eye::before{content:'';width:20px;height:4px;border-radius:4px;flex-shrink:0;background:var(--forest)}
+.s-eye.eye-rose::before{background:#C4325B}
+.s-eye.eye-purple::before{background:#7B5CF5}
+.s-eye.eye-blue::before{background:#2D8BF5}
+.s-eye.eye-amber::before{background:#E87B2F}
+.s-eye.eye-green::before{background:#1AAD6B}
+.s-eye.center{justify-content:center;text-align:center}
+.s-h{font-family:var(--display);font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:18px;color:var(--forest-deep)}
+.s-p{font-size:16px;line-height:1.7;color:rgba(0,0,0,.55);max-width:640px;margin-bottom:24px}
+
+/* Dotted text */
+.dt-rose{background:radial-gradient(circle,#C4325B 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-purple{background:radial-gradient(circle,#7B5CF5 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-blue{background:radial-gradient(circle,#2D8BF5 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-amber{background:radial-gradient(circle,#E87B2F 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-green{background:radial-gradient(circle,#1AAD6B 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Reveal animation */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.rv.show{opacity:1;transform:translateY(0)}
+
+/* ── Navbar ── */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(9,56,41,.95);backdrop-filter:blur(12px);box-shadow:0 1px 8px rgba(0,0,0,.15);transition:background .3s,box-shadow .3s}
+.navbar.scrolled{background:rgba(255,255,255,.97);box-shadow:0 1px 8px rgba(0,0,0,.06)}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-logo-icon{width:28px;height:28px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:var(--forest-deep)}
+.nav-logo-text{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.nav-logo-text span{color:var(--lime)}
+.navbar.scrolled .nav-logo-text{color:var(--forest-deep)}
+.navbar.scrolled .nav-logo-text span{color:var(--forest)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-link{font-size:14px;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:#fff}
+.navbar.scrolled .nav-link{color:rgba(0,0,0,.6)}
+.navbar.scrolled .nav-link:hover{color:var(--forest-deep)}
+.nav-cta{padding:10px 24px;background:transparent;border:1.5px solid rgba(255,255,255,.2);border-radius:10px;font-size:13px;font-weight:600;color:#fff;text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35)}
+.navbar.scrolled .nav-cta{border-color:var(--forest-deep);color:var(--forest-deep)}
+.navbar.scrolled .nav-cta:hover{background:var(--forest-deep);color:var(--white)}
+
+/* ── S1: Dark Hero ── */
+.cs-hero{padding:160px 0 100px;background:var(--forest-deep);position:relative;overflow:hidden}
+.cs-hero::before{content:'';position:absolute;top:-30%;right:-10%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(125,255,179,.08),transparent 60%);pointer-events:none}
+.cs-hero::after{content:'';position:absolute;bottom:-40%;left:-15%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(125,255,179,.04),transparent 60%);pointer-events:none}
+.cs-hero .s-inner{position:relative;z-index:2}
+.cs-hero-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--lime);margin-bottom:20px;display:flex;align-items:center;gap:10px;opacity:.7}
+.cs-hero-eyebrow::before{content:'';width:20px;height:4px;border-radius:4px;background:var(--lime)}
+.cs-hero h1{font-family:var(--display);font-size:clamp(36px,5vw,60px);font-weight:700;line-height:1.08;letter-spacing:-.03em;color:#fff;margin-bottom:20px;max-width:800px}
+.cs-hero h1 .dt-green{background:radial-gradient(circle,#7DFFB3 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cs-hero-sub{font-size:17px;line-height:1.7;color:rgba(255,255,255,.4);max-width:600px;margin-bottom:48px}
+/* Hero stat strip */
+.cs-hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px}
+.cs-hero-stat{background:rgba(125,255,179,.06);border:1px solid rgba(125,255,179,.1);border-radius:16px;padding:24px 20px;text-align:center;transition:all .4s}
+.cs-hero-stat:hover{background:rgba(125,255,179,.1);transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.cs-hero-stat strong{display:block;font-family:var(--display);font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--lime);line-height:1;margin-bottom:6px}
+.cs-hero-stat span{font-size:12px;font-weight:500;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em}
+/* Hero trust */
+.cs-hero-trust{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.cs-hero-trust img{height:40px;opacity:.3;transition:opacity .3s;filter:brightness(0) invert(1)}
+.cs-hero-trust img:hover{opacity:.6}
+
+/* ── S2: Testimonial ── */
+.cs-testi{background:#fff;padding:60px 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.cs-testi-inner{max-width:800px;margin:0 auto;padding:0 40px;display:flex;align-items:flex-start;gap:28px}
+.cs-testi img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(9,56,41,.08)}
+.cs-testi-body{flex:1}
+.cs-testi blockquote{font-size:18px;font-style:italic;line-height:1.7;color:rgba(0,0,0,.6);margin-bottom:12px}
+.cs-testi cite{font-size:13px;font-weight:600;color:var(--forest-deep);font-style:normal;display:block}
+.cs-testi cite span{display:block;font-size:12px;font-weight:400;color:rgba(0,0,0,.4);margin-top:2px}
+
+/* ── S3: Featured Case Studies ── */
+.cs-cases{background:#f9fafb}
+.cs-card{border-radius:24px;padding:48px 44px;margin-bottom:28px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden;transition:all .4s}
+.cs-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.08)}
+.cs-card:nth-child(1){background:#CEEBFF}
+.cs-card:nth-child(2){background:#D2FFC1}
+.cs-card:nth-child(3){background:#FFD6E8}
+/* Card content */
+.cs-card-badge{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:5px 14px;border-radius:20px;margin-bottom:14px}
+.cs-card:nth-child(1) .cs-card-badge{background:rgba(0,67,210,.08);color:#0043D2}
+.cs-card:nth-child(2) .cs-card-badge{background:rgba(9,56,41,.08);color:var(--forest-deep)}
+.cs-card:nth-child(3) .cs-card-badge{background:rgba(192,0,107,.08);color:#C0006B}
+.cs-card h3{font-family:var(--display);font-size:clamp(24px,3vw,32px);font-weight:700;margin-bottom:6px;line-height:1.15}
+.cs-card:nth-child(1) h3{color:#001D66}
+.cs-card:nth-child(2) h3{color:#063D1A}
+.cs-card:nth-child(3) h3{color:#8A004E}
+.cs-card-tagline{font-family:var(--display);font-size:15px;font-weight:600;margin-bottom:16px}
+.cs-card:nth-child(1) .cs-card-tagline{color:rgba(0,29,102,.5)}
+.cs-card:nth-child(2) .cs-card-tagline{color:rgba(6,61,26,.5)}
+.cs-card:nth-child(3) .cs-card-tagline{color:rgba(138,0,78,.45)}
+.cs-card-desc{font-size:15px;line-height:1.7;margin-bottom:24px}
+.cs-card:nth-child(1) .cs-card-desc{color:rgba(0,29,102,.45)}
+.cs-card:nth-child(2) .cs-card-desc{color:rgba(6,61,26,.45)}
+.cs-card:nth-child(3) .cs-card-desc{color:rgba(138,0,78,.35)}
+.cs-card-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;transition:all .3s}
+.cs-card-link svg{width:16px;height:16px;transition:transform .3s}
+.cs-card-link:hover svg{transform:translateX(4px)}
+.cs-card:nth-child(1) .cs-card-link{color:#0043D2}
+.cs-card:nth-child(2) .cs-card-link{color:var(--forest-deep)}
+.cs-card:nth-child(3) .cs-card-link{color:#C0006B}
+/* Stat grid inside cards */
+.cs-card-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cs-card-stat{padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.55);backdrop-filter:blur(4px);transition:all .3s}
+.cs-card-stat:hover{background:rgba(255,255,255,.8);transform:scale(1.03)}
+.cs-card-stat strong{display:block;font-family:var(--display);font-size:22px;font-weight:700;line-height:1;margin-bottom:4px}
+.cs-card:nth-child(1) .cs-card-stat strong{color:#0043D2}
+.cs-card:nth-child(2) .cs-card-stat strong{color:var(--forest-deep)}
+.cs-card:nth-child(3) .cs-card-stat strong{color:#C0006B}
+.cs-card-stat span{font-size:11px;color:rgba(0,0,0,.4);line-height:1.3}
+/* Platform label */
+.cs-card-platform{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.5;margin-top:2px;display:block}
+
+/* ── S4: What Makes Different ── */
+.cs-diff{background:#fff}
+.cs-diff-blocks{display:flex;flex-direction:column;gap:48px;margin-top:48px}
+.cs-diff-block{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.cs-diff-block:nth-child(even){direction:rtl}
+.cs-diff-block:nth-child(even) > *{direction:ltr}
+.cs-diff-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.cs-diff-icon svg{width:24px;height:24px}
+.cs-diff-block:nth-child(1) .cs-diff-icon{background:rgba(45,139,245,.08);color:#2D8BF5}
+.cs-diff-block:nth-child(2) .cs-diff-icon{background:rgba(26,173,107,.08);color:#1AAD6B}
+.cs-diff-block:nth-child(3) .cs-diff-icon{background:rgba(123,92,245,.08);color:#7B5CF5}
+.cs-diff-block:nth-child(4) .cs-diff-icon{background:rgba(232,123,47,.08);color:#E87B2F}
+.cs-diff-text h3{font-family:var(--display);font-size:24px;font-weight:700;color:var(--forest-deep);margin-bottom:12px;line-height:1.2}
+.cs-diff-text p{font-size:15px;line-height:1.7;color:rgba(0,0,0,.5)}
+.cs-diff-visual{background:rgba(9,56,41,.03);border-radius:20px;padding:48px;text-align:center;transition:all .3s ease}
+.cs-diff-block:hover .cs-diff-visual{background:rgba(9,56,41,.05);transform:scale(1.02)}
+.cs-diff-stat{font-family:var(--display);font-size:72px;font-weight:700;color:var(--forest-deep);line-height:1}
+.cs-diff-stat-label{font-size:14px;color:rgba(9,56,41,.4);margin-top:10px;font-weight:500}
+
+/* ── S5: Aggregate Numbers ── */
+.cs-numbers{background:var(--mint-bg)}
+.cs-num-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.cs-num-card{background:rgba(255,255,255,.55);border-radius:20px;padding:36px 28px;text-align:center;transition:all .4s;cursor:default}
+.cs-num-card:hover{background:rgba(255,255,255,.85);transform:translateY(-6px);box-shadow:0 16px 48px rgba(9,56,41,.08)}
+.cs-num-card strong{display:block;font-family:var(--display);font-size:clamp(40px,5vw,64px);font-weight:700;color:var(--forest-deep);line-height:1;margin-bottom:8px}
+.cs-num-card .cs-num-label{font-size:15px;font-weight:600;color:var(--forest-deep);margin-bottom:6px}
+.cs-num-card .cs-num-desc{font-size:13px;color:rgba(9,56,41,.4);line-height:1.5}
+
+/* ── CTA + Footer (shared) ── */
+.s-cta-footer{position:relative;overflow:hidden}
+.cta-top{background:var(--mint-bg);position:relative;padding:100px 0 0;overflow:hidden}
+.cta-top::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(9,56,41,.04) 0%,transparent 60%);pointer-events:none}
+.cta-top .s-inner{position:relative;z-index:2}
+.hp-cta-top-text{text-align:center;margin-bottom:48px}
+.hp-cta-eyebrow{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--forest-deep);margin-bottom:16px;opacity:.4}
+.s-cta-footer .s-h{font-family:var(--display);color:var(--forest-deep);font-size:clamp(32px,4.5vw,52px);font-weight:700;margin:0 auto 16px;line-height:1.08;text-align:center;max-width:700px}
+.s-cta-footer .s-sub{color:rgba(9,56,41,.4);font-size:16px;line-height:1.7;margin:0 auto 32px;text-align:center;max-width:500px}
+.hp-cta-btn{display:inline-flex;align-items:center;gap:12px;padding:20px 48px;background:var(--forest-deep);color:#fff;font-weight:800;font-size:17px;border-radius:60px;border:none;cursor:pointer;text-decoration:none;transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 20px rgba(9,56,41,.15)}
+.hp-cta-btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 40px rgba(9,56,41,.25)}
+.hp-cta-btn svg{width:18px;height:18px}
+.hp-cta-micro{margin-top:16px;font-size:13px;color:rgba(9,56,41,.25);text-align:center}
+.hp-cta-card{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-top:48px}
+.hp-cta-photo{position:relative;display:flex;align-items:flex-end;justify-content:center;margin-bottom:-2px}
+.hp-cta-photo img{position:relative;z-index:3;width:380px;max-width:100%;display:block;object-fit:contain;filter:grayscale(100%) contrast(1.1) drop-shadow(0 8px 30px rgba(9,56,41,.15))}
+.hp-cta-proof{display:flex;flex-direction:column;gap:12px;padding-bottom:40px}
+.hp-cta-proof-card{background:#fff;border:1px solid rgba(9,56,41,.06);border-radius:16px;padding:20px 24px;display:flex;align-items:center;gap:20px;transition:all .3s;box-shadow:0 2px 8px rgba(9,56,41,.04)}
+.hp-cta-proof-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(9,56,41,.08);border-color:rgba(9,56,41,.1)}
+.hp-cta-proof-num{font-family:var(--display);font-size:28px;font-weight:700;color:var(--forest-deep);line-height:1;min-width:70px}
+.hp-cta-proof-text{font-size:13px;color:rgba(9,56,41,.35);line-height:1.4}
+.hp-cta-proof-text strong{color:var(--forest-deep);font-weight:600;display:block;margin-bottom:2px;font-size:14px}
+/* Footer */
+.cta-bottom{background:var(--forest-deep);position:relative;z-index:1;overflow:hidden}
+.ft-topbar{max-width:1100px;margin:0 auto;padding:56px 40px 0;display:flex;justify-content:space-between;align-items:center}
+.ft-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.ft-logo-icon{width:32px;height:32px;border-radius:10px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--forest-deep)}
+.ft-logo-text{font-family:var(--display);font-size:20px;font-weight:700;color:#fff}
+.ft-logo-text span{color:var(--lime)}
+.ft-socials{display:flex;gap:10px}
+.ft-socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;transition:all .3s;text-decoration:none}
+.ft-socials a:hover{border-color:var(--lime);background:rgba(125,255,179,.08);transform:translateY(-2px)}
+.ft-socials a svg{width:16px;height:16px;fill:rgba(255,255,255,.55);transition:fill .3s}
+.ft-socials a:hover svg{fill:var(--lime)}
+.ft-nav-center{text-align:center;padding:48px 40px;max-width:700px;margin:0 auto}
+.ft-nav{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;align-items:center}
+.ft-nav a{color:rgba(255,255,255,.5);text-decoration:none;font-size:17px;font-weight:600;transition:all .3s;display:inline-block;letter-spacing:.3px}
+.ft-nav a:hover{color:var(--lime);letter-spacing:1.5px}
+.ft-badge-strip{position:relative;padding:40px 40px 48px;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:0}
+.ft-badge{flex-shrink:0;animation:ftBadgeFloat 7s ease-in-out infinite}
+.ft-badge:last-child{animation-delay:-3.5s}
+@keyframes ftBadgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.ft-badge svg{display:block;filter:drop-shadow(0 4px 20px rgba(125,255,179,.1))}
+.ft-statement{flex:1;display:flex;align-items:center;gap:0;padding:0 20px}
+.ft-statement-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--lime),transparent);opacity:.3;position:relative}
+.ft-statement-line::before{content:'';position:absolute;width:8px;height:8px;border-radius:50%;background:var(--lime);top:-3.5px;box-shadow:0 0 10px rgba(125,255,179,.4)}
+.ft-statement-line:first-child::before{right:0}
+.ft-statement-line:last-child::before{left:0}
+.ft-statement-text{padding:0 24px;white-space:nowrap;font-family:var(--display);font-size:clamp(16px,2.2vw,22px);color:#fff;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.ft-statement-text strong{color:var(--lime);font-size:1.4em;text-shadow:0 0 20px rgba(125,255,179,.3)}
+.ft-newsletter{max-width:1100px;margin:0 auto;padding:0 40px}
+.ft-nl-inner{display:flex;justify-content:space-between;align-items:center;gap:32px;padding:28px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.ft-nl-text{font-size:14px;color:rgba(255,255,255,.35);font-weight:500}
+.ft-nl-form{display:flex;gap:0;flex-shrink:0}
+.ft-nl-form input{padding:12px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-right:none;border-radius:10px 0 0 10px;color:#fff;font-size:14px;font-family:var(--sans);outline:none;width:240px;transition:border-color .3s}
+.ft-nl-form input::placeholder{color:rgba(255,255,255,.2)}
+.ft-nl-form input:focus{border-color:rgba(125,255,179,.3)}
+.ft-nl-form button{padding:12px 24px;background:var(--lime);color:var(--forest-deep);font-weight:700;font-size:14px;border:none;border-radius:0 10px 10px 0;cursor:pointer;font-family:var(--sans);transition:all .3s;white-space:nowrap}
+.ft-nl-form button:hover{background:#6ee6a0}
+.ft-trust-row{max-width:1100px;margin:0 auto;padding:28px 40px;display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
+.ft-trust-badge{transition:all .3s;display:block}
+.ft-trust-badge:hover{transform:translateY(-2px)}
+.ft-trust-badge img{height:60px;width:auto;display:block;opacity:.7;transition:opacity .3s}
+.ft-trust-badge:hover img{opacity:1}
+.ft-bottom{max-width:1100px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ft-bottom-logo{font-family:var(--display);font-size:16px;font-weight:700;color:rgba(255,255,255,.3)}
+.ft-bottom-logo span{color:rgba(125,255,179,.4)}
+.ft-bottom-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(125,255,179,.2);border-radius:60px;color:var(--lime);font-size:14px;font-weight:700;text-decoration:none;transition:all .3s}
+.ft-bottom-cta:hover{border-color:var(--lime);background:rgba(125,255,179,.06);transform:translateY(-2px);box-shadow:0 4px 16px rgba(125,255,179,.1)}
+.ft-bottom-cta svg{width:14px;height:14px}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.2)}
+.ft-legal{display:flex;gap:16px}
+.ft-legal a{font-size:12px;color:rgba(255,255,255,.2);text-decoration:none;transition:color .2s}
+.ft-legal a:hover{color:var(--lime)}
+
+/* ── Responsive ── */
+@media(max-width:768px){
+  .s-inner{padding:0 20px}
+  .s-sec{padding:60px 0}
+  .cs-hero{padding:120px 0 60px}
+  .cs-hero-stats{grid-template-columns:1fr 1fr;gap:12px}
+  .cs-hero-trust{justify-content:center}
+  .cs-card{grid-template-columns:1fr;padding:32px 24px}
+  .cs-diff-block,.cs-diff-block:nth-child(even){grid-template-columns:1fr;direction:ltr}
+  .cs-diff-block:nth-child(even) > *{direction:ltr}
+  .cs-num-grid{grid-template-columns:1fr}
+  .hp-cta-card{grid-template-columns:1fr}
+  .hp-cta-proof{padding-bottom:0}
+  .ft-topbar{flex-direction:column;gap:24px;align-items:flex-start}
+  .ft-badge-strip{flex-direction:column;gap:24px}
+  .ft-statement{padding:0;width:100%}
+  .ft-nl-inner{flex-direction:column;align-items:flex-start}
+  .ft-trust-row{gap:24px}
+  .ft-bottom{flex-direction:column;align-items:center;text-align:center}
+  .navbar{padding:14px 20px}
+  .nav-links{display:none}
+  .cs-testi-inner{flex-direction:column;align-items:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <a href="/" class="nav-logo"><div class="nav-logo-icon">B</div><div class="nav-logo-text">B2B<span>Mint</span></div></a>
+  <div class="nav-links">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/saas-seo/" class="nav-link">SaaS SEO</a>
+    <a href="/case-studies/" class="nav-link">Case Studies</a>
+    <a href="https://calendly.com/hamid-b2bmint/30min" class="nav-cta">Book Free Audit</a>
+  </div>
+</nav>
+
+<!-- S1: DARK HERO -->
+<section class="cs-hero">
+  <div class="s-inner">
+    <div class="cs-hero-eyebrow rv">Verified Results</div>
+    <h1 class="rv" style="transition-delay:.1s"><span class="dt-green">Real Results</span> From SaaS Companies Using SAGE</h1>
+    <p class="cs-hero-sub rv" style="transition-delay:.15s">Every number below is verified. Every client is real. Two are named and publicly checkable. AI citation metrics lead because that's what separates B2BMint from every other agency in the space.</p>
+    <div class="cs-hero-stats rv" style="transition-delay:.2s">
+      <div class="cs-hero-stat">
+        <strong>$72M+</strong>
+        <span>Pipeline Generated</span>
+      </div>
+      <div class="cs-hero-stat">
+        <strong>50+</strong>
+        <span>SaaS Clients</span>
+      </div>
+      <div class="cs-hero-stat">
+        <strong>4,244</strong>
+        <span>AI Citations (1 Client)</span>
+      </div>
+      <div class="cs-hero-stat">
+        <strong>$50M+</strong>
+        <span>Revenue From Organic</span>
+      </div>
+    </div>
+    <div class="cs-hero-trust rv" style="transition-delay:.3s">
+      <img src="/google-premier.svg" alt="Google Premier Partner 2025">
+      <img src="/trustpilot-badge.svg" alt="Trustpilot 4.9">
+    </div>
+  </div>
+</section>
+
+<!-- S2: TESTIMONIAL -->
+<section class="cs-testi rv">
+  <div class="cs-testi-inner">
+    <img src="/baris-zeren.jpeg" alt="Baris Zeren" loading="lazy">
+    <div class="cs-testi-body">
+      <blockquote>&ldquo;The $5M in revenue from search isn't just a number. It's validation that authority-driven SEO actually works. Our CAC dropped 39% while lead quality went through the roof.&rdquo;</blockquote>
+      <cite>Baris Zeren<span>CEO &amp; Founder, BookYourData</span></cite>
+    </div>
+  </div>
+</section>
+
+<!-- S3: FEATURED CASE STUDIES -->
+<section class="s-sec cs-cases">
+  <div class="s-inner">
+    <div class="s-eye eye-green rv" style="text-align:center;justify-content:center">Featured Case Studies</div>
+    <h2 class="s-h rv" style="transition-delay:.1s;text-align:center">Three SaaS companies. One system. <span class="dt-green">Verified numbers.</span></h2>
+
+    <!-- Card 1: Email Marketing SaaS -->
+    <div class="cs-card rv" style="transition-delay:.2s">
+      <div class="cs-card-content">
+        <div class="cs-card-badge">Email Marketing SaaS &bull; Anonymized</div>
+        <h3>4,244 AI Citations. $1.2M Pipeline.</h3>
+        <div class="cs-card-tagline">$3M ARR Series A. Previous agency: $50K spent, 73 clicks/day, zero demos.</div>
+        <p class="cs-card-desc">After SAGE, this client became the most AI-cited brand in their category. Pipeline from organic in months 4-6 alone hit $1.2M. CAC from organic came in 67% lower than paid.</p>
+        <a href="#" class="cs-card-link">Read Full Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="cs-card-stats">
+        <div class="cs-card-stat"><strong>4,244</strong><span>Total AI Citations</span></div>
+        <div class="cs-card-stat"><strong>2,300</strong><span>AI Overviews</span></div>
+        <div class="cs-card-stat"><strong>1,700</strong><span>ChatGPT<span class="cs-card-platform">Citations</span></span></div>
+        <div class="cs-card-stat"><strong>120</strong><span>Perplexity<span class="cs-card-platform">Citations</span></span></div>
+        <div class="cs-card-stat"><strong>$1.2M</strong><span>Pipeline (Months 4-6)</span></div>
+        <div class="cs-card-stat"><strong>67%</strong><span>Lower CAC vs Paid</span></div>
+        <div class="cs-card-stat"><strong>89%</strong><span>More Demo Requests</span></div>
+        <div class="cs-card-stat"><strong>3,300%</strong><span>Traffic Growth</span></div>
+      </div>
+    </div>
+
+    <!-- Card 2: BookYourData -->
+    <div class="cs-card rv" style="transition-delay:.3s">
+      <div class="cs-card-content">
+        <div class="cs-card-badge">Data Platform &bull; Named</div>
+        <h3>BookYourData</h3>
+        <div class="cs-card-tagline">$1M to $5M+ revenue. 891 top-3 keywords. 3+ year engagement.</div>
+        <p class="cs-card-desc">Bootstrapped B2B data provider. No venture funding. B2BMint has been BookYourData's partner for 3+ years, making this the longest continuous engagement. Now ranks #1 for "buy email list" in the US. Publicly verifiable.</p>
+        <a href="#" class="cs-card-link">Read Full Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="cs-card-stats">
+        <div class="cs-card-stat"><strong>511</strong><span>AI Overviews</span></div>
+        <div class="cs-card-stat"><strong>145</strong><span>ChatGPT<span class="cs-card-platform">Citations</span></span></div>
+        <div class="cs-card-stat"><strong>79</strong><span>Perplexity<span class="cs-card-platform">Citations</span></span></div>
+        <div class="cs-card-stat"><strong>891</strong><span>Top-3 Keywords</span></div>
+        <div class="cs-card-stat"><strong>#1</strong><span>"buy email list" (US)</span></div>
+        <div class="cs-card-stat"><strong>$5M+</strong><span>Revenue From Search</span></div>
+        <div class="cs-card-stat"><strong>26K+</strong><span>Monthly Organic Traffic</span></div>
+        <div class="cs-card-stat"><strong>3+</strong><span>Years Partnership</span></div>
+      </div>
+    </div>
+
+    <!-- Card 3: Socially Powerful -->
+    <div class="cs-card rv" style="transition-delay:.4s">
+      <div class="cs-card-content">
+        <div class="cs-card-badge">Agency &bull; Named</div>
+        <h3>Socially Powerful</h3>
+        <div class="cs-card-tagline">1,500 to 26K+ traffic. $50M+ revenue. Page 1 for brutal keyword.</div>
+        <p class="cs-card-desc">$50M+ revenue influencer marketing agency. Grew from 1,500 to 26K+ organic visitors per month. Page 1 for "influencer marketing agency" in the UK, one of the most competitive agency keywords in the country.</p>
+        <a href="#" class="cs-card-link">Read Full Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="cs-card-stats">
+        <div class="cs-card-stat"><strong>8x</strong><span>Lead Growth</span></div>
+        <div class="cs-card-stat"><strong>180%</strong><span>Organic Traffic Growth</span></div>
+        <div class="cs-card-stat"><strong>$50M+</strong><span>Client Revenue</span></div>
+        <div class="cs-card-stat"><strong>35%</strong><span>Lower CAC</span></div>
+        <div class="cs-card-stat"><strong>Page 1</strong><span>"influencer marketing agency" (UK)</span></div>
+        <div class="cs-card-stat"><strong>26K+</strong><span>Monthly Visitors</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S4: WHAT MAKES DIFFERENT -->
+<section class="s-sec cs-diff">
+  <div class="s-inner">
+    <div class="s-eye eye-purple rv" style="text-align:center;justify-content:center">Why These Numbers Matter</div>
+    <h2 class="s-h rv" style="transition-delay:.1s;text-align:center">What makes these results <span class="dt-purple">different.</span></h2>
+    <div class="cs-diff-blocks">
+
+      <div class="cs-diff-block rv" style="transition-delay:.2s">
+        <div class="cs-diff-text">
+          <div class="cs-diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <h3>AI citation metrics, platform by platform</h3>
+          <p>No other agency reports AI citations broken down by ChatGPT, Perplexity, Gemini, AI Overviews, and Copilot. B2BMint monitors AI visibility as a core metric alongside pipeline and revenue.</p>
+        </div>
+        <div class="cs-diff-visual">
+          <div class="cs-diff-stat">5</div>
+          <div class="cs-diff-stat-label">AI platforms monitored per client</div>
+        </div>
+      </div>
+
+      <div class="cs-diff-block rv" style="transition-delay:.3s">
+        <div class="cs-diff-text">
+          <div class="cs-diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>Pipeline attribution, not traffic claims</h3>
+          <p>These results are measured in pipeline and revenue, not traffic growth. $1.2M in pipeline. $5M+ in revenue. $50M+ in revenue. Numbers that showed up in clients' financial systems.</p>
+        </div>
+        <div class="cs-diff-visual">
+          <div class="cs-diff-stat">$72M+</div>
+          <div class="cs-diff-stat-label">Total pipeline across all clients</div>
+        </div>
+      </div>
+
+      <div class="cs-diff-block rv" style="transition-delay:.4s">
+        <div class="cs-diff-text">
+          <div class="cs-diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
+          <h3>Named, verifiable clients</h3>
+          <p>Two of three clients are named. BookYourData is publicly checkable. Socially Powerful is a $50M+ company with a public presence. These aren't anonymous testimonials.</p>
+        </div>
+        <div class="cs-diff-visual">
+          <div class="cs-diff-stat">2/3</div>
+          <div class="cs-diff-stat-label">Clients publicly named and verifiable</div>
+        </div>
+      </div>
+
+      <div class="cs-diff-block rv" style="transition-delay:.5s">
+        <div class="cs-diff-text">
+          <div class="cs-diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+          <h3>One system across all three</h3>
+          <p>An email marketing SaaS, a B2B data provider, and an influencer marketing agency. Three different verticals. Three different sizes. One system. SAGE adapts because it's methodology-driven, not template-driven.</p>
+        </div>
+        <div class="cs-diff-visual">
+          <div class="cs-diff-stat">1</div>
+          <div class="cs-diff-stat-label">System. Any B2B vertical.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S5: AGGREGATE NUMBERS -->
+<section class="s-sec cs-numbers">
+  <div class="s-inner">
+    <div class="s-eye eye-amber rv" style="text-align:center;justify-content:center">The Numbers Across All Engagements</div>
+    <h2 class="s-h rv" style="transition-delay:.1s;text-align:center">Aggregate <span class="dt-amber">proof.</span></h2>
+    <div class="cs-num-grid rv" style="transition-delay:.2s">
+      <div class="cs-num-card">
+        <strong>$72M+</strong>
+        <div class="cs-num-label">Total Pipeline Generated</div>
+        <div class="cs-num-desc">Across all B2BMint client engagements</div>
+      </div>
+      <div class="cs-num-card">
+        <strong>50+</strong>
+        <div class="cs-num-label">SaaS &amp; B2B Companies</div>
+        <div class="cs-num-desc">Served across multiple verticals</div>
+      </div>
+      <div class="cs-num-card">
+        <strong>4,244</strong>
+        <div class="cs-num-label">AI Citations (Single Client)</div>
+        <div class="cs-num-desc">Across ChatGPT, Perplexity, Gemini, AI Overviews, Copilot</div>
+      </div>
+      <div class="cs-num-card">
+        <strong>3+</strong>
+        <div class="cs-num-label">Years Longest Engagement</div>
+        <div class="cs-num-desc">BookYourData, continuously since early days</div>
+      </div>
+      <div class="cs-num-card">
+        <strong>67%</strong>
+        <div class="cs-num-label">Lower CAC From Organic</div>
+        <div class="cs-num-desc">Vs paid channels for the email marketing SaaS</div>
+      </div>
+      <div class="cs-num-card">
+        <strong>8x</strong>
+        <div class="cs-num-label">Lead Growth</div>
+        <div class="cs-num-desc">For Socially Powerful via organic search</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S6: CTA + FOOTER -->
+<div class="s-cta-footer">
+  <div class="cta-top">
+    <div class="s-inner">
+      <div class="hp-cta-top-text">
+        <div class="hp-cta-eyebrow rv">See what SAGE can produce</div>
+        <h2 class="s-h rv" style="transition-delay:.1s">Your competitors are already being<br>cited by <span class="dt-green">AI.</span></h2>
+        <p class="s-sub rv" style="transition-delay:.15s">On the first call, we don't pitch. We show you exactly where your competitors are being cited and where you're invisible. One call. Real data. No obligation.</p>
+        <a href="https://calendly.com/hamid-b2bmint/30min" class="hp-cta-btn rv" style="transition-delay:.2s">
+          Book Your Free AI Visibility Audit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <div class="hp-cta-micro rv" style="transition-delay:.25s">Free &bull; 30 min &bull; Founder-led &bull; Zero obligation</div>
+      </div>
+      <div class="hp-cta-card rv" style="transition-delay:.3s">
+        <div class="hp-cta-photo">
+          <img src="/hamid-khan.png" alt="Hamid Khan, Founder of B2BMint" loading="lazy">
+        </div>
+        <div class="hp-cta-proof">
+          <div class="hp-cta-proof-card">
+            <div class="hp-cta-proof-num">4,244</div>
+            <div class="hp-cta-proof-text"><strong>AI Citations Built</strong>Across ChatGPT, Claude, Perplexity, Gemini &amp; Google</div>
+          </div>
+          <div class="hp-cta-proof-card">
+            <div class="hp-cta-proof-num">$1.2M</div>
+            <div class="hp-cta-proof-text"><strong>Pipeline Generated</strong>From organic search and AI visibility alone</div>
+          </div>
+          <div class="hp-cta-proof-card">
+            <div class="hp-cta-proof-num">47</div>
+            <div class="hp-cta-proof-text"><strong>SaaS Companies</strong>Trust B2BMint to build their search &amp; AI presence</div>
+          </div>
+          <div class="hp-cta-proof-card">
+            <div class="hp-cta-proof-num">90d</div>
+            <div class="hp-cta-proof-text"><strong>Trial Period</strong>All assets stay with you. You own everything from day one.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="cta-bottom">
+    <div class="ft-topbar">
+      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+        <a href="/" class="ft-logo">
+          <div class="ft-logo-icon">B</div>
+          <div class="ft-logo-text">B2B<span>Mint</span></div>
+        </a>
+        <span style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.5">7209 Lancaster Pike, Ste 4 #3125<br>Hockessin, DE 19707</span>
+      </div>
+      <div class="ft-socials">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-nav-center">
+      <ul class="ft-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/saas-seo/">SaaS SEO</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="/case-studies/">Case Studies</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="ft-badge-strip">
+      <div class="ft-badge">
+        <svg width="180" height="180" viewBox="0 0 180 180" fill="none"><path d="M90 10 L160 45 L160 100 C160 140 130 165 90 175 C50 165 20 140 20 100 L20 45 Z" fill="rgba(125,255,179,.06)" stroke="#7DFFB3" stroke-width="1.5"/><path d="M90 28 L145 55 L145 98 C145 130 120 152 90 160 C60 152 35 130 35 98 L35 55 Z" fill="rgba(125,255,179,.03)" stroke="#7DFFB3" stroke-width=".5" opacity=".4"/><path d="M90 55 C105 70 112 82 112 95 C112 108 102 118 90 125 C78 118 68 108 68 95 C68 82 75 70 90 55Z" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width="1.2"/><line x1="90" y1="60" x2="90" y2="120" stroke="#7DFFB3" stroke-width=".6" opacity=".4"/><text x="90" y="88" text-anchor="middle" fill="#7DFFB3" font-size="22" font-weight="700" font-family="Space Grotesk,sans-serif">SAGE</text><text x="90" y="139" text-anchor="middle" fill="#7DFFB3" font-size="8" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">ENGINE</text><circle cx="75" cy="42" r="2" fill="#7DFFB3" opacity=".5"/><circle cx="90" cy="38" r="2.5" fill="#7DFFB3" opacity=".6"/><circle cx="105" cy="42" r="2" fill="#7DFFB3" opacity=".5"/></svg>
+      </div>
+      <div class="ft-statement">
+        <div class="ft-statement-line"></div>
+        <div class="ft-statement-text">We build <strong>100%</strong> visibility</div>
+        <div class="ft-statement-line"></div>
+      </div>
+      <div class="ft-badge">
+        <svg width="180" height="180" viewBox="0 0 180 180" fill="none"><polygon points="90,8 160,38 160,118 90,172 20,118 20,38" fill="rgba(125,255,179,.05)" stroke="#7DFFB3" stroke-width="1.5"/><polygon points="90,24 148,48 148,112 90,158 32,112 32,48" fill="rgba(125,255,179,.02)" stroke="#7DFFB3" stroke-width=".5" opacity=".35"/><rect x="58" y="100" width="12" height="30" rx="2" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width=".8"/><rect x="74" y="85" width="12" height="45" rx="2" fill="rgba(125,255,179,.12)" stroke="#7DFFB3" stroke-width=".8"/><rect x="90" y="65" width="12" height="65" rx="2" fill="rgba(125,255,179,.15)" stroke="#7DFFB3" stroke-width="1"/><rect x="106" y="50" width="12" height="80" rx="2" fill="rgba(125,255,179,.18)" stroke="#7DFFB3" stroke-width="1"/><path d="M112 50 L112 38 M106 44 L112 36 L118 44" stroke="#7DFFB3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="144" text-anchor="middle" fill="#7DFFB3" font-size="9" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">GROWTH</text><text x="90" y="22" text-anchor="middle" fill="#7DFFB3" font-size="18" font-weight="700" font-family="Space Grotesk,sans-serif" opacity=".6">MINT</text></svg>
+      </div>
+    </div>
+    <div class="ft-newsletter">
+      <div class="ft-nl-inner">
+        <div class="ft-nl-left">
+          <span class="ft-nl-text">Subscribe to our SEO &amp; AI visibility newsletter</span>
+        </div>
+        <form class="ft-nl-form" onsubmit="return false">
+          <input type="email" placeholder="Enter your email">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="ft-trust-row">
+      <div class="ft-trust-badge"><img src="/google-premier.svg" alt="Google Premier Partner 2025"></div>
+      <div class="ft-trust-badge"><img src="/linkedin-badge.avif" alt="LinkedIn Certified Marketing Partner"></div>
+      <div class="ft-trust-badge"><img src="/trustpilot-badge.svg" alt="Trustpilot 4.9" style="height:40px"></div>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-bottom-logo">B2B<span>Mint</span></div>
+      <a href="https://calendly.com/hamid-b2bmint/30min" class="ft-bottom-cta">Book a Strategy Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="ft-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+// Navbar scroll behavior
+const navbar=document.getElementById('navbar');
+const heroEnd=document.querySelector('.cs-hero').offsetHeight;
+window.addEventListener('scroll',()=>{
+  navbar.classList.toggle('scrolled',window.scrollY>heroEnd-80);
+},{passive:true});
+
+// Reveal animation
+const rvObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const delay=e.target.dataset.delay||0;
+      setTimeout(()=>e.target.classList.add('show'),delay);
+      rvObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
+
+// Count-up animation for hero stats
+const countObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.cs-hero-stat strong').forEach(el=>{
+        const raw=el.textContent;
+        const num=parseFloat(raw.replace(/[^0-9.]/g,''));
+        if(isNaN(num))return;
+        const prefix=raw.match(/^[^0-9]*/)[0];
+        const suffix=raw.match(/[^0-9.]*$/)[0];
+        const duration=1200;
+        const start=performance.now();
+        const tick=(now)=>{
+          const p=Math.min((now-start)/duration,1);
+          const ease=1-Math.pow(1-p,3);
+          const cur=Math.round(ease*num);
+          el.textContent=prefix+(cur>=1000?cur.toLocaleString():cur)+suffix;
+          if(p<1)requestAnimationFrame(tick);
+          else el.textContent=raw;
+        };
+        el.textContent=prefix+'0'+suffix;
+        requestAnimationFrame(tick);
+      });
+      countObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.3});
+const heroStats=document.querySelector('.cs-hero-stats');
+if(heroStats)countObs.observe(heroStats);
+</script>
+</body>
+</html>
