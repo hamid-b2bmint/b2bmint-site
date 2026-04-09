@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>SaaS Search Intelligence Newsletter | B2BMint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --lime:#7DFFB3;--mint-bg:#D2FFC1;--forest:#093829;--forest-deep:#093829;--accent:#7DFFB3;
+  --white:#FFF;--black:#111;
+  --sans:'Inter',system-ui,sans-serif;
+  --display:'Space Grotesk','Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:#fff;color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ══════════════════════════════════════
+   NAVBAR — solid white (inner page)
+   ══════════════════════════════════════ */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);box-shadow:0 1px 8px rgba(0,0,0,.06);transition:background .3s,box-shadow .3s}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-logo-icon{width:28px;height:28px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:var(--forest-deep)}
+.nav-logo-text{font-size:18px;font-weight:800;color:var(--forest-deep);letter-spacing:-.02em}
+.nav-logo-text span{color:var(--lime)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-link{font-size:14px;font-weight:500;color:rgba(0,0,0,.6);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--forest-deep)}
+.nav-cta{padding:10px 24px;background:transparent;border:1.5px solid var(--forest-deep);border-radius:10px;font-size:13px;font-weight:600;color:var(--forest-deep);text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:var(--forest-deep);color:var(--white)}
+
+/* ══════════════════════════════════════
+   SHARED CLASSES
+   ══════════════════════════════════════ */
+.rv{opacity:0;transform:translateY(24px);transition:all .7s cubic-bezier(.16,1,.3,1)}.rv.show{opacity:1;transform:translateY(0)}
+.s-sec{padding:100px 0}
+.s-inner{max-width:1100px;margin:0 auto;padding:0 40px}
+.s-h{font-family:var(--display);font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:18px;color:var(--forest-deep)}
+.s-p{font-size:17px;line-height:1.7;color:rgba(0,0,0,.6);max-width:600px}
+
+/* ── Dotted text ── */
+.dt-rose{background:radial-gradient(circle,#C4325B 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-purple{background:radial-gradient(circle,#7B5CF5 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-blue{background:radial-gradient(circle,#2D8BF5 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-amber{background:radial-gradient(circle,#E87B2F 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-green{background:radial-gradient(circle,#1AAD6B 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── Eyebrow ── */
+.s-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:14px;background:linear-gradient(135deg,var(--forest-deep),#1a6b42,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:flex;align-items:center;gap:10px}
+.s-eye::before{content:'';width:20px;height:4px;border-radius:4px;flex-shrink:0;background:var(--forest)}
+.s-eye.eye-rose::before{background:#C4325B}
+.s-eye.eye-purple::before{background:#7B5CF5}
+.s-eye.eye-blue::before{background:#2D8BF5}
+.s-eye.eye-amber::before{background:#E87B2F}
+.s-eye.eye-green::before{background:#1AAD6B}
+
+/* ══════════════════════════════════════
+   S1: HERO
+   ══════════════════════════════════════ */
+.nl-hero{background:var(--mint-bg);padding:140px 0 100px;position:relative;overflow:hidden}
+.nl-hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(125,255,179,.3),transparent 70%);pointer-events:none}
+.nl-hero .s-inner{display:grid;grid-template-columns:55% 45%;gap:48px;align-items:center}
+.nl-hero-left{position:relative;z-index:1}
+.nl-hero h1{font-family:var(--display);font-size:clamp(36px,4.2vw,52px);font-weight:700;line-height:1.1;letter-spacing:-.03em;color:var(--forest-deep);margin-bottom:20px}
+.nl-hero-sub{font-size:17px;line-height:1.7;color:rgba(9,56,41,.6);max-width:520px;margin-bottom:32px}
+
+/* ── Email form ── */
+.nl-form{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.nl-form input{flex:1;min-width:140px;padding:14px 18px;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:12px;font-size:14px;font-family:var(--sans);color:var(--black);outline:none;transition:border-color .3s,box-shadow .3s}
+.nl-form input::placeholder{color:rgba(0,0,0,.35)}
+.nl-form input:focus{border-color:var(--forest-deep);box-shadow:0 0 0 3px rgba(9,56,41,.08)}
+.nl-form button{padding:14px 28px;background:var(--forest-deep);color:var(--white);font-weight:700;font-size:14px;font-family:var(--sans);border:none;border-radius:12px;cursor:pointer;transition:all .3s;white-space:nowrap}
+.nl-form button:hover{background:#0c4a35;transform:translateY(-2px);box-shadow:0 6px 20px rgba(9,56,41,.2)}
+.nl-form button:active{transform:translateY(0)}
+.nl-form button:disabled{opacity:.7;cursor:default;transform:none;box-shadow:none}
+.nl-micro{font-size:13px;color:rgba(9,56,41,.4);font-weight:500}
+
+/* ── Email mockup card ── */
+.nl-hero-right{display:flex;justify-content:center;align-items:center;position:relative;z-index:1}
+.nl-mockup{width:100%;max-width:400px;background:#1a1a1a;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.05);transform:rotate(-2deg);transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s;cursor:default}
+.nl-mockup:hover{transform:rotate(0deg);box-shadow:0 40px 100px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.08)}
+.nl-mock-top{padding:16px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,.06)}
+.nl-mock-dots{display:flex;gap:6px}
+.nl-mock-dots span{width:10px;height:10px;border-radius:50%}
+.nl-mock-dots span:nth-child(1){background:#ff5f56}
+.nl-mock-dots span:nth-child(2){background:#ffbd2e}
+.nl-mock-dots span:nth-child(3){background:#27c93f}
+.nl-mock-sender{font-size:13px;font-weight:600;color:rgba(255,255,255,.6);margin-left:8px}
+.nl-mock-body{padding:24px 20px 28px}
+.nl-mock-subject{font-family:var(--display);font-size:17px;font-weight:700;color:#fff;line-height:1.4;margin-bottom:12px}
+.nl-mock-preview{font-size:14px;color:rgba(255,255,255,.4);line-height:1.6;margin-bottom:24px}
+.nl-mock-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--lime);color:var(--forest-deep);font-weight:700;font-size:13px;border-radius:10px;border:none;font-family:var(--sans);cursor:default;transition:all .3s}
+.nl-mockup:hover .nl-mock-btn{background:#6ee6a0;transform:translateX(4px)}
+
+/* ══════════════════════════════════════
+   S2: WHAT YOU'LL GET
+   ══════════════════════════════════════ */
+.nl-benefits{background:#fff}
+.nl-benefits .s-p{margin-bottom:48px}
+.nl-benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.nl-benefit-card{border-radius:20px;padding:32px;transition:all .4s cubic-bezier(.16,1,.3,1);cursor:default;position:relative}
+.nl-benefit-card:hover{transform:translateY(-4px);filter:brightness(.97)}
+.nl-benefit-icon{width:44px;height:44px;border-radius:12px;background:var(--forest-deep);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.nl-benefit-icon svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nl-benefit-card h3{font-family:var(--display);font-size:20px;font-weight:700;margin-bottom:10px;line-height:1.3}
+.nl-benefit-card p{font-size:15px;line-height:1.65;opacity:.7}
+
+/* card colors */
+.nl-bc-mint{background:#C6F5E2}.nl-bc-mint h3{color:#0a4a2e}
+.nl-bc-blue{background:#CEEBFF}.nl-bc-blue h3{color:#1a4d7a}
+.nl-bc-pink{background:#FFD6E8}.nl-bc-pink h3{color:#7a1a3d}
+.nl-bc-yellow{background:#FFFDD9}.nl-bc-yellow h3{color:#5c5400}
+
+/* stagger */
+.nl-benefit-card.rv:nth-child(2){transition-delay:.15s}
+.nl-benefit-card.rv:nth-child(3){transition-delay:.3s}
+.nl-benefit-card.rv:nth-child(4){transition-delay:.45s}
+
+/* ══════════════════════════════════════
+   S3: SOCIAL PROOF STRIP
+   ══════════════════════════════════════ */
+.nl-proof{background:var(--forest-deep);padding:72px 0;position:relative;overflow:hidden}
+.nl-proof::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(125,255,179,.04),transparent 70%);pointer-events:none}
+.nl-proof .s-inner{display:flex;justify-content:center;align-items:center;gap:0;position:relative;z-index:1}
+.nl-proof-stat{flex:1;text-align:center;padding:0 40px}
+.nl-proof-stat:not(:last-child){border-right:1px solid rgba(255,255,255,.08)}
+.nl-proof-num{font-family:var(--display);font-size:clamp(36px,5vw,56px);font-weight:700;color:var(--lime);margin-bottom:8px;line-height:1}
+.nl-proof-label{font-size:14px;color:rgba(255,255,255,.55);font-weight:500}
+
+/* ══════════════════════════════════════
+   S4: SAMPLE PREVIEW
+   ══════════════════════════════════════ */
+.nl-sample{background:#f9fafb}
+.nl-sample .s-p{margin-bottom:48px}
+.nl-sample-card{max-width:600px;margin:0 auto;background:#fff;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.08),0 0 0 1px rgba(0,0,0,.04);overflow:hidden;padding:40px}
+.nl-sample-header{font-family:var(--display);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--forest-deep);opacity:.5;margin-bottom:20px}
+.nl-sample-subject{font-family:var(--display);font-size:22px;font-weight:700;color:var(--forest-deep);line-height:1.3;margin-bottom:24px}
+.nl-sample-list{list-style:none;padding:0;margin:0 0 32px}
+.nl-sample-list li{position:relative;padding:12px 0 12px 28px;font-size:15px;line-height:1.6;color:rgba(0,0,0,.65);border-bottom:1px solid rgba(0,0,0,.04)}
+.nl-sample-list li:last-child{border-bottom:none}
+.nl-sample-list li::before{content:'';position:absolute;left:0;top:18px;width:12px;height:12px;border-radius:4px;background:var(--lime);opacity:.7}
+.nl-sample-badges{display:flex;gap:12px;flex-wrap:wrap}
+.nl-sample-badge{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:60px;background:#f4f5f6;font-size:13px;font-weight:600;color:rgba(0,0,0,.5)}
+.nl-sample-badge svg{width:14px;height:14px;flex-shrink:0}
+
+/* ══════════════════════════════════════
+   S5: BOTTOM CTA
+   ══════════════════════════════════════ */
+.nl-cta{background:var(--mint-bg);position:relative;overflow:hidden}
+.nl-cta::after{content:'';position:absolute;bottom:-200px;left:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(9,56,41,.05),transparent 70%);pointer-events:none}
+.nl-cta .s-inner{text-align:center;position:relative;z-index:1}
+.nl-cta .s-h{max-width:640px;margin-left:auto;margin-right:auto}
+.nl-cta .nl-cta-sub{font-size:17px;color:rgba(9,56,41,.55);margin-bottom:36px;font-weight:500}
+.nl-cta .nl-form{justify-content:center;max-width:560px;margin:0 auto 14px}
+.nl-cta .nl-micro{text-align:center}
+
+/* ══════════════════════════════════════
+   S6: FOOTER (exact homepage match)
+   ══════════════════════════════════════ */
+.cta-bottom{background:var(--forest-deep);position:relative;z-index:1;overflow:hidden}
+
+/* ── top row: logo + social ── */
+.ft-topbar{max-width:1100px;margin:0 auto;padding:56px 40px 0;display:flex;justify-content:space-between;align-items:center}
+.ft-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.ft-logo-icon{width:32px;height:32px;border-radius:10px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--forest-deep)}
+.ft-logo-text{font-family:var(--display);font-size:20px;font-weight:700;color:#fff}
+.ft-logo-text span{color:var(--lime)}
+.ft-socials{display:flex;gap:10px}
+.ft-socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;transition:all .3s;text-decoration:none}
+.ft-socials a:hover{border-color:var(--lime);background:rgba(125,255,179,.08);transform:translateY(-2px)}
+.ft-socials a svg{width:16px;height:16px;fill:rgba(255,255,255,.55);transition:fill .3s}
+.ft-socials a:hover svg{fill:var(--lime)}
+
+/* ── centered nav ── */
+.ft-nav-center{text-align:center;padding:48px 40px;max-width:700px;margin:0 auto}
+.ft-nav{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;align-items:center}
+.ft-nav a{color:rgba(255,255,255,.5);text-decoration:none;font-size:17px;font-weight:600;transition:all .3s;display:inline-block;letter-spacing:.3px}
+.ft-nav a:hover{color:var(--lime);letter-spacing:1.5px}
+
+/* ── decorative badge strip ── */
+.ft-badge-strip{position:relative;padding:40px 40px 48px;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:0}
+.ft-badge{flex-shrink:0;animation:ftBadgeFloat 7s ease-in-out infinite}
+.ft-badge:last-child{animation-delay:-3.5s}
+@keyframes ftBadgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.ft-badge svg{display:block;filter:drop-shadow(0 4px 20px rgba(125,255,179,.1))}
+.ft-statement{flex:1;display:flex;align-items:center;gap:0;padding:0 20px}
+.ft-statement-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--lime),transparent);opacity:.3;position:relative}
+.ft-statement-line::before{content:'';position:absolute;width:8px;height:8px;border-radius:50%;background:var(--lime);top:-3.5px;box-shadow:0 0 10px rgba(125,255,179,.4)}
+.ft-statement-line:first-child::before{right:0}
+.ft-statement-line:last-child::before{left:0}
+.ft-statement-text{padding:0 24px;white-space:nowrap;font-family:var(--display);font-size:clamp(16px,2.2vw,22px);color:#fff;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.ft-statement-text strong{color:var(--lime);font-size:1.4em;text-shadow:0 0 20px rgba(125,255,179,.3)}
+
+/* ── newsletter row (kept for consistency) ── */
+.ft-newsletter{max-width:1100px;margin:0 auto;padding:0 40px}
+.ft-nl-inner{display:flex;justify-content:space-between;align-items:center;gap:32px;padding:28px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.ft-nl-left{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.ft-nl-text{font-size:14px;color:rgba(255,255,255,.35);font-weight:500}
+.ft-nl-form{display:flex;gap:0;flex-shrink:0}
+.ft-nl-form input{padding:12px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-right:none;border-radius:10px 0 0 10px;color:#fff;font-size:14px;font-family:var(--sans);outline:none;width:240px;transition:border-color .3s}
+.ft-nl-form input::placeholder{color:rgba(255,255,255,.2)}
+.ft-nl-form input:focus{border-color:rgba(125,255,179,.3)}
+.ft-nl-form button{padding:12px 24px;background:var(--lime);color:var(--forest-deep);font-weight:700;font-size:14px;border:none;border-radius:0 10px 10px 0;cursor:pointer;font-family:var(--sans);transition:all .3s;white-space:nowrap}
+.ft-nl-form button:hover{background:#6ee6a0}
+
+/* ── trust badges row ── */
+.ft-trust-row{max-width:1100px;margin:0 auto;padding:28px 40px;display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
+.ft-trust-badge{transition:all .3s;display:block}
+.ft-trust-badge:hover{transform:translateY(-2px)}
+.ft-trust-badge img{height:60px;width:auto;display:block;opacity:.7;transition:opacity .3s}
+.ft-trust-badge:hover img{opacity:1}
+
+/* ── bottom bar ── */
+.ft-bottom{max-width:1100px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ft-bottom-logo{font-family:var(--display);font-size:16px;font-weight:700;color:rgba(255,255,255,.3)}
+.ft-bottom-logo span{color:rgba(125,255,179,.4)}
+.ft-bottom-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(125,255,179,.2);border-radius:60px;color:var(--lime);font-size:14px;font-weight:700;text-decoration:none;transition:all .3s}
+.ft-bottom-cta:hover{border-color:var(--lime);background:rgba(125,255,179,.06);transform:translateY(-2px);box-shadow:0 4px 16px rgba(125,255,179,.1)}
+.ft-bottom-cta svg{width:14px;height:14px}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.2)}
+.ft-legal{display:flex;gap:16px}
+.ft-legal a{font-size:12px;color:rgba(255,255,255,.2);text-decoration:none;transition:color .3s}
+.ft-legal a:hover{color:var(--lime)}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════ */
+@media(max-width:768px){
+  .navbar{padding:12px 20px}
+  .nav-links{gap:16px}
+  .nav-link{display:none}
+  .nl-hero{padding:100px 0 60px}
+  .nl-hero .s-inner{grid-template-columns:1fr;gap:32px}
+  .nl-hero-right{order:-1}
+  .nl-mockup{max-width:340px;transform:rotate(0)}
+  .nl-form{flex-direction:column}
+  .nl-form input{min-width:100%}
+  .nl-benefit-grid{grid-template-columns:1fr}
+  .nl-benefit-card.rv:nth-child(2){transition-delay:.1s}
+  .nl-benefit-card.rv:nth-child(3){transition-delay:.2s}
+  .nl-benefit-card.rv:nth-child(4){transition-delay:.3s}
+  .nl-proof .s-inner{flex-direction:column;gap:32px}
+  .nl-proof-stat{padding:0;border:none!important}
+  .nl-proof-stat:not(:last-child){border-right:none;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .nl-sample-card{padding:28px}
+  .nl-sample-subject{font-size:18px}
+  .nl-cta .nl-form{flex-direction:column;align-items:stretch}
+  .s-inner{padding:0 20px}
+  .ft-topbar{padding:40px 20px 0}
+  .ft-nav-center{padding:32px 20px}
+  .ft-nav a{font-size:15px}
+  .ft-badge-strip{padding:24px 20px;flex-wrap:wrap;gap:20px}
+  .ft-badge svg{width:100px;height:100px}
+  .ft-newsletter{padding:0 20px}
+  .ft-nl-inner{flex-direction:column;gap:16px;text-align:center}
+  .ft-nl-form input{width:180px}
+  .ft-trust-row{gap:16px;padding:20px 20px}
+  .ft-bottom{padding:20px;flex-direction:column;text-align:center;gap:16px}
+  .ft-legal{justify-content:center}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     NAVBAR
+     ═══════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <a href="/" class="nav-logo"><div class="nav-logo-icon">B</div><div class="nav-logo-text">B2B<span>Mint</span></div></a>
+  <div class="nav-links">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/saas-seo/" class="nav-link">SaaS SEO</a>
+    <a href="/about/" class="nav-link">About</a>
+    <a href="/case-studies/" class="nav-link">Case Studies</a>
+    <a href="/faq/" class="nav-link">FAQ</a>
+    <a href="https://calendly.com/hamid-b2bmint/30min" class="nav-cta">Book Free Audit</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════
+     S1: HERO
+     ═══════════════════════════════════ -->
+<section class="nl-hero s-sec">
+  <div class="s-inner">
+    <div class="nl-hero-left">
+      <div class="s-eye eye-green rv">Weekly Newsletter</div>
+      <h1 class="rv">SaaS Search Intelligence. <span class="dt-green">Weekly.</span></h1>
+      <p class="nl-hero-sub rv">Actionable frameworks, real case study breakdowns, and AI search trends that actually affect your pipeline. No fluff. Written by Hamid Khan from inside B2BMint's client work.</p>
+      <form class="nl-form rv" id="heroForm" onsubmit="return false">
+        <input type="text" name="first_name" placeholder="First name" required>
+        <input type="email" name="email" placeholder="Email address" required>
+        <button type="submit">Subscribe Free &rarr;</button>
+      </form>
+      <p class="nl-micro rv">Join 3,700+ SaaS founders. Unsubscribe anytime.</p>
+    </div>
+    <div class="nl-hero-right rv">
+      <div class="nl-mockup">
+        <div class="nl-mock-top">
+          <div class="nl-mock-dots"><span></span><span></span><span></span></div>
+          <span class="nl-mock-sender">B2BMint Weekly</span>
+        </div>
+        <div class="nl-mock-body">
+          <div class="nl-mock-subject">How BookYourData went from $1M to $5M+ with semantic SEO</div>
+          <div class="nl-mock-preview">This week: the exact 3-stage architecture that generated 511 AI Overview citations and drove $1.2M in pipeline from organic alone...</div>
+          <button class="nl-mock-btn">Open <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     S2: WHAT YOU'LL GET
+     ═══════════════════════════════════ -->
+<section class="nl-benefits s-sec">
+  <div class="s-inner">
+    <div class="s-eye eye-amber rv">What's Inside</div>
+    <h2 class="s-h rv">Not tips. <span class="dt-amber">Frameworks.</span></h2>
+    <p class="s-p rv">Every edition is built from live client work. You get the same thinking your competitors are paying $15K/month for.</p>
+    <div class="nl-benefit-grid">
+
+      <!-- Card 1: Mint -->
+      <div class="nl-benefit-card nl-bc-mint rv">
+        <div class="nl-benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Client-Grade SEO Strategies</h3>
+        <p>The same semantic frameworks that generated $1.2M in pipeline. Not theory. Production playbooks.</p>
+      </div>
+
+      <!-- Card 2: Blue -->
+      <div class="nl-benefit-card nl-bc-blue rv">
+        <div class="nl-benefit-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>AI Search Intelligence</h3>
+        <p>What's changing across ChatGPT, Perplexity, Gemini, and AI Overviews. Monitored daily, reported weekly.</p>
+      </div>
+
+      <!-- Card 3: Pink -->
+      <div class="nl-benefit-card nl-bc-pink rv">
+        <div class="nl-benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </div>
+        <h3>Real Numbers, Real Breakdowns</h3>
+        <p>We share what worked, what didn't, and why. No vague tips with no data behind them.</p>
+      </div>
+
+      <!-- Card 4: Yellow -->
+      <div class="nl-benefit-card nl-bc-yellow rv">
+        <div class="nl-benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Pipeline-First Thinking</h3>
+        <p>Every strategy evaluated through one lens: does this generate demos? If not, it doesn't make the cut.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     S3: SOCIAL PROOF STRIP
+     ═══════════════════════════════════ -->
+<section class="nl-proof">
+  <div class="s-inner">
+    <div class="nl-proof-stat rv">
+      <div class="nl-proof-num" data-target="3700" data-suffix="+">0</div>
+      <div class="nl-proof-label">SaaS founders subscribed</div>
+    </div>
+    <div class="nl-proof-stat rv">
+      <div class="nl-proof-num" data-target="47" data-suffix="%">0</div>
+      <div class="nl-proof-label">Average open rate</div>
+    </div>
+    <div class="nl-proof-stat rv">
+      <div class="nl-proof-num" data-text="Weekly">Weekly</div>
+      <div class="nl-proof-label">Fresh insights every Thursday</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     S4: SAMPLE PREVIEW
+     ═══════════════════════════════════ -->
+<section class="nl-sample s-sec">
+  <div class="s-inner">
+    <div class="s-eye eye-purple rv">Sample Edition</div>
+    <h2 class="s-h rv">Here's what a typical edition <span class="dt-purple">looks like.</span></h2>
+    <p class="s-p rv">Four minutes of signal. Zero filler. Every week.</p>
+    <div class="nl-sample-card rv">
+      <div class="nl-sample-header">B2BMint Weekly &mdash; Edition #47</div>
+      <div class="nl-sample-subject">How we built 511 AI Overview citations for one client</div>
+      <ul class="nl-sample-list">
+        <li>The semantic architecture pattern that made Google index 15 pages in 72 hours</li>
+        <li>Why comparison pages convert 5-10x better than blog posts (with real data)</li>
+        <li>AI citation tracking: what changed across 6 platforms this week</li>
+        <li>One framework you can implement this week to improve entity recognition</li>
+      </ul>
+      <div class="nl-sample-badges">
+        <span class="nl-sample-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Read time: 4 minutes
+        </span>
+        <span class="nl-sample-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          No fluff guarantee
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     S5: BOTTOM CTA
+     ═══════════════════════════════════ -->
+<section class="nl-cta s-sec">
+  <div class="s-inner">
+    <h2 class="s-h rv">Your competitors are reading this. <span class="dt-green">You should too.</span></h2>
+    <p class="nl-cta-sub rv">Every Thursday. 4 minutes. Frameworks that move pipeline.</p>
+    <form class="nl-form rv" id="ctaForm" onsubmit="return false">
+      <input type="text" name="first_name" placeholder="First name" required>
+      <input type="email" name="email" placeholder="Email address" required>
+      <button type="submit">Subscribe Free &rarr;</button>
+    </form>
+    <p class="nl-micro rv">Free forever. Unsubscribe anytime. No spam.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     S6: FOOTER
+     ═══════════════════════════════════ -->
+<footer class="cta-bottom">
+
+  <!-- Top: Logo + Address + Socials -->
+  <div class="ft-topbar">
+    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+      <a href="/" class="ft-logo">
+        <div class="ft-logo-icon">B</div>
+        <div class="ft-logo-text">B2B<span>Mint</span></div>
+      </a>
+      <span style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.5">7209 Lancaster Pike, Ste 4 #3125<br>Hockessin, DE 19707</span>
+    </div>
+    <div class="ft-socials">
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+      <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    </div>
+  </div>
+
+  <!-- Center: Vertical nav -->
+  <div class="ft-nav-center">
+    <ul class="ft-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/saas-seo/">SaaS SEO</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/case-studies/">Case Studies</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </div>
+
+  <!-- Decorative badge strip: [SAGE badge] — WE BUILD 100% VISIBILITY — [MINT badge] -->
+  <div class="ft-badge-strip">
+    <!-- Left badge — SAGE shield -->
+    <div class="ft-badge">
+      <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 10 L160 45 L160 100 C160 140 130 165 90 175 C50 165 20 140 20 100 L20 45 Z" fill="rgba(125,255,179,.06)" stroke="#7DFFB3" stroke-width="1.5"/>
+        <path d="M90 28 L145 55 L145 98 C145 130 120 152 90 160 C60 152 35 130 35 98 L35 55 Z" fill="rgba(125,255,179,.03)" stroke="#7DFFB3" stroke-width=".5" opacity=".4"/>
+        <path d="M90 55 C105 70 112 82 112 95 C112 108 102 118 90 125 C78 118 68 108 68 95 C68 82 75 70 90 55Z" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width="1.2"/>
+        <line x1="90" y1="60" x2="90" y2="120" stroke="#7DFFB3" stroke-width=".6" opacity=".4"/>
+        <path d="M78 85 Q90 75 102 85" stroke="#7DFFB3" stroke-width=".5" fill="none" opacity=".3"/>
+        <path d="M75 98 Q90 88 105 98" stroke="#7DFFB3" stroke-width=".5" fill="none" opacity=".3"/>
+        <path d="M40 130 L65 125 L65 145 L40 140 Z" fill="rgba(125,255,179,.08)" stroke="#7DFFB3" stroke-width=".8"/>
+        <path d="M140 130 L115 125 L115 145 L140 140 Z" fill="rgba(125,255,179,.08)" stroke="#7DFFB3" stroke-width=".8"/>
+        <rect x="65" y="122" width="50" height="24" rx="2" fill="rgba(125,255,179,.06)" stroke="#7DFFB3" stroke-width=".8"/>
+        <text x="90" y="88" text-anchor="middle" fill="#7DFFB3" font-size="22" font-weight="700" font-family="Space Grotesk,sans-serif">SAGE</text>
+        <text x="90" y="139" text-anchor="middle" fill="#7DFFB3" font-size="8" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">ENGINE</text>
+        <circle cx="75" cy="42" r="2" fill="#7DFFB3" opacity=".5"/>
+        <circle cx="90" cy="38" r="2.5" fill="#7DFFB3" opacity=".6"/>
+        <circle cx="105" cy="42" r="2" fill="#7DFFB3" opacity=".5"/>
+      </svg>
+    </div>
+
+    <!-- Center statement -->
+    <div class="ft-statement">
+      <div class="ft-statement-line"></div>
+      <div class="ft-statement-text">We build <strong>100%</strong> visibility</div>
+      <div class="ft-statement-line"></div>
+    </div>
+
+    <!-- Right badge — MINT growth crest -->
+    <div class="ft-badge">
+      <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="90,8 160,38 160,118 90,172 20,118 20,38" fill="rgba(125,255,179,.05)" stroke="#7DFFB3" stroke-width="1.5"/>
+        <polygon points="90,24 148,48 148,112 90,158 32,112 32,48" fill="rgba(125,255,179,.02)" stroke="#7DFFB3" stroke-width=".5" opacity=".35"/>
+        <rect x="58" y="100" width="12" height="30" rx="2" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width=".8"/>
+        <rect x="74" y="85" width="12" height="45" rx="2" fill="rgba(125,255,179,.12)" stroke="#7DFFB3" stroke-width=".8"/>
+        <rect x="90" y="65" width="12" height="65" rx="2" fill="rgba(125,255,179,.15)" stroke="#7DFFB3" stroke-width="1"/>
+        <rect x="106" y="50" width="12" height="80" rx="2" fill="rgba(125,255,179,.18)" stroke="#7DFFB3" stroke-width="1"/>
+        <path d="M112 50 L112 38 M106 44 L112 36 L118 44" stroke="#7DFFB3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="112" cy="33" r="3" fill="#7DFFB3" opacity=".3"/>
+        <circle cx="112" cy="33" r="1.5" fill="#7DFFB3" opacity=".7"/>
+        <path d="M30 135 L60 130 L60 150 L30 145 Z" fill="rgba(125,255,179,.08)" stroke="#7DFFB3" stroke-width=".8"/>
+        <path d="M150 135 L120 130 L120 150 L150 145 Z" fill="rgba(125,255,179,.08)" stroke="#7DFFB3" stroke-width=".8"/>
+        <rect x="60" y="127" width="60" height="24" rx="2" fill="rgba(125,255,179,.06)" stroke="#7DFFB3" stroke-width=".8"/>
+        <text x="90" y="144" text-anchor="middle" fill="#7DFFB3" font-size="9" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">GROWTH</text>
+        <text x="90" y="22" text-anchor="middle" fill="#7DFFB3" font-size="18" font-weight="700" font-family="Space Grotesk,sans-serif" opacity=".6">MINT</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Newsletter row -->
+  <div class="ft-newsletter">
+    <div class="ft-nl-inner">
+      <div class="ft-nl-left">
+        <span class="ft-nl-text">Subscribe to our SEO &amp; AI visibility newsletter</span>
+      </div>
+      <form class="ft-nl-form" onsubmit="return false">
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Trust badges -->
+  <div class="ft-trust-row">
+    <div class="ft-trust-badge"><img src="/google-premier.svg" alt="Google Premier Partner 2025"></div>
+    <div class="ft-trust-badge"><img src="/linkedin-badge.avif" alt="LinkedIn Certified Marketing Partner"></div>
+    <div class="ft-trust-badge"><img src="/trustpilot-badge.svg" alt="Trustpilot 4.9" style="height:40px"></div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="ft-bottom">
+    <div class="ft-bottom-logo">B2B<span>Mint</span></div>
+    <a href="https://calendly.com/hamid-b2bmint/30min" class="ft-bottom-cta">Book a Strategy Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="ft-legal">
+      <div class="ft-copy">&copy; 2025 B2BMint</div>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════ -->
+<script>
+(function(){
+
+  /* ── IntersectionObserver for .rv reveals ── */
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('show');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.1});
+
+  document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+
+  /* ── Count-up animation on proof strip numbers ── */
+  var counted = false;
+  var proofObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !counted){
+        counted = true;
+        runCountUp();
+        proofObs.disconnect();
+      }
+    });
+  },{threshold:0.3});
+
+  var proofSection = document.querySelector('.nl-proof');
+  if(proofSection) proofObs.observe(proofSection);
+
+  function runCountUp(){
+    var nums = document.querySelectorAll('.nl-proof-num[data-target]');
+    nums.forEach(function(el){
+      var target = parseInt(el.getAttribute('data-target'));
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1800;
+      var start = performance.now();
+
+      function tick(now){
+        var elapsed = now - start;
+        var progress = Math.min(elapsed / duration, 1);
+        // easeOutQuart
+        var eased = 1 - Math.pow(1 - progress, 4);
+        var current = Math.floor(eased * target);
+        el.textContent = current.toLocaleString() + suffix;
+        if(progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target.toLocaleString() + suffix;
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  /* ── Form submit UI feedback ── */
+  function handleFormSubmit(form){
+    var btn = form.querySelector('button[type="submit"]');
+    var nameInput = form.querySelector('input[name="first_name"]');
+    var emailInput = form.querySelector('input[name="email"]');
+
+    if(!nameInput.value.trim() || !emailInput.value.trim()) return;
+
+    btn.textContent = 'Subscribed \u2713';
+    btn.disabled = true;
+    btn.style.background = '#1AAD6B';
+    nameInput.disabled = true;
+    emailInput.disabled = true;
+  }
+
+  var heroForm = document.getElementById('heroForm');
+  var ctaForm = document.getElementById('ctaForm');
+
+  if(heroForm){
+    heroForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      handleFormSubmit(heroForm);
+    });
+  }
+  if(ctaForm){
+    ctaForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      handleFormSubmit(ctaForm);
+    });
+  }
+
+  /* ── Footer newsletter form feedback ── */
+  var ftForms = document.querySelectorAll('.ft-nl-form');
+  ftForms.forEach(function(f){
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = f.querySelector('button');
+      var inp = f.querySelector('input');
+      if(inp.value.trim()){
+        btn.textContent = 'Subscribed \u2713';
+        btn.disabled = true;
+        inp.disabled = true;
+      }
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
