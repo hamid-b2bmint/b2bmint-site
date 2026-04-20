@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Email Marketing SaaS Case Study | 4,244 AI Citations &amp; $1.2M Pipeline | B2BMint</title>
+<meta name="description" content="How an anonymized email marketing SaaS went from 73 clicks/day to 4,244 AI citations and $1.2M in organic pipeline within 6 months using SAGE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --lime:#7DFFB3;--mint-bg:#D2FFC1;--forest:#093829;--forest-deep:#093829;--accent:#7DFFB3;
+  --white:#FFF;--black:#111;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+  --display:'Space Grotesk','Inter',sans-serif;
+  --purple:#7B5CF5;--purple-bg:#E8D8FF;--purple-dark:#4A2D8A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:#fff;color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto}
+a{text-decoration:none}
+
+/* shared */
+.s-inner{max-width:1100px;margin:0 auto;padding:0 40px}
+.s-sec{padding:100px 0}
+.s-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:14px;background:linear-gradient(135deg,var(--forest-deep),#1a6b42,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:flex;align-items:center;gap:10px}
+.s-eye::before{content:'';width:20px;height:4px;border-radius:4px;flex-shrink:0;background:var(--forest)}
+.s-eye.eye-rose::before{background:#C4325B}
+.s-eye.eye-purple::before{background:#7B5CF5}
+.s-eye.eye-blue::before{background:#2D8BF5}
+.s-eye.eye-amber::before{background:#E87B2F}
+.s-eye.eye-green::before{background:#1AAD6B}
+.s-eye.center{justify-content:center;text-align:center}
+.s-h{font-family:var(--display);font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:18px;color:var(--forest-deep)}
+.dt-purple{background:radial-gradient(circle,#7B5CF5 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-amber{background:radial-gradient(circle,#E87B2F 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-green{background:radial-gradient(circle,#1AAD6B 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dt-rose{background:radial-gradient(circle,#C4325B 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.rv.show{opacity:1;transform:translateY(0)}
+
+/* navbar (dark over dark hero, turns white on scroll) */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(9,56,41,.95);backdrop-filter:blur(12px);box-shadow:0 1px 8px rgba(0,0,0,.15);transition:all .3s}
+.navbar.scrolled{background:rgba(255,255,255,.97);box-shadow:0 1px 8px rgba(0,0,0,.06)}
+.nav-logo{display:flex;align-items:center;gap:8px}
+.nav-logo-icon{width:28px;height:28px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:var(--forest-deep)}
+.nav-logo-text{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.nav-logo-text span{color:var(--lime)}
+.navbar.scrolled .nav-logo-text{color:var(--forest-deep)}
+.navbar.scrolled .nav-logo-text span{color:var(--forest)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-link{font-size:14px;font-weight:500;color:rgba(255,255,255,.6);transition:color .2s}
+.nav-link:hover{color:#fff}
+.navbar.scrolled .nav-link{color:rgba(0,0,0,.6)}
+.navbar.scrolled .nav-link:hover{color:var(--forest-deep)}
+.nav-cta{padding:10px 24px;background:transparent;border:1.5px solid rgba(255,255,255,.2);border-radius:10px;font-size:13px;font-weight:600;color:#fff;transition:all .2s}
+.nav-cta:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35)}
+.navbar.scrolled .nav-cta{border-color:var(--forest-deep);color:var(--forest-deep)}
+.navbar.scrolled .nav-cta:hover{background:var(--forest-deep);color:var(--white)}
+
+/* Hero — dark forest with purple accents */
+.em-hero{padding:140px 0 100px;background:var(--forest-deep);position:relative;overflow:hidden}
+.em-hero::before{content:'';position:absolute;top:-30%;right:-10%;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(123,92,245,.12),transparent 55%);pointer-events:none}
+.em-hero::after{content:'';position:absolute;bottom:-50%;left:-20%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(125,255,179,.05),transparent 60%);pointer-events:none}
+.em-hero .s-inner{position:relative;z-index:2}
+.em-breadcrumb{font-size:13px;margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.em-breadcrumb a{color:rgba(125,255,179,.5);transition:color .2s}
+.em-breadcrumb a:hover{color:var(--lime)}
+.em-breadcrumb span{color:rgba(255,255,255,.25)}
+.em-bc-current{color:rgba(255,255,255,.5)}
+.em-badge{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--purple-bg);opacity:.8;margin-bottom:20px;padding:6px 16px;background:rgba(123,92,245,.12);border:1px solid rgba(123,92,245,.2);border-radius:40px}
+.em-hero h1{font-family:var(--display);font-size:clamp(32px,4.5vw,52px);font-weight:700;line-height:1.08;letter-spacing:-.03em;color:#fff;margin-bottom:28px;max-width:850px}
+.em-client-info{display:flex;align-items:center;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.em-client-tag{font-size:13px;font-weight:500;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:8px}
+.em-client-tag strong{color:rgba(255,255,255,.7);font-weight:600}
+.em-client-tag::before{content:'';width:4px;height:4px;border-radius:50%;background:rgba(123,92,245,.5)}
+.em-client-tag:first-child::before{display:none}
+.em-hero-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.em-hero-stat{background:rgba(123,92,245,.06);border:1px solid rgba(123,92,245,.12);border-radius:16px;padding:22px 16px;text-align:center;transition:all .4s}
+.em-hero-stat:hover{background:rgba(123,92,245,.14);transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.2)}
+.em-hero-stat strong{display:block;font-family:var(--display);font-size:clamp(22px,2.8vw,32px);font-weight:700;color:var(--purple-bg);line-height:1;margin-bottom:5px}
+.em-hero-stat span{font-size:11px;font-weight:500;color:rgba(255,255,255,.3);line-height:1.3}
+
+/* Situation */
+.em-situation{background:#fff}
+.em-sit-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:start;margin-top:32px}
+.em-sit-prose p{font-size:16px;line-height:1.8;color:rgba(0,0,0,.55);margin-bottom:20px}
+.em-sit-prose p:last-child{margin-bottom:0}
+.em-sit-card{background:#FFE8E2;border-radius:20px;padding:32px 28px}
+.em-sit-card h4{font-family:var(--display);font-size:16px;font-weight:700;color:#8A1A00;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.em-sit-card h4::before{content:'';width:8px;height:8px;border-radius:50%;background:#FA4028}
+.em-sit-item{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(255,255,255,.5);border-radius:12px;margin-bottom:8px;font-size:14px;color:rgba(138,26,0,.6)}
+.em-sit-item:last-child{margin-bottom:0}
+.em-sit-item svg{width:16px;height:16px;color:#c00;flex-shrink:0}
+
+/* Built */
+.em-built{background:#f9fafb}
+.em-built-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.em-built-wide{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.em-built-card{border-radius:20px;padding:32px 28px;transition:all .3s;cursor:default}
+.em-built-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.em-built-card:nth-child(1){background:#E8D8FF}
+.em-built-card:nth-child(2){background:#CEEBFF}
+.em-built-card:nth-child(3){background:#D2FFC1}
+.em-built-wide .em-built-card:nth-child(1){background:#FFE0C8}
+.em-built-wide .em-built-card:nth-child(2){background:#FFFDD9}
+.em-built-card-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.em-built-card-icon svg{width:22px;height:22px}
+.em-built-grid .em-built-card:nth-child(1) .em-built-card-icon{background:rgba(123,92,245,.1);color:#7B5CF5}
+.em-built-grid .em-built-card:nth-child(2) .em-built-card-icon{background:rgba(0,67,210,.08);color:#0043D2}
+.em-built-grid .em-built-card:nth-child(3) .em-built-card-icon{background:rgba(9,56,41,.08);color:var(--forest-deep)}
+.em-built-wide .em-built-card:nth-child(1) .em-built-card-icon{background:rgba(232,123,47,.1);color:#E87B2F}
+.em-built-wide .em-built-card:nth-child(2) .em-built-card-icon{background:rgba(138,114,0,.1);color:#8A7200}
+.em-built-card h3{font-family:var(--display);font-size:18px;font-weight:700;color:var(--forest-deep);margin-bottom:8px;line-height:1.2}
+.em-built-card p{font-size:14px;line-height:1.65;color:rgba(0,0,0,.5)}
+
+/* AI citations */
+.em-ai{background:var(--purple-bg)}
+.em-ai-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.em-ai-card{background:rgba(255,255,255,.65);border-radius:20px;padding:40px 28px;text-align:center;transition:all .4s;cursor:default}
+.em-ai-card:hover{background:rgba(255,255,255,.9);transform:translateY(-6px);box-shadow:0 16px 48px rgba(74,45,138,.08)}
+.em-ai-card strong{display:block;font-family:var(--display);font-size:clamp(42px,5.5vw,64px);font-weight:700;color:var(--purple-dark);line-height:1;margin-bottom:8px}
+.em-ai-card .em-ai-platform{font-size:14px;font-weight:600;color:var(--purple-dark);margin-bottom:4px}
+.em-ai-card .em-ai-sub{font-size:12px;color:rgba(74,45,138,.4)}
+.em-ai-sub-row{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
+.em-ai-sub-card{background:rgba(255,255,255,.45);border-radius:14px;padding:20px;text-align:center}
+.em-ai-sub-card strong{display:block;font-family:var(--display);font-size:22px;font-weight:700;color:var(--purple-dark);margin-bottom:4px}
+.em-ai-sub-card span{font-size:12px;color:rgba(74,45,138,.45)}
+.em-ai-note{margin-top:32px;text-align:center;font-size:16px;line-height:1.7;color:rgba(74,45,138,.55);max-width:720px;margin-left:auto;margin-right:auto}
+.em-ai-note strong{color:var(--purple-dark)}
+
+/* Business */
+.em-biz{background:#fff}
+.em-biz-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.em-biz-card{background:#f9fafb;border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:28px 20px;text-align:center;transition:all .3s}
+.em-biz-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.06);border-color:rgba(123,92,245,.2)}
+.em-biz-card strong{display:block;font-family:var(--display);font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--purple);line-height:1;margin-bottom:6px}
+.em-biz-card span{font-size:12px;color:rgba(0,0,0,.4);line-height:1.3}
+
+/* Timeline */
+.em-compound{background:#f9fafb}
+.em-compound-prose{max-width:700px;margin:0 auto 48px}
+.em-compound-prose p{font-size:16px;line-height:1.8;color:rgba(0,0,0,.55);margin-bottom:16px;text-align:center}
+.em-timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:40px;position:relative}
+.em-timeline::before{content:'';position:absolute;top:28px;left:16.6%;right:16.6%;height:3px;background:linear-gradient(90deg,#FFE8E2,#E8D8FF,#D2FFC1);border-radius:4px}
+.em-tl-step{text-align:center;position:relative;padding-top:56px}
+.em-tl-dot{position:absolute;top:18px;left:50%;transform:translateX(-50%);width:24px;height:24px;border-radius:50%;border:3px solid #f9fafb;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.em-timeline .em-tl-step:nth-child(1) .em-tl-dot{background:#FA4028}
+.em-timeline .em-tl-step:nth-child(2) .em-tl-dot{background:#7B5CF5}
+.em-timeline .em-tl-step:nth-child(3) .em-tl-dot{background:#1AAD6B}
+.em-tl-step h4{font-family:var(--display);font-size:16px;font-weight:700;color:var(--forest-deep);margin-bottom:6px}
+.em-tl-step p{font-size:13px;color:rgba(0,0,0,.45);line-height:1.5;max-width:240px;margin:0 auto}
+
+/* CTA + Footer shared (identical to other pages) */
+.s-cta-footer{position:relative;overflow:hidden}
+.cta-top{background:var(--mint-bg);position:relative;padding:100px 0 0;overflow:hidden}
+.cta-top::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(9,56,41,.04) 0%,transparent 60%);pointer-events:none}
+.cta-top .s-inner{position:relative;z-index:2}
+.hp-cta-top-text{text-align:center;margin-bottom:48px}
+.hp-cta-eyebrow{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--forest-deep);margin-bottom:16px;opacity:.4}
+.s-cta-footer .s-h{font-family:var(--display);color:var(--forest-deep);font-size:clamp(32px,4.5vw,52px);font-weight:700;margin:0 auto 16px;line-height:1.08;text-align:center;max-width:700px}
+.s-cta-footer .s-sub{color:rgba(9,56,41,.4);font-size:16px;line-height:1.7;margin:0 auto 32px;text-align:center;max-width:500px}
+.hp-cta-btn{display:inline-flex;align-items:center;gap:12px;padding:20px 48px;background:var(--forest-deep);color:#fff;font-weight:800;font-size:17px;border-radius:60px;border:none;cursor:pointer;transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 20px rgba(9,56,41,.15)}
+.hp-cta-btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 40px rgba(9,56,41,.25)}
+.hp-cta-btn svg{width:18px;height:18px}
+.hp-cta-micro{margin-top:16px;font-size:13px;color:rgba(9,56,41,.25);text-align:center}
+.em-cta-secondary{display:block;text-align:center;margin-top:12px;font-size:14px;font-weight:600;color:var(--forest-deep);opacity:.4;transition:opacity .2s}
+.em-cta-secondary:hover{opacity:.7}
+.hp-cta-card{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-top:48px}
+.hp-cta-photo{position:relative;display:flex;align-items:flex-end;justify-content:center;margin-bottom:-2px}
+.hp-cta-photo img{position:relative;z-index:3;width:380px;max-width:100%;display:block;object-fit:contain;filter:grayscale(100%) contrast(1.1) drop-shadow(0 8px 30px rgba(9,56,41,.15))}
+.hp-cta-proof{display:flex;flex-direction:column;gap:12px;padding-bottom:40px}
+.hp-cta-proof-card{background:#fff;border:1px solid rgba(9,56,41,.06);border-radius:16px;padding:20px 24px;display:flex;align-items:center;gap:20px;transition:all .3s;box-shadow:0 2px 8px rgba(9,56,41,.04)}
+.hp-cta-proof-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(9,56,41,.08)}
+.hp-cta-proof-num{font-family:var(--display);font-size:28px;font-weight:700;color:var(--forest-deep);line-height:1;min-width:70px}
+.hp-cta-proof-text{font-size:13px;color:rgba(9,56,41,.35);line-height:1.4}
+.hp-cta-proof-text strong{color:var(--forest-deep);font-weight:600;display:block;margin-bottom:2px;font-size:14px}
+.cta-bottom{background:var(--forest-deep);position:relative;z-index:1;overflow:hidden}
+.ft-topbar{max-width:1100px;margin:0 auto;padding:56px 40px 0;display:flex;justify-content:space-between;align-items:center}
+.ft-logo{display:flex;align-items:center;gap:10px}
+.ft-logo-icon{width:32px;height:32px;border-radius:10px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--forest-deep)}
+.ft-logo-text{font-family:var(--display);font-size:20px;font-weight:700;color:#fff}
+.ft-logo-text span{color:var(--lime)}
+.ft-socials{display:flex;gap:10px}
+.ft-socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.ft-socials a:hover{border-color:var(--lime);background:rgba(125,255,179,.08);transform:translateY(-2px)}
+.ft-socials a svg{width:16px;height:16px;fill:rgba(255,255,255,.55);transition:fill .3s}
+.ft-socials a:hover svg{fill:var(--lime)}
+.ft-nav-center{text-align:center;padding:48px 40px;max-width:700px;margin:0 auto}
+.ft-nav{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;align-items:center}
+.ft-nav a{color:rgba(255,255,255,.5);font-size:17px;font-weight:600;transition:all .3s;display:inline-block;letter-spacing:.3px}
+.ft-nav a:hover{color:var(--lime);letter-spacing:1.5px}
+.ft-badge-strip{position:relative;padding:40px 40px 48px;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:0}
+.ft-badge{flex-shrink:0;animation:ftBadgeFloat 7s ease-in-out infinite}
+.ft-badge:last-child{animation-delay:-3.5s}
+@keyframes ftBadgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.ft-badge svg{display:block;filter:drop-shadow(0 4px 20px rgba(125,255,179,.1))}
+.ft-statement{flex:1;display:flex;align-items:center;gap:0;padding:0 20px}
+.ft-statement-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--lime),transparent);opacity:.3;position:relative}
+.ft-statement-line::before{content:'';position:absolute;width:8px;height:8px;border-radius:50%;background:var(--lime);top:-3.5px;box-shadow:0 0 10px rgba(125,255,179,.4)}
+.ft-statement-line:first-child::before{right:0}
+.ft-statement-line:last-child::before{left:0}
+.ft-statement-text{padding:0 24px;white-space:nowrap;font-family:var(--display);font-size:clamp(16px,2.2vw,22px);color:#fff;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.ft-statement-text strong{color:var(--lime);font-size:1.4em;text-shadow:0 0 20px rgba(125,255,179,.3)}
+.ft-newsletter{max-width:1100px;margin:0 auto;padding:0 40px}
+.ft-nl-inner{display:flex;justify-content:space-between;align-items:center;gap:32px;padding:28px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.ft-nl-text{font-size:14px;color:rgba(255,255,255,.35);font-weight:500}
+.ft-nl-form{display:flex;gap:0;flex-shrink:0}
+.ft-nl-form input{padding:12px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-right:none;border-radius:10px 0 0 10px;color:#fff;font-size:14px;font-family:var(--sans);outline:none;width:240px;transition:border-color .3s}
+.ft-nl-form input::placeholder{color:rgba(255,255,255,.2)}
+.ft-nl-form input:focus{border-color:rgba(125,255,179,.3)}
+.ft-nl-form button{padding:12px 24px;background:var(--lime);color:var(--forest-deep);font-weight:700;font-size:14px;border:none;border-radius:0 10px 10px 0;cursor:pointer;font-family:var(--sans);transition:all .3s;white-space:nowrap}
+.ft-nl-form button:hover{background:#6ee6a0}
+.ft-trust-row{max-width:1100px;margin:0 auto;padding:28px 40px;display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
+.ft-trust-badge{transition:all .3s;display:block}
+.ft-trust-badge:hover{transform:translateY(-2px)}
+.ft-trust-badge img{height:60px;width:auto;display:block;opacity:.7;transition:opacity .3s}
+.ft-trust-badge:hover img{opacity:1}
+.ft-bottom{max-width:1100px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ft-bottom-logo{font-family:var(--display);font-size:16px;font-weight:700;color:rgba(255,255,255,.3)}
+.ft-bottom-logo span{color:rgba(125,255,179,.4)}
+.ft-bottom-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(125,255,179,.2);border-radius:60px;color:var(--lime);font-size:14px;font-weight:700;transition:all .3s}
+.ft-bottom-cta:hover{border-color:var(--lime);background:rgba(125,255,179,.06);transform:translateY(-2px)}
+.ft-bottom-cta svg{width:14px;height:14px}
+.ft-legal{display:flex;gap:16px}
+.ft-legal a{font-size:12px;color:rgba(255,255,255,.2);transition:color .2s}
+.ft-legal a:hover{color:var(--lime)}
+
+/* Responsive */
+@media(max-width:768px){
+  .s-inner{padding:0 20px}
+  .s-sec{padding:60px 0}
+  .em-hero{padding:120px 0 60px}
+  .em-hero-stats{grid-template-columns:1fr 1fr;gap:10px}
+  .em-hero-stats .em-hero-stat:last-child{grid-column:1/-1}
+  .em-sit-grid{grid-template-columns:1fr}
+  .em-built-grid,.em-built-wide,.em-ai-cards,.em-ai-sub-row{grid-template-columns:1fr}
+  .em-biz-grid{grid-template-columns:1fr 1fr}
+  .em-timeline{grid-template-columns:1fr;gap:32px}
+  .em-timeline::before{display:none}
+  .em-tl-step{padding-top:0;padding-left:40px;text-align:left}
+  .em-tl-dot{left:0;top:0;transform:none}
+  .em-tl-step p{margin:0}
+  .hp-cta-card{grid-template-columns:1fr}
+  .hp-cta-proof{padding-bottom:0}
+  .ft-topbar{flex-direction:column;gap:24px;align-items:flex-start}
+  .ft-badge-strip{flex-direction:column;gap:24px}
+  .ft-statement{padding:0;width:100%}
+  .ft-nl-inner{flex-direction:column;align-items:flex-start}
+  .ft-trust-row{gap:24px}
+  .ft-bottom{flex-direction:column;align-items:center;text-align:center}
+  .navbar{padding:14px 20px}
+  .nav-links{display:none}
+  .em-client-info{flex-direction:column;gap:8px;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <a href="/" class="nav-logo"><div class="nav-logo-icon">B</div><div class="nav-logo-text">B2B<span>Mint</span></div></a>
+  <div class="nav-links">
+    <a href="/saas-seo/" class="nav-link">SaaS SEO</a>
+    <a href="/b2b-geo/" class="nav-link">GEO</a>
+    <a href="/case-studies/" class="nav-link">Case Studies</a>
+    <a href="/about/" class="nav-link">About</a>
+    <a href="https://calendly.com/hamid-b2bmint/30min" class="nav-cta">Book Free Audit</a>
+  </div>
+</nav>
+
+<!-- S1: HERO -->
+<section class="em-hero">
+  <div class="s-inner">
+    <div class="em-breadcrumb rv">
+      <a href="/case-studies/">Case Studies</a>
+      <span>&rsaquo;</span>
+      <span class="em-bc-current">Email Marketing SaaS</span>
+    </div>
+    <div class="em-badge rv" style="transition-delay:.05s">Email Marketing SaaS &bull; Anonymized &bull; Series A</div>
+    <h1 class="rv" style="transition-delay:.1s">How a Series A Email Marketing SaaS Went From 73 Clicks a Day to 4,244 AI Citations in 6 Months</h1>
+    <div class="em-client-info rv" style="transition-delay:.15s">
+      <div class="em-client-tag"><strong>$3M ARR Series A</strong></div>
+      <div class="em-client-tag">Email Marketing Platform</div>
+      <div class="em-client-tag">Anonymized at client request</div>
+      <div class="em-client-tag">6-month engagement</div>
+    </div>
+    <div class="em-hero-stats rv" style="transition-delay:.2s" id="heroStats">
+      <div class="em-hero-stat"><strong>4,244</strong><span>Total AI Citations</span></div>
+      <div class="em-hero-stat"><strong>$1.2M</strong><span>Pipeline (Months 4-6)</span></div>
+      <div class="em-hero-stat"><strong>3,300%</strong><span>Traffic Growth</span></div>
+      <div class="em-hero-stat"><strong>67%</strong><span>Lower CAC vs Paid</span></div>
+      <div class="em-hero-stat"><strong>89%</strong><span>More Demo Requests</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- S2: SITUATION -->
+<section class="s-sec em-situation">
+  <div class="s-inner">
+    <div class="s-eye eye-rose rv">The Situation</div>
+    <h2 class="s-h rv" style="transition-delay:.1s">$50K spent. 73 clicks a day. <span class="dt-rose">Zero demos.</span></h2>
+    <div class="em-sit-grid">
+      <div class="em-sit-prose rv" style="transition-delay:.2s">
+        <p>This client came to us 9 months after raising their Series A. They&rsquo;d spent $50K with a respected SaaS SEO agency that published 40+ blog posts. Traffic reports showed green arrows. The CFO asked one question: how many demos came from this? Answer: zero.</p>
+        <p>The previous agency had optimized for MOFU keyword volume while their buyers were searching for comparison pages, alternatives, and pricing. On AI platforms, the brand was completely invisible. ChatGPT recommended competitors with half the product.</p>
+        <p>The company was three quarters from needing a Series B story. They needed organic search to become a meaningful pipeline channel, not a traffic line item.</p>
+      </div>
+      <div class="em-sit-card rv" style="transition-delay:.3s">
+        <h4>Starting Point</h4>
+        <div class="em-sit-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          $50K spent with previous agency
+        </div>
+        <div class="em-sit-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          ~73 clicks per day
+        </div>
+        <div class="em-sit-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Zero demos attributable to organic
+        </div>
+        <div class="em-sit-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Invisible on every AI platform
+        </div>
+        <div class="em-sit-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Series B runway: ~9 months
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S3: WHAT WE BUILT -->
+<section class="s-sec em-built">
+  <div class="s-inner">
+    <div class="s-eye eye-amber rv" style="text-align:center;justify-content:center">The SAGE Engine at Work</div>
+    <h2 class="s-h rv" style="transition-delay:.1s;text-align:center">What B2BMint built in <span class="dt-amber">six months.</span></h2>
+    <div class="em-built-grid rv" style="transition-delay:.2s">
+      <div class="em-built-card">
+        <div class="em-built-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <h3>Full semantic rebuild</h3>
+        <p>We killed the blog-post factory approach. Semantic topical map of the entire email marketing category. Entity-attribute mapping that positioned the client distinctly against Mailchimp, Klaviyo, HubSpot. Pillar-cluster architecture covering every commercial query.</p>
+      </div>
+      <div class="em-built-card">
+        <div class="em-built-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>BOFU-first content</h3>
+        <p>Comparison pages vs every major competitor. Alternative pages. Integration guides. Pricing comparison with schema markup. Use-case landing pages for the segments the client actually wanted: agencies, ecommerce, B2B SaaS sales teams.</p>
+      </div>
+      <div class="em-built-card">
+        <div class="em-built-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <h3>AI citation engineering</h3>
+        <p>Entity recognition optimization. Content structured for AI extraction. Prompt research to identify the exact questions ChatGPT and Perplexity were answering. Platform-by-platform citation monitoring from day one.</p>
+      </div>
+    </div>
+    <div class="em-built-wide rv" style="transition-delay:.3s">
+      <div class="em-built-card">
+        <div class="em-built-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div>
+        <h3>Pipeline attribution in GA4 + CRM</h3>
+        <p>We connected organic pages to demos and demos to opportunities. Every new page had a closed-loop attribution path so the CFO could see which pages actually drove revenue.</p>
+      </div>
+      <div class="em-built-card">
+        <div class="em-built-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>71-rule quality framework on every page</h3>
+        <p>Every page ran through our 71-rule semantic quality check before publishing. Entity density. Co-occurrence signals. Answer structuring. This is what Google and AI models reward when they decide who to rank and who to cite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S4: AI CITATIONS BREAKDOWN -->
+<section class="s-sec em-ai">
+  <div class="s-inner">
+    <div class="s-eye eye-purple rv" style="text-align:center;justify-content:center">AI Visibility Results</div>
+    <h2 class="s-h rv" style="transition-delay:.1s;text-align:center">From zero citations to the most AI-cited brand in their <span class="dt-purple">category.</span></h2>
+    <div class="em-ai-cards rv" style="transition-delay:.2s">
+      <div class="em-ai-card">
+        <strong>2,300</strong>
+        <div class="em-ai-platform">AI Overviews</div>
+        <div class="em-ai-sub">Google&rsquo;s AI-generated answers</div>
+      </div>
+      <div class="em-ai-card">
+        <strong>1,700</strong>
+        <div class="em-ai-platform">ChatGPT</div>
+        <div class="em-ai-sub">OpenAI recommendations</div>
+      </div>
+      <div class="em-ai-card">
+        <strong>120</strong>
+        <div class="em-ai-platform">Perplexity</div>
+        <div class="em-ai-sub">AI-powered search engine</div>
+      </div>
+    </div>
+    <div class="em-ai-sub-row rv" style="transition-delay:.3s">
+      <div class="em-ai-sub-card"><strong>100+</strong><span>Gemini Citations</span></div>
+      <div class="em-ai-sub-card"><strong>4,244</strong><span>Total Citations Tracked</span></div>
+    </div>
+    <p class="em-ai-note rv" style="transition-delay:.4s"><strong>4,244 AI citations in 6 months</strong> is not a vanity number. When a buyer asks ChatGPT &ldquo;what&rsquo;s the best email marketing platform for agencies,&rdquo; this client is the answer. That&rsquo;s demand capture at the point where the decision actually happens.</p>
+  </div>
+</section>
+
+<!-- S5: BUSINESS IMPACT -->
+<section class="s-sec em-biz">
+  <div class="s-inner">
+    <div class="s-eye eye-green rv" style="text-align:center;justify-content:center">Business Impact</div>
+    <h2 class="s-h rv" style="transition-delay:.1s;text-align:center">The numbers that matter to a <span class="dt-green">CFO.</span></h2>
+    <div class="em-biz-grid rv" style="transition-delay:.2s">
+      <div class="em-biz-card"><strong>$1.2M</strong><span>Pipeline (Months 4-6)</span></div>
+      <div class="em-biz-card"><strong>3,300%</strong><span>Traffic Growth</span></div>
+      <div class="em-biz-card"><strong>67%</strong><span>Lower CAC vs Paid</span></div>
+      <div class="em-biz-card"><strong>89%</strong><span>More Demo Requests</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- S6: COMPOUNDING / TIMELINE -->
+<section class="s-sec em-compound">
+  <div class="s-inner">
+    <div class="s-eye eye-amber rv" style="text-align:center;justify-content:center">How It Compounded</div>
+    <h2 class="s-h rv" style="transition-delay:.1s;text-align:center">Six months. Three <span class="dt-amber">inflection points.</span></h2>
+    <div class="em-compound-prose rv" style="transition-delay:.15s">
+      <p>Semantic authority doesn&rsquo;t build linearly. It compounds. Every new comparison page strengthened every existing pillar. Every AI citation made the next one easier to earn. Here&rsquo;s how the six months unfolded.</p>
+    </div>
+    <div class="em-timeline rv" style="transition-delay:.2s">
+      <div class="em-tl-step">
+        <div class="em-tl-dot"></div>
+        <h4>Months 1-2: Rebuild</h4>
+        <p>Semantic architecture replaced. First BOFU pages live. Existing blog posts triaged. Schema markup standardized across the site.</p>
+      </div>
+      <div class="em-tl-step">
+        <div class="em-tl-dot"></div>
+        <h4>Month 3: AI citations appear</h4>
+        <p>First ChatGPT citations appear. AI Overview placements start. Demo requests climb 34%. Pipeline indicators begin showing in the CRM.</p>
+      </div>
+      <div class="em-tl-step">
+        <div class="em-tl-dot"></div>
+        <h4>Months 4-6: Compounding</h4>
+        <p>$1.2M pipeline. 4,244 citations. Demo requests up 89%. CAC from organic 67% lower than paid. Series B conversation is now a strength, not a fear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S7: CTA + FOOTER -->
+<div class="s-cta-footer">
+  <div class="cta-top">
+    <div class="s-inner">
+      <div class="hp-cta-top-text">
+        <div class="hp-cta-eyebrow rv">See what SAGE can produce</div>
+        <h2 class="s-h rv" style="transition-delay:.1s">Your competitors are already being<br>cited by <span class="dt-green">AI.</span></h2>
+        <p class="s-sub rv" style="transition-delay:.15s">On the first call, we don&rsquo;t pitch. We show you exactly where your competitors are being cited and where you&rsquo;re invisible.</p>
+        <a href="https://calendly.com/hamid-b2bmint/30min" class="hp-cta-btn rv" style="transition-delay:.2s">
+          Book Your Free AI Visibility Audit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <div class="hp-cta-micro rv" style="transition-delay:.25s">Free &bull; 30 min &bull; Founder-led &bull; Zero obligation</div>
+        <a href="/case-studies/" class="em-cta-secondary rv" style="transition-delay:.3s">&larr; View All Case Studies</a>
+      </div>
+      <div class="hp-cta-card rv" style="transition-delay:.35s">
+        <div class="hp-cta-photo"><img src="/hamid-khan.png" alt="Hamid Khan, Founder of B2BMint" loading="lazy"></div>
+        <div class="hp-cta-proof">
+          <div class="hp-cta-proof-card"><div class="hp-cta-proof-num">4,244</div><div class="hp-cta-proof-text"><strong>AI Citations Built</strong>Across ChatGPT, Claude, Perplexity, Gemini &amp; Google</div></div>
+          <div class="hp-cta-proof-card"><div class="hp-cta-proof-num">$1.2M</div><div class="hp-cta-proof-text"><strong>Pipeline Generated</strong>From organic search and AI visibility alone</div></div>
+          <div class="hp-cta-proof-card"><div class="hp-cta-proof-num">47</div><div class="hp-cta-proof-text"><strong>SaaS Companies</strong>Trust B2BMint to build their search &amp; AI presence</div></div>
+          <div class="hp-cta-proof-card"><div class="hp-cta-proof-num">90d</div><div class="hp-cta-proof-text"><strong>Trial Period</strong>All assets stay with you. You own everything from day one.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="cta-bottom">
+    <div class="ft-topbar">
+      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+        <a href="/" class="ft-logo"><div class="ft-logo-icon">B</div><div class="ft-logo-text">B2B<span>Mint</span></div></a>
+        <span style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.5">7209 Lancaster Pike, Ste 4 #3125<br>Hockessin, DE 19707</span>
+      </div>
+      <div class="ft-socials">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-nav-center">
+      <ul class="ft-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/saas-seo/">SaaS SEO</a></li>
+        <li><a href="/b2b-geo/">GEO</a></li>
+        <li><a href="/case-studies/">Case Studies</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+    <div class="ft-badge-strip">
+      <div class="ft-badge"><svg width="180" height="180" viewBox="0 0 180 180" fill="none"><path d="M90 10 L160 45 L160 100 C160 140 130 165 90 175 C50 165 20 140 20 100 L20 45 Z" fill="rgba(125,255,179,.06)" stroke="#7DFFB3" stroke-width="1.5"/><path d="M90 28 L145 55 L145 98 C145 130 120 152 90 160 C60 152 35 130 35 98 L35 55 Z" fill="rgba(125,255,179,.03)" stroke="#7DFFB3" stroke-width=".5" opacity=".4"/><path d="M90 55 C105 70 112 82 112 95 C112 108 102 118 90 125 C78 118 68 108 68 95 C68 82 75 70 90 55Z" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width="1.2"/><line x1="90" y1="60" x2="90" y2="120" stroke="#7DFFB3" stroke-width=".6" opacity=".4"/><text x="90" y="88" text-anchor="middle" fill="#7DFFB3" font-size="22" font-weight="700" font-family="Space Grotesk,sans-serif">SAGE</text><text x="90" y="139" text-anchor="middle" fill="#7DFFB3" font-size="8" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">ENGINE</text></svg></div>
+      <div class="ft-statement"><div class="ft-statement-line"></div><div class="ft-statement-text">We build <strong>100%</strong> visibility</div><div class="ft-statement-line"></div></div>
+      <div class="ft-badge"><svg width="180" height="180" viewBox="0 0 180 180" fill="none"><polygon points="90,8 160,38 160,118 90,172 20,118 20,38" fill="rgba(125,255,179,.05)" stroke="#7DFFB3" stroke-width="1.5"/><polygon points="90,24 148,48 148,112 90,158 32,112 32,48" fill="rgba(125,255,179,.02)" stroke="#7DFFB3" stroke-width=".5" opacity=".35"/><rect x="58" y="100" width="12" height="30" rx="2" fill="rgba(125,255,179,.1)" stroke="#7DFFB3" stroke-width=".8"/><rect x="74" y="85" width="12" height="45" rx="2" fill="rgba(125,255,179,.12)" stroke="#7DFFB3" stroke-width=".8"/><rect x="90" y="65" width="12" height="65" rx="2" fill="rgba(125,255,179,.15)" stroke="#7DFFB3" stroke-width="1"/><rect x="106" y="50" width="12" height="80" rx="2" fill="rgba(125,255,179,.18)" stroke="#7DFFB3" stroke-width="1"/><text x="90" y="144" text-anchor="middle" fill="#7DFFB3" font-size="9" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">GROWTH</text><text x="90" y="22" text-anchor="middle" fill="#7DFFB3" font-size="18" font-weight="700" font-family="Space Grotesk,sans-serif" opacity=".6">MINT</text></svg></div>
+    </div>
+    <div class="ft-newsletter"><div class="ft-nl-inner"><div class="ft-nl-left"><span class="ft-nl-text">Subscribe to our SEO &amp; AI visibility newsletter</span></div><form class="ft-nl-form" onsubmit="return false"><input type="email" placeholder="Enter your email"><button type="submit">Subscribe</button></form></div></div>
+    <div class="ft-trust-row">
+      <div class="ft-trust-badge"><img src="/google-premier.svg" alt="Google Premier Partner 2025"></div>
+      <div class="ft-trust-badge"><img src="/linkedin-badge.avif" alt="LinkedIn Certified Marketing Partner"></div>
+      <div class="ft-trust-badge"><img src="/trustpilot-badge.svg" alt="Trustpilot 4.9" style="height:40px"></div>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-bottom-logo">B2B<span>Mint</span></div>
+      <a href="https://calendly.com/hamid-b2bmint/30min" class="ft-bottom-cta">Book a Strategy Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="ft-legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+    </div>
+  </footer>
+</div>
+
+<script>
+const navbar=document.getElementById('navbar');
+const heroEnd=document.querySelector('.em-hero').offsetHeight;
+window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>heroEnd-80)},{passive:true});
+const rvObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');rvObs.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
+const countObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.em-hero-stat strong').forEach(el=>{const raw=el.textContent;const num=parseFloat(raw.replace(/[^0-9.]/g,''));if(isNaN(num))return;const prefix=raw.match(/^[^0-9]*/)[0];const suffix=raw.match(/[^0-9.]*$/)[0];const dur=1200,start=performance.now();const tick=now=>{const p=Math.min((now-start)/dur,1);const ease=1-Math.pow(1-p,3);const cur=Math.round(ease*num);el.textContent=prefix+(cur>=1000?cur.toLocaleString():cur)+suffix;if(p<1)requestAnimationFrame(tick);else el.textContent=raw};el.textContent=prefix+'0'+suffix;requestAnimationFrame(tick)});countObs.unobserve(e.target)}})},{threshold:.3});
+const hs=document.getElementById('heroStats');if(hs)countObs.observe(hs);
+</script>
+</body>
+</html>

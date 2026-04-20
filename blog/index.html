@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Blog | B2BMint — SaaS SEO &amp; AI Visibility</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--lime:#7DFFB3;--mint-bg:#D2FFC1;--forest:#093829;--forest-deep:#093829;--accent:#7DFFB3;--white:#FFF;--black:#111;--sans:'Inter',system-ui,sans-serif;--display:'Space Grotesk','Inter',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:#fff;color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none}
+img{max-width:100%;display:block}
+
+.navbar{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);box-shadow:0 1px 8px rgba(0,0,0,.06)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:32px;height:32px;border-radius:10px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--forest-deep)}
+.nav-logo-text{font-family:var(--display);font-size:20px;font-weight:700;color:var(--forest-deep)}
+.nav-logo-text span{color:var(--lime);background:var(--forest-deep);padding:1px 4px;border-radius:4px}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-link{font-size:14px;font-weight:500;color:rgba(0,0,0,.6);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--forest-deep)}
+.nav-cta{padding:10px 24px;background:transparent;border:1.5px solid var(--forest-deep);border-radius:10px;font-size:13px;font-weight:600;color:var(--forest-deep);text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:var(--forest-deep);color:var(--white)}
+
+/* Hero — centered with big "coming soon" energy */
+.blog-hero{background:var(--mint-bg);padding:180px 0 120px;position:relative;overflow:hidden;text-align:center}
+.blog-hero::before{content:'';position:absolute;top:-300px;left:50%;transform:translateX(-50%);width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(125,255,179,.35),transparent 65%);pointer-events:none}
+.blog-hero .s-inner{max-width:760px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
+.blog-eye{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--forest-deep);margin-bottom:24px;padding:8px 18px;background:rgba(9,56,41,.08);border-radius:40px}
+.blog-eye::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--forest-deep);animation:pulseDot 2s ease-in-out infinite}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.3)}}
+.blog-hero h1{font-family:var(--display);font-size:clamp(44px,6vw,72px);font-weight:700;line-height:1.03;letter-spacing:-.035em;color:var(--forest-deep);margin-bottom:20px}
+.blog-hero h1 em{font-style:italic;color:rgba(9,56,41,.5)}
+.blog-hero p{font-size:18px;line-height:1.65;color:rgba(9,56,41,.55);max-width:540px;margin:0 auto 40px}
+
+/* newsletter CTA */
+.blog-cta-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.blog-cta-form input{flex:1;min-width:200px;padding:14px 18px;background:#fff;border:1px solid rgba(9,56,41,.12);border-radius:12px;font-size:14px;font-family:var(--sans);outline:none;transition:border-color .3s}
+.blog-cta-form input:focus{border-color:var(--forest-deep);box-shadow:0 0 0 3px rgba(9,56,41,.08)}
+.blog-cta-form button{padding:14px 28px;background:var(--forest-deep);color:#fff;font-weight:700;font-size:14px;border:none;border-radius:12px;cursor:pointer;white-space:nowrap;transition:all .3s}
+.blog-cta-form button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(9,56,41,.2)}
+.blog-cta-micro{margin-top:12px;font-size:13px;color:rgba(9,56,41,.35)}
+
+/* meantime section */
+.blog-while{background:#fff;padding:100px 0}
+.blog-while-inner{max-width:1100px;margin:0 auto;padding:0 40px}
+.blog-while-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:14px;background:linear-gradient(135deg,var(--forest-deep),#1a6b42,var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:flex;align-items:center;gap:10px}
+.blog-while-eye::before{content:'';width:20px;height:4px;border-radius:4px;background:#E87B2F}
+.blog-while-h{font-family:var(--display);font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--forest-deep);margin-bottom:40px;line-height:1.2}
+.blog-while-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.blog-while-card{border-radius:20px;padding:32px 28px;transition:all .3s;display:flex;flex-direction:column;min-height:220px;cursor:pointer;text-decoration:none}
+.blog-while-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.06)}
+.blog-while-card:nth-child(1){background:#CEEBFF;color:#001D66}
+.blog-while-card:nth-child(2){background:#E8D8FF;color:#4A2D8A}
+.blog-while-card:nth-child(3){background:#D2FFC1;color:#063D1A}
+.blog-while-card-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;opacity:.5;margin-bottom:14px}
+.blog-while-card h3{font-family:var(--display);font-size:20px;font-weight:700;line-height:1.2;margin-bottom:10px}
+.blog-while-card p{font-size:14px;line-height:1.6;opacity:.6;margin-bottom:auto}
+.blog-while-card-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;margin-top:20px;transition:gap .3s}
+.blog-while-card:hover .blog-while-card-link{gap:10px}
+.blog-while-card-link svg{width:14px;height:14px}
+
+/* Footer */
+.cta-bottom{background:var(--forest-deep);position:relative;z-index:1;overflow:hidden}
+.ft-topbar{max-width:1100px;margin:0 auto;padding:56px 40px 0;display:flex;justify-content:space-between;align-items:center}
+.ft-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.ft-logo-icon{width:32px;height:32px;border-radius:10px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--forest-deep)}
+.ft-logo-text{font-family:var(--display);font-size:20px;font-weight:700;color:#fff}
+.ft-logo-text span{color:var(--lime)}
+.ft-socials{display:flex;gap:10px}
+.ft-socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.ft-socials a:hover{border-color:var(--lime);background:rgba(125,255,179,.08);transform:translateY(-2px)}
+.ft-socials a svg{width:16px;height:16px;fill:rgba(255,255,255,.55)}
+.ft-socials a:hover svg{fill:var(--lime)}
+.ft-nav-center{text-align:center;padding:48px 40px;max-width:700px;margin:0 auto}
+.ft-nav{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;align-items:center}
+.ft-nav a{color:rgba(255,255,255,.5);text-decoration:none;font-size:17px;font-weight:600;transition:all .3s}
+.ft-nav a:hover{color:var(--lime);letter-spacing:1.5px}
+.ft-badge-strip{position:relative;padding:40px 40px 48px;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center}
+.ft-badge{flex-shrink:0;animation:ftBadgeFloat 7s ease-in-out infinite}
+.ft-badge:last-child{animation-delay:-3.5s}
+@keyframes ftBadgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.ft-statement{flex:1;display:flex;align-items:center;padding:0 20px}
+.ft-statement-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--lime),transparent);opacity:.3;position:relative}
+.ft-statement-line::before{content:'';position:absolute;width:8px;height:8px;border-radius:50%;background:var(--lime);top:-3.5px;box-shadow:0 0 10px rgba(125,255,179,.4)}
+.ft-statement-line:first-child::before{right:0}
+.ft-statement-line:last-child::before{left:0}
+.ft-statement-text{padding:0 24px;white-space:nowrap;font-family:var(--display);font-size:clamp(16px,2.2vw,22px);color:#fff;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.ft-statement-text strong{color:var(--lime);font-size:1.4em}
+.ft-newsletter{max-width:1100px;margin:0 auto;padding:0 40px}
+.ft-nl-inner{display:flex;justify-content:space-between;align-items:center;gap:32px;padding:28px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.ft-nl-text{font-size:14px;color:rgba(255,255,255,.35);font-weight:500}
+.ft-nl-form{display:flex;gap:0;flex-shrink:0}
+.ft-nl-form input{padding:12px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-right:none;border-radius:10px 0 0 10px;color:#fff;font-size:14px;font-family:var(--sans);outline:none;width:240px}
+.ft-nl-form button{padding:12px 24px;background:var(--lime);color:var(--forest-deep);font-weight:700;font-size:14px;border:none;border-radius:0 10px 10px 0;cursor:pointer;font-family:var(--sans)}
+.ft-trust-row{max-width:1100px;margin:0 auto;padding:28px 40px;display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
+.ft-trust-badge img{height:60px;opacity:.7}
+.ft-bottom{max-width:1100px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ft-bottom-logo{font-family:var(--display);font-size:16px;font-weight:700;color:rgba(255,255,255,.3)}
+.ft-bottom-logo span{color:rgba(125,255,179,.4)}
+.ft-bottom-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(125,255,179,.2);border-radius:60px;color:var(--lime);font-size:14px;font-weight:700}
+.ft-bottom-cta svg{width:14px;height:14px}
+.ft-legal{display:flex;gap:16px}
+.ft-legal a{font-size:12px;color:rgba(255,255,255,.2);text-decoration:none}
+
+@media(max-width:768px){
+  .navbar{padding:12px 20px}
+  .nav-link{display:none}
+  .blog-hero{padding:120px 0 70px}
+  .blog-hero .s-inner,.blog-while-inner{padding:0 20px}
+  .blog-while{padding:60px 0}
+  .blog-while-grid{grid-template-columns:1fr}
+  .blog-cta-form{flex-direction:column}
+  .blog-cta-form input{min-width:100%}
+  .ft-topbar{padding:40px 20px 0;flex-direction:column;align-items:flex-start;gap:16px}
+  .ft-badge-strip{flex-wrap:wrap;gap:20px;padding:24px 20px}
+  .ft-nl-inner{flex-direction:column;gap:16px}
+  .ft-bottom{flex-direction:column;text-align:center;padding:20px}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo"><div class="nav-logo-icon">B</div><div class="nav-logo-text">B2B<span>Mint</span></div></a>
+  <div class="nav-links">
+    <a href="/saas-seo/" class="nav-link">SaaS SEO</a>
+    <a href="/b2b-geo/" class="nav-link">GEO</a>
+    <a href="/case-studies/" class="nav-link">Case Studies</a>
+    <a href="/about/" class="nav-link">About</a>
+    <a href="https://calendly.com/hamid-b2bmint/30min" class="nav-cta">Book Free Audit</a>
+  </div>
+</nav>
+
+<section class="blog-hero">
+  <div class="s-inner">
+    <div class="blog-eye">Coming soon</div>
+    <h1>The blog is being built. <em>Slowly, on purpose.</em></h1>
+    <p>We&rsquo;re not publishing until we have something worth reading. Frameworks, teardowns, and real client breakdowns &mdash; not 1,500-word SEO-filler. The first post drops soon.</p>
+    <form class="blog-cta-form" onsubmit="return false" id="blogNotifyForm">
+      <input type="email" name="email" placeholder="Your email" required>
+      <button type="submit">Notify me</button>
+    </form>
+    <div class="blog-cta-micro">Or get weekly frameworks in the meantime &rarr; <a href="/newsletter/" style="color:var(--forest-deep);border-bottom:1px solid rgba(9,56,41,.3)">subscribe to the newsletter</a></div>
+  </div>
+</section>
+
+<section class="blog-while">
+  <div class="blog-while-inner">
+    <div class="blog-while-eye">While you wait</div>
+    <h2 class="blog-while-h">Start with what&rsquo;s already live.</h2>
+    <div class="blog-while-grid">
+
+      <a href="/case-studies/" class="blog-while-card">
+        <div class="blog-while-card-label">Case Studies</div>
+        <h3>Real client breakdowns</h3>
+        <p>Verified results from SaaS companies running SAGE. $72M+ in aggregate pipeline. Named clients you can check.</p>
+        <span class="blog-while-card-link">Read case studies <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a href="/saas-seo/" class="blog-while-card">
+        <div class="blog-while-card-label">Methodology</div>
+        <h3>The SAGE framework, explained</h3>
+        <p>The 3-stage pipeline. The 71-rule quality framework. Exactly how we structure search and AI visibility for SaaS.</p>
+        <span class="blog-while-card-link">See the methodology <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a href="/newsletter/" class="blog-while-card">
+        <div class="blog-while-card-label">Weekly signal</div>
+        <h3>Join 3,700+ SaaS founders</h3>
+        <p>The newsletter drops every Thursday. Four minutes of actionable frameworks. Zero filler. What a blog post would be, if blog posts weren&rsquo;t usually fluff.</p>
+        <span class="blog-while-card-link">Subscribe free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer class="cta-bottom">
+  <div class="ft-topbar">
+    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+      <a href="/" class="ft-logo"><div class="ft-logo-icon">B</div><div class="ft-logo-text">B2B<span>Mint</span></div></a>
+      <span style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.5">7209 Lancaster Pike, Ste 4 #3125<br>Hockessin, DE 19707</span>
+    </div>
+    <div class="ft-socials">
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+    </div>
+  </div>
+  <div class="ft-nav-center">
+    <ul class="ft-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/saas-seo/">SaaS SEO</a></li>
+      <li><a href="/b2b-geo/">GEO</a></li>
+      <li><a href="/case-studies/">Case Studies</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </div>
+  <div class="ft-badge-strip">
+    <div class="ft-badge"><svg width="180" height="180" viewBox="0 0 180 180" fill="none"><path d="M90 10 L160 45 L160 100 C160 140 130 165 90 175 C50 165 20 140 20 100 L20 45 Z" fill="rgba(125,255,179,.06)" stroke="#7DFFB3" stroke-width="1.5"/><text x="90" y="88" text-anchor="middle" fill="#7DFFB3" font-size="22" font-weight="700" font-family="Space Grotesk,sans-serif">SAGE</text><text x="90" y="139" text-anchor="middle" fill="#7DFFB3" font-size="8" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">ENGINE</text></svg></div>
+    <div class="ft-statement"><div class="ft-statement-line"></div><div class="ft-statement-text">We build <strong>100%</strong> visibility</div><div class="ft-statement-line"></div></div>
+    <div class="ft-badge"><svg width="180" height="180" viewBox="0 0 180 180" fill="none"><polygon points="90,8 160,38 160,118 90,172 20,118 20,38" fill="rgba(125,255,179,.05)" stroke="#7DFFB3" stroke-width="1.5"/><text x="90" y="22" text-anchor="middle" fill="#7DFFB3" font-size="18" font-weight="700" font-family="Space Grotesk,sans-serif" opacity=".6">MINT</text></svg></div>
+  </div>
+  <div class="ft-newsletter"><div class="ft-nl-inner"><span class="ft-nl-text">Subscribe to our SEO &amp; AI visibility newsletter</span><form class="ft-nl-form" onsubmit="return false"><input type="email" placeholder="Enter your email"><button type="submit">Subscribe</button></form></div></div>
+  <div class="ft-trust-row">
+    <div class="ft-trust-badge"><img src="/google-premier.svg" alt="Google Premier Partner 2025"></div>
+    <div class="ft-trust-badge"><img src="/linkedin-badge.avif" alt="LinkedIn Certified Marketing Partner"></div>
+    <div class="ft-trust-badge"><img src="/trustpilot-badge.svg" alt="Trustpilot 4.9" style="height:40px"></div>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-bottom-logo">B2B<span>Mint</span></div>
+    <a href="https://calendly.com/hamid-b2bmint/30min" class="ft-bottom-cta">Book a Strategy Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="ft-legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+  </div>
+</footer>
+
+<script>
+// notify form UI feedback
+const notifyForm=document.getElementById('blogNotifyForm');
+if(notifyForm){
+  notifyForm.addEventListener('submit',e=>{
+    e.preventDefault();
+    const btn=notifyForm.querySelector('button');
+    const inp=notifyForm.querySelector('input');
+    if(!inp.value.trim())return;
+    btn.textContent='Got you \u2713';
+    btn.disabled=true;
+    btn.style.background='#1AAD6B';
+    inp.disabled=true;
+  });
+}
+</script>
+
+</body>
+</html>

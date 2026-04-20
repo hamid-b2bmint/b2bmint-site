@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>FAQ | B2BMint — SaaS SEO &amp; AI Visibility Questions Answered</title>
+<meta name="description" content="Straight answers to the questions SaaS founders actually ask before hiring B2BMint. Methodology, timelines, pricing, guarantees, AI citations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--lime:#7DFFB3;--mint-bg:#D2FFC1;--forest:#093829;--forest-deep:#093829;--accent:#7DFFB3;--white:#FFF;--black:#111;--sans:'Inter',system-ui,sans-serif;--display:'Space Grotesk','Inter',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:#fff;color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none}
+img{max-width:100%;display:block}
+
+.navbar{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);box-shadow:0 1px 8px rgba(0,0,0,.06)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:32px;height:32px;border-radius:10px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--forest-deep)}
+.nav-logo-text{font-family:var(--display);font-size:20px;font-weight:700;color:var(--forest-deep)}
+.nav-logo-text span{color:var(--lime);background:var(--forest-deep);padding:1px 4px;border-radius:4px}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-link{font-size:14px;font-weight:500;color:rgba(0,0,0,.6);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--forest-deep)}
+.nav-cta{padding:10px 24px;background:transparent;border:1.5px solid var(--forest-deep);border-radius:10px;font-size:13px;font-weight:600;color:var(--forest-deep);text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:var(--forest-deep);color:var(--white)}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.rv.show{opacity:1;transform:translateY(0)}
+
+/* dotted text */
+.dt-amber{background:radial-gradient(circle,#E87B2F 1.4px,transparent 1.4px);background-size:3px 3px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Hero */
+.faq-hero{background:var(--mint-bg);padding:160px 0 100px;position:relative;overflow:hidden}
+.faq-hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(125,255,179,.3),transparent 65%);pointer-events:none}
+.faq-hero .s-inner{max-width:820px;margin:0 auto;padding:0 40px;position:relative;z-index:2;text-align:center}
+.faq-eye{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:14px;color:#E87B2F;padding:6px 16px;background:rgba(232,123,47,.1);border-radius:40px}
+.faq-hero h1{font-family:var(--display);font-size:clamp(40px,5.5vw,60px);font-weight:700;line-height:1.05;letter-spacing:-.03em;color:var(--forest-deep);margin-bottom:20px}
+.faq-hero p{font-size:17px;line-height:1.7;color:rgba(9,56,41,.55);max-width:640px;margin:0 auto}
+
+/* Category nav */
+.faq-catnav{background:#fff;border-bottom:1px solid rgba(0,0,0,.06);padding:24px 0;position:sticky;top:64px;z-index:100;backdrop-filter:blur(12px);background:rgba(255,255,255,.95)}
+.faq-catnav-inner{max-width:1100px;margin:0 auto;padding:0 40px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.faq-catnav a{padding:8px 18px;border-radius:60px;font-size:13px;font-weight:600;color:rgba(0,0,0,.55);background:#f9fafb;border:1px solid rgba(0,0,0,.06);transition:all .2s}
+.faq-catnav a:hover{background:var(--mint-bg);color:var(--forest-deep);border-color:rgba(9,56,41,.1)}
+
+/* Categories */
+.faq-body{background:#fff;padding:80px 0 100px}
+.faq-body-inner{max-width:900px;margin:0 auto;padding:0 40px}
+.faq-cat{margin-bottom:72px;scroll-margin-top:140px}
+.faq-cat:last-child{margin-bottom:0}
+.faq-cat-head{margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid rgba(0,0,0,.06)}
+.faq-cat-eye{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#E87B2F;margin-bottom:8px;display:block}
+.faq-cat h2{font-family:var(--display);font-size:clamp(24px,2.8vw,32px);font-weight:700;color:var(--forest-deep);letter-spacing:-.015em}
+
+/* Accordion items */
+.faq-item{border:1px solid rgba(0,0,0,.06);border-radius:14px;margin-bottom:10px;overflow:hidden;background:#fff;transition:all .3s}
+.faq-item:hover{border-color:rgba(9,56,41,.15);box-shadow:0 4px 16px rgba(0,0,0,.03)}
+.faq-item.open{border-color:rgba(9,56,41,.2);background:#fafbfa}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;cursor:pointer;user-select:none;gap:16px;font-size:15px;font-weight:700;color:var(--forest-deep);line-height:1.4}
+.faq-q-icon{width:28px;height:28px;border-radius:50%;background:rgba(9,56,41,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;color:var(--forest);transition:all .3s}
+.faq-item.open .faq-q-icon{background:var(--forest-deep);color:var(--lime);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1),padding .3s;padding:0 24px}
+.faq-item.open .faq-a{max-height:500px;padding:0 24px 20px}
+.faq-a p{font-size:14.5px;line-height:1.75;color:rgba(0,0,0,.62)}
+.faq-a p + p{margin-top:10px}
+.faq-a strong{color:var(--forest-deep)}
+
+/* Bottom CTA */
+.faq-bottom-cta{background:var(--forest-deep);padding:80px 0 90px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.faq-bottom-cta::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(125,255,179,.08),transparent 60%);pointer-events:none}
+.faq-bottom-cta-inner{max-width:720px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
+.faq-bottom-cta-eye{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--lime);opacity:.6;margin-bottom:14px}
+.faq-bottom-cta h2{font-family:var(--display);font-size:clamp(30px,4vw,44px);font-weight:700;line-height:1.1;margin-bottom:14px}
+.faq-bottom-cta p{font-size:16px;line-height:1.7;color:rgba(255,255,255,.55);margin-bottom:32px}
+.faq-cta-btn{display:inline-flex;align-items:center;gap:12px;padding:18px 40px;background:var(--lime);color:var(--forest-deep);font-weight:800;font-size:16px;border-radius:60px;transition:all .3s}
+.faq-cta-btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(125,255,179,.25)}
+.faq-cta-btn svg{width:18px;height:18px}
+
+/* Footer (matching site) */
+.cta-bottom{background:var(--forest-deep);position:relative;z-index:1;overflow:hidden;border-top:1px solid rgba(255,255,255,.06)}
+.ft-topbar{max-width:1100px;margin:0 auto;padding:56px 40px 0;display:flex;justify-content:space-between;align-items:center}
+.ft-logo{display:flex;align-items:center;gap:10px}
+.ft-logo-icon{width:32px;height:32px;border-radius:10px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--forest-deep)}
+.ft-logo-text{font-family:var(--display);font-size:20px;font-weight:700;color:#fff}
+.ft-logo-text span{color:var(--lime)}
+.ft-socials{display:flex;gap:10px}
+.ft-socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.ft-socials a:hover{border-color:var(--lime);background:rgba(125,255,179,.08);transform:translateY(-2px)}
+.ft-socials a svg{width:16px;height:16px;fill:rgba(255,255,255,.55)}
+.ft-nav-center{text-align:center;padding:48px 40px;max-width:700px;margin:0 auto}
+.ft-nav{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;align-items:center}
+.ft-nav a{color:rgba(255,255,255,.5);text-decoration:none;font-size:17px;font-weight:600;transition:all .3s}
+.ft-nav a:hover{color:var(--lime);letter-spacing:1.5px}
+.ft-badge-strip{position:relative;padding:40px 40px 48px;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center}
+.ft-badge{flex-shrink:0;animation:ftBadgeFloat 7s ease-in-out infinite}
+.ft-badge:last-child{animation-delay:-3.5s}
+@keyframes ftBadgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.ft-statement{flex:1;display:flex;align-items:center;padding:0 20px}
+.ft-statement-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--lime),transparent);opacity:.3;position:relative}
+.ft-statement-line::before{content:'';position:absolute;width:8px;height:8px;border-radius:50%;background:var(--lime);top:-3.5px;box-shadow:0 0 10px rgba(125,255,179,.4)}
+.ft-statement-line:first-child::before{right:0}
+.ft-statement-line:last-child::before{left:0}
+.ft-statement-text{padding:0 24px;white-space:nowrap;font-family:var(--display);font-size:clamp(16px,2.2vw,22px);color:#fff;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.ft-statement-text strong{color:var(--lime);font-size:1.4em}
+.ft-newsletter{max-width:1100px;margin:0 auto;padding:0 40px}
+.ft-nl-inner{display:flex;justify-content:space-between;align-items:center;gap:32px;padding:28px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.ft-nl-text{font-size:14px;color:rgba(255,255,255,.35);font-weight:500}
+.ft-nl-form{display:flex;gap:0;flex-shrink:0}
+.ft-nl-form input{padding:12px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-right:none;border-radius:10px 0 0 10px;color:#fff;font-size:14px;font-family:var(--sans);outline:none;width:240px}
+.ft-nl-form button{padding:12px 24px;background:var(--lime);color:var(--forest-deep);font-weight:700;font-size:14px;border:none;border-radius:0 10px 10px 0;cursor:pointer;font-family:var(--sans)}
+.ft-trust-row{max-width:1100px;margin:0 auto;padding:28px 40px;display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
+.ft-trust-badge img{height:60px;opacity:.7}
+.ft-bottom{max-width:1100px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ft-bottom-logo{font-family:var(--display);font-size:16px;font-weight:700;color:rgba(255,255,255,.3)}
+.ft-bottom-logo span{color:rgba(125,255,179,.4)}
+.ft-bottom-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(125,255,179,.2);border-radius:60px;color:var(--lime);font-size:14px;font-weight:700}
+.ft-bottom-cta svg{width:14px;height:14px}
+.ft-legal{display:flex;gap:16px}
+.ft-legal a{font-size:12px;color:rgba(255,255,255,.2);text-decoration:none}
+
+@media(max-width:768px){
+  .navbar{padding:12px 20px}
+  .nav-link{display:none}
+  .faq-hero{padding:120px 0 60px}
+  .faq-hero .s-inner,.faq-body-inner,.faq-bottom-cta-inner{padding:0 20px}
+  .faq-body{padding:48px 0 70px}
+  .faq-catnav{padding:14px 0}
+  .faq-catnav-inner{padding:0 20px;gap:6px}
+  .faq-catnav a{padding:6px 12px;font-size:12px}
+  .faq-q{font-size:14.5px;padding:18px 20px}
+  .faq-item.open .faq-a{padding:0 20px 18px}
+  .ft-topbar{padding:40px 20px 0;flex-direction:column;align-items:flex-start;gap:16px}
+  .ft-badge-strip{flex-wrap:wrap;gap:20px;padding:24px 20px}
+  .ft-nl-inner{flex-direction:column;gap:16px}
+  .ft-bottom{flex-direction:column;text-align:center;padding:20px}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo"><div class="nav-logo-icon">B</div><div class="nav-logo-text">B2B<span>Mint</span></div></a>
+  <div class="nav-links">
+    <a href="/saas-seo/" class="nav-link">SaaS SEO</a>
+    <a href="/b2b-geo/" class="nav-link">GEO</a>
+    <a href="/case-studies/" class="nav-link">Case Studies</a>
+    <a href="/about/" class="nav-link">About</a>
+    <a href="https://calendly.com/hamid-b2bmint/30min" class="nav-cta">Book Free Audit</a>
+  </div>
+</nav>
+
+<section class="faq-hero">
+  <div class="s-inner">
+    <div class="faq-eye">Frequently asked</div>
+    <h1 class="rv">Straight answers. <span class="dt-amber">No fluff.</span></h1>
+    <p class="rv" style="transition-delay:.1s">Everything SaaS founders actually ask before signing. Grouped by topic. If your question isn&rsquo;t here, book a 30-minute call and we&rsquo;ll answer it live.</p>
+  </div>
+</section>
+
+<nav class="faq-catnav">
+  <div class="faq-catnav-inner">
+    <a href="#methodology">Methodology</a>
+    <a href="#timeline">Timeline &amp; Results</a>
+    <a href="#ai">AI Citations</a>
+    <a href="#engagement">Engagement</a>
+    <a href="#billing">Billing &amp; Trial</a>
+  </div>
+</nav>
+
+<section class="faq-body">
+  <div class="faq-body-inner">
+
+    <!-- Methodology -->
+    <div class="faq-cat" id="methodology">
+      <div class="faq-cat-head rv">
+        <span class="faq-cat-eye">01 &mdash; Methodology</span>
+        <h2>How SAGE actually works</h2>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">What is SAGE?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>SAGE stands for <strong>Search &amp; AI Growth Engine</strong>. It&rsquo;s our 3-stage framework: build semantic authority, earn search and AI visibility, then convert that into pipeline. Built on Koray Tu&#287;berk GUBUR&rsquo;s semantic SEO methodology, adapted for B2B SaaS and AI search.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">How is this different from what other SaaS SEO agencies do?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>Most SaaS SEO agencies work from keyword lists, publish blog posts, and report traffic. SAGE starts from a semantic map of your category &mdash; the entities, relationships, and questions buyers actually search. Then we build content as a connected system, optimize for both Google and AI models simultaneously, and report on pipeline, not traffic.</p><p>The practical difference: one engine handles SEO and GEO because <strong>80% of the work overlaps.</strong> Agencies that sell them separately are double-billing you.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">What is the 71-rule framework?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>A structural quality check every page runs through before publishing. It covers entity density, co-occurrence signals, answer formatting, schema markup, internal link geometry, and the specific attributes Google and LLMs reward when deciding who to rank and who to cite. Not style guidelines. Structural rules.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">Do you do link building?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>Yes, when strategy calls for it. The semantic foundation does most of the heavy lifting. Strategic backlinks from relevant sources accelerate authority when competition requires it. We don&rsquo;t do generic guest-post spam.</p></div>
+      </div>
+    </div>
+
+    <!-- Timeline & Results -->
+    <div class="faq-cat" id="timeline">
+      <div class="faq-cat-head rv">
+        <span class="faq-cat-eye">02 &mdash; Timeline &amp; Results</span>
+        <h2>When you&rsquo;ll see results</h2>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">How long until we see results?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>BOFU content goes live Week 4. First rankings by Week 6-8. AI citations starting Month 3. Demo requests by Month 3. Pipeline tracking back to specific pages by Month 4.</p><p>One real data point: a Series A email marketing SaaS hit <strong>$1.2M in pipeline between months 4-6</strong>, with CAC from organic 67% lower than paid.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">Can you guarantee specific rankings or revenue?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>No. Anyone who does is lying. Search and LLM outputs are influenced by factors outside any agency&rsquo;s control &mdash; algorithm updates, competitor activity, your product-market fit, the quality of inputs you provide. What we guarantee is a methodology with a track record: $72M+ in aggregate pipeline, 4,244 AI citations for a single client, named clients like BookYourData and Socially Powerful you can publicly verify.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">How do you measure success?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>Pipeline generated from organic. Which pages drove demos. Which content drove SQLs. What organic revenue looks like vs paid. AI citation growth by platform. If your CFO can&rsquo;t use our reports in a board meeting, we&rsquo;ve failed.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">What if results plateau after a few months?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>Semantic authority compounds. Results don&rsquo;t plateau, they accelerate. BookYourData has been a client for 3+ years because year 1 foundations made year 2 stronger, and year 2 made year 3 stronger. If you&rsquo;re seeing plateau, your system isn&rsquo;t compounding &mdash; that&rsquo;s what we fix.</p></div>
+      </div>
+    </div>
+
+    <!-- AI Citations -->
+    <div class="faq-cat" id="ai">
+      <div class="faq-cat-head rv">
+        <span class="faq-cat-eye">03 &mdash; AI Citations &amp; GEO</span>
+        <h2>Getting cited by ChatGPT, Perplexity, and AI Overviews</h2>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">How do we get cited by ChatGPT?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>Four things LLMs reward: <strong>entity recognition</strong> (they need to see your brand as a distinct entity), <strong>information uniqueness</strong> (content that says something the web doesn&rsquo;t already say 50 times), <strong>structured extractability</strong> (content that can be pulled into answers), and <strong>topical authority</strong> (semantic coverage of your category). SAGE engineers all four. One client went from zero to 4,244 citations in 6 months.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">What&rsquo;s the difference between GEO and AEO?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>GEO (generative engine optimization) and AEO (answer engine optimization) describe the same discipline with slightly different framing. In practice, the strategies are identical. We use GEO because the &ldquo;answer&rdquo; frame under-represents how LLMs generate responses.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">How do you measure AI visibility?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>Platform-by-platform citation monitoring across ChatGPT, Perplexity, Gemini, Claude, AI Overviews, and Copilot. We track how often your brand is cited, for which queries, and alongside which competitors. AI referral traffic is captured in GA4 separately.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">Do I need GEO if I already have good SEO?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>Good SEO is a head start, not a complete strategy. If your SEO is genuinely strong, you&rsquo;re 80% of the way there. SAGE adds the 20% specific to AI visibility: entity recognition engineering, prompt research, content structured for LLM extraction, and citation monitoring. The mistake is treating GEO as a separate budget &mdash; the work overlaps.</p></div>
+      </div>
+    </div>
+
+    <!-- Engagement -->
+    <div class="faq-cat" id="engagement">
+      <div class="faq-cat-head rv">
+        <span class="faq-cat-eye">04 &mdash; The engagement</span>
+        <h2>How we actually work together</h2>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">Who actually leads my engagement?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>Hamid, personally. No account managers, no junior strategists, no handoff to a content team you&rsquo;ve never met. Every decision on your semantic architecture, content priority, and pipeline strategy is his. We deliberately keep client slots limited so this stays true.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">Can you work with our in-house team?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>Yes. Two models work: (1) B2BMint owns full strategy and execution end-to-end, or (2) B2BMint builds the semantic architecture and 71-rule framework, your team handles production using our system. The hybrid typically produces the most velocity once your team is trained.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">What if we already have an SEO agency?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>The free audit shows exactly where your current agency&rsquo;s work is producing and where the gaps are. If they&rsquo;re doing great work, the audit confirms it &mdash; no hidden agenda to move you. If they&rsquo;re not, you&rsquo;ll see specifically which pages and queries they&rsquo;re missing and what it&rsquo;s costing you.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">What kind of SaaS do you work with?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>B2B SaaS doing $1M-$50M ARR with product-market fit. The methodology works best when there&rsquo;s real product to recommend, real buyers searching, and a 3-6 month horizon for compounding to kick in. We don&rsquo;t work with pre-PMF startups or ecommerce.</p></div>
+      </div>
+    </div>
+
+    <!-- Billing & Trial -->
+    <div class="faq-cat" id="billing">
+      <div class="faq-cat-head rv">
+        <span class="faq-cat-eye">05 &mdash; Billing &amp; trial</span>
+        <h2>Pricing, trial period, ownership</h2>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">How much should we budget?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>Scaled to stage. Early-stage engagements start with focused BOFU content and semantic foundations. Larger companies invest in full semantic coverage, technical rebuild, and platform-wide AI citation work. Measured against pipeline, not traffic. Exact pricing on the discovery call.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">What if it doesn&rsquo;t work?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>90-day trial period. If you don&rsquo;t see the milestones we&rsquo;ve agreed on, walk away. All content, semantic maps, technical work, and architecture stays with you regardless. No lock-in, no penalty, no &ldquo;our IP&rdquo; games.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">Do we own what you produce?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p>Yes. Every deliverable transfers to you on payment. Semantic maps, content drafts, technical specs, custom frameworks &mdash; all yours. The only thing that stays ours is the SAGE methodology and the 71-rule framework themselves (not what we build <em>with</em> them for you).</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">How do we start?<span class="faq-q-icon">+</span></div>
+        <div class="faq-a"><p><a href="https://calendly.com/hamid-b2bmint/30min" style="color:var(--forest-deep);border-bottom:1px solid rgba(9,56,41,.3)">Book a 30-minute audit call</a>. Hamid shows you exactly where your AI visibility gaps are and what your competitors are being cited for. No pitch deck. No obligation. If SAGE fits, we discuss scope. If it doesn&rsquo;t, you walk away with a concrete audit either way.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="faq-bottom-cta">
+  <div class="faq-bottom-cta-inner">
+    <div class="faq-bottom-cta-eye">Still have questions?</div>
+    <h2>Ask Hamid live.</h2>
+    <p>30 minutes. Real data. No pitch. You&rsquo;ll leave with a concrete audit of your AI visibility gaps whether we work together or not.</p>
+    <a href="https://calendly.com/hamid-b2bmint/30min" class="faq-cta-btn">
+      Book a Strategy Call
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer class="cta-bottom">
+  <div class="ft-topbar">
+    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+      <a href="/" class="ft-logo"><div class="ft-logo-icon">B</div><div class="ft-logo-text">B2B<span>Mint</span></div></a>
+      <span style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.5">7209 Lancaster Pike, Ste 4 #3125<br>Hockessin, DE 19707</span>
+    </div>
+    <div class="ft-socials">
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+    </div>
+  </div>
+  <div class="ft-nav-center">
+    <ul class="ft-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/saas-seo/">SaaS SEO</a></li>
+      <li><a href="/b2b-geo/">GEO</a></li>
+      <li><a href="/case-studies/">Case Studies</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </div>
+  <div class="ft-badge-strip">
+    <div class="ft-badge"><svg width="180" height="180" viewBox="0 0 180 180" fill="none"><path d="M90 10 L160 45 L160 100 C160 140 130 165 90 175 C50 165 20 140 20 100 L20 45 Z" fill="rgba(125,255,179,.06)" stroke="#7DFFB3" stroke-width="1.5"/><text x="90" y="88" text-anchor="middle" fill="#7DFFB3" font-size="22" font-weight="700" font-family="Space Grotesk,sans-serif">SAGE</text><text x="90" y="139" text-anchor="middle" fill="#7DFFB3" font-size="8" font-weight="700" letter-spacing="3" font-family="Inter,sans-serif" opacity=".7">ENGINE</text></svg></div>
+    <div class="ft-statement"><div class="ft-statement-line"></div><div class="ft-statement-text">We build <strong>100%</strong> visibility</div><div class="ft-statement-line"></div></div>
+    <div class="ft-badge"><svg width="180" height="180" viewBox="0 0 180 180" fill="none"><polygon points="90,8 160,38 160,118 90,172 20,118 20,38" fill="rgba(125,255,179,.05)" stroke="#7DFFB3" stroke-width="1.5"/><text x="90" y="22" text-anchor="middle" fill="#7DFFB3" font-size="18" font-weight="700" font-family="Space Grotesk,sans-serif" opacity=".6">MINT</text></svg></div>
+  </div>
+  <div class="ft-newsletter"><div class="ft-nl-inner"><span class="ft-nl-text">Subscribe to our SEO &amp; AI visibility newsletter</span><form class="ft-nl-form" onsubmit="return false"><input type="email" placeholder="Enter your email"><button type="submit">Subscribe</button></form></div></div>
+  <div class="ft-trust-row">
+    <div class="ft-trust-badge"><img src="/google-premier.svg" alt="Google Premier Partner 2025"></div>
+    <div class="ft-trust-badge"><img src="/linkedin-badge.avif" alt="LinkedIn Certified Marketing Partner"></div>
+    <div class="ft-trust-badge"><img src="/trustpilot-badge.svg" alt="Trustpilot 4.9" style="height:40px"></div>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-bottom-logo">B2B<span>Mint</span></div>
+    <a href="https://calendly.com/hamid-b2bmint/30min" class="ft-bottom-cta">Book a Strategy Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="ft-legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+  </div>
+</footer>
+
+<script>
+// reveals
+const rvObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');rvObs.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>{
+    const wasOpen=item.classList.contains('open');
+    // close others in the same category
+    const cat=item.closest('.faq-cat');
+    if(cat) cat.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
